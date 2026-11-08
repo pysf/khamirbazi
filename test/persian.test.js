@@ -14,7 +14,7 @@ test("toPersianDigits: digits and decimal points", () => {
 
 test("toPersianDigits: times, ranges, thousands, percent and sentence ends", () => {
   assert.equal(toPersianDigits("1:30"), "۱:۳۰");
-  assert.equal(toPersianDigits("8 تا 12 ساعت، 30×40"), "۸ تا ۱۲ ساعت، ۳۰×۴۰");
+  assert.equal(toPersianDigits("8 تا 12 ساعت، 26×32"), "۸ تا ۱۲ ساعت، ۲۶×۳۲");
   assert.equal(toPersianDigits("1,000 g"), "۱,۰۰۰ g");
   assert.equal(toPersianDigits("65.5%"), "۶۵٫۵%");
   assert.equal(toPersianDigits("این 4 بار است. بعد"), "این ۴ بار است. بعد");

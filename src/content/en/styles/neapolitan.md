@@ -77,11 +77,11 @@ You mix the dough in the morning and bake in the evening, or the other way round
 
     > Why: Keep it light. A heavy or wet topping holds steam under the dough, so the centre stays wet and the pizza sticks to the board. Dry wet ingredients or pre-cook them, and use dry grated cheese or dry it first. Use olive oil only as a thin film on the rim; a refined or light olive oil resists smoke better (see the Safety note below).
 
-10. **Slide the pizza onto the hot surface fast.** Move it from a board or peel (the wooden or metal paddle for pizzas) onto the surface.
+10. **Slide the pizza onto the hot surface fast.** Move it from a board or peel (the wooden or metal paddle for pizzas) onto the surface. Use a board dusted with a little semolina or flour, or baking paper if you prefer it (see the Safety note below).
 
     > Why: Every time the oven door opens, heat is lost. Be quick.
 
-    > Safety: Check the highest temperature printed on the pack of your baking paper. Many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. This recipe uses the grill at the end, and baking paper must never go under the grill or touch the heating elements. So bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+    > Safety: Using baking paper is your choice. Option 1, no paper: open the dough on a board or peel dusted with a little semolina or flour and slide it onto the hot surface. Option 2, baking paper: check the temperature printed on the pack, because many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven's maximum. Keep the paper away from the heating elements and the oven walls, and trim the edges. Paper and the grill do not go together unless the pack says it is safe.
 
     > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.neapolitan.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. This dough has no oil inside. A thin film of oil on the rim before baking is fine.
 11. **Bake for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, and use the grill at the end.** Bake with top and bottom heat. For the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes switch on the grill so the top and the rim get colour. Stay at the oven and watch. The pizza must spend no more than {{ recipes.styles.neapolitan.bake.grill.max_min.value }} minutes in total under the grill.
@@ -89,9 +89,7 @@ You mix the dough in the morning and bake in the evening, or the other way round
     > Why: A {{ recipes.styles.neapolitan.bake.temp_c.value }} degree oven is short on heat from above. A real Neapolitan oven bakes at a much higher temperature, so the grill replaces some of that heat.
 
     > Tip: The pizza is done when the rim has risen and has brown to dark spots, and the base is firm. Take it out before the spots turn black.
-12. **Take the pizza out, add fresh basil and a little olive oil, and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it.** Leave it uncovered, on a rack if you have one.
-
-    > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base keeps its crispness. Cut with a sharp pizza wheel or a large knife. Basil and other fresh, delicate things go on after the bake, because they burn and turn bitter in the oven.
+12. **Take the pizza out.** Add fresh basil and a little olive oil if you like.
 13. **Second pizza:** keep its ball covered until the first pizza is out and the surface is hot again, which takes about {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes. Only then open it.
 
     > Why: Dough that waits open on the board gets wet and sticks.
@@ -135,11 +133,11 @@ You make the dough the day before baking. Take the amounts from the Ingredients 
 
     > Why: Keep it light. A heavy or wet topping holds steam under the dough, so the centre stays wet and the pizza sticks to the board. Dry wet ingredients or pre-cook them, and use dry grated cheese or dry it first. Use olive oil only as a thin film on the rim; a refined or light olive oil resists smoke better (see the Safety note below).
 
-11. **Slide the pizza onto the hot surface fast.** Move it from a board or peel (the wooden or metal paddle for pizzas) onto the surface.
+11. **Slide the pizza onto the hot surface fast.** Move it from a board or peel (the wooden or metal paddle for pizzas) onto the surface. Use a board dusted with a little semolina or flour, or baking paper if you prefer it (see the Safety note below).
 
     > Why: Every time the oven door opens, heat is lost. Be quick.
 
-    > Safety: Check the highest temperature printed on the pack of your baking paper. Many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. This recipe uses the grill at the end, and baking paper must never go under the grill or touch the heating elements. So bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+    > Safety: Using baking paper is your choice. Option 1, no paper: open the dough on a board or peel dusted with a little semolina or flour and slide it onto the hot surface. Option 2, baking paper: check the temperature printed on the pack, because many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven's maximum. Keep the paper away from the heating elements and the oven walls, and trim the edges. Paper and the grill do not go together unless the pack says it is safe.
 
     > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.neapolitan.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. This dough has no oil inside. A thin film of oil on the rim before baking is fine.
 12. **Bake for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, and use the grill at the end.** Bake with top and bottom heat. For the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes switch on the grill so the top and the rim get colour. Stay at the oven and watch. The pizza must spend no more than {{ recipes.styles.neapolitan.bake.grill.max_min.value }} minutes in total under the grill.
@@ -147,9 +145,7 @@ You make the dough the day before baking. Take the amounts from the Ingredients 
     > Why: A {{ recipes.styles.neapolitan.bake.temp_c.value }} degree oven is short on heat from above. A real Neapolitan oven bakes at a much higher temperature, so the grill replaces some of that heat.
 
     > Tip: The pizza is done when the rim has risen and has brown to dark spots, and the base is firm. Take it out before the spots turn black.
-13. **Take the pizza out, add fresh basil and a little olive oil, and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it.** Leave it uncovered, on a rack if you have one.
-
-    > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base keeps its crispness. Cut with a sharp pizza wheel or a large knife. Basil and other fresh, delicate things go on after the bake, because they burn and turn bitter in the oven.
+13. **Take the pizza out.** Add fresh basil and a little olive oil if you like.
 14. **Second pizza:** keep its ball covered until the first pizza is out and the surface is hot again, which takes about {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes. Only then open it.
 
     > Why: Dough that waits open on the board gets wet and sticks.
@@ -187,11 +183,11 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
 
     > Why: Keep it light. A heavy or wet topping holds steam under the dough, so the centre stays wet and the pizza sticks to the board. Dry wet ingredients or pre-cook them, and use dry grated cheese or dry it first. Use olive oil only as a thin film on the rim; a refined or light olive oil resists smoke better (see the Safety note below).
 
-9. **Slide the pizza onto the hot surface fast.** Move it from a board or peel (the wooden or metal paddle for pizzas) onto the surface.
+9. **Slide the pizza onto the hot surface fast.** Move it from a board or peel (the wooden or metal paddle for pizzas) onto the surface. Use a board dusted with a little semolina or flour, or baking paper if you prefer it (see the Safety note below).
 
     > Why: Every time the oven door opens, heat is lost. Be quick.
 
-    > Safety: Check the highest temperature printed on the pack of your baking paper. Many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. This recipe uses the grill at the end, and baking paper must never go under the grill or touch the heating elements. So bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+    > Safety: Using baking paper is your choice. Option 1, no paper: open the dough on a board or peel dusted with a little semolina or flour and slide it onto the hot surface. Option 2, baking paper: check the temperature printed on the pack, because many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven's maximum. Keep the paper away from the heating elements and the oven walls, and trim the edges. Paper and the grill do not go together unless the pack says it is safe.
 
     > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.neapolitan.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. This dough has no oil inside. A thin film of oil on the rim before baking is fine.
 10. **Bake for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, and use the grill at the end.** Bake with top and bottom heat. For the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes switch on the grill so the top and the rim get colour. Stay at the oven and watch. The pizza must spend no more than {{ recipes.styles.neapolitan.bake.grill.max_min.value }} minutes in total under the grill.
@@ -199,9 +195,7 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
     > Why: A {{ recipes.styles.neapolitan.bake.temp_c.value }} degree oven is short on heat from above. A real Neapolitan oven bakes at a much higher temperature, so the grill replaces some of that heat.
 
     > Tip: The pizza is done when the rim has risen and has brown to dark spots, and the base is firm. Take it out before the spots turn black.
-11. **Take the pizza out, add fresh basil and a little olive oil, and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it.** Leave it uncovered, on a rack if you have one.
-
-    > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base keeps its crispness. Cut with a sharp pizza wheel or a large knife. Basil and other fresh, delicate things go on after the bake, because they burn and turn bitter in the oven.
+11. **Take the pizza out.** Add fresh basil and a little olive oil if you like.
 12. **Second pizza:** keep its ball covered until the first pizza is out and the surface is hot again, which takes about {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes. Only then open it.
 
     > Why: Dough that waits open on the board gets wet and sticks.
@@ -212,14 +206,14 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
 - **Then:** divide into balls of about {{ recipes.styles.neapolitan.ball_g.value }} g. Rest them, covered, for {{ recipes.methods.room_8_12h.final_rest_min.value }} minutes.
 - **{{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking:** oven at {{ recipes.styles.neapolitan.bake.temp_c.value }} degrees with the baking surface on the upper rack.
 - **About {{ recipes.timeline.shape_lead_min.value }} minutes before baking:** open the dough, dress it and bake.
-- **Bake** for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes. No baking paper under the grill.
+- **Bake** for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes. Baking paper and the grill do not go together unless the pack says it is safe.
 
 ## Bake-day checklist, fridge method {methods=cold_24h}
 
 - **{{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before shaping:** take the dough out of the fridge and keep the lid closed.
 - **{{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking:** oven at {{ recipes.styles.neapolitan.bake.temp_c.value }} degrees with the baking surface on the upper rack.
 - **About {{ recipes.timeline.shape_lead_min.value }} minutes before baking:** open the dough, dress it and bake.
-- **Bake** for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes. No baking paper under the grill.
+- **Bake** for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes. Baking paper and the grill do not go together unless the pack says it is safe.
 
 ## Bake-day checklist, warm method {methods=warm_2h}
 
@@ -227,7 +221,7 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
 - **First rise:** {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes in a warm place.
 - **Then:** divide into balls of about {{ recipes.styles.neapolitan.ball_g.value }} g. Rest them, covered, for {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes. Switch on the oven and the baking surface at the same time.
 - **About {{ recipes.timeline.shape_lead_min.value }} minutes before baking:** open the dough, dress it and bake.
-- **Bake** for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes. No baking paper under the grill.
+- **Bake** for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes. Baking paper and the grill do not go together unless the pack says it is safe.
 
 ## Troubleshooting
 

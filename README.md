@@ -1,6 +1,6 @@
 # Khamirbazi
 
-A static, bilingual (English and Farsi) home pizza dough guide with a calculator. The UI offers New York and Neapolitan; the data, calculator and tests still cover six styles (also Roman tonda, al taglio, Detroit, Chicago deep dish), pans, ball weights and a timeline, which the UI does not expose. The guide is about dough only: the calculator and the data have no sauce, cheese or topping amounts (the steps only give a short, amount-free "dress the pizza" step). Published text names no brands, stores, countries or local-language product terms (`make check` enforces it). Built with Eleventy 3 (ESM); the calculator is plain JavaScript.
+A static, bilingual (English and Farsi) home pizza dough guide with a calculator. The guide covers two styles: New York and Neapolitan. The guide is about dough only: the calculator and the data have no sauce, cheese or topping amounts (the steps only give a short, amount-free "dress the pizza" step). Published text names no brands, stores, countries or local-language product terms (`make check` enforces it). Built with Eleventy 3 (ESM); the calculator is plain JavaScript.
 
 ## Run
 
@@ -19,8 +19,8 @@ The site is built to `_site/` with URLs `/en/` (Home = calculator), `/en/recipe/
 
 ## Where things are
 
-- `src/_data/recipes.json`: every number (baker's percentages, methods, yeast, pans, bake settings, safety data), each with `confidence`, `verified`, `sources` and notes. Single source of truth.
-- `src/assets/calc.js`: pure calculator (`computeRecipe`, `panArea`, `formatNumber`). No DOM. Results are exact; only `formatNumber` rounds, to at most one decimal. Round and tray sizes: `mode: { pizzas, size: { shape, diameter | length, width } }`, dough = pizzas x area x the style's `dough_density_g_per_cm2` (derived from 250 g for 30 cm; `sizes` in `recipes.json` lists the four sizes of the site).
+- `src/_data/recipes.json`: every number (baker's percentages, methods, yeast, bake settings, safety data), each with `confidence`, `verified`, `sources` and notes. Single source of truth.
+- `src/assets/calc.js`: pure calculator (`computeRecipe`, `roundArea`, `formatNumber`). No DOM. Results are exact; only `formatNumber` rounds, to at most one decimal. Round sizes: `mode: { pizzas, size: { shape: "round", diameter } }`, dough = pizzas x area x the style's `dough_density_g_per_cm2` (derived from 250 g for 30 cm; `sizes` in `recipes.json` lists the three sizes of the site (26, 30 and 32 cm)).
 - `src/assets/home.js`: the Home inputs; "Show recipe" is a link with the choices in the query string. `src/assets/recipe.js`: reads the query string, renders the ingredients with `calc.js`, shows the steps of the chosen method. `src/assets/site.js`: theme toggle, language switch that keeps the query string.
 - `src/_data/i18n/en.json`, `fa.json`: UI strings. `src/_data/recipePage.js`: per-style data for the recipe page and its no-JS default table.
 - `src/_includes/layout.njk`, `src/home.njk`, `src/recipe.njk`, `src/basics.njk`: templates. `src/assets/style.css`: the only stylesheet (tokens ported from `docs/design`, which is read-only reference).

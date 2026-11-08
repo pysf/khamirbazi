@@ -1,6 +1,6 @@
 # Khamirbazi: home pizza guide + calculator
 
-A simple static website (English and Farsi, built together) with accurate, step-by-step instructions for pizza dough at home and a calculator that scales the recipe to your pizza size and number of pizzas. The UI offers two styles now (New York, Neapolitan). calc.js, recipes.json, the tests and the i18n names still cover six styles, pans and a timeline; the UI does not expose them.
+A simple static website (English and Farsi, built together) with accurate, step-by-step instructions for pizza dough at home and a calculator that scales the recipe to your pizza size and number of pizzas. The project has two styles: New York and Neapolitan.
 
 Keep it simple (KISS). Prefer fewer files, fewer dependencies, and plain code over clever code.
 
@@ -40,16 +40,15 @@ Keep it simple (KISS). Prefer fewer files, fewer dependencies, and plain code ov
 
 ## Calculator rules
 
-- Inputs (UI): style, method, yeast type (dry/fresh), size (round 26/30/32 cm or the 30 x 40 cm oven tray, from `sizes` in `recipes.json`) and number of pizzas (trays for the tray). Dough per pizza = size area x the style's `dough_density_g_per_cm2`. calc.js also still supports ball weight, pans and the timeline (not shown in the UI).
-- Output: all ingredients in grams, the yeast solution instructions, a timeline that works backwards from the planned bake time (mix, rest, fridge, take out, preheat, open, bake), oven settings, and bake time. Dough only: no sauce, cheese or topping amounts anywhere (data, calculator, tests, text).
+- Inputs (UI): style, method, yeast type (dry/fresh), size (round 26/30/32 cm, from `sizes` in `recipes.json`) and number of pizzas. Dough per pizza = round area x the style's `dough_density_g_per_cm2`. calc.js also still accepts a ball weight instead of a size (not shown in the UI). The warm 2-hour method needs at least 2 pizzas (`min_pizzas`).
+- Output: all ingredients in grams, the yeast solution instructions, oven settings, and bake time. Dough only: no sauce, cheese or topping amounts anywhere (data, calculator, tests, text).
 - **Do not round to friendly numbers.** Compute exactly; display at most 1 decimal.
 - **Assume a 1 g kitchen scale.** Never ask the user to weigh less than 1 g. Yeast is handled by a solution: dry yeast = one whole 7 g packet in 700 g water (1%); fresh yeast = half a 42 g cube (21 g) in 700 g water (3%). Then weigh out X g of solution, and subtract X from the recipe water.
-- Pan styles scale by pan area x dough density, not by pizza count.
 - Fridge temperature is an ordinary fridge (about 4-5 degrees C). Room temperature is 21 degrees C.
 
-## Styles in scope (all six in v1)
+## Styles in scope
 
-New York (main recipe), Neapolitan, Roman tonda, al taglio, Detroit, Chicago deep dish.
+New York (main recipe) and Neapolitan.
 
 Reference quantities (for 300 g flour, about 2 pizzas) currently live in `pizza-guide-v7-raw.md` (Persian). That file is the **translation source**. Port its numbers into `recipes.json` (after the fact-check) and write each style in English and Farsi together, then retire it. Designer brief: `docs/ui-designer-prompt.md`.
 
@@ -72,7 +71,7 @@ This section is background for the maintainer. **It must not leak into published
 
 ## Writing rules (English)
 
-- **Published text must not mention brands, stores, countries or cities of the reader, or local-language product terms** (no Germany, Berlin, REWE, Edeka, dm, Backpapier, Pizzamehl and the like). Use generic terms: pizza flour, instant dry yeast, fresh yeast, baking paper, top and bottom heat, fan mode, protein, semolina, oven tray. Give general guidance only (flour type and protein line, 3x yeast conversion, check the baking paper rating). The origin of a style (Naples, New York...) is history, not the reader's location, and is fine. Package sizes read "a common 7 g packet / 42 g cube, check your pack".
+- **Published text must not mention brands, stores, countries or cities of the reader, or local-language product terms** (no Germany, Berlin, REWE, Edeka, dm, Backpapier, Pizzamehl and the like). Use generic terms: pizza flour, instant dry yeast, fresh yeast, baking paper, top and bottom heat, fan mode, protein, semolina. Give general guidance only (flour type and protein line, 3x yeast conversion, check the baking paper rating). The origin of a style (Naples, New York...) is history, not the reader's location, and is fine. Package sizes read "a common 7 g packet / 42 g cube, check your pack".
 - Plain English, short sentences. Explain **why** next to each step. Keep practical tips; do not cut details.
 - Every foreign or technical term is explained where it first appears and listed in the glossary.
 - Cross-reference by section number and name (for example "Section 3: Kneading").
@@ -85,7 +84,7 @@ This section is background for the maintainer. **It must not leak into published
 
 - Simple, fluent Farsi; short sentences; explain why next to each step. Phone readers.
 - Write temperatures as "250 degrees" in words (the letter C breaks right-to-left flow). Avoid `&` and complex Latin mixes.
-- No Latin-script words on Farsi pages. Use the established Persian word (آرد، مخمر فوری، تخمیر سرد، ورز دادن، کفگیر/پیتزابر) and add a short Persian explanation when the term would be opaque. Write proper names in Persian script (تیپو 00، لومباردی، یونسکو). The only Latin on a Farsi page is the language-switch label "EN". `make check` fails on any Latin word in `src/content/fa/**` or in the values of `fa.json` (allow list in `scripts/check-sync.mjs`). Units in words: گرم، درجه، دقیقه، ساعت، سانتی‌متر.
+- No Latin-script words on Farsi pages. Use the established Persian word (آرد، مخمر فوری، تخمیر سرد، ورز دادن، کفگیر/پیتزابر) and add a short Persian explanation when the term would be opaque. Write proper names in Persian script (تیپو 00، یونسکو). The only Latin on a Farsi page is the language-switch label "EN". `make check` fails on any Latin word in `src/content/fa/**` or in the values of `fa.json` (allow list in `scripts/check-sync.mjs`). Units in words: گرم، درجه، دقیقه، ساعت، سانتی‌متر.
 - No unknown or meaningless Farsi phrases. Example: say "کشیدن و تا کردن خمیر" (stretch the dough and fold it over itself), not a literal calque.
 - Section references use number and name, same as English.
 - The existing Persian guide (`pizza-guide-v7-raw.md`) shows the user's preferred tone; reuse its wording where the content is unchanged.
@@ -95,16 +94,15 @@ This section is background for the maintainer. **It must not leak into published
 - Never state an unverified number as fact. If unsure, say so and mark it.
 - Keep claims from web sources separate from my own reasoning; cite the source in a comment or note.
 - If a lookup suggests changing a user-tested or user-given value, do not change it silently. Report it and wait for approval.
-- Known unverified items: exact protein of REWE/Edeka Pizzamehl (about 11.8-13 g), dm dry yeast, yeast amounts for 12-16 h, 48 h, 72 h and room-temperature methods, al taglio / Detroit / Chicago dough density and fermentation ranges, history dates and names. No recipe has been test-baked yet.
-- Safety notes must be present: check the parchment paper's maximum temperature (many are rated 220-230 degrees C) before using it at 250 degrees or under the grill; olive oil smokes in a 250 degree pan.
+- Known unverified items: exact protein of REWE/Edeka Pizzamehl (about 11.8-13 g), dm dry yeast, yeast amounts for 12-16 h, 48 h, 72 h and room-temperature methods, history dates and names. No recipe has been test-baked yet.
+- Safety notes must be present: baking paper is the reader's choice (bake on semolina or flour, or use paper); if paper is used, check its maximum temperature (many are rated 220-230 degrees C), keep it away from the heating elements, trim the edges, and keep paper and the grill apart unless the pack says it is safe; olive oil smokes in a 250 degree pan.
 
 ## Known content problems to fix while porting
 
 1. Yeast table lacks 12-16 h (overnight); recipes only show cold water/solution for 24 h. Derive other durations from the data.
-2. Cold method timeline is ambiguous (stretch-and-fold rounds vs the 1-1.5 h room-temperature rise). Make the sequence explicit.
+2. Cold method sequence is ambiguous (stretch-and-fold rounds vs the 1-1.5 h room-temperature rise). Make the sequence explicit.
 3. Neapolitan grill instruction contradicts the oven section. Use one rule: top+bottom heat, grill for the last 1-2 minutes.
 4. Second pizza waits on parchment while the first bakes: tell the user to open it only when the oven is ready.
-5. Verify the thin al taglio density and the Chicago pan load.
 
 ## Git
 

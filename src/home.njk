@@ -24,7 +24,7 @@ eleventyComputed:
       <span class="selw"><select id="f-method" class="sel">{% for m in recipes.styles[first].methods_typical %}<option value="{{ m }}"{% if m == recipes.styles[first].default_method %} selected{% endif %}>{{ t.methods_short[m] }}</option>{% endfor %}</select>{% icon "chev", "chv" %}</span></div>
     <div class="row col"><span class="k" id="l-size">{{ h.size }}</span>
       <div class="segc" role="group" aria-labelledby="l-size" data-group="size">
-        {% for s in recipes.sizes %}<button type="button" data-value="{{ s.id }}" aria-pressed="{{ 'true' if s.id == 'round_30' else 'false' }}">{% if s.shape == "round" %}{{ s.diameter }}<small>{{ h.round }}</small>{% else %}<bdi dir="ltr">{{ s.length }}×{{ s.width }}</bdi><small>{{ h.tray }}</small>{% endif %}</button>{% endfor %}
+        {% for s in recipes.sizes %}<button type="button" data-value="{{ s.id }}" aria-pressed="{{ 'true' if s.id == 'round_30' else 'false' }}">{{ s.diameter }}<small>{{ h.round }}</small></button>{% endfor %}
       </div></div>
     <div class="row"><span class="k" id="l-count">{{ h.count }}</span>
       <div class="stp" role="group" aria-labelledby="l-count"><button type="button" data-step="-1" aria-label="{{ h.dec }}">−</button><span class="val" id="f-count" aria-live="polite">2</span><button type="button" data-step="1" aria-label="{{ h.inc }}">+</button></div></div>

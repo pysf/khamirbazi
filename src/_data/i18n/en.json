@@ -29,7 +29,6 @@
     "method": "Method",
     "size": "Size, cm",
     "round": "round",
-    "tray": "tray",
     "count": "Pizzas",
     "yeast": "Yeast",
     "dry": "Dry",
@@ -52,11 +51,8 @@
     "more_details": "More details",
     "placeholder": "Detailed steps for this style are coming next.",
     "size_round": "{d} cm",
-    "size_tray": "{l} × {w} cm tray",
     "pizza_one": "{n} pizza",
     "pizza_other": "{n} pizzas",
-    "tray_one": "{n} tray",
-    "tray_other": "{n} trays",
     "table_note": "The yeast solution replaces the same weight of water.",
     "noscript": "Without JavaScript this page shows 2 pizzas of 30 cm. Use the Home page to choose your own amounts."
   },
@@ -70,26 +66,6 @@
       "name": "Neapolitan",
       "latin": "Pizza Napoletana",
       "blurb": "Soft centre and a tall, airy rim. No oil in the dough. In a home oven it is Neapolitan-style, not the real thing."
-    },
-    "roman_tonda": {
-      "name": "Roman tonda",
-      "latin": "Pizza Romana Tonda",
-      "blurb": "Thin, crisp and light. The dough is rolled out with a rolling pin."
-    },
-    "al_taglio": {
-      "name": "Al taglio",
-      "latin": "Pizza al Taglio / in Teglia",
-      "blurb": "Roman tray pizza cut into squares. Very wet dough, open crumb, crisp base."
-    },
-    "detroit": {
-      "name": "Detroit",
-      "latin": "Detroit-style pizza",
-      "blurb": "Thick, airy, with a fried crisp base, baked in a rectangular pan."
-    },
-    "chicago": {
-      "name": "Chicago deep dish",
-      "latin": "Chicago deep dish",
-      "blurb": "A tall pie with a thick dough in a deep pan."
     }
   },
   "methods": {

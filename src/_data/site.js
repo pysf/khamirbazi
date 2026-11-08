@@ -1,5 +1,5 @@
 const langs = ["en", "fa"];
-// Only these styles have pages and appear in the UI. The other four stay in recipes.json, the tests and the i18n names.
+// Only these styles have pages and appear in the UI. There are no other styles.
 const uiStyles = ["new_york", "neapolitan"];
 
 export default {

@@ -2,8 +2,8 @@
 
 Hydration is the weight of water as a percentage of the weight of flour. The New York dough in this guide has {{ recipes.styles.new_york.dough.hydration.value }}% hydration: that many grams of water for every 100 g of flour.
 
-- Stiffer dough (for example Roman tonda, {{ recipes.styles.roman_tonda.dough.hydration.value }}%) is easy to handle and bakes crisp.
-- Softer, stickier dough (for example al taglio, {{ recipes.styles.al_taglio.dough.hydration.value }}%) gives an open, airy crumb and suits a pan.
+- Stiffer dough is easy to handle and bakes crisp.
+- Softer, stickier dough gives an open, airy crumb but is harder to handle.
 
 Why a home oven keeps hydration moderate: an oven that tops out at {{ recipes.oven.max_c.value }} degrees gives less heat, so the bake is longer. With a lot of water the dough can dry out before it browns.
 
@@ -33,10 +33,7 @@ Fermentation is the yeast eating sugar and making gas and flavour. Cold fermenta
 
 ## Where the styles come from
 
-Dates and stories here are the common accounts. Sources often disagree, and none of this affects the recipes.
+These are the common accounts. Sources often disagree, and none of this affects the recipes.
 
-- **New York:** Italian immigrants, early 20th century. Lombardi's (1905) is traditionally said to be the first pizzeria in the United States, but that claim is disputed.
-- **Neapolitan:** Naples. The story that the Margherita was made for the queen in 1889 is popular and disputed. UNESCO listed the art of the Neapolitan pizzaiuolo (the pizza maker), not the pizza itself.
-- **Roman tonda and al taglio:** Rome. The modern forms date from the middle of the 20th century; sources give different years.
-- **Detroit:** Buddy's Rendezvous is usually credited with the first square pie in 1946. Who created the recipe, and where the first pans came from, is disputed.
-- **Chicago deep dish:** Pizzeria Uno, 1943, is the date most often given. Who invented deep dish is disputed.
+- **New York:** traditionally said to come from Italian immigrants in the early 20th century. Which pizzeria was the first in the United States is disputed.
+- **Neapolitan:** from Naples. The story that the Margherita was made for a queen in the 19th century is popular and disputed. UNESCO listed the art of the Neapolitan pizzaiuolo (the pizza maker), not the pizza itself.

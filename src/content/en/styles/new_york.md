@@ -66,7 +66,7 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
     > Tip: After adding the cheese, a small pinch of garlic powder sprinkled on top tastes good. It is optional. Garlic powder burns less than fresh garlic.
 9. **Bake** (see Oven and baking surface).
 
-    > Safety: Check the highest temperature printed on the pack of your baking paper before you use it. Many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put baking paper under the grill, and do not let it touch the heating elements or the oven walls. If your paper is not rated high enough, bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+    > Safety: Using baking paper is your choice. Option 1, no paper: open the dough on a board or peel dusted with a little semolina or flour and slide it onto the hot surface. Option 2, baking paper: check the temperature printed on the pack, because many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven's maximum. Keep the paper away from the heating elements and the oven walls, and trim the edges. Paper and the grill do not go together unless the pack says it is safe.
 
     > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. Oil mixed into the dough is fine.
 10. **Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it.** Leave it uncovered, on a rack if you have one. While it rests, add what you like that is fresh or delicate: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings.
@@ -100,7 +100,7 @@ You make the dough one or more days before baking. Take the amounts from the Ing
     > Tip: After adding the cheese, a small pinch of garlic powder sprinkled on top tastes good. It is optional. Garlic powder burns less than fresh garlic.
 11. **Bake** (see Oven and baking surface).
 
-    > Safety: Check the highest temperature printed on the pack of your baking paper before you use it. Many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put baking paper under the grill, and do not let it touch the heating elements or the oven walls. If your paper is not rated high enough, bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+    > Safety: Using baking paper is your choice. Option 1, no paper: open the dough on a board or peel dusted with a little semolina or flour and slide it onto the hot surface. Option 2, baking paper: check the temperature printed on the pack, because many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven's maximum. Keep the paper away from the heating elements and the oven walls, and trim the edges. Paper and the grill do not go together unless the pack says it is safe.
 
     > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. Oil mixed into the dough is fine.
 12. **Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it.** Leave it uncovered, on a rack if you have one. While it rests, add what you like that is fresh or delicate: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings.
@@ -212,7 +212,7 @@ The goal is to keep moving air off the dough. Air makes the surface dry and crus
 3. Put the ball on it and press from the middle outwards with your fingertips. **Leave a rim of {{ recipes.styles.new_york.practice.rim_cm.range.0 }} to {{ recipes.styles.new_york.practice.rim_cm.range.1 }} cm untouched.**
 4. Stretch the dough with both hands and turn it until it is about {{ recipes.styles.new_york.practice.shape_diameter_cm.value }} cm wide.
    > Why: The untouched rim keeps its air and puffs in the oven. This is how you get a rim with air in it.
-5. Put the dough on baking paper, or on the floured peel or a board if you bake without paper (see Oven and baking surface).
+5. Put the dough on a board or peel dusted with semolina or flour, or on baking paper if you prefer it (see Oven and baking surface).
 
 > Warning: Do not use a rolling pin. It presses the air out of the dough, and the rim does not puff.
 
@@ -240,7 +240,7 @@ The baking surface stores heat. When the dough lands on it, the surface gives it
 2. **Put it on the upper rack** (about the upper third of the oven).
 3. **Use top and bottom heat** and **no fan**. If your oven has a fan mode and the top browns too fast, switch the fan off.
    > Why: The fan dries the surface of the dough and burns the top before the base is ready.
-4. **Move the pizza onto the hot surface fast.** Slide it, with the paper if you use paper, from a board or peel onto the surface. Cut off extra paper at the edges.
+4. **Move the pizza onto the hot surface fast.** Slide it from a board or peel onto the surface, with the paper if you use paper (then trim the edges).
    > Why: Every time the oven door opens, heat is lost. Be quick.
 5. **Bake for {{ recipes.styles.new_york.bake.time_min.range.0 }} to {{ recipes.styles.new_york.bake.time_min.range.1 }} minutes.** The pizza is done when the rim is golden to light brown and the base is crisp.
 6. **For the last {{ recipes.styles.new_york.bake.grill.last_min.range.0 }} to {{ recipes.styles.new_york.bake.grill.last_min.range.1 }} minutes turn on the grill** to colour the top.
@@ -248,7 +248,7 @@ The baking surface stores heat. When the dough lands on it, the surface gives it
 7. **Second pizza:** keep its dough covered until the first pizza is out and the surface is hot again, which takes about {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes. Only then open it.
    > Why: Dough that waits on the paper gets wet and sticks.
 
-> Safety: Many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put it under the grill. The full note is in the bake step of your method.
+> Safety: Baking paper is your choice. If you use it, check the temperature printed on the pack (many papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven) and trim the edges. Paper and the grill do not go together unless the pack says it is safe. The full note is in the bake step of your method.
 
 > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees. Do not oil the hot surface or pan. Oil in the dough, and a thin film on the rim, is fine.
 

@@ -32,9 +32,8 @@ function render() {
     .map((w) => `<div class="callout warn" role="note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l10 18H2z"></path><path d="M12 10v5M12 18h.01"></path></svg><div><p>${esc(fill(t.warn[w.id], w.params))}</p></div></div>`)
     .join("");
 
-  const sizeText = size.shape === "round" ? fill(t.recipe.size_round, { d: size.diameter }) : fill(t.recipe.size_tray, { l: size.length, w: size.width });
-  const unit = size.shape === "round" ? "pizza" : "tray";
-  const count = fill(t.recipe[`${unit}_${pizzas === 1 ? "one" : "other"}`], { n: pizzas });
+  const sizeText = fill(t.recipe.size_round, { d: size.diameter });
+  const count = fill(t.recipe[`pizza_${pizzas === 1 ? "one" : "other"}`], { n: pizzas });
   document.getElementById("pills").innerHTML = [sizeText, count, localize(t.methods_short[methodId], lang), localize(t.ing[`yeast_${yeastType}`], lang)]
     .map((x) => `<span class="pill">${esc(x)}</span>`).join("");
 }
