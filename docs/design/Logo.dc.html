@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Logotype</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Newsreader:wght@600&family=Vazirmatn:wght@700&display=swap">
+<style>
+body{margin:0}
+.lgo{box-sizing:border-box;padding:40px 48px;font-family:Inter,system-ui,sans-serif;display:grid;gap:24px;background:#FBF6EC;color:#2B2A22}
+.lgo *{box-sizing:border-box}
+.lgo h1,.lgo h2,.lgo p{margin:0}
+.pn{border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:20px;align-items:flex-start;border:1px solid #D9CFB9}
+.pn.light{background:#FBF6EC;color:#2B2A22;--a:#B3321F}
+.pn.dark{background:#1C1A16;color:#F1E9D8;--a:#FF8A70;border-color:#4A443A}
+.lg{font:600 var(--s,96px)/1 Newsreader,Georgia,serif;letter-spacing:-.01em;display:inline-block;padding-block:.08em;white-space:nowrap}
+.di{position:relative;display:inline-block}
+.di::after{content:"";position:absolute;left:50%;top:.2em;width:.17em;height:.17em;border-radius:50%;background:var(--a);transform:translateX(-50%)}
+.fa{font:700 var(--s,84px)/1.5 Vazirmatn,sans-serif;direction:rtl;display:inline-flex;align-items:baseline;white-space:nowrap}
+.ld{display:inline-block;width:.17em;height:.17em;border-radius:50%;background:var(--a);margin-inline-start:.1em}
+.row{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end}
+.ic{width:96px;height:96px;border-radius:24px;background:var(--a);color:#FFFDF8;display:grid;place-items:center;font:600 64px/1 Newsreader,Georgia,serif;position:relative}
+.pn.dark .ic{color:#1C1A16}
+.ic.fa{font:700 56px/1 Vazirmatn,sans-serif;direction:rtl}
+.ic .k{position:relative;display:inline-block}
+.ic .k::after{content:"";position:absolute;right:-.06em;top:.1em;width:.14em;height:.14em;border-radius:50%;background:currentColor}
+.ic.fa .k::after{display:none}
+.cap{font-size:15px;color:#5B5849}
+.pn.dark .cap{color:#C4BAA4}
+ul{margin:0;padding-inline-start:20px;line-height:1.7}
+</style>
+</helmet>
+<div class="lgo">
+<h1 style="font:600 34px/1.2 Newsreader,Georgia,serif">Logotype</h1>
+<p class="cap" style="max-width:720px;color:#5B5849">A pure wordmark, no pictogram. The two dots of the Latin <b>i</b> become tomato-red circles (sauce, or a ball of dough seen from above). Set in Newsreader 600; the dotless ı is a normal character, so the logo is live text. The Farsi wordmark is Vazirmatn 700 with one matching tomato dot, because the Farsi letter dots cannot be coloured separately.</p>
+<div class="pn light">
+<span class="lg" aria-label="Khamirbazi">Kham<span class="di">ı</span>baz<span class="di">ı</span></span>
+<span class="fa" aria-label="خمیربازی">خمیربازی<span class="ld"></span></span>
+</div>
+<div class="pn dark">
+<span class="lg" aria-label="Khamirbazi">Kham<span class="di">ı</span>baz<span class="di">ı</span></span>
+<span class="fa" aria-label="خمیربازی">خمیربازی<span class="ld"></span></span>
+</div>
+<div class="pn light">
+<p class="cap">Header size (26 px) and app icon / favicon</p>
+<div class="row">
+<span class="lg" style="--s:26px" aria-label="Khamirbazi">Kham<span class="di">ı</span>baz<span class="di">ı</span></span>
+<span class="fa" style="--s:24px" aria-label="خمیربازی">خمیربازی<span class="ld"></span></span>
+<span class="ic" aria-label="Khamirbazi icon"><span class="k">k</span></span>
+<span class="ic fa" aria-label="خمیربازی icon"><span class="k">خ</span></span>
+</div>
+</div>
+<ul class="cap">
+<li>Minimum width: 96 px for the Latin wordmark. Below that, use the square icon.</li>
+<li>Clear space: the height of the “K” on every side.</li>
+<li>Colour: ink + accent only. On photos or the accent colour, use a single colour (all cream or all charcoal).</li>
+<li>No outlines, shadows, or rotation.</li>
+</ul>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1000,"height":1100}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

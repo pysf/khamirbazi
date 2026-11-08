@@ -1,0 +1,25 @@
+# Design reference (read-only)
+
+Exported from the Khamirbazi design canvas: https://claude.ai/artifact/Txwq38ixzSvox7MZAJ9FCD (private link; version 1794143776-69d2).
+
+These `.dc.html` files only run inside the canvas. Do not ship them. Use them as a reference when building the Eleventy site.
+
+## Where to look
+
+| What | File |
+|---|---|
+| All screens, components, CSS, and copy for both languages | `Screens.dc.html` (one component; `screen`, `lang`, `theme`, `view`, `mode`, `state` props pick the variant) |
+| Which variant each board shows | the small wrapper files (`Main`, `HomeFaDark`, `StyleEn`, `CalcPanFa`, ...) |
+| Design tokens (CSS variables) | the `.kb` and `.kb[data-theme=dark]` blocks at the top of `Screens.dc.html`, and the "Design tokens" board |
+| Logotype and icon rules | `Logo.dc.html` |
+| RTL decisions and assumptions | `Notes.dc.html` |
+| Board layout on the canvas | `canvas.json` |
+
+## Porting rules
+
+- Take the CSS from the `<style>` in `Screens.dc.html` into one `src/assets/style.css`. It already uses logical properties for RTL.
+- Rename the `.kb` root selector to `:root` / `[data-theme]` / `[dir=rtl]`. Remove the `sc-for, sc-if` rule and `min-height: 100vh`.
+- `{{...}}` holes become Eleventy variables. Strings in `renderVals()` move to `src/_data/i18n/en.json` and `fa.json`.
+- **Every number, time, difficulty and fermentation label in the mockups is a placeholder.** Real values come only from `recipes.json` after the fact-check.
+- Farsi copy is a draft. Review it against `pizza-guide-v7-raw.md`.
+- Fonts: self-host Inter, Newsreader and Vazirmatn (all SIL OFL). Do not load from Google Fonts in production.

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RTL decisions and assumptions</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<style>
+body{margin:0}
+.n h1,.n h2,.n p,.n ul{margin:0}
+.n li{margin-bottom:6px}
+</style>
+</helmet>
+<div class="n" style="font-family: Inter, system-ui, sans-serif; background: #FBF6EC; color: #2B2A22; padding: 40px 48px; line-height: 1.6; font-size: 17px; display: flex; flex-direction: column; gap: 20px; max-width: 900px; box-sizing: border-box">
+<h1 style="font-size: 34px">RTL decisions and assumptions</h1>
+
+<h2 style="font-size: 22px; margin-top: 8px">RTL decisions</h2>
+<ul style="padding-inline-start: 22px">
+<li><b>Logical CSS only.</b> Use <code>margin-inline</code>, <code>padding-inline</code>, <code>inset-inline-start</code>, <code>text-align: start/end</code> and <code>border-inline-end</code>. One stylesheet serves both languages; the only RTL-specific rules are the font swap and the mirrored arrow.</li>
+<li><b>Set direction on the root</b> with <code>&lt;html lang="fa" dir="rtl"&gt;</code>. Flex and grid then mirror by themselves: header, nav order, key-facts strip, stepper (− on the right, + on the left), radio cards, step numbers and the timeline columns.</li>
+<li><b>Directional icons flip, others do not.</b> Arrows and back chevrons get <code>transform: scaleX(-1)</code> in RTL. The “Why?” chevron points down, so it stays as is. Check marks, copy, print and the safety icons never flip.</li>
+<li><b>Timeline.</b> The time column sits at the start side (right in Farsi), then the rail, then the text. Time still reads top to bottom, earliest first. The rail stays vertical.</li>
+<li><b>Numbers.</b> Western digits (0–9) in both languages, so they match the kitchen scale and oven display. Quantity cells use tabular figures and align to the end side. Units are words in Farsi (“گرم”, “درجه”); the letter C is never used in Farsi text.</li>
+<li><b>Latin names in Farsi.</b> Style cards show the Farsi name, with the Latin name on its own line under it, forced <code>dir="ltr"</code>. Inside running Farsi sentences, wrap Latin terms in <code>&lt;bdi&gt;</code> (the build can do this from a marker in the Markdown). No invisible characters.</li>
+<li><b>Fonts.</b> Vazirmatn for all Farsi text, headings in Vazirmatn 700. Line height 1.95 for Farsi body (Latin 1.65) so diacritics and ZWNJ forms do not collide.</li>
+<li><b>Language switcher.</b> Always in the header, each label in its own script and its own <code>lang</code>, so it looks the same in both directions. The link points to the same page in the other language.</li>
+</ul>
+
+<h2 style="font-size: 22px; margin-top: 8px">Assumptions</h2>
+<ul style="padding-inline-start: 22px">
+<li><b>All quantities, times and the “difficulty” and “fermentation” labels in these screens are placeholders</b> so the layout can be judged. They are not recipe data. The real numbers come from <code>recipes.json</code> after the fact-check. The dough maths in the mockups (500 g of dough, 296.7 g of flour, 59.3 g of solution) uses placeholder percentages.</li>
+<li>Farsi copy is a working draft for review against the Persian source guide; it follows the project rules (temperatures in words, short sentences, why next to each step).</li>
+<li>Dark mode: on the real site it follows <code>prefers-color-scheme</code> with a manual override saved in <code>localStorage</code>. Here the boards switch it with <code>data-theme</code>.</li>
+<li>Breakpoints: 640 px (two card columns), 768 px (inline nav), 900 px (calculator becomes two columns and the sticky summary bar hides), 1000 px (three card columns, style page splits into ingredients and steps).</li>
+<li>Illustrations are flat inline SVG shapes (round, tray, square, deep) in five colours from the illustration tokens. No raster images.</li>
+<li>Not drawn: loading states (static site), the empty state when no bake time is entered (the timeline then shows “hours before bake” instead of clock times), and the Farsi tablet view. They use the same components.</li>
+<li>Print: black on white, no navigation, no shadows, tables and timeline kept together; the disclaimer is the last line. The style page prints the same way, with “Why?” text expanded.</li>
+</ul>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":900,"height":1500}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
