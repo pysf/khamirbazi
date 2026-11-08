@@ -1,0 +1,33 @@
+{% set t = i18n[lang] %}<!doctype html>
+<html lang="{{ lang }}" dir="{{ t.dir }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} - {{ t.site_name }}</title>
+  <meta name="description" content="{{ t.tagline }}">
+  <meta name="color-scheme" content="light dark">
+  {% if lang == "fa" %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap">
+  {% endif %}
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">{{ t.skip }}</a>
+  <header class="site-header">
+    <a class="brand" href="/{{ lang }}/">{{ t.site_name }}</a>
+    <nav aria-label="{{ t.nav.styles }}">
+      <a href="/{{ lang }}/">{{ t.nav.home }}</a>
+      <a href="/{{ lang }}/calculator/">{{ t.nav.calculator }}</a>
+    </nav>
+    <a class="lang-switch" lang="{{ t.other_lang }}" hreflang="{{ t.other_lang }}" href="{{ page.url | replace('/' + lang + '/', '/' + t.other_lang + '/') }}">{{ t.other_lang_name }}</a>
+  </header>
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <p>{{ t.footer.disclaimer }}</p>
+  </footer>
+</body>
+</html>

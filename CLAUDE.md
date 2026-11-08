@@ -43,7 +43,7 @@ Reference quantities (for 300 g flour, about 2 pizzas) currently live in `pizza-
 ## Baker's setup the guide assumes (Berlin)
 
 - Oven max 250 degrees C, German modes (Ober-/Unterhitze, Umluft, Grill). Use top+bottom heat, no fan.
-- Flat cast-iron tray, preheated 45-60 min on the upper rack. Other users have different pans, so always offer pan-size alternatives.
+- Flat cast-iron pizza pan (IKEA), preheated 45-60 min on the upper rack. The site says "pizza stone, baking steel or cast-iron pan" are all fine; steel and cast iron conduct heat better than stone. No controlled test of cast iron was found, so mark that advice as home-tested. Other users have different pans, so always offer pan-size alternatives.
 - Pizzamehl (Tipo 00), protein about 12-13 g per 100 g. Dry (Trockenhefe, 7 g packet) or fresh (Frischhefe, 42 g cube) yeast. No sourdough.
 - Dried, grated mozzarella. Parchment paper (Backpapier) used to launch the pizza.
 - Beginner to intermediate. Phone readers.

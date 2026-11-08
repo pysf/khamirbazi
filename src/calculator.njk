@@ -1,0 +1,72 @@
+---
+layout: layout.njk
+pagination:
+  data: site.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/calculator/index.html"
+eleventyComputed:
+  title: "{{ i18n[lang].calc.title }}"
+---
+{% set t = i18n[lang] %}
+<h1>{{ t.calc.title }}</h1>
+<p>{{ t.calc.intro }}</p>
+
+<div class="calc">
+  <form id="calc-form" class="calc-form" autocomplete="off">
+    <div class="field">
+      <label for="style">{{ t.calc.style }}</label>
+      <select id="style" name="style">
+        {% for sid, st in recipes.styles %}<option value="{{ sid }}">{{ t.styles[sid].name }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label for="method">{{ t.calc.method }}</label>
+      <select id="method" name="method">
+        {% for mid, m in recipes.methods %}<option value="{{ mid }}">{{ t.methods[mid] }}</option>{% endfor %}
+      </select>
+    </div>
+    <fieldset class="field">
+      <legend>{{ t.calc.yeast_type }}</legend>
+      <label class="choice"><input type="radio" name="yeast" value="dry" checked> {{ t.calc.yeast_dry }}</label>
+      <label class="choice"><input type="radio" name="yeast" value="fresh"> {{ t.calc.yeast_fresh }}</label>
+    </fieldset>
+
+    <div id="ball-inputs" class="field-row">
+      <div class="field">
+        <label for="pizzas">{{ t.calc.pizzas }}</label>
+        <input id="pizzas" name="pizzas" type="number" inputmode="decimal" min="1" step="1" value="2">
+      </div>
+      <div class="field">
+        <label for="ball">{{ t.calc.ball }}</label>
+        <input id="ball" name="ball" type="number" inputmode="decimal" min="1" step="any">
+      </div>
+    </div>
+
+    <fieldset id="pan-inputs" class="field" hidden>
+      <legend>{{ t.calc.pans }}</legend>
+      <div id="pan-list"></div>
+      <button type="button" id="add-pan" class="button secondary">{{ t.calc.add_pan }}</button>
+      <label class="choice" id="thick-field" hidden><input type="checkbox" id="thick"> {{ t.calc.thick }}</label>
+    </fieldset>
+
+    <div class="field">
+      <label for="bake-time">{{ t.calc.bake_time }}</label>
+      <input id="bake-time" name="bake-time" type="datetime-local">
+      <p class="muted">{{ t.calc.bake_time_help }}</p>
+    </div>
+  </form>
+
+  <section id="results" class="results" aria-live="polite" aria-labelledby="results-title">
+    <h2 id="results-title">{{ t.calc.results }}</h2>
+    <div id="results-body"></div>
+    <div class="actions">
+      <button type="button" id="copy" class="button secondary">{{ t.calc.copy }}</button>
+      <button type="button" id="print" class="button secondary">{{ t.calc.print }}</button>
+      <label class="choice" id="wake-field" hidden><input type="checkbox" id="wake"> {{ t.calc.wake }}</label>
+    </div>
+  </section>
+</div>
+
+<script type="application/json" id="calc-data">{{ { recipes: recipes, strings: t, lang: lang } | dump | safe }}</script>
+<script type="module" src="/assets/calculator-page.js"></script>

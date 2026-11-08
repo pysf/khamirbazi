@@ -1,0 +1,1870 @@
+{
+  "schema_version": 1,
+  "notes": [
+    "Every dough amount is a baker's percentage of flour weight (flour = 100%). Flour for Chicago means wheat flour plus cornmeal.",
+    "Values are objects: value (or range), confidence (high/medium/low), verified (true only when checked against a primary source by a person), sources (URLs), optional note.",
+    "No recipe has been test-baked yet. verified is false everywhere on purpose."
+  ],
+  "oven": {
+    "max_c": {
+      "value": 250,
+      "unit": "C",
+      "confidence": "high",
+      "verified": false,
+      "sources": [],
+      "note": "Berlin home oven (user's setup)."
+    },
+    "mode": "top_bottom",
+    "mode_note": "Top+bottom heat (Ober-/Unterhitze), no fan (Umluft).",
+    "rack_round": "upper_third",
+    "preheat_min": {
+      "value": 60,
+      "range": [
+        45,
+        60
+      ],
+      "unit": "min",
+      "confidence": "low",
+      "verified": false,
+      "sources": [],
+      "note": "Preheat the baking surface 45-60 minutes. From the user's guide; the cast-iron tray heat-up time was not measured."
+    },
+    "room_c": {
+      "value": 21,
+      "unit": "C",
+      "confidence": "high",
+      "verified": false,
+      "sources": [],
+      "note": "Assumed room temperature."
+    },
+    "fridge_c": {
+      "range": [
+        4,
+        5
+      ],
+      "unit": "C",
+      "confidence": "high",
+      "verified": false,
+      "sources": [],
+      "note": "Assumed ordinary fridge."
+    },
+    "surface": {
+      "options": [
+        "pizza_stone",
+        "baking_steel",
+        "cast_iron_pan"
+      ],
+      "confidence": "low",
+      "verified": false,
+      "home_tested": true,
+      "sources": [
+        "https://www.americastestkitchen.com/recipes/16948-neapolitan-style-pizza"
+      ],
+      "note": "Pizza stone, baking steel or cast-iron pan are all fine. Steel and cast iron conduct heat better than stone (America's Test Kitchen). Cast-iron advice is home-tested only; no controlled test was found."
+    }
+  },
+  "timeline": {
+    "shape_lead_min": {
+      "value": 15,
+      "unit": "min",
+      "confidence": "low",
+      "verified": false,
+      "sources": [],
+      "note": "Open the dough about 15 minutes before it goes in the oven; open it only when the oven is ready (second pizza waits as a ball, not on the paper)."
+    }
+  },
+  "yeast": {
+    "fresh_to_dry": {
+      "value": 3,
+      "unit": "x",
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        "https://www.thefreshloaf.com/node/72947"
+      ],
+      "note": "Fresh yeast = 3x instant dry yeast (King Arthur Baker's Hotline, quoted in a Fresh Loaf thread). Active dry is often quoted as 2-2.5x; German Trockenhefe packets are instant."
+    },
+    "source_spread_x": {
+      "value": 5,
+      "unit": "x",
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        "https://moondogapps.com/crust/how-much-yeast-cold-ferment-pizza-dough.html",
+        "https://pizzalogic.app/blog/how-to-cold-ferment-pizza-dough/"
+      ],
+      "note": "Yeast amounts for the same schedule differ up to 5x between sources."
+    },
+    "solution_threshold_dry_g": {
+      "value": 1.5,
+      "unit": "g",
+      "confidence": "low",
+      "verified": false,
+      "sources": [],
+      "note": "Design rule: use the yeast solution when the dry-equivalent yeast is under 1.5 g, otherwise weigh the yeast directly. The user's scale reads whole grams only."
+    },
+    "min_weigh_g": {
+      "value": 1,
+      "unit": "g",
+      "confidence": "high",
+      "verified": false,
+      "sources": [],
+      "note": "Never instruct weighing under 1 g."
+    },
+    "solution": {
+      "dry": {
+        "yeast_g": {
+          "value": 7,
+          "unit": "g",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [],
+          "note": "One whole 7 g packet of Trockenhefe."
+        },
+        "water_g": {
+          "value": 700,
+          "unit": "g",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [],
+          "note": "Lukewarm water."
+        },
+        "concentration_pct": {
+          "value": 1,
+          "unit": "%",
+          "confidence": "high",
+          "verified": false,
+          "sources": [],
+          "note": "7 g / 700 g."
+        }
+      },
+      "fresh": {
+        "yeast_g": {
+          "value": 21,
+          "unit": "g",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [],
+          "note": "Half of a 42 g cube of Frischhefe."
+        },
+        "cube_g": {
+          "value": 42,
+          "unit": "g",
+          "confidence": "high",
+          "verified": false,
+          "sources": [],
+          "note": "Frischhefe cube size in German shops."
+        },
+        "water_g": {
+          "value": 700,
+          "unit": "g",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [],
+          "note": "Lukewarm water."
+        },
+        "concentration_pct": {
+          "value": 3,
+          "unit": "%",
+          "confidence": "high",
+          "verified": false,
+          "sources": [],
+          "note": "21 g / 700 g."
+        }
+      },
+      "use_immediately": true,
+      "note": "Use immediately. A shelf life for a diluted yeast solution was not found in any source, so none is stated. Yeast dissolved in water loses vigour with time (secondhand source).",
+      "sources": [
+        "https://www.thefreshloaf.com/node/72947"
+      ]
+    },
+    "notes": [
+      "Dr. Oetker-style 7 g packets are instant yeast: they can be mixed straight into the flour and need no proofing (retailer descriptions; the official oetker.de page was not reachable). Check the packet text.",
+      "A 7 g packet is meant for about 500 g flour (1.4%); this guide uses much less per dough for fridge methods."
+    ]
+  },
+  "safety": {
+    "parchment_max_c": {
+      "value": 220,
+      "unit": "C",
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        "https://www.dm.de/p/d/1110733/",
+        "https://www.rewe.de/shop/p/toppits-backpapier-8m/5907411",
+        "https://www.dm.de/p/d/1348548/",
+        "https://kuechenfibel.de/faq/welches-backpapier-bei-250-grad"
+      ],
+      "note": "Common German baking paper (Toppits, dm Profissimo) is rated to 220 C. Not advised with the grill function or touching oven walls. Some premium papers are rated 240-250 C; check the pack."
+    },
+    "evoo_smoke_c": {
+      "value": 200,
+      "range": [
+        190,
+        210
+      ],
+      "unit": "C",
+      "confidence": "low",
+      "verified": false,
+      "sources": [
+        "https://wtop.com/news/2021/04/why-you-should-stop-worrying-about-olive-oils-smoke-points/"
+      ],
+      "note": "Extra-virgin olive oil smokes around 190-210 C (industry sites; UC Davis notes smoke point alone does not predict quality loss). At 250 C use refined olive oil or a neutral oil (rapeseed, sunflower) in pans. Oil mixed into the dough is fine."
+    }
+  },
+  "limits": {
+    "min_pan_area_cm2": 100,
+    "note": "Design limit: pans smaller than this give a warning (very little dough)."
+  },
+  "sauce_recipe": {
+    "note": "Raw sauce, per 150 g crushed tomatoes. Scaled to the sauce amount needed.",
+    "base_g": {
+      "value": 150,
+      "unit": "g crushed tomatoes",
+      "confidence": "low",
+      "verified": false,
+      "sources": [],
+      "note": "Value from the user's guide v7 (untested, no external source checked)."
+    },
+    "parts_g": [
+      {
+        "id": "oil",
+        "g": 8
+      },
+      {
+        "id": "salt",
+        "g": 1.5
+      },
+      {
+        "id": "garlic",
+        "g": 2,
+        "optional": true
+      },
+      {
+        "id": "sugar",
+        "g": 1,
+        "optional": true
+      }
+    ]
+  },
+  "pan_presets": [
+    {
+      "id": "tray_45x37_5",
+      "shape": "rect",
+      "length": 45,
+      "width": 37.5,
+      "styles": [
+        "al_taglio",
+        "detroit"
+      ],
+      "label_key": "oven_tray",
+      "sources": [
+        "https://www.ebay.de/p/27052012905"
+      ],
+      "note": "German built-in oven universal tray, about 44.5-46 x 37.5 cm depending on the model. Check your own tray."
+    },
+    {
+      "id": "tray_40x30",
+      "shape": "rect",
+      "length": 40,
+      "width": 30,
+      "styles": [
+        "al_taglio",
+        "detroit"
+      ],
+      "label_key": "oven_tray",
+      "sources": [],
+      "note": "Common smaller tray."
+    },
+    {
+      "id": "detroit_20x25",
+      "shape": "rect",
+      "length": 20,
+      "width": 25,
+      "styles": [
+        "detroit"
+      ],
+      "label_key": "pan",
+      "sources": [
+        "https://www.theperfectloaf.com/sourdough-detroit-style-pizza-recipe/",
+        "https://www.americastestkitchen.com/recipes/9775-detroit-style-pizza"
+      ],
+      "note": "8 x 10 in."
+    },
+    {
+      "id": "detroit_23x33",
+      "shape": "rect",
+      "length": 23,
+      "width": 33,
+      "styles": [
+        "detroit"
+      ],
+      "label_key": "pan",
+      "sources": [
+        "https://www.americastestkitchen.com/recipes/9775-detroit-style-pizza"
+      ],
+      "note": "9 x 13 in."
+    },
+    {
+      "id": "taglio_23x33",
+      "shape": "rect",
+      "length": 23,
+      "width": 33,
+      "styles": [
+        "al_taglio"
+      ],
+      "label_key": "pan",
+      "sources": [
+        "https://fond.kitchen/guides/pizza-dough/roman-pizza-al-taglio/"
+      ],
+      "note": "Quarter sheet, 9 x 13 in."
+    },
+    {
+      "id": "taglio_30x40",
+      "shape": "rect",
+      "length": 30,
+      "width": 40,
+      "styles": [
+        "al_taglio"
+      ],
+      "label_key": "pan",
+      "sources": [
+        "https://www.pizzastunde.com/en/how-much-dough-for-one-pizza-dough-weight-explained/"
+      ],
+      "note": "1200 cm2."
+    },
+    {
+      "id": "chicago_18",
+      "shape": "round",
+      "diameter": 18,
+      "styles": [
+        "chicago"
+      ],
+      "label_key": "pan",
+      "sources": [],
+      "note": "From the user's guide (18-20 cm pans)."
+    },
+    {
+      "id": "chicago_20",
+      "shape": "round",
+      "diameter": 20,
+      "styles": [
+        "chicago"
+      ],
+      "label_key": "pan",
+      "sources": [],
+      "note": "From the user's guide (18-20 cm pans)."
+    },
+    {
+      "id": "chicago_23",
+      "shape": "round",
+      "diameter": 23,
+      "styles": [
+        "chicago"
+      ],
+      "label_key": "pan",
+      "sources": [
+        "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza"
+      ],
+      "note": "9 in."
+    },
+    {
+      "id": "chicago_28",
+      "shape": "round",
+      "diameter": 28,
+      "styles": [
+        "chicago"
+      ],
+      "label_key": "pan",
+      "sources": [
+        "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
+      ],
+      "note": "11 in."
+    }
+  ],
+  "methods": {
+    "warm_2h": {
+      "yeast_pct_dry": {
+        "value": 0.6666666666666666,
+        "unit": "% of flour, instant dry yeast",
+        "confidence": "low",
+        "verified": false,
+        "sources": [],
+        "note": "2 g per 300 g flour (0.667%). Typical straight-dough rule of thumb is 0.5-0.7% instant yeast (pizzamaking forum, secondhand); Reinhart NY about 0.71%. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+      },
+      "water_temp_c": {
+        "value": 30,
+        "unit": "C",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Lukewarm. Yeast works at 25-35 C and dies above about 45 C (guide)."
+      },
+      "autolyse_min": 0,
+      "knead_min": {
+        "value": 10,
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "bulk_min": {
+        "value": 60,
+        "range": [
+          45,
+          60
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Bulk rise in a warm place (26-28 C), 45-60 min, until 1.5-2x. Planning uses the upper end."
+      },
+      "final_rest_min": {
+        "value": 45,
+        "range": [
+          30,
+          45
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Rest after dividing/balling (or in the pan), 30-45 min. Planning uses the upper end."
+      },
+      "fridge_h": null
+    },
+    "room_8_12h": {
+      "yeast_pct_dry": {
+        "value": 0.1,
+        "unit": "% of flour, instant dry yeast",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://community.fornobravo.com/forum/pizza-quest-with-peter-reinhart/pizza/9849-optimum-yeast-percentage"
+        ],
+        "note": "Only a home-recipe data point (0.3% overnight) and a forum reply (\"no single right percentage\") were found. May be too low. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+      },
+      "water_temp_c": {
+        "value": 15,
+        "unit": "C",
+        "confidence": "low",
+        "verified": false,
+        "sources": [],
+        "note": "Cool water to slow the fermentation at room temperature. Estimate, not in the guide."
+      },
+      "autolyse_min": {
+        "value": 30,
+        "range": [
+          20,
+          30
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "knead_min": {
+        "value": 10,
+        "range": [
+          8,
+          10
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "bulk_min": {
+        "value": 240,
+        "unit": "min",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+        ],
+        "note": "Planning assumption: about 4 h in bulk, then about 5 h in balls = 9 h at 21 C, inside the 8-12 h window. AVPN allows 8-24 h in total; the split is an estimate (Naples practice: bulk then balls)."
+      },
+      "final_rest_min": {
+        "value": 300,
+        "unit": "min",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+        ],
+        "note": "Time in balls (or in the pan) at room temperature."
+      },
+      "total_ferment_h": {
+        "range": [
+          8,
+          12
+        ],
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+        ],
+        "note": "Total room-temperature fermentation window."
+      },
+      "fridge_h": null
+    },
+    "cold_12_16h": {
+      "yeast_pct_dry": {
+        "value": 0.3,
+        "unit": "% of flour, instant dry yeast",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://pizzalogic.app/blog/how-to-cold-ferment-pizza-dough/"
+        ],
+        "note": "ESTIMATE, interpolated between the 24 h and warm values; no source gives a 12-16 h figure. Lehmann (secondhand) quotes 0.375% for up to 3 days. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+      },
+      "water_temp_c": {
+        "value": 15,
+        "unit": "C",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "autolyse_min": {
+        "value": 30,
+        "range": [
+          20,
+          30
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "knead_min": {
+        "value": 10,
+        "range": [
+          8,
+          10
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Knead 8-10 min, or three rounds of stretch-and-fold 30 min apart."
+      },
+      "room_rest_min": {
+        "value": 60,
+        "range": [
+          60,
+          90
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Rest at 21 C for 1-1.5 h so the yeast starts, then divide, ball, fridge. Planning uses the lower end."
+      },
+      "fridge_h": {
+        "value": 14,
+        "range": [
+          12,
+          16
+        ],
+        "unit": "h",
+        "confidence": "low",
+        "verified": false,
+        "sources": [],
+        "note": "Planning value, middle of 12-16 h."
+      },
+      "take_out_lead_min": {
+        "value": 120,
+        "range": [
+          90,
+          120
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Take the dough out of the fridge 1.5-2 h before baking (cold dough tears). Planning uses the upper end."
+      }
+    },
+    "cold_24h": {
+      "yeast_pct_dry": {
+        "value": 0.2,
+        "unit": "% of flour, instant dry yeast",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://moondogapps.com/crust/how-much-yeast-cold-ferment-pizza-dough.html",
+          "https://pizzalogic.app/blog/how-to-cold-ferment-pizza-dough/"
+        ],
+        "note": "Moon Dog table 0.07-0.10%, Lehmann (secondhand) 0.375%, guide 0.2%. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+      },
+      "water_temp_c": {
+        "value": 15,
+        "unit": "C",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "autolyse_min": {
+        "value": 30,
+        "range": [
+          20,
+          30
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "knead_min": {
+        "value": 10,
+        "range": [
+          8,
+          10
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Knead 8-10 min, or three rounds of stretch-and-fold 30 min apart."
+      },
+      "room_rest_min": {
+        "value": 60,
+        "range": [
+          60,
+          90
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "1-1.5 h at 21 C before the fridge. Planning uses the lower end."
+      },
+      "fridge_h": {
+        "value": 24,
+        "unit": "h",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "take_out_lead_min": {
+        "value": 120,
+        "range": [
+          90,
+          120
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "1.5-2 h before baking."
+      }
+    },
+    "cold_48h": {
+      "yeast_pct_dry": {
+        "value": 0.15,
+        "unit": "% of flour, instant dry yeast",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://moondogapps.com/crust/how-much-yeast-cold-ferment-pizza-dough.html",
+          "https://pizzalogic.app/blog/how-to-cold-ferment-pizza-dough/"
+        ],
+        "note": "Agrees with pizzalogic (0.15-0.2%); Moon Dog says 0.03-0.05%. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+      },
+      "water_temp_c": {
+        "value": 15,
+        "unit": "C",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "autolyse_min": {
+        "value": 30,
+        "range": [
+          20,
+          30
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "knead_min": {
+        "value": 10,
+        "range": [
+          8,
+          10
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Knead 8-10 min, or three rounds of stretch-and-fold 30 min apart."
+      },
+      "room_rest_min": {
+        "value": 60,
+        "range": [
+          60,
+          90
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "1-1.5 h at 21 C before the fridge."
+      },
+      "fridge_h": {
+        "value": 48,
+        "unit": "h",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "take_out_lead_min": {
+        "value": 120,
+        "range": [
+          90,
+          120
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "1.5-2 h before baking."
+      }
+    },
+    "cold_72h": {
+      "yeast_pct_dry": {
+        "value": 0.1,
+        "unit": "% of flour, instant dry yeast",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://moondogapps.com/crust/how-much-yeast-cold-ferment-pizza-dough.html",
+          "https://pizzalogic.app/blog/how-to-cold-ferment-pizza-dough/"
+        ],
+        "note": "Agrees with pizzalogic (0.10-0.15%); Lehmann (secondhand) 0.25% for 4-5 days. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+      },
+      "water_temp_c": {
+        "value": 15,
+        "unit": "C",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "autolyse_min": {
+        "value": 30,
+        "range": [
+          20,
+          30
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked)."
+      },
+      "knead_min": {
+        "value": 10,
+        "range": [
+          8,
+          10
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Knead 8-10 min, or three rounds of stretch-and-fold 30 min apart."
+      },
+      "room_rest_min": {
+        "value": 60,
+        "range": [
+          60,
+          90
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "1-1.5 h at 21 C before the fridge."
+      },
+      "fridge_h": {
+        "value": 72,
+        "unit": "h",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Value from the user's guide v7 (untested, no external source checked). More than 72 h is not recommended."
+      },
+      "take_out_lead_min": {
+        "value": 120,
+        "range": [
+          90,
+          120
+        ],
+        "unit": "min",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "1.5-2 h before baking."
+      }
+    }
+  },
+  "styles": {
+    "new_york": {
+      "kind": "ball",
+      "difficulty": "easy",
+      "methods_typical": [
+        "warm_2h",
+        "cold_12_16h",
+        "cold_24h",
+        "cold_48h",
+        "cold_72h"
+      ],
+      "default_method": "cold_24h",
+      "default_mode": {
+        "pizzas": 2
+      },
+      "ball_g": {
+        "value": 250,
+        "unit": "g",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://www.surlatable.com/recipe/new-york-style-pizza-dough/REC-236776"
+        ],
+        "note": "About 30 cm pizza. Serious Eats (mirror) uses about 210 g for 12 in; 250 g is the user's guide value."
+      },
+      "dough": {
+        "hydration": {
+          "value": 63,
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.surlatable.com/recipe/new-york-style-pizza-dough/REC-236776"
+          ],
+          "note": "Typical NY range 58-65% (Lehmann/pizzamaking, not retrieved); Serious Eats mirror about 67%; Reinhart about 65%."
+        },
+        "salt": {
+          "value": 2.33,
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.surlatable.com/recipe/new-york-style-pizza-dough/REC-236776"
+          ],
+          "note": "7 g per 300 g flour. Slightly above the typical 1.75-2%."
+        },
+        "sugar": {
+          "value": 1,
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.surlatable.com/recipe/new-york-style-pizza-dough/REC-236776"
+          ],
+          "note": "Typical 0-2%."
+        },
+        "oil": {
+          "value": 3,
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.surlatable.com/recipe/new-york-style-pizza-dough/REC-236776"
+          ],
+          "note": "Typical 1-3%; Serious Eats mirror 5%, Reinhart about 6%."
+        }
+      },
+      "bake": {
+        "temp_c": {
+          "value": 250,
+          "unit": "C",
+          "confidence": "high",
+          "verified": false,
+          "sources": [],
+          "note": "Home oven maximum."
+        },
+        "time_min": {
+          "range": [
+            7,
+            9
+          ],
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide; no source found for NY bake time at 250 C on a hot tray."
+        },
+        "rack": "upper_third",
+        "grill": {
+          "last_min": {
+            "range": [
+              1,
+              2
+            ],
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Grill for the last 1-2 minutes for top colour (a 250 C oven is short on top heat)."
+          }
+        }
+      },
+      "toppings": [
+        {
+          "id": "sauce",
+          "basis": "pizza",
+          "amount": {
+            "value": 70,
+            "unit": "g per 30 cm pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Value from the user's guide v7 (untested, no external source checked). Over 100 g makes the centre wet."
+          }
+        },
+        {
+          "id": "cheese",
+          "basis": "pizza",
+          "amount": {
+            "value": 90,
+            "unit": "g per 30 cm pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Value from the user's guide v7 (untested, no external source checked). Dried, grated mozzarella; over 120 g is too heavy."
+          }
+        },
+        {
+          "id": "pepperoni",
+          "basis": "pizza",
+          "amount": {
+            "value": 40,
+            "unit": "g per 30 cm pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Value from the user's guide v7 (untested, no external source checked)."
+          },
+          "alt_group": "main",
+          "optional": true
+        },
+        {
+          "id": "mushrooms",
+          "basis": "pizza",
+          "amount": {
+            "value": 60,
+            "unit": "g per 30 cm pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Value from the user's guide v7 (untested, no external source checked). Dry or pre-cook them."
+          },
+          "alt_group": "main",
+          "optional": true
+        },
+        {
+          "id": "basil",
+          "basis": "pizza",
+          "amount": {
+            "value": 3,
+            "unit": "g per 30 cm pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Value from the user's guide v7 (untested, no external source checked). Add after baking."
+          },
+          "after_bake": true,
+          "optional": true
+        },
+        {
+          "id": "parmesan",
+          "basis": "pizza",
+          "amount": {
+            "value": 8,
+            "unit": "g per 30 cm pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Value from the user's guide v7 (untested, no external source checked). Add after baking."
+          },
+          "after_bake": true,
+          "optional": true
+        },
+        {
+          "id": "olive_oil",
+          "basis": "pizza",
+          "amount": {
+            "value": 5,
+            "unit": "g per 30 cm pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Value from the user's guide v7 (untested, no external source checked). 3-4 g on the rim before baking, the rest after."
+          },
+          "optional": true
+        }
+      ],
+      "layer_order": [
+        "sauce",
+        "cheese",
+        "toppings"
+      ]
+    },
+    "neapolitan": {
+      "kind": "ball",
+      "difficulty": "medium",
+      "methods_typical": [
+        "room_8_12h",
+        "cold_24h",
+        "warm_2h"
+      ],
+      "default_method": "cold_24h",
+      "default_mode": {
+        "pizzas": 2
+      },
+      "ball_g": {
+        "value": 250,
+        "range": [
+          200,
+          280
+        ],
+        "unit": "g",
+        "confidence": "high",
+        "verified": false,
+        "sources": [
+          "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+        ],
+        "note": "AVPN allows 200-280 g, 22-35 cm. The guide uses 28-30 cm."
+      },
+      "dough": {
+        "hydration": {
+          "value": 61.7,
+          "range": [
+            55.6,
+            62.5
+          ],
+          "unit": "% of flour",
+          "confidence": "high",
+          "verified": false,
+          "sources": [
+            "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana",
+            "https://www.americastestkitchen.com/recipes/16948-neapolitan-style-pizza"
+          ],
+          "note": "AVPN: 1600-1800 g flour per litre of water (about 56-63%). Home-oven sources use 65-76% because the bake is longer (America's Test Kitchen about 76%). AVPN numbers were read from the AVPN page by a summarizing tool; re-check the official PDF."
+        },
+        "salt": {
+          "value": 2.67,
+          "range": [
+            2.4,
+            3.5
+          ],
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+          ],
+          "note": "AVPN 40-60 g per litre of water (about 2.4-3.5% of flour); STG reportedly 50-55 g/L (secondary summary)."
+        },
+        "sugar": {
+          "value": 0.7,
+          "optional": true,
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/16948-neapolitan-style-pizza"
+          ],
+          "note": "Optional, for colour at 250 C. America's Test Kitchen uses about 1.1%. Not part of the traditional recipe."
+        },
+        "oil": {
+          "value": 0,
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+          ],
+          "note": "No oil."
+        }
+      },
+      "flags": {
+        "no_oil_no_sugar": {
+          "traditional": true,
+          "source_level": "avpn_secondary",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [],
+          "note": "The traditional recipe is flour, water, salt, yeast, no oil and no sugar. This is stated by secondary sources (thepizzacraft, doughdorks); the AVPN page text that was fetched did not list prohibited ingredients. Check the official disciplinare."
+        }
+      },
+      "bake": {
+        "temp_c": {
+          "value": 250,
+          "unit": "C",
+          "confidence": "high",
+          "verified": false,
+          "sources": [],
+          "note": "Home oven maximum. A real Neapolitan oven runs 430-480 C for 60-90 s (AVPN)."
+        },
+        "time_min": {
+          "range": [
+            5,
+            7
+          ],
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://bakingsteel.com/blogs/recipes/how-to-make-neapolitan-style-pizza-in-a-home-oven"
+          ],
+          "note": "Vendor/blog sources say 5-7 min with the broiler at the end; add about 1 min if the oven is cooler than 290 C (America's Test Kitchen)."
+        },
+        "rack": "upper_third",
+        "grill": {
+          "last_min": {
+            "range": [
+              1,
+              2
+            ],
+            "confidence": "medium",
+            "verified": false,
+            "sources": [
+              "https://www.americastestkitchen.com/recipes/16948-neapolitan-style-pizza",
+              "https://bakingsteel.com/blogs/recipes/how-to-make-neapolitan-style-pizza-in-a-home-oven"
+            ],
+            "note": "Bake with top+bottom heat, then switch on the grill for the last 1-2 minutes. Never more than 3-5 minutes of grill in total."
+          },
+          "max_min": {
+            "value": 5,
+            "unit": "min",
+            "confidence": "low",
+            "verified": false,
+            "sources": [
+              "https://www.americastestkitchen.com/recipes/16948-neapolitan-style-pizza"
+            ],
+            "note": "America's Test Kitchen broils 4-5 min at 550 F on a hotter steel."
+          }
+        }
+      },
+      "toppings": [
+        {
+          "id": "sauce",
+          "basis": "pizza",
+          "amount": {
+            "value": 60,
+            "unit": "g per pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Value from the user's guide v7 (untested, no external source checked)."
+          }
+        },
+        {
+          "id": "cheese",
+          "basis": "pizza",
+          "amount": {
+            "value": 70,
+            "range": [
+              60,
+              80
+            ],
+            "unit": "g per pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Value from the user's guide v7 (untested, no external source checked). Guide says 60-80 g."
+          }
+        },
+        {
+          "id": "basil",
+          "basis": "pizza",
+          "amount": {
+            "value": 3,
+            "unit": "g per pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Same as New York (guide). Add after baking."
+          },
+          "after_bake": true,
+          "optional": true
+        }
+      ],
+      "layer_order": [
+        "sauce",
+        "cheese",
+        "toppings"
+      ]
+    },
+    "roman_tonda": {
+      "kind": "ball",
+      "difficulty": "medium",
+      "methods_typical": [
+        "cold_24h",
+        "cold_48h",
+        "warm_2h"
+      ],
+      "default_method": "cold_24h",
+      "default_mode": {
+        "pizzas": 2
+      },
+      "shaping": "rolling_pin",
+      "ball_g": {
+        "value": 170,
+        "range": [
+          160,
+          190
+        ],
+        "unit": "g",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [
+          "https://www.ristorazioneitalianamagazine.it/pizza-romana-matterello-pizzerie/",
+          "https://www.pizzafattaincasa.it/ricetta-pizza-romana/"
+        ],
+        "note": "Ball weight is per pizza. Pizzerias use 160-190 g for 30-33 cm. Replaces the guide's 250 g (approved)."
+      },
+      "dough": {
+        "hydration": {
+          "value": 58.3,
+          "range": [
+            50,
+            60
+          ],
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.ristorazioneitalianamagazine.it/pizza-romana-matterello-pizzerie/",
+            "https://www.pizzafattaincasa.it/ricetta-pizza-romana/"
+          ],
+          "note": "Pizzerias 50-55%, final 60%; home recipes 55-60%."
+        },
+        "salt": {
+          "value": 2,
+          "range": [
+            2,
+            3
+          ],
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.ristorazioneitalianamagazine.it/pizza-romana-matterello-pizzerie/"
+          ],
+          "note": "Pizzerias 2-3%."
+        },
+        "sugar": {
+          "value": 0,
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [],
+          "note": "None in the guide."
+        },
+        "oil": {
+          "value": 3.5,
+          "range": [
+            3,
+            5
+          ],
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.ristorazioneitalianamagazine.it/pizza-romana-matterello-pizzerie/",
+            "https://www.pizzafattaincasa.it/ricetta-pizza-romana/"
+          ],
+          "note": "Pizzerias 3%, one home recipe 5%; 3.5% chosen between them (approved; the guide had 5%)."
+        }
+      },
+      "bake": {
+        "temp_c": {
+          "value": 250,
+          "unit": "C",
+          "confidence": "high",
+          "verified": false,
+          "sources": [],
+          "note": "Home oven maximum. Roman pizzerias bake about 350 C for about 2 min."
+        },
+        "time_min": {
+          "range": [
+            5,
+            7
+          ],
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.pizzafattaincasa.it/ricetta-pizza-romana/"
+          ],
+          "note": "Home sources: 4-8 min at 250 C on stone."
+        },
+        "rack": "upper_third"
+      },
+      "toppings": [
+        {
+          "id": "sauce",
+          "basis": "pizza",
+          "amount": {
+            "value": 50,
+            "unit": "g per pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Value from the user's guide v7 (untested, no external source checked). Few, dry toppings keep it crisp."
+          }
+        },
+        {
+          "id": "cheese",
+          "basis": "pizza",
+          "amount": {
+            "value": 50,
+            "range": [
+              40,
+              60
+            ],
+            "unit": "g per pizza",
+            "confidence": "low",
+            "verified": false,
+            "sources": [],
+            "note": "Value from the user's guide v7 (untested, no external source checked). Guide says 40-60 g."
+          }
+        }
+      ],
+      "layer_order": [
+        "sauce",
+        "cheese",
+        "toppings"
+      ]
+    },
+    "al_taglio": {
+      "kind": "pan",
+      "difficulty": "medium",
+      "methods_typical": [
+        "cold_48h",
+        "cold_72h",
+        "cold_24h",
+        "warm_2h"
+      ],
+      "default_method": "cold_48h",
+      "default_mode": {
+        "pans": [
+          {
+            "shape": "rect",
+            "length": 30,
+            "width": 40
+          }
+        ]
+      },
+      "density": {
+        "value": 0.63,
+        "range": [
+          0.55,
+          0.7
+        ],
+        "unit": "g/cm2",
+        "thick": {
+          "value": 0.95,
+          "unit": "g/cm2",
+          "confidence": "low",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/articles/1281-introducing-pizza-al-taglio"
+          ],
+          "note": "Thicker, focaccia-like version (America's Test Kitchen about 1.0)."
+        },
+        "confidence": "medium",
+        "verified": false,
+        "sources": [
+          "https://www.pizzastunde.com/en/how-much-dough-for-one-pizza-dough-weight-explained/",
+          "https://fond.kitchen/guides/pizza-dough/roman-pizza-al-taglio/"
+        ],
+        "note": "Dough weight per cm2 of pan. Sources 0.6-0.7; useful range 0.55-0.70."
+      },
+      "dough": {
+        "hydration": {
+          "value": 80,
+          "range": [
+            75,
+            85
+          ],
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/articles/1281-introducing-pizza-al-taglio",
+            "https://fond.kitchen/guides/pizza-dough/roman-pizza-al-taglio/"
+          ],
+          "note": "Sources 75-85% (America's Test Kitchen 82%, Bonci about 80%). Replaces the guide's 75% (approved)."
+        },
+        "salt": {
+          "value": 2.3,
+          "range": [
+            2,
+            2.8
+          ],
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://fond.kitchen/guides/pizza-dough/roman-pizza-al-taglio/"
+          ],
+          "note": "Sources 2.0-2.8%."
+        },
+        "sugar": {
+          "value": 0,
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [],
+          "note": "None in the guide."
+        },
+        "oil": {
+          "value": 4,
+          "range": [
+            2,
+            4
+          ],
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://fond.kitchen/guides/pizza-dough/roman-pizza-al-taglio/",
+            "https://www.americastestkitchen.com/articles/1281-introducing-pizza-al-taglio"
+          ],
+          "note": "In the dough. Sources 2-4%."
+        }
+      },
+      "pan_oil": {
+        "amount": {
+          "value": 22.5,
+          "range": [
+            20,
+            25
+          ],
+          "unit": "g",
+          "confidence": "low",
+          "verified": false,
+          "sources": [
+            "https://fond.kitchen/guides/pizza-dough/roman-pizza-al-taglio/",
+            "https://www.americastestkitchen.com/articles/1281-introducing-pizza-al-taglio"
+          ],
+          "note": "Pan oil per 875 cm2 (25 x 35 cm), scaled by area. Sources 20-25 g or more; the guide had 15 g. Use refined olive oil or a neutral oil at 250 C."
+        },
+        "ref_area_cm2": 875
+      },
+      "bake": {
+        "temp_c": {
+          "value": 250,
+          "unit": "C",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://fond.kitchen/guides/pizza-dough/roman-pizza-al-taglio/"
+          ],
+          "note": "250-260 C in sources."
+        },
+        "time_min": {
+          "range": [
+            15,
+            18
+          ],
+          "confidence": "low",
+          "verified": false,
+          "sources": [
+            "https://fond.kitchen/guides/pizza-dough/roman-pizza-al-taglio/"
+          ],
+          "note": "Guide 15-18 min; fond.kitchen suggests 20-25 min at 250 C, so check the base."
+        },
+        "rack": "middle",
+        "rack_note": "Rack not given in the guide; fond.kitchen uses middle/upper-middle. Place the tray on the hot cast-iron tray."
+      },
+      "toppings": [],
+      "toppings_note": "Light toppings only, often added halfway through. Amounts per area were not found in any source.",
+      "layer_order": [
+        "sauce",
+        "cheese",
+        "toppings"
+      ]
+    },
+    "detroit": {
+      "kind": "pan",
+      "difficulty": "medium",
+      "methods_typical": [
+        "cold_24h",
+        "cold_48h",
+        "warm_2h"
+      ],
+      "default_method": "cold_24h",
+      "default_mode": {
+        "pans": [
+          {
+            "shape": "rect",
+            "length": 20,
+            "width": 25
+          },
+          {
+            "shape": "rect",
+            "length": 20,
+            "width": 25
+          }
+        ]
+      },
+      "density": {
+        "value": 0.65,
+        "range": [
+          0.58,
+          0.75
+        ],
+        "unit": "g/cm2",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [
+          "https://www.theperfectloaf.com/sourdough-detroit-style-pizza-recipe/",
+          "https://www.americastestkitchen.com/recipes/9775-detroit-style-pizza"
+        ],
+        "note": "Sources 0.58-0.75 g/cm2 on the nominal pan top. Replaces the guide's 0.54 (approved)."
+      },
+      "dough": {
+        "hydration": {
+          "value": 72,
+          "range": [
+            70,
+            78
+          ],
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.theperfectloaf.com/sourdough-detroit-style-pizza-recipe/",
+            "https://www.americastestkitchen.com/recipes/9775-detroit-style-pizza"
+          ],
+          "note": "Sources 70-78%."
+        },
+        "salt": {
+          "value": 2.33,
+          "unit": "% of flour",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "Value from the user's guide v7 (untested, no external source checked). Typical about 2%."
+        },
+        "sugar": {
+          "value": 1,
+          "unit": "% of flour",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "Value from the user's guide v7 (untested, no external source checked). Not found in the sources checked."
+        },
+        "oil": {
+          "value": 3,
+          "unit": "% of flour",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "Value from the user's guide v7 (untested, no external source checked). Not contradicted by sources."
+        }
+      },
+      "pan_oil": {
+        "amount": {
+          "value": 14,
+          "unit": "g",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/9775-detroit-style-pizza",
+            "https://www.theperfectloaf.com/sourdough-detroit-style-pizza-recipe/"
+          ],
+          "note": "Pan oil per 800 cm2, scaled by area (America's Test Kitchen: 1 Tbsp, about 14 g, in 759 cm2). Use refined olive oil or a neutral oil at 250 C."
+        },
+        "ref_area_cm2": 800
+      },
+      "bake": {
+        "temp_c": {
+          "value": 250,
+          "unit": "C",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/9775-detroit-style-pizza",
+            "https://www.theperfectloaf.com/sourdough-detroit-style-pizza-recipe/"
+          ],
+          "note": "Sources bake at 245-260 C."
+        },
+        "time_min": {
+          "range": [
+            12,
+            15
+          ],
+          "confidence": "low",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/9775-detroit-style-pizza"
+          ],
+          "note": "America's Test Kitchen about 15 min at 260 C; budget a little more at 250 C. Bake until the edges are dark brown."
+        },
+        "rack": "lower",
+        "rack_note": "Low or middle rack, pan on the hot tray."
+      },
+      "toppings": [
+        {
+          "id": "cheese",
+          "basis": "cm2",
+          "amount": {
+            "value": 0.275,
+            "range": [
+              0.25,
+              0.3
+            ],
+            "unit": "g/cm2",
+            "confidence": "medium",
+            "verified": false,
+            "sources": [
+              "https://www.theperfectloaf.com/sourdough-detroit-style-pizza-recipe/",
+              "https://www.americastestkitchen.com/recipes/9775-detroit-style-pizza"
+            ],
+            "note": "Sources 0.19-0.37 g/cm2; 0.25-0.30 chosen. Spread to the pan walls so the edge caramelises. Mozzarella plus Butterkaese (not Gouda). Sources: Butterkaese is the Perfect Loaf's first choice for brick cheese; Gouda/Edam were not tested in any source. Blends of about 60/40 mozzarella to brick-style cheese appear in low-authority sources."
+          },
+          "blend": [
+            "mozzarella",
+            "butterkaese"
+          ]
+        },
+        {
+          "id": "sauce",
+          "basis": "cm2",
+          "amount": {
+            "value": 0.15,
+            "unit": "g/cm2",
+            "confidence": "medium",
+            "verified": false,
+            "sources": [
+              "https://www.theperfectloaf.com/sourdough-detroit-style-pizza-recipe/",
+              "https://www.americastestkitchen.com/recipes/9775-detroit-style-pizza"
+            ],
+            "note": "Sources 0.13-0.32 g/cm2. Replaces the guide's 0.10 (approved). Add in stripes on top of the cheese after the cheese."
+          }
+        }
+      ],
+      "layer_order": [
+        "cheese",
+        "toppings",
+        "sauce"
+      ]
+    },
+    "chicago": {
+      "kind": "pan",
+      "difficulty": "hard",
+      "methods_typical": [
+        "warm_2h"
+      ],
+      "default_method": "warm_2h",
+      "default_mode": {
+        "pans": [
+          {
+            "shape": "round",
+            "diameter": 20
+          },
+          {
+            "shape": "round",
+            "diameter": 20
+          }
+        ]
+      },
+      "oil_id": "fat",
+      "warm_final_rest_min": {
+        "value": 30,
+        "range": [
+          15,
+          30
+        ],
+        "unit": "min",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
+        ],
+        "note": "Rest in the pan 15-30 min (guide). Planning uses the upper end."
+      },
+      "density": {
+        "value": 1,
+        "range": [
+          0.9,
+          1.06
+        ],
+        "unit": "g/cm2",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [
+          "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza",
+          "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
+        ],
+        "note": "Sources 1.04-1.06 g/cm2 on the pan top; useful range 0.9-1.06. Replaces the guide's 0.83-1.02."
+      },
+      "dough": {
+        "hydration": {
+          "value": 55,
+          "range": [
+            52,
+            65
+          ],
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza",
+            "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
+          ],
+          "note": "Of total flour including cornmeal. America's Test Kitchen 52%, King Arthur 65% (both of total flour)."
+        },
+        "cornmeal": {
+          "value": 10,
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza"
+          ],
+          "note": "Fine cornmeal (Maismehl), part of the total flour. America's Test Kitchen about 17%."
+        },
+        "salt": {
+          "value": 2,
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza",
+            "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
+          ],
+          "note": "Sources 1.7-2%."
+        },
+        "sugar": {
+          "value": 1,
+          "unit": "% of flour",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "Value from the user's guide v7 (untested, no external source checked)."
+        },
+        "oil": {
+          "value": 15,
+          "range": [
+            8,
+            20
+          ],
+          "unit": "% of flour",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza",
+            "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
+          ],
+          "note": "Melted butter or oil in the dough. Sources 8-20%."
+        }
+      },
+      "pan_oil": {
+        "amount": {
+          "value": 20,
+          "range": [
+            15,
+            25
+          ],
+          "unit": "g",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza",
+            "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
+          ],
+          "note": "Pan oil or butter per 20 cm pan, scaled by area. Sources 15-25 g per 9 in pan; the guide had 10 g. Use refined oil or butter at 220 C."
+        },
+        "ref_area_cm2": 314.1592653589793
+      },
+      "bake": {
+        "temp_c": {
+          "value": 220,
+          "unit": "C",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza",
+            "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
+          ],
+          "note": "Both sources bake at 425 F (218 C)."
+        },
+        "time_min": {
+          "range": [
+            20,
+            32
+          ],
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza",
+            "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
+          ],
+          "note": "America's Test Kitchen 20-30 min, King Arthur 28-32 min. Replaces the guide's 35-45 min (approved). Lower rack. Move the pan up for the last minutes if the top is pale; a foil sheet is harmless if the top darkens early."
+        },
+        "rack": "lower"
+      },
+      "toppings": [
+        {
+          "id": "cheese",
+          "basis": "ref_area",
+          "ref_area_cm2": 314.1592653589793,
+          "amount": {
+            "value": 227,
+            "unit": "g",
+            "confidence": "medium",
+            "verified": false,
+            "sources": [
+              "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza",
+              "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
+            ],
+            "note": "227 g mozzarella per 20 cm pan, scaled by area (about 0.72 g/cm2). Sources 0.37-0.55 g/cm2 on larger pans."
+          }
+        },
+        {
+          "id": "sauce",
+          "basis": "cm2",
+          "amount": {
+            "value": 0.85,
+            "range": [
+              0.73,
+              0.95
+            ],
+            "unit": "g/cm2",
+            "confidence": "low",
+            "verified": false,
+            "sources": [
+              "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza",
+              "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
+            ],
+            "note": "Sauce 230-300 g per 20 cm pan (about 0.85 g/cm2). Sources 0.35-0.72 g/cm2; reduce the sauce until thick."
+          }
+        }
+      ],
+      "layer_order": [
+        "cheese",
+        "toppings",
+        "sauce"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+---
+layout: layout.njk
+pagination:
+  data: site.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/index.html"
+eleventyComputed:
+  title: "{{ i18n[lang].home.title }}"
+---
+{% set t = i18n[lang] %}
+<h1>{{ t.home.title }}</h1>
+<p class="lead">{{ t.home.pitch | fill({ max_c: recipes.oven.max_c.value }, lang) }}</p>
+<p><a class="button" href="/{{ lang }}/calculator/">{{ t.home.cta }}</a></p>
+
+<h2>{{ t.home.styles_heading }}</h2>
+<ul class="cards">
+  {% for id, st in recipes.styles %}
+  <li class="card">
+    <h3><a href="/{{ lang }}/styles/{{ id }}/" aria-label="{{ t.card.open | fill({ name: t.styles[id].name }, lang) }}">{{ t.styles[id].name }}</a></h3>
+    <p class="latin"><bdi dir="ltr">{{ t.styles[id].latin }}</bdi></p>
+    <p>{{ t.styles[id].blurb }}</p>
+    <dl class="facts">
+      <div><dt>{{ t.card.difficulty }}</dt><dd>{{ t.difficulty[st.difficulty] }}</dd></div>
+      <div><dt>{{ t.card.hydration }}</dt><dd>{{ st.dough.hydration.value | num(lang) }}{{ t.unit.pct }}</dd></div>
+      <div><dt>{{ t.card.bake }}</dt><dd>{{ st.bake.temp_c.value | num(lang) }} {{ t.unit.c }}, {{ st.bake.time_min.range[0] | num(lang) }}-{{ st.bake.time_min.range[1] | num(lang) }} {{ t.unit.min }}</dd></div>
+      <div><dt>{{ t.card.ferment }}</dt><dd>{% for m in st.methods_typical %}{{ t.methods[m] }}{% if not loop.last %}{{ "، " if lang == "fa" else ", " }}{% endif %}{% endfor %}</dd></div>
+    </dl>
+  </li>
+  {% endfor %}
+</ul>

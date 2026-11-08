@@ -1,0 +1,63 @@
+---
+layout: layout.njk
+pagination:
+  data: site.stylePages
+  size: 1
+  alias: sp
+permalink: "/{{ sp.lang }}/styles/{{ sp.id }}/index.html"
+eleventyComputed:
+  lang: "{{ sp.lang }}"
+  title: "{{ i18n[sp.lang].styles[sp.id].name }}"
+---
+{% set lang = sp.lang %}{% set t = i18n[lang] %}{% set id = sp.id %}
+{% set st = recipes.styles[id] %}{% set tb = tables[id] %}
+<article>
+  <h1>{{ t.styles[id].name }}</h1>
+  <p class="latin"><bdi dir="ltr">{{ t.styles[id].latin }}</bdi></p>
+  <p class="lead">{{ t.styles[id].blurb }}</p>
+
+  <h2>{{ t.style.facts }}</h2>
+  <dl class="facts">
+    <div><dt>{{ t.style.hydration }}</dt><dd>{{ st.dough.hydration.value | num(lang) }}{{ t.unit.pct }}</dd></div>
+    <div><dt>{{ t.style.oven }}</dt><dd>{{ st.bake.temp_c.value | num(lang) }} {{ t.unit.c }}</dd></div>
+    <div><dt>{{ t.style.bake_time }}</dt><dd>{{ st.bake.time_min.range[0] | num(lang) }}-{{ st.bake.time_min.range[1] | num(lang) }} {{ t.unit.min }}</dd></div>
+    <div><dt>{{ t.style.rack }}</dt><dd>{{ t.rack[st.bake.rack] }}</dd></div>
+    <div><dt>{{ t.style.methods }}</dt><dd>{% for m in st.methods_typical %}{{ t.methods[m] }}{% if not loop.last %}{{ "، " if lang == "fa" else ", " }}{% endif %}{% endfor %}</dd></div>
+  </dl>
+
+  <h2>{{ t.style.table }}</h2>
+  {% if st.kind == "pan" %}
+  {% set pansText %}{% for p in tb.mode.pans %}{% if p.shape == "round" %}{{ p.diameter | num(lang) }} {{ t.unit.cm }} ({{ t.calc.round_word }}){% else %}<bdi dir="ltr">{{ p.length | num(lang) }} × {{ p.width | num(lang) }}</bdi> {{ t.unit.cm }}{% endif %}{% if not loop.last %}{{ "، " if lang == "fa" else ", " }}{% endif %}{% endfor %}{% endset %}
+  <p>{{ t.style.table_for_pans | fill({ pans: pansText }, lang) | safe }}</p>
+  {% else %}
+  <p>{{ t.style.table_for_pizzas | fill({ n: tb.mode.pizzas, ball: tb.ball_g }, lang) }}</p>
+  {% endif %}
+  <table class="ingredients">
+    <thead>
+      <tr>
+        <th scope="col">{{ t.style.table }}</th>
+        {% for m in tb.methodIds %}<th scope="col">{{ t.methods[m] }}</th>{% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in tb.rows %}
+      <tr>
+        <th scope="row">{{ t.ing[row.id] }}{% if row.optional %} <span class="muted">({{ t.style.optional }})</span>{% endif %}</th>
+        {% for c in row.cells %}<td>{% if c == null %}{{ t.style.dash }}{% else %}{{ c | num(lang) }} {{ t.unit.g }}{% endif %}</td>{% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p class="muted">{{ t.style.table_note | fill({ x: recipes.yeast.fresh_to_dry.value }, lang) }}</p>
+  <p><a class="button" href="/{{ lang }}/calculator/?style={{ id }}&amp;method={{ st.default_method }}">{{ t.style.calc_link }}</a></p>
+
+  <h2>{{ t.style.steps }}</h2>
+  <p>{{ t.style.body_placeholder }}</p>
+
+  <h2>{{ t.style.notes }}</h2>
+  <ul class="notes">
+    {% for w in tb.warnings %}{% if w.id != "method_not_typical" and w.id != "scale_resolution" %}
+    <li class="note note-{{ w.severity }}">{{ t.warn[w.id] | fill(w.params, lang) }}</li>
+    {% endif %}{% endfor %}
+  </ul>
+</article>
