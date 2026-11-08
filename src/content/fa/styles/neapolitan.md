@@ -4,7 +4,6 @@
 
 - **وسط:** نازک و نرم. خم می‌شود و مثل کراکر ترد نیست.
 - **حاشیه (کراست):** بلند، هوادار و نرم، با چند لکه‌ی قهوه‌ای تا تیره از گرما.
-- **تاپینگ:** کم و ساده، تا طعم خمیر حس شود.
 - **در خانه:** فر اصلی ناپولیتن روی {{ recipes.styles.neapolitan.practice.avpn_oven_c.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_oven_c.range.1 }} درجه کار می‌کند و پیتزا را در {{ recipes.styles.neapolitan.practice.avpn_bake_s.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_bake_s.range.1 }} ثانیه می‌پزد. فر تو تا {{ recipes.oven.max_c.value }} درجه می‌رود، پس پخت {{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه طول می‌کشد. نتیجه «شبیه ناپولیتن» (<bdi>Neapolitan-style</bdi>) است، نه اصل آن. حاشیه کمی سفت‌تر است و رنگ کمتر تیره می‌شود. باز هم پیتزای خیلی خوبی است.
 
 دستور اصلی درباره‌ی طعم و بافت است، نه عددهای دقیق. همه‌ی مقدارها و زمان‌ها اینجا نقطه‌ی شروع‌اند. یک بار بپز، خمیر و پوسته را نگاه کن و دفعه‌ی بعد تنظیم کن.
@@ -33,14 +32,14 @@
 
 ## آرد و مخمر
 
-**آرد.** همان پیتزامل (<bdi>Pizzamehl</bdi>) پیتزای نیویورکی را بگیر (اغلب <bdi>Tipo 00</bdi> نوشته‌اند). صفحه‌ی پیتزای نیویورکی در بخش «آرد و مخمر» توضیح می‌دهد پروتئین روی بسته را چطور بخوانی.
+**آرد.** همان آرد پیتزایی را بگیر که برای پیتزای نیویورکی می‌گیری (اغلب <bdi>Tipo 00</bdi> نوشته‌اند). صفحه‌ی پیتزای نیویورکی در بخش «آرد و مخمر» توضیح می‌دهد پروتئین روی بسته را چطور بخوانی.
 
 **مخمر.** کارت «مواد لازم» همان مخمری را نشان می‌دهد که در صفحه‌ی اصلی انتخاب کرده‌ای (خشک یا تازه). صفحه‌ی پیتزای نیویورکی در بخش «آرد و مخمر» هر دو نوع را توضیح داده است. روش دمای اتاق و روش یخچال از محلول مخمر استفاده می‌کنند، چون مخمر برای ترازوی یک‌گرمی خیلی کم است. مرحله‌ی اول آن روش‌ها توضیحش را دارد.
 
 - **شکر:** خمیر اصلی شکر ندارد. این دستور خانگی کمی شکر اضافه می‌کند ({{ recipes.styles.neapolitan.dough.sugar.value }}% وزن آرد؛ کارت «مواد لازم» گرمش را نشان می‌دهد)، چون فر {{ recipes.oven.max_c.value }} درجه پیتزا را کمتر از فر واقعی ناپولیتن رنگ می‌دهد. می‌توانی بدونش هم بپزی.
 - **روغن:** ندارد. این خمیر روغن ندارد.
 
-> Warning: مقدار مخمر یک نقطه‌ی شروع است، نه قانون ثابت. منبع‌ها برای همان برنامه تا {{ recipes.yeast.source_spread_x.value }} برابر فرق دارند. مقدار درست به دمای اتاق یا یخچال تو و برند مخمر بستگی دارد. یک بار بپز، خمیر و پوسته را نگاه کن و دفعه‌ی بعد مقدار را تنظیم کن.
+> Warning: مقدار مخمر یک نقطه‌ی شروع است، نه قانون ثابت. منبع‌ها برای همان برنامه تا {{ recipes.yeast.source_spread_x.value }} برابر فرق دارند. مقدار درست به دمای اتاق یا یخچال تو و مخمر خودت بستگی دارد. یک بار بپز، خمیر و پوسته را نگاه کن و دفعه‌ی بعد مقدار را تنظیم کن.
 
 ## روش دمای اتاق {methods=room_8_12h}
 
@@ -66,7 +65,7 @@
 6. **گلوله‌ها را {{ recipes.methods.room_8_12h.final_rest_min.value }} دقیقه با روکش استراحت بده.** کل ور آمدن، از مخلوط کردن تا پخت، {{ recipes.methods.room_8_12h.total_ferment_h.range.0 }} تا {{ recipes.methods.room_8_12h.total_ferment_h.range.1 }} ساعت طول می‌کشد.
 
     > Why: در گلوله‌ها خمیر آرام به ور آمدن ادامه می‌دهد و گلوتن شل می‌شود. گلوله‌ی شل‌شده راحت باز می‌شود و جمع نمی‌شود.
-7. **{{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه قبل از پخت فر و سطح پخت را روشن کن.** سنگ پیتزا (<bdi>Pizza Stone</bdi>)، فولاد پخت (<bdi>Baking Steel</bdi>) یا سینی چدنی را روی رک بالایی بگذار (حدود یک‌سوم بالای فر). فر را روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه، با حالت بالا و پایین (در فرهای آلمانی: <bdi>Ober-/Unterhitze</bdi>) و **بدون فن** (<bdi>Umluft</bdi>) بگذار.
+7. **{{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه قبل از پخت فر و سطح پخت را روشن کن.** سنگ پیتزا (<bdi>Pizza Stone</bdi>)، فولاد پخت (<bdi>Baking Steel</bdi>) یا سینی چدنی را روی رک بالایی بگذار (حدود یک‌سوم بالای فر). فر را روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه، با حالت بالا و پایین و **بدون فن** بگذار.
 
     > Why: سطحی که کامل داغ نشده باشد، کف رنگ‌پریده و نرم می‌دهد. فن خمیر را خشک می‌کند و بالا را قبل از آماده شدن کف می‌سوزاند.
 8. **خمیر را با نوک انگشتان باز کن.** فقط وقتی فر داغ شد خمیر را باز کن. حدود {{ recipes.styles.new_york.practice.bench_flour_g.value }} گرم آرد روی میز بپاش، گلوله را رویش بگذار و از وسط به بیرون فشار بده. **حاشیه‌ی {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی را دست نزن.** خمیر را با دست بکش و بچرخان تا قطرش به {{ recipes.styles.neapolitan.practice.shape_diameter_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.shape_diameter_cm.range.1 }} سانتی برسد. اگر خمیر جمع شد، {{ recipes.styles.new_york.practice.shrink_rest_min.range.0 }} تا {{ recipes.styles.new_york.practice.shrink_rest_min.range.1 }} دقیقه استراحتش بده.
@@ -74,27 +73,29 @@
     > Why: حاشیه‌ای که دست نخورده هوایش را نگه می‌دارد و در فر پف می‌کند. حاشیه‌ی بلند و نرم نشانه‌ی پیتزای ناپولیتن است.
 
     > Warning: وردنه استفاده نکن. وردنه هوا را از خمیر بیرون می‌دهد و حاشیه پف نمی‌کند.
-9. **سس و پنیر را بگذار.** {{ recipes.styles.neapolitan.toppings.0.amount.value }} گرم سس را نازک از وسط به بیرون پخش کن و {{ recipes.styles.neapolitan.toppings.1.amount.value }} گرم پنیر رویش بپاش (بخش «تاپینگ»). سریع کار کن.
+9. **روی پیتزا را بچین.** ساده، مثل ناپل: یک لایه‌ی نازک سس با حاشیه‌ی خالی (حدود {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی‌متر)، پنیر، هر تاپینگی که دوست داری و کمی روغن زیتون با قلم‌مو روی حاشیه. سریع کار کن.
 
-    > Why: خمیری که زیر تاپینگ خیس منتظر بماند، خیس می‌شود و به تخته می‌چسبد.
+    > Why: سبک بچین. تاپینگ سنگین یا پرآب بخار را زیر خمیر نگه می‌دارد، وسط خیس می‌ماند و پیتزا به تخته می‌چسبد. مواد پرآب را خشک یا نیم‌پز کن و از پنیر رنده‌شده‌ی خشک استفاده کن یا اول خشکش کن. روغن زیتون فقط یک لایه‌ی نازک روی حاشیه باشد؛ روغن زیتون تصفیه‌شده یا سبک کمتر دود می‌کند (یادداشت ایمنی پایین را ببین).
+
+    > Tip: بعد از گذاشتن پنیر، یک ذره پودر سیر رویش بپاش؛ خوش‌طعم می‌شود. اختیاری است. پودر سیر کمتر از سیر تازه می‌سوزد.
 10. **پیتزا را سریع روی سطح داغ بلغزان.** آن را از تخته یا کفگیر بزرگ پیتزا (<bdi>Peel</bdi>) روی سطح ببر.
 
     > Why: هر بار که در فر باز می‌شود، گرما از دست می‌رود. سریع باش.
 
-    > Safety: قبل از استفاده، حداکثر دمای چاپ‌شده روی کاغذ روغنی (<bdi>Backpapier</bdi>) را بخوان. برندهای رایج تا {{ recipes.safety.parchment_max_c.value }} درجه تحمل دارند، یعنی کمتر از دمای این فر. این دستور آخرش گریل را روشن می‌کند و کاغذ را هرگز نباید زیر گریل گذاشت یا به المنت‌ها چسباند. پس بدون کاغذ بپز: خمیر را روی تخته‌ی پاشیده‌شده با سمولینا یا آرد باز کن و روی سطح داغ بلغزان.
+    > Safety: قبل از استفاده، حداکثر دمای چاپ‌شده روی بسته‌ی کاغذ روغنی را بخوان. بسیاری از کاغذهای روغنی تا {{ recipes.safety.parchment_max_c.value }} درجه تحمل دارند، یعنی کمتر از دمای این فر. این دستور آخرش گریل را روشن می‌کند و کاغذ را هرگز نباید زیر گریل گذاشت یا به المنت‌ها چسباند. پس بدون کاغذ بپز: خمیر را روی تخته‌ی پاشیده‌شده با سمولینا یا آرد باز کن و روی سطح داغ بلغزان.
 
-    > Safety: روغن زیتون فرابکر (<bdi>Extra-Virgin</bdi>) در حدود {{ recipes.safety.evoo_smoke_c.range.0 }} تا {{ recipes.safety.evoo_smoke_c.range.1 }} درجه شروع به دود کردن می‌کند و این فر روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه است. سطح داغ یا سینی داغ را روغنی نکن. این خمیر روغن ندارد، پس داخل خمیر نگرانی نیست. اگر روغن روی پیتزا می‌خواهی، کمی بعد از پخت بریز.
+    > Safety: روغن زیتون فرابکر (<bdi>Extra-Virgin</bdi>) در حدود {{ recipes.safety.evoo_smoke_c.range.0 }} تا {{ recipes.safety.evoo_smoke_c.range.1 }} درجه شروع به دود کردن می‌کند و این فر روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه است. سطح داغ یا سینی داغ را روغنی نکن. داخل این خمیر روغن نیست. یک لایه‌ی نازک روغن روی حاشیه قبل از پخت مشکلی ندارد.
 11. **{{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه بپز و آخرش از گریل استفاده کن.** با حالت بالا و پایین بپز. {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} دقیقه‌ی آخر گریل (<bdi>Grill</bdi>) را روشن کن تا روی پیتزا و حاشیه رنگ بگیرد. کنار فر بمان و نگاه کن. پیتزا در مجموع بیشتر از {{ recipes.styles.neapolitan.bake.grill.max_min.value }} دقیقه زیر گریل نماند.
 
     > Why: فر {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه گرمای بالا را کم دارد. فر اصلی ناپولیتن خیلی داغ‌تر است، پس گریل بخشی از آن گرما را جبران می‌کند.
 
     > Tip: پیتزا وقتی آماده است که حاشیه ور آمده و لکه‌های قهوه‌ای تا تیره دارد و کف سفت است. قبل از اینکه لکه‌ها سیاه شوند، پیتزا را بیرون بیاور.
-12. **پیتزای دوم:** گلوله‌اش را با روکش نگه دار تا پیتزای اول بیرون بیاید و سطح دوباره داغ شود، یعنی حدود {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} تا {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} دقیقه. فقط بعد از آن خمیر را باز کن و تاپینگ بگذار.
+12. **پیتزا را از فر دربیاور، ریحان تازه و کمی روغن زیتون رویش بگذار و {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} تا {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} دقیقه صبر کن، بعد برش بزن.** رویش را نپوشان؛ اگر رک داری، روی رک بگذار.
+
+    > Why: بخار خارج می‌شود و پنیر سفت می‌شود، پس تاپینگ سر نمی‌خورد. کفی که رویش پوشیده نباشد ترد می‌ماند. با چرخ پیتزابر تیز یا چاقوی بزرگ برش بزن. ریحان و چیزهای تازه و ظریف را بعد از پخت اضافه کن، چون در فر می‌سوزند و تلخ می‌شوند.
+13. **پیتزای دوم:** گلوله‌اش را با روکش نگه دار تا پیتزای اول بیرون بیاید و سطح دوباره داغ شود، یعنی حدود {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} تا {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} دقیقه. فقط بعد از آن خمیر را باز کن.
 
     > Why: خمیری که باز شده روی تخته منتظر بماند خیس می‌شود و می‌چسبد.
-13. **بعد از پخت ریحان را بگذار.** {{ recipes.styles.neapolitan.toppings.2.amount.value }} گرم ریحان تازه رویش بگذار.
-
-    > Why: ریحان در فر می‌سوزد و تلخ می‌شود.
 
 ## روش یخچال {methods=cold_24h}
 
@@ -123,7 +124,7 @@
 7. **در روز پخت، {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} تا {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} دقیقه قبل از باز کردن، خمیر را از یخچال بیرون بیاور.** درپوش بسته بماند.
 
     > Why: خمیر سرد نمی‌کشد و پاره می‌شود. این رایج‌ترین اشتباه در کولد فرمنتیشن است.
-8. **{{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه قبل از پخت فر و سطح پخت را روشن کن.** سنگ پیتزا (<bdi>Pizza Stone</bdi>)، فولاد پخت (<bdi>Baking Steel</bdi>) یا سینی چدنی را روی رک بالایی بگذار (حدود یک‌سوم بالای فر). فر را روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه، با حالت بالا و پایین (در فرهای آلمانی: <bdi>Ober-/Unterhitze</bdi>) و **بدون فن** (<bdi>Umluft</bdi>) بگذار.
+8. **{{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه قبل از پخت فر و سطح پخت را روشن کن.** سنگ پیتزا (<bdi>Pizza Stone</bdi>)، فولاد پخت (<bdi>Baking Steel</bdi>) یا سینی چدنی را روی رک بالایی بگذار (حدود یک‌سوم بالای فر). فر را روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه، با حالت بالا و پایین و **بدون فن** بگذار.
 
     > Why: سطحی که کامل داغ نشده باشد، کف رنگ‌پریده و نرم می‌دهد. فن خمیر را خشک می‌کند و بالا را قبل از آماده شدن کف می‌سوزاند.
 9. **خمیر را با نوک انگشتان باز کن.** فقط وقتی فر داغ شد خمیر را باز کن. حدود {{ recipes.styles.new_york.practice.bench_flour_g.value }} گرم آرد روی میز بپاش، گلوله را رویش بگذار و از وسط به بیرون فشار بده. **حاشیه‌ی {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی را دست نزن.** خمیر را با دست بکش و بچرخان تا قطرش به {{ recipes.styles.neapolitan.practice.shape_diameter_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.shape_diameter_cm.range.1 }} سانتی برسد. اگر خمیر جمع شد، {{ recipes.styles.new_york.practice.shrink_rest_min.range.0 }} تا {{ recipes.styles.new_york.practice.shrink_rest_min.range.1 }} دقیقه استراحتش بده.
@@ -131,27 +132,29 @@
     > Why: حاشیه‌ای که دست نخورده هوایش را نگه می‌دارد و در فر پف می‌کند. حاشیه‌ی بلند و نرم نشانه‌ی پیتزای ناپولیتن است.
 
     > Warning: وردنه استفاده نکن. وردنه هوا را از خمیر بیرون می‌دهد و حاشیه پف نمی‌کند.
-10. **سس و پنیر را بگذار.** {{ recipes.styles.neapolitan.toppings.0.amount.value }} گرم سس را نازک از وسط به بیرون پخش کن و {{ recipes.styles.neapolitan.toppings.1.amount.value }} گرم پنیر رویش بپاش (بخش «تاپینگ»). سریع کار کن.
+10. **روی پیتزا را بچین.** ساده، مثل ناپل: یک لایه‌ی نازک سس با حاشیه‌ی خالی (حدود {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی‌متر)، پنیر، هر تاپینگی که دوست داری و کمی روغن زیتون با قلم‌مو روی حاشیه. سریع کار کن.
 
-    > Why: خمیری که زیر تاپینگ خیس منتظر بماند، خیس می‌شود و به تخته می‌چسبد.
+    > Why: سبک بچین. تاپینگ سنگین یا پرآب بخار را زیر خمیر نگه می‌دارد، وسط خیس می‌ماند و پیتزا به تخته می‌چسبد. مواد پرآب را خشک یا نیم‌پز کن و از پنیر رنده‌شده‌ی خشک استفاده کن یا اول خشکش کن. روغن زیتون فقط یک لایه‌ی نازک روی حاشیه باشد؛ روغن زیتون تصفیه‌شده یا سبک کمتر دود می‌کند (یادداشت ایمنی پایین را ببین).
+
+    > Tip: بعد از گذاشتن پنیر، یک ذره پودر سیر رویش بپاش؛ خوش‌طعم می‌شود. اختیاری است. پودر سیر کمتر از سیر تازه می‌سوزد.
 11. **پیتزا را سریع روی سطح داغ بلغزان.** آن را از تخته یا کفگیر بزرگ پیتزا (<bdi>Peel</bdi>) روی سطح ببر.
 
     > Why: هر بار که در فر باز می‌شود، گرما از دست می‌رود. سریع باش.
 
-    > Safety: قبل از استفاده، حداکثر دمای چاپ‌شده روی کاغذ روغنی (<bdi>Backpapier</bdi>) را بخوان. برندهای رایج تا {{ recipes.safety.parchment_max_c.value }} درجه تحمل دارند، یعنی کمتر از دمای این فر. این دستور آخرش گریل را روشن می‌کند و کاغذ را هرگز نباید زیر گریل گذاشت یا به المنت‌ها چسباند. پس بدون کاغذ بپز: خمیر را روی تخته‌ی پاشیده‌شده با سمولینا یا آرد باز کن و روی سطح داغ بلغزان.
+    > Safety: قبل از استفاده، حداکثر دمای چاپ‌شده روی بسته‌ی کاغذ روغنی را بخوان. بسیاری از کاغذهای روغنی تا {{ recipes.safety.parchment_max_c.value }} درجه تحمل دارند، یعنی کمتر از دمای این فر. این دستور آخرش گریل را روشن می‌کند و کاغذ را هرگز نباید زیر گریل گذاشت یا به المنت‌ها چسباند. پس بدون کاغذ بپز: خمیر را روی تخته‌ی پاشیده‌شده با سمولینا یا آرد باز کن و روی سطح داغ بلغزان.
 
-    > Safety: روغن زیتون فرابکر (<bdi>Extra-Virgin</bdi>) در حدود {{ recipes.safety.evoo_smoke_c.range.0 }} تا {{ recipes.safety.evoo_smoke_c.range.1 }} درجه شروع به دود کردن می‌کند و این فر روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه است. سطح داغ یا سینی داغ را روغنی نکن. این خمیر روغن ندارد، پس داخل خمیر نگرانی نیست. اگر روغن روی پیتزا می‌خواهی، کمی بعد از پخت بریز.
+    > Safety: روغن زیتون فرابکر (<bdi>Extra-Virgin</bdi>) در حدود {{ recipes.safety.evoo_smoke_c.range.0 }} تا {{ recipes.safety.evoo_smoke_c.range.1 }} درجه شروع به دود کردن می‌کند و این فر روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه است. سطح داغ یا سینی داغ را روغنی نکن. داخل این خمیر روغن نیست. یک لایه‌ی نازک روغن روی حاشیه قبل از پخت مشکلی ندارد.
 12. **{{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه بپز و آخرش از گریل استفاده کن.** با حالت بالا و پایین بپز. {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} دقیقه‌ی آخر گریل (<bdi>Grill</bdi>) را روشن کن تا روی پیتزا و حاشیه رنگ بگیرد. کنار فر بمان و نگاه کن. پیتزا در مجموع بیشتر از {{ recipes.styles.neapolitan.bake.grill.max_min.value }} دقیقه زیر گریل نماند.
 
     > Why: فر {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه گرمای بالا را کم دارد. فر اصلی ناپولیتن خیلی داغ‌تر است، پس گریل بخشی از آن گرما را جبران می‌کند.
 
     > Tip: پیتزا وقتی آماده است که حاشیه ور آمده و لکه‌های قهوه‌ای تا تیره دارد و کف سفت است. قبل از اینکه لکه‌ها سیاه شوند، پیتزا را بیرون بیاور.
-13. **پیتزای دوم:** گلوله‌اش را با روکش نگه دار تا پیتزای اول بیرون بیاید و سطح دوباره داغ شود، یعنی حدود {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} تا {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} دقیقه. فقط بعد از آن خمیر را باز کن و تاپینگ بگذار.
+13. **پیتزا را از فر دربیاور، ریحان تازه و کمی روغن زیتون رویش بگذار و {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} تا {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} دقیقه صبر کن، بعد برش بزن.** رویش را نپوشان؛ اگر رک داری، روی رک بگذار.
+
+    > Why: بخار خارج می‌شود و پنیر سفت می‌شود، پس تاپینگ سر نمی‌خورد. کفی که رویش پوشیده نباشد ترد می‌ماند. با چرخ پیتزابر تیز یا چاقوی بزرگ برش بزن. ریحان و چیزهای تازه و ظریف را بعد از پخت اضافه کن، چون در فر می‌سوزند و تلخ می‌شوند.
+14. **پیتزای دوم:** گلوله‌اش را با روکش نگه دار تا پیتزای اول بیرون بیاید و سطح دوباره داغ شود، یعنی حدود {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} تا {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} دقیقه. فقط بعد از آن خمیر را باز کن.
 
     > Why: خمیری که باز شده روی تخته منتظر بماند خیس می‌شود و می‌چسبد.
-14. **بعد از پخت ریحان را بگذار.** {{ recipes.styles.neapolitan.toppings.2.amount.value }} گرم ریحان تازه رویش بگذار.
-
-    > Why: ریحان در فر می‌سوزد و تلخ می‌شود.
 
 ## روش 2 ساعته {methods=warm_2h}
 
@@ -174,7 +177,7 @@
 5. **گلوله‌ها را {{ recipes.methods.warm_2h.final_rest_min.range.0 }} تا {{ recipes.methods.warm_2h.final_rest_min.range.1 }} دقیقه با روکش استراحت بده.**
 
     > Why: گلوتن شل می‌شود. گلوله‌ی شل‌شده راحت باز می‌شود و موقع کشیدن جمع نمی‌شود.
-6. **{{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه قبل از پخت فر و سطح پخت را روشن کن.** سنگ پیتزا (<bdi>Pizza Stone</bdi>)، فولاد پخت (<bdi>Baking Steel</bdi>) یا سینی چدنی را روی رک بالایی بگذار (حدود یک‌سوم بالای فر). فر را روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه، با حالت بالا و پایین (در فرهای آلمانی: <bdi>Ober-/Unterhitze</bdi>) و **بدون فن** (<bdi>Umluft</bdi>) بگذار.
+6. **{{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه قبل از پخت فر و سطح پخت را روشن کن.** سنگ پیتزا (<bdi>Pizza Stone</bdi>)، فولاد پخت (<bdi>Baking Steel</bdi>) یا سینی چدنی را روی رک بالایی بگذار (حدود یک‌سوم بالای فر). فر را روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه، با حالت بالا و پایین و **بدون فن** بگذار.
 
     > Why: سطحی که کامل داغ نشده باشد، کف رنگ‌پریده و نرم می‌دهد. فن خمیر را خشک می‌کند و بالا را قبل از آماده شدن کف می‌سوزاند.
 7. **خمیر را با نوک انگشتان باز کن.** فقط وقتی فر داغ شد خمیر را باز کن. حدود {{ recipes.styles.new_york.practice.bench_flour_g.value }} گرم آرد روی میز بپاش، گلوله را رویش بگذار و از وسط به بیرون فشار بده. **حاشیه‌ی {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی را دست نزن.** خمیر را با دست بکش و بچرخان تا قطرش به {{ recipes.styles.neapolitan.practice.shape_diameter_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.shape_diameter_cm.range.1 }} سانتی برسد. اگر خمیر جمع شد، {{ recipes.styles.new_york.practice.shrink_rest_min.range.0 }} تا {{ recipes.styles.new_york.practice.shrink_rest_min.range.1 }} دقیقه استراحتش بده.
@@ -182,89 +185,63 @@
     > Why: حاشیه‌ای که دست نخورده هوایش را نگه می‌دارد و در فر پف می‌کند. حاشیه‌ی بلند و نرم نشانه‌ی پیتزای ناپولیتن است.
 
     > Warning: وردنه استفاده نکن. وردنه هوا را از خمیر بیرون می‌دهد و حاشیه پف نمی‌کند.
-8. **سس و پنیر را بگذار.** {{ recipes.styles.neapolitan.toppings.0.amount.value }} گرم سس را نازک از وسط به بیرون پخش کن و {{ recipes.styles.neapolitan.toppings.1.amount.value }} گرم پنیر رویش بپاش (بخش «تاپینگ»). سریع کار کن.
+8. **روی پیتزا را بچین.** ساده، مثل ناپل: یک لایه‌ی نازک سس با حاشیه‌ی خالی (حدود {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی‌متر)، پنیر، هر تاپینگی که دوست داری و کمی روغن زیتون با قلم‌مو روی حاشیه. سریع کار کن.
 
-    > Why: خمیری که زیر تاپینگ خیس منتظر بماند، خیس می‌شود و به تخته می‌چسبد.
+    > Why: سبک بچین. تاپینگ سنگین یا پرآب بخار را زیر خمیر نگه می‌دارد، وسط خیس می‌ماند و پیتزا به تخته می‌چسبد. مواد پرآب را خشک یا نیم‌پز کن و از پنیر رنده‌شده‌ی خشک استفاده کن یا اول خشکش کن. روغن زیتون فقط یک لایه‌ی نازک روی حاشیه باشد؛ روغن زیتون تصفیه‌شده یا سبک کمتر دود می‌کند (یادداشت ایمنی پایین را ببین).
+
+    > Tip: بعد از گذاشتن پنیر، یک ذره پودر سیر رویش بپاش؛ خوش‌طعم می‌شود. اختیاری است. پودر سیر کمتر از سیر تازه می‌سوزد.
 9. **پیتزا را سریع روی سطح داغ بلغزان.** آن را از تخته یا کفگیر بزرگ پیتزا (<bdi>Peel</bdi>) روی سطح ببر.
 
     > Why: هر بار که در فر باز می‌شود، گرما از دست می‌رود. سریع باش.
 
-    > Safety: قبل از استفاده، حداکثر دمای چاپ‌شده روی کاغذ روغنی (<bdi>Backpapier</bdi>) را بخوان. برندهای رایج تا {{ recipes.safety.parchment_max_c.value }} درجه تحمل دارند، یعنی کمتر از دمای این فر. این دستور آخرش گریل را روشن می‌کند و کاغذ را هرگز نباید زیر گریل گذاشت یا به المنت‌ها چسباند. پس بدون کاغذ بپز: خمیر را روی تخته‌ی پاشیده‌شده با سمولینا یا آرد باز کن و روی سطح داغ بلغزان.
+    > Safety: قبل از استفاده، حداکثر دمای چاپ‌شده روی بسته‌ی کاغذ روغنی را بخوان. بسیاری از کاغذهای روغنی تا {{ recipes.safety.parchment_max_c.value }} درجه تحمل دارند، یعنی کمتر از دمای این فر. این دستور آخرش گریل را روشن می‌کند و کاغذ را هرگز نباید زیر گریل گذاشت یا به المنت‌ها چسباند. پس بدون کاغذ بپز: خمیر را روی تخته‌ی پاشیده‌شده با سمولینا یا آرد باز کن و روی سطح داغ بلغزان.
 
-    > Safety: روغن زیتون فرابکر (<bdi>Extra-Virgin</bdi>) در حدود {{ recipes.safety.evoo_smoke_c.range.0 }} تا {{ recipes.safety.evoo_smoke_c.range.1 }} درجه شروع به دود کردن می‌کند و این فر روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه است. سطح داغ یا سینی داغ را روغنی نکن. این خمیر روغن ندارد، پس داخل خمیر نگرانی نیست. اگر روغن روی پیتزا می‌خواهی، کمی بعد از پخت بریز.
+    > Safety: روغن زیتون فرابکر (<bdi>Extra-Virgin</bdi>) در حدود {{ recipes.safety.evoo_smoke_c.range.0 }} تا {{ recipes.safety.evoo_smoke_c.range.1 }} درجه شروع به دود کردن می‌کند و این فر روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه است. سطح داغ یا سینی داغ را روغنی نکن. داخل این خمیر روغن نیست. یک لایه‌ی نازک روغن روی حاشیه قبل از پخت مشکلی ندارد.
 10. **{{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه بپز و آخرش از گریل استفاده کن.** با حالت بالا و پایین بپز. {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} دقیقه‌ی آخر گریل (<bdi>Grill</bdi>) را روشن کن تا روی پیتزا و حاشیه رنگ بگیرد. کنار فر بمان و نگاه کن. پیتزا در مجموع بیشتر از {{ recipes.styles.neapolitan.bake.grill.max_min.value }} دقیقه زیر گریل نماند.
 
     > Why: فر {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه گرمای بالا را کم دارد. فر اصلی ناپولیتن خیلی داغ‌تر است، پس گریل بخشی از آن گرما را جبران می‌کند.
 
     > Tip: پیتزا وقتی آماده است که حاشیه ور آمده و لکه‌های قهوه‌ای تا تیره دارد و کف سفت است. قبل از اینکه لکه‌ها سیاه شوند، پیتزا را بیرون بیاور.
-11. **پیتزای دوم:** گلوله‌اش را با روکش نگه دار تا پیتزای اول بیرون بیاید و سطح دوباره داغ شود، یعنی حدود {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} تا {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} دقیقه. فقط بعد از آن خمیر را باز کن و تاپینگ بگذار.
+11. **پیتزا را از فر دربیاور، ریحان تازه و کمی روغن زیتون رویش بگذار و {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} تا {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} دقیقه صبر کن، بعد برش بزن.** رویش را نپوشان؛ اگر رک داری، روی رک بگذار.
+
+    > Why: بخار خارج می‌شود و پنیر سفت می‌شود، پس تاپینگ سر نمی‌خورد. کفی که رویش پوشیده نباشد ترد می‌ماند. با چرخ پیتزابر تیز یا چاقوی بزرگ برش بزن. ریحان و چیزهای تازه و ظریف را بعد از پخت اضافه کن، چون در فر می‌سوزند و تلخ می‌شوند.
+12. **پیتزای دوم:** گلوله‌اش را با روکش نگه دار تا پیتزای اول بیرون بیاید و سطح دوباره داغ شود، یعنی حدود {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} تا {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} دقیقه. فقط بعد از آن خمیر را باز کن.
 
     > Why: خمیری که باز شده روی تخته منتظر بماند خیس می‌شود و می‌چسبد.
-12. **بعد از پخت ریحان را بگذار.** {{ recipes.styles.neapolitan.toppings.2.amount.value }} گرم ریحان تازه رویش بگذار.
-
-    > Why: ریحان در فر می‌سوزد و تلخ می‌شود.
-
-## تاپینگ
-
-تاپینگ ناپولیتن ساده است. سس را از گوجه‌ی کوبیده‌ی قوطی و کمی نمک بساز. سس را **خام** استفاده کن، چون در فر می‌پزد. کارت «مواد لازم» خمیر را برای اندازه و تعداد پیتزایی که در صفحه‌ی اصلی انتخاب کرده‌ای نشان می‌دهد. مقدارهای زیر برای یک پیتزاست.
-
-- **سس:** {{ recipes.styles.neapolitan.toppings.0.amount.value }} گرم
-- **موزارلا** (رنده‌شده و خشک): {{ recipes.styles.neapolitan.toppings.1.amount.value }} گرم، یا {{ recipes.styles.neapolitan.toppings.1.amount.range.0 }} تا {{ recipes.styles.neapolitan.toppings.1.amount.range.1 }} گرم
-- **ریحان تازه**، بعد از پخت: {{ recipes.styles.neapolitan.toppings.2.amount.value }} گرم
-
-> Tip: اگر موزارلایت در آب است، {{ recipes.styles.new_york.practice.cheese_dry_lead_min.range.0 }} تا {{ recipes.styles.new_york.practice.cheese_dry_lead_min.range.1 }} دقیقه قبل تکه‌تکه‌اش کن و با دستمال کاغذی آشپزخانه خشکش کن. وگرنه پیتزا آبکی می‌شود.
-
-ترتیب:
-
-1. سس را با پشت قاشق نازک از وسط به بیرون پخش کن. دور لبه {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی خمیر خالی بگذار.
-   > Why: حاشیه‌ی خالی پف می‌کند و نرم و هوادار می‌ماند.
-2. پنیر را یکنواخت روی سس بپاش.
-3. بپز (مراحل بالای همین صفحه).
-4. بعد از پخت ریحان را بگذار.
-   > Why: ریحان در فر می‌سوزد و تلخ می‌شود.
-
-تاپینگ بیشتر یعنی پیتزای ناپولیتن بدتر. در فر {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه پیتزا فقط چند دقیقه وقت دارد و تاپینگ پرآب یا سنگین وسط را خیس و حاشیه را صاف نگه می‌دارد.
 
 ## چک‌لیست روز پخت، روش دمای اتاق {methods=room_8_12h}
 
 - **ور آمدن اول:** {{ recipes.methods.room_8_12h.bulk_min.value }} دقیقه یک‌تکه، با روکش.
 - **بعد:** به گلوله‌های حدود {{ recipes.styles.neapolitan.ball_g.value }} گرمی تقسیم کن. {{ recipes.methods.room_8_12h.final_rest_min.value }} دقیقه با روکش استراحت بده.
 - **{{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه قبل از پخت:** فر روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه و سطح پخت روی رک بالا.
-- **آماده کن:** سس، پنیر و ریحان. موزارلای پرآب را خشک کن.
-- **حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه قبل از پخت:** خمیر را باز کن، تاپینگ بگذار و بپز.
+- **حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه قبل از پخت:** خمیر را باز کن، رویش را بچین و بپز.
 - **بپز** {{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه، با گریل در {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} دقیقه‌ی آخر. کاغذ روغنی زیر گریل نباشد.
-- **بعد از پخت:** ریحان.
 
 ## چک‌لیست روز پخت، روش یخچال {methods=cold_24h}
 
 - **{{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} تا {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} دقیقه قبل از باز کردن:** خمیر را از یخچال بیرون بیاور و درپوش را بسته نگه دار.
 - **{{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه قبل از پخت:** فر روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه و سطح پخت روی رک بالا.
-- **آماده کن:** سس، پنیر و ریحان. موزارلای پرآب را خشک کن.
-- **حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه قبل از پخت:** خمیر را باز کن، تاپینگ بگذار و بپز.
+- **حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه قبل از پخت:** خمیر را باز کن، رویش را بچین و بپز.
 - **بپز** {{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه، با گریل در {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} دقیقه‌ی آخر. کاغذ روغنی زیر گریل نباشد.
-- **بعد از پخت:** ریحان.
 
 ## چک‌لیست روز پخت، روش 2 ساعته {methods=warm_2h}
 
 - **ساعت صفر:** مخمر، آب ولرم، آرد، نمک و شکر. {{ recipes.methods.warm_2h.knead_min.value }} دقیقه ورز بده.
 - **ور آمدن اول:** {{ recipes.methods.warm_2h.bulk_min.range.0 }} تا {{ recipes.methods.warm_2h.bulk_min.range.1 }} دقیقه در جای گرم.
 - **بعد:** به گلوله‌های حدود {{ recipes.styles.neapolitan.ball_g.value }} گرمی تقسیم کن. {{ recipes.methods.warm_2h.final_rest_min.range.0 }} تا {{ recipes.methods.warm_2h.final_rest_min.range.1 }} دقیقه با روکش استراحت بده. همزمان فر و سطح پخت را روشن کن.
-- **حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه قبل از پخت:** خمیر را باز کن، تاپینگ بگذار و بپز.
+- **حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه قبل از پخت:** خمیر را باز کن، رویش را بچین و بپز.
 - **بپز** {{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه، با گریل در {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} دقیقه‌ی آخر. کاغذ روغنی زیر گریل نباشد.
-- **بعد از پخت:** ریحان.
 
 ## عیب‌یابی
 
 - **حاشیه پف نکرد.** حاشیه را موقع باز کردن فشار داده‌ای، یا خمیر کم‌ور آمده. خمیر را از وسط باز کن و حاشیه را دست نزن.
-- **کف رنگ نگرفت یا نرم ماند.** سطح پخت کم داغ بوده یا سس زیاد است. سطح را {{ recipes.oven.preheat_min.range.1 }} دقیقه گرم کن و بیشتر از {{ recipes.styles.neapolitan.toppings.0.amount.value }} گرم سس نگذار.
+- **کف رنگ نگرفت یا نرم ماند.** سطح پخت کم داغ بوده. سطح را {{ recipes.oven.preheat_min.range.1 }} دقیقه گرم کن.
 - **رو رنگ نگرفت ولی کف رنگ گرفت.** رک را بالاتر ببر و {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} دقیقه‌ی آخر گریل بگذار.
 - **حاشیه یا رو زیر گریل سوخت.** گریل را کوتاه‌تر بگذار. در مجموع هرگز بیشتر از {{ recipes.styles.neapolitan.bake.grill.max_min.value }} دقیقه.
-- **پیتزا ترد نیست و وسطش خیس است.** سس یا پنیر زیاد است یا تاپینگ پرآب. کمتر بگذار و موزارلا را خشک کن.
 - **خمیر برمی‌گردد.** گلوتن سفت یا خمیر سرد است. {{ recipes.styles.new_york.practice.shrink_rest_min.range.0 }} تا {{ recipes.styles.new_york.practice.shrink_rest_min.range.1 }} دقیقه استراحت بده.
 - **خمیر پاره می‌شود.** سرد است یا گلوتن ضعیف. استراحت بده، یا سوراخ را با تکه‌ی کوچکی خمیر وصله کن.
 - **بوی تند الکل یا ترشی.** خمیر زیادی ور آمده. دفعه‌ی بعد مخمر یا زمان را کم کن. در اتاق گرم ور آمدن را کوتاه کن.
 - **خمیر خیلی چسبناک یا خیلی سفت است.** بخش‌های «خمیر چسبناک است» و «خمیر خشک است» را در «ورز دادن» صفحه‌ی پیتزای نیویورکی ببین.
-- **پنیر آب انداخت.** پنیر تر بوده. پنیر خشک بگیر یا با دستمال کاغذی خشکش کن.
 
 ## قانون‌های اصلی چه می‌گویند
 

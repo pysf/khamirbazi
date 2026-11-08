@@ -8,7 +8,7 @@ Keep it simple (KISS). Prefer fewer files, fewer dependencies, and plain code ov
 
 - **Eleventy (11ty)** builds the static site. Output goes to `_site/`.
 - **Pages** (per language, `/en/`, `/fa/`): Home = the calculator (style, method, size, number of pizzas, yeast, then "Show recipe"); `/<lang>/recipe/<style_id>/?method=&size=&pizzas=&yeast=` = ingredients (computed in the browser with calc.js; a 2-pizza 30 cm table is the no-JS fallback) and the steps of the chosen method, then the other Markdown sections under "More details"; Basics. No style pages, no calculator page. The recipe is about dough only.
-- **Content** is Markdown, one file per section per language: `src/content/en/` and `src/content/fa/`, same file names in both (`basics.md`, `glossary.md`, `styles/<style_id>.md`). Write content once; never copy it into HTML. Convention (details and sample in README.md): ordered list = steps; an indented `> Why:` line under a step = the round "?" ("Good to know", with a link to Basics); `> Tip:`, `> Warning:`, `> Safety:` = callouts (markers stay English in both languages); numbers only as `{{ recipes... }}` values; `<bdi>` around Latin terms in Farsi.
+- **Content** is Markdown, one file per section per language: `src/content/en/` and `src/content/fa/`, same file names in both (`basics.md`, `glossary.md`, `styles/<style_id>.md`). Write content once; never copy it into HTML. Convention (details and sample in README.md): ordered list = steps; an indented `> Why:` line under a step = a muted note that is always shown below the step (label "Why"); `> Tip:`, `> Warning:`, `> Safety:` = callouts (markers stay English in both languages); numbers only as `{{ recipes... }}` values; `<bdi>` around Latin terms in Farsi.
 - **Languages:** English (LTR) and Farsi (RTL, `lang="fa" dir="rtl"`). Numbers, quantities and percentages live only in `recipes.json`, never in translated text; prose refers to them through template variables so the two languages cannot disagree. UI strings live in `src/_data/i18n/en.json` and `fa.json`. Latin names inside Farsi text use `<bdi>`/`dir="ltr"` isolation, not invisible characters. Farsi uses the rules in "Farsi writing rules" below. Language switch keeps the user on the same page.
 - **Delivery order:** work one pizza style at a time, and finish English and Farsi for that style together so the user can review both side by side. Start with New York.
 - **Data** is `src/_data/recipes.json`. It is the single source of truth for every number. Recipe tables and the calculator are both generated from it. Never hardcode a quantity in prose or in JS.
@@ -32,7 +32,7 @@ Keep it simple (KISS). Prefer fewer files, fewer dependencies, and plain code ov
 
 ## Data model (`recipes.json`)
 
-- Store everything as **baker's percentages** of flour weight (flour = 100%): water, salt, sugar, oil, yeast, plus per-style `dough_density_g_per_cm2`, bake temperature/time, bake rack, topping amounts per pizza or per cm2.
+- Store everything as **baker's percentages** of flour weight (flour = 100%): water, salt, sugar, oil, yeast, plus per-style `dough_density_g_per_cm2`, bake temperature/time, bake rack. No sauce, cheese or topping data: the guide is about dough only.
 - Each style lists its **methods**: `warm_2h`, `room_8_12h`, `cold_12_16h`, `cold_24h`, `cold_48h`, `cold_72h`, each with yeast % (dry), water temperature, rise and rest times.
 - Fresh yeast = 3x dry yeast.
 - Cold methods use a yeast solution (see below), so the water in the recipe is reduced by the solution amount.
@@ -41,7 +41,7 @@ Keep it simple (KISS). Prefer fewer files, fewer dependencies, and plain code ov
 ## Calculator rules
 
 - Inputs (UI): style, method, yeast type (dry/fresh), size (round 26/30/32 cm or the 30 x 40 cm oven tray, from `sizes` in `recipes.json`) and number of pizzas (trays for the tray). Dough per pizza = size area x the style's `dough_density_g_per_cm2`. calc.js also still supports ball weight, pans and the timeline (not shown in the UI).
-- Output: all ingredients in grams, the yeast solution instructions, sauce/cheese/topping amounts, a timeline that works backwards from the planned bake time (mix, rest, fridge, take out, preheat, open, bake), oven settings, and bake time.
+- Output: all ingredients in grams, the yeast solution instructions, a timeline that works backwards from the planned bake time (mix, rest, fridge, take out, preheat, open, bake), oven settings, and bake time. Dough only: no sauce, cheese or topping amounts anywhere (data, calculator, tests, text).
 - **Do not round to friendly numbers.** Compute exactly; display at most 1 decimal.
 - **Assume a 1 g kitchen scale.** Never ask the user to weigh less than 1 g. Yeast is handled by a solution: dry yeast = one whole 7 g packet in 700 g water (1%); fresh yeast = half a 42 g cube (21 g) in 700 g water (3%). Then weigh out X g of solution, and subtract X from the recipe water.
 - Pan styles scale by pan area x dough density, not by pizza count.
@@ -53,7 +53,9 @@ New York (main recipe), Neapolitan, Roman tonda, al taglio, Detroit, Chicago dee
 
 Reference quantities (for 300 g flour, about 2 pizzas) currently live in `pizza-guide-v7-raw.md` (Persian). That file is the **translation source**. Port its numbers into `recipes.json` (after the fact-check) and write each style in English and Farsi together, then retire it. Designer brief: `docs/ui-designer-prompt.md`.
 
-## Baker's setup the guide assumes (Berlin)
+## Baker's setup the guide assumes (maintainer's private context)
+
+This section is background for the maintainer. **It must not leak into published text** (content, UI strings, glossary, rendered data): no brands, stores, countries or cities, no local-language product terms. `make check` fails when a banned word appears (list in `scripts/check-sync.mjs`).
 
 - Oven max 250 degrees C, German modes (Ober-/Unterhitze, Umluft, Grill). Use top+bottom heat, no fan.
 - Flat cast-iron pizza pan (IKEA), preheated 45-60 min on the upper rack. The site says "pizza stone, baking steel or cast-iron pan" are all fine; steel and cast iron conduct heat better than stone. No controlled test of cast iron was found, so mark that advice as home-tested. Other users have different pans, so always offer pan-size alternatives.
@@ -70,6 +72,7 @@ Reference quantities (for 300 g flour, about 2 pizzas) currently live in `pizza-
 
 ## Writing rules (English)
 
+- **Published text must not mention brands, stores, countries or cities of the reader, or local-language product terms** (no Germany, Berlin, REWE, Edeka, dm, Backpapier, Pizzamehl and the like). Use generic terms: pizza flour, instant dry yeast, fresh yeast, baking paper, top and bottom heat, fan mode, protein, semolina, oven tray. Give general guidance only (flour type and protein line, 3x yeast conversion, check the baking paper rating). The origin of a style (Naples, New York...) is history, not the reader's location, and is fine. Package sizes read "a common 7 g packet / 42 g cube, check your pack".
 - Plain English, short sentences. Explain **why** next to each step. Keep practical tips; do not cut details.
 - Every foreign or technical term is explained where it first appears and listed in the glossary.
 - Cross-reference by section number and name (for example "Section 3: Kneading").

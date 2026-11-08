@@ -25,17 +25,14 @@ const SAMPLE = `## Steps
 - **Sample problem.** Sample answer.
 `;
 
-test("steps become steps and Why becomes the round ? with a Good to know note", () => {
-  const html = renderContent(md, SAMPLE, "en", { basicsUrl: "/en/basics/" });
+test("steps become steps and Why becomes a visible note", () => {
+  const html = renderContent(md, SAMPLE, "en");
   assert.match(html, /<ol class="steps">/);
   assert.equal((html.match(/<li><div class="sb">/g) || []).length, 2);
   assert.match(html, /<p class="act">First sample step\.<\/p>/);
-  assert.match(html, /<details class="gk"><summary aria-label="Good to know"><\/summary><div class="gkb">/);
+  assert.match(html, /<div class="why"><span class="why-l">Why<\/span>/);
   assert.match(html, /Sample reason for the first step\./);
-  assert.match(html, /<a class="link" href="\/en\/basics\/">More in Basics/);
-  assert.equal((html.match(/<details/g) || []).length, 1);
-  // without a Basics link the note has no link
-  assert.doesNotMatch(renderContent(md, SAMPLE, "en"), /class="link"/);
+  assert.doesNotMatch(html, /<button|<details/);
 });
 
 test("a bold first phrase is the action of the step", () => {
@@ -51,7 +48,7 @@ test("Tip, Warning and Safety become callouts with a translated label", () => {
   assert.match(en, /<div class="callout safe" role="note">.*<strong>Safety<\/strong>/s);
   const fa = renderContent(md, SAMPLE, "fa");
   assert.match(fa, /<strong>نکته<\/strong>/);
-  assert.match(fa, /aria-label="خوب است بدانی"/);
+  assert.match(fa, /<span class="why-l">چرا؟<\/span>/);
   assert.doesNotMatch(en, /Tip:|Warning:|Safety:|Why:/);
 });
 

@@ -20,9 +20,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("fill", (str, params, lang) => interpolate(str, params, lang));
   // {{ docs[lang].basics | md(lang) | safe }}
   eleventyConfig.addFilter("md", (text, lang) => renderContent(md, text, lang));
-  // {{ docs[lang].styles[id] | recipeParts(lang, basicsUrl) }} -> [{ title, methods, main, html }] (see lib/content.js)
-  eleventyConfig.addFilter("recipeParts", (text, lang, basicsUrl) =>
-    splitSections(text).map((s) => ({ ...s, html: renderContent(md, s.body, lang, { basicsUrl }) })),
+  // {{ docs[lang].styles[id] | recipeParts(lang) }} -> [{ title, methods, main, html }] (see lib/content.js)
+  eleventyConfig.addFilter("recipeParts", (text, lang) =>
+    splitSections(text).map((s) => ({ ...s, html: renderContent(md, s.body, lang, ) })),
   );
   // {% icon "arrow", "dir-icon" %}
   eleventyConfig.addShortcode("icon", (name, extra) => icon(name, extra));

@@ -51,6 +51,12 @@ function walk(dir) {
     return statSync(p).isDirectory() ? walk(p) : p.endsWith(".md") ? [p] : [];
   });
 }
+function walkFiles(dir, exts) {
+  return readdirSync(dir).flatMap((f) => {
+    const p = join(dir, f);
+    return statSync(p).isDirectory() ? (f === "assets" || f === "content" ? [] : walkFiles(p, exts)) : exts.some((e) => p.endsWith(e)) ? [p] : [];
+  });
+}
 function shape(text) {
   const fm = text.match(/^---\n([\s\S]*?)\n---/);
   const body = fm ? text.slice(fm[0].length) : text;
@@ -106,6 +112,33 @@ for (const f of enFiles) {
 const digitFiles = [...faFiles].map((f) => join(faDir, f)).concat(join(root, "src/_data/i18n/fa.json"));
 for (const p of digitFiles)
   if (/[\u0660-\u0669\u06F0-\u06F9]/.test(readFileSync(p, "utf8"))) fail(`digits: ${relative(root, p)} contains Arabic-Indic or Persian digits; write 0-9 and let the build convert them`);
+
+// 5. Published text names no stores, brands, countries or local-language product terms (see CLAUDE.md, Writing rules).
+// Scans the Markdown content, both UI string files, the templates and the fields of recipes.json that pages can show
+// (notes, sources and the like are citations and are not rendered, so they are skipped).
+const BANNED = [
+  "REWE", "Edeka", "dm", "dmBio", "Aldi", "Lidl", "Kaufland", "Oetker", "Toppits", "Alnatura", "Wieninger",
+  "Profissimo", "Friessinger", "Caputo", "IKEA", "Germany", "German", "Deutsch", "Berlin",
+  "Pizzamehl", "Trockenhefe", "Frischhefe", "Backpapier", "Unterhitze", "Umluft", "Eiwei\u00df", "Hartweizengrie\u00df", "Backblech", "Auflaufform", "Maismehl",
+];
+const BANNED_RE = new RegExp(`(?<![\\p{L}])(${BANNED.map((w) => w).join("|")})(?![\\p{L}])`, "iu");
+const NOT_RENDERED = new Set(["note", "notes", "sources", "confidence", "verified", "unit", "mode_note"]);
+function rendered(o, path = "") {
+  if (typeof o === "string") return [[path, o]];
+  if (!o || typeof o !== "object") return [];
+  return Object.entries(o).flatMap(([k, v]) => (NOT_RENDERED.has(k) ? [] : rendered(v, `${path}/${k}`)));
+}
+const scanned = [
+  ...[...enFiles].map((f) => [join(enDir, f), readFileSync(join(enDir, f), "utf8")]),
+  ...[...faFiles].map((f) => [join(faDir, f), readFileSync(join(faDir, f), "utf8")]),
+  ...["en", "fa"].map((l) => [join(root, `src/_data/i18n/${l}.json`), readFileSync(join(root, `src/_data/i18n/${l}.json`), "utf8")]),
+  ...walkFiles(join(root, "src"), [".njk"]).map((p) => [p, readFileSync(p, "utf8")]),
+  ...rendered(recipes).map(([k, v]) => [`recipes.json${k}`, v]),
+];
+for (const [where, text] of scanned) {
+  const m = text.match(BANNED_RE);
+  if (m) fail(`banned word "${m[1]}" in ${where.startsWith(root) ? relative(root, where) : where}`);
+}
 
 if (problems.length) {
   console.error(`Language sync check FAILED (${problems.length}):`);

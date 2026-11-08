@@ -29,19 +29,19 @@ There are two ways to make this dough. Both give a good pizza. They differ in ti
 
 ## Flour and yeast
 
-**Flour.** Buy Pizzamehl (pizza flour). In German shops, look for a 1 kg bag of Pizzamehl at REWE or Edeka. The pack often says Tipo 00 or Typ 00, which means very finely milled.
+**Flour.** Use pizza flour or strong bread flour. The pack of pizza flour often says Tipo 00, which means very finely milled wheat flour.
 
-- **Check the protein.** Look for the line **Eiweiß** (protein) in the nutrition table. The number is per 100 g of flour. A good value is {{ recipes.styles.new_york.practice.flour_protein_g.range.0 }} to {{ recipes.styles.new_york.practice.flour_protein_g.range.1 }} g. Read the exact number on your pack, because brands differ.
+- **Check the protein.** Look for the line **protein** in the nutrition table. The number is per 100 g of flour. A good value is {{ recipes.styles.new_york.practice.flour_protein_g.range.0 }} to {{ recipes.styles.new_york.practice.flour_protein_g.range.1 }} g. Read the exact number on your pack, because flours differ.
 - **Why more protein is better:** more protein means stronger gluten. Gluten is the stretchy net that holds the gas of the yeast. The dough stretches better, tears less when you shape it, and handles a long cold rest better.
 - **Not too much:** above {{ recipes.styles.new_york.practice.flour_protein_max_g.value }} g the dough turns stiff and rubbery.
 
 **Yeast.** Use what you have. The Ingredients card shows the yeast you chose on the Home page (dry or fresh).
 
-- **Dry yeast (Trockenhefe):** {{ recipes.yeast.solution.dry.yeast_g.value }} g packets, found at REWE and dm. It is instant yeast. It needs no proofing (no waiting in water first). You can stir it straight into the flour or the water. Close an opened packet tightly. Check the text on your packet.
-- **Fresh yeast (Frischhefe):** a small soft cube of {{ recipes.yeast.solution.fresh.cube_g.value }} g in the fridge section. It has a short shelf life. Wrap what is left and keep it in the fridge.
+- **Dry yeast:** a common packet holds {{ recipes.yeast.solution.dry.yeast_g.value }} g (check your pack). It is instant yeast. It needs no proofing (no waiting in water first). You can stir it straight into the flour or the water. Close an opened packet tightly. Check the text on your packet.
+- **Fresh yeast:** a small soft cube, commonly {{ recipes.yeast.solution.fresh.cube_g.value }} g (check your pack), sold in the fridge section. It has a short shelf life. Wrap what is left and keep it in the fridge.
 - **Equivalent:** fresh yeast is {{ recipes.yeast.fresh_to_dry.value }} times the amount of dry yeast.
 
-> Warning: The yeast amounts are a starting point, not a fixed rule. Sources differ by up to {{ recipes.yeast.source_spread_x.value }} times for the same schedule. The right amount depends on your fridge temperature and the brand of yeast. Bake once, look at the dough and the crust, and adjust the amount next time.
+> Warning: The yeast amounts are a starting point, not a fixed rule. Sources differ by up to {{ recipes.yeast.source_spread_x.value }} times for the same schedule. The right amount depends on your fridge temperature and your yeast. Bake once, look at the dough and the crust, and adjust the amount next time.
 
 ## Warm 2-hour method {methods=warm_2h}
 
@@ -59,17 +59,25 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
 5. **Divide the dough into two equal pieces and shape each into a ball** (see the section Shaping).
 6. **Rest the balls, covered, for {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes.** Start heating the oven and the tray at the same time (see the section Oven and baking surface).
    > Why: The gluten relaxes. A relaxed ball opens easily and does not shrink back when you stretch it.
-7. **Shape the dough, add the toppings and bake** (see Shaping, Sauce and toppings, and Oven and baking surface).
+7. **Shape the dough** (see Shaping).
+8. **Dress the pizza.** Spread a thin layer of sauce and leave the rim bare (about {{ recipes.styles.new_york.practice.rim_cm.range.0 }} to {{ recipes.styles.new_york.practice.rim_cm.range.1 }} cm). Add cheese and any toppings you like, then brush the rim lightly with olive oil. Work fast, because dough that waits on the paper sticks.
+   > Why: Keep it light. A heavy or wet topping holds steam under the dough, so the base stays soft and the pizza sticks to the paper. Dry wet ingredients or pre-cook them, and use dry grated cheese or dry it first. Use olive oil only as a thin film on the rim; a refined or light olive oil resists smoke better (see the Safety note below).
 
-    > Safety: Check the highest temperature printed on your baking paper (Backpapier) before you use it. Common brands are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put baking paper under the grill, and do not let it touch the heating elements or the oven walls. If your paper is not rated high enough, bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+    > Tip: After adding the cheese, a small pinch of garlic powder sprinkled on top tastes good. It is optional. Garlic powder burns less than fresh garlic.
+9. **Bake** (see Oven and baking surface).
 
-    > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. Oil mixed into the dough is fine. For the rim, a small amount of oil after baking is fine.
+    > Safety: Check the highest temperature printed on the pack of your baking paper before you use it. Many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put baking paper under the grill, and do not let it touch the heating elements or the oven walls. If your paper is not rated high enough, bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+
+    > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. Oil mixed into the dough is fine.
+10. **Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it.** Leave it uncovered, on a rack if you have one. While it rests, add what you like that is fresh or delicate: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings.
+   > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base keeps its crispness. Cut with a sharp pizza wheel or a large knife. Fresh or delicate things go on after the bake so they do not burn or wilt.
+
 
 > Tip: A switched-off oven with the light on is a good warm place. Make sure the oven is not heating while the dough is inside.
 
 ## Cold fermentation {methods=cold_12_16h,cold_24h,cold_48h,cold_72h}
 
-You make the dough one or more days before baking. Take the amounts from the Ingredients card on this page. It shows the amounts for the fermentation time you chose on the Home page. Steps 1 to 6 are the first day. Steps 7 to 9 are baking day.
+You make the dough one or more days before baking. Take the amounts from the Ingredients card on this page. It shows the amounts for the fermentation time you chose on the Home page. Steps 1 to 6 are the first day. Steps 7 to 12 are baking day.
 
 1. **Make the yeast solution, then mix the cold water, the yeast solution and the flour.** Pour the cold water (about {{ recipes.methods.cold_24h.water_temp_c.value }} degrees) into a bowl. Add the amount of yeast solution from the Ingredients card. Add the flour and stir only until you see no dry flour.
    > Why: The yeast amount is so small that a kitchen scale cannot weigh it. So you dissolve a whole {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast in {{ recipes.yeast.solution.dry.water_g.value }} g of lukewarm water. With fresh yeast, use half of a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube ({{ recipes.yeast.solution.fresh.yeast_g.value }} g) in {{ recipes.yeast.solution.fresh.water_g.value }} g of water. Then you weigh out a part of the solution. The solution counts as part of the water, so the Ingredients card already takes it off the cold water.
@@ -85,11 +93,19 @@ You make the dough one or more days before baking. Take the amounts from the Ing
 7. **On baking day, take the dough out of the fridge {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you shape it.** Keep the lid closed.
    > Why: Cold dough does not stretch and tears. This is the most common mistake in cold fermentation.
 8. **Start heating the oven and the tray {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking** (see Oven and baking surface).
-9. **Shape the dough, add the toppings and bake** (see Shaping, Sauce and toppings, and Oven and baking surface).
+9. **Shape the dough** (see Shaping).
+10. **Dress the pizza.** Spread a thin layer of sauce and leave the rim bare (about {{ recipes.styles.new_york.practice.rim_cm.range.0 }} to {{ recipes.styles.new_york.practice.rim_cm.range.1 }} cm). Add cheese and any toppings you like, then brush the rim lightly with olive oil. Work fast, because dough that waits on the paper sticks.
+   > Why: Keep it light. A heavy or wet topping holds steam under the dough, so the base stays soft and the pizza sticks to the paper. Dry wet ingredients or pre-cook them, and use dry grated cheese or dry it first. Use olive oil only as a thin film on the rim; a refined or light olive oil resists smoke better (see the Safety note below).
 
-    > Safety: Check the highest temperature printed on your baking paper (Backpapier) before you use it. Common brands are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put baking paper under the grill, and do not let it touch the heating elements or the oven walls. If your paper is not rated high enough, bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+    > Tip: After adding the cheese, a small pinch of garlic powder sprinkled on top tastes good. It is optional. Garlic powder burns less than fresh garlic.
+11. **Bake** (see Oven and baking surface).
 
-    > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. Oil mixed into the dough is fine. For the rim, a small amount of oil after baking is fine.
+    > Safety: Check the highest temperature printed on the pack of your baking paper before you use it. Many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put baking paper under the grill, and do not let it touch the heating elements or the oven walls. If your paper is not rated high enough, bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+
+    > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. Oil mixed into the dough is fine.
+12. **Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it.** Leave it uncovered, on a rack if you have one. While it rests, add what you like that is fresh or delicate: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings.
+   > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base keeps its crispness. Cut with a sharp pizza wheel or a large knife. Fresh or delicate things go on after the bake so they do not burn or wilt.
+
 
 > Tip: If you put the dough in the fridge as one piece, take it out at the same time, but divide it and shape the balls first. Cold dough shapes more easily. Then let the balls rest, covered.
 
@@ -140,11 +156,11 @@ If the dough is stiff, cracks or tires your hands:
 
 Use this when kneading by hand is hard or the dough is loose. One round looks like this:
 
-1. Wet your hand.
-2. Take one side of the dough and pull it up gently, without tearing it.
-3. Fold it over the middle of the dough.
-4. Turn the bowl a quarter turn and repeat.
-5. Do this 4 times. That is one round.
+6. Wet your hand.
+7. Take one side of the dough and pull it up gently, without tearing it.
+8. Fold it over the middle of the dough.
+9. Turn the bowl a quarter turn and repeat.
+10. Do this 4 times. That is one round.
 
 Between the rounds, cover the dough.
 
@@ -192,20 +208,22 @@ The goal is to keep moving air off the dough. Air makes the surface dry and crus
 
 ### Opening the dough
 
-1. Sprinkle about {{ recipes.styles.new_york.practice.bench_flour_g.value }} g of flour or semolina on the table (more on semolina below).
-2. Put the ball on it and press from the middle outwards with your fingertips. **Leave a rim of {{ recipes.styles.new_york.practice.rim_cm.range.0 }} to {{ recipes.styles.new_york.practice.rim_cm.range.1 }} cm untouched.**
-3. Stretch the dough with both hands and turn it until it is about {{ recipes.styles.new_york.practice.shape_diameter_cm.value }} cm wide.
+2. Sprinkle about {{ recipes.styles.new_york.practice.bench_flour_g.value }} g of flour or semolina on the table (more on semolina below).
+3. Put the ball on it and press from the middle outwards with your fingertips. **Leave a rim of {{ recipes.styles.new_york.practice.rim_cm.range.0 }} to {{ recipes.styles.new_york.practice.rim_cm.range.1 }} cm untouched.**
+4. Stretch the dough with both hands and turn it until it is about {{ recipes.styles.new_york.practice.shape_diameter_cm.value }} cm wide.
    > Why: The untouched rim keeps its air and puffs in the oven. This is how you get a rim with air in it.
-4. Put the dough on baking paper (Backpapier), or on the floured peel or a board if you bake without paper (see Oven and baking surface).
+5. Put the dough on baking paper, or on the floured peel or a board if you bake without paper (see Oven and baking surface).
 
 > Warning: Do not use a rolling pin. It presses the air out of the dough, and the rim does not puff.
+
+> Tip: Work fast once the dough is open. Dough that waits on the paper for a long time sticks to it.
 
 - **The dough springs back:** the gluten is tight. Rest it for {{ recipes.styles.new_york.practice.shrink_rest_min.range.0 }} to {{ recipes.styles.new_york.practice.shrink_rest_min.range.1 }} minutes.
 - **The dough tears:** it is cold or the gluten is weak. Rest it, or patch the hole with a small piece of dough.
 
 ### What is semolina for?
 
-Semolina (in German: **Hartweizengrieß**) is a coarse flour from durum wheat, which is hard wheat. The grains feel like fine sand. It is optional.
+Semolina is a coarse flour from durum wheat, which is hard wheat. The grains feel like fine sand. It is optional.
 
 - Its coarse grains do not soak up water from the dough as fast as normal flour, so the dough does not turn pasty.
 - The grains work like tiny rollers, so the dough slides easily on the board and onto the hot tray.
@@ -220,60 +238,19 @@ The baking surface stores heat. When the dough lands on it, the surface gives it
 1. **Heat the surface for {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking.** Put the stone, steel or tray in the oven and set the oven to {{ recipes.styles.new_york.bake.temp_c.value }} degrees.
    > Why: A surface that is not fully hot gives a pale, soft base.
 2. **Put it on the upper rack** (about the upper third of the oven).
-3. **Use top and bottom heat** (in German ovens: Ober-/Unterhitze) and **no fan**. If your oven has a fan mode (Umluft) and the top browns too fast, switch the fan off.
+3. **Use top and bottom heat** and **no fan**. If your oven has a fan mode and the top browns too fast, switch the fan off.
    > Why: The fan dries the surface of the dough and burns the top before the base is ready.
 4. **Move the pizza onto the hot surface fast.** Slide it, with the paper if you use paper, from a board or peel onto the surface. Cut off extra paper at the edges.
    > Why: Every time the oven door opens, heat is lost. Be quick.
 5. **Bake for {{ recipes.styles.new_york.bake.time_min.range.0 }} to {{ recipes.styles.new_york.bake.time_min.range.1 }} minutes.** The pizza is done when the rim is golden to light brown and the base is crisp.
 6. **For the last {{ recipes.styles.new_york.bake.grill.last_min.range.0 }} to {{ recipes.styles.new_york.bake.grill.last_min.range.1 }} minutes turn on the grill** to colour the top.
    > Why: A {{ recipes.styles.new_york.bake.temp_c.value }} degree oven is short on heat from above.
-7. **Second pizza:** keep its dough covered until the first pizza is out and the surface is hot again, which takes about {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes. Only then open it and put on the toppings.
+7. **Second pizza:** keep its dough covered until the first pizza is out and the surface is hot again, which takes about {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes. Only then open it.
    > Why: Dough that waits on the paper gets wet and sticks.
 
-> Safety: Baking paper (Backpapier) on common brands is rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put it under the grill. The full note is in the last step of your method.
+> Safety: Many baking papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put it under the grill. The full note is in the bake step of your method.
 
-> Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees. Do not oil the hot surface or pan. Oil in the dough, and a little on the rim after baking, is fine.
-
-## Sauce and toppings
-
-Make the sauce from crushed tomatoes from a tin, a little olive oil and salt. Add grated garlic and a little sugar if you like. Use it **raw**, because it cooks in the oven. The Ingredients card shows the dough for the size and number of pizzas you chose on the Home page. The amounts below are for one pizza.
-
-For one pizza of {{ recipes.styles.new_york.practice.shape_diameter_cm.value }} cm:
-
-- **Sauce:** {{ recipes.styles.new_york.toppings.0.amount.value }} g
-- **Cheese** (dried, grated mozzarella): {{ recipes.styles.new_york.toppings.1.amount.value }} g
-- **Pepperoni:** {{ recipes.styles.new_york.toppings.2.amount.value }} g, or **sliced mushrooms** (dried or pre-cooked): {{ recipes.styles.new_york.toppings.3.amount.value }} g
-- **Fresh basil**, after baking: {{ recipes.styles.new_york.toppings.4.amount.value }} g
-- **Parmesan**, after baking: {{ recipes.styles.new_york.toppings.5.amount.value }} g
-- **Olive oil**, for the rim after baking and to finish: {{ recipes.styles.new_york.toppings.6.amount.value }} g
-
-> Tip: Use no more than {{ recipes.styles.new_york.practice.topping_types.range.0 }} to {{ recipes.styles.new_york.practice.topping_types.range.1 }} kinds of topping besides sauce and cheese.
-
-Order:
-
-1. Spread the sauce thinly with the back of a spoon, from the middle outwards. Leave {{ recipes.styles.new_york.practice.rim_cm.range.0 }} to {{ recipes.styles.new_york.practice.rim_cm.range.1 }} cm of bare dough around the edge.
-   > Why: The bare rim puffs up and stays chewy.
-2. Scatter the cheese evenly over the sauce.
-3. Put the firm toppings (pepperoni, mushrooms) on the cheese.
-4. Bake (see Oven and baking surface).
-5. After baking add the basil, the parmesan and the rest of the olive oil.
-   > Why: Basil burns and turns bitter in the oven.
-
-> Tip: Work fast when you top the pizza. Dough that waits on the paper for a long time sticks to it.
-
-> Tip: If your mozzarella is in water, tear it into pieces {{ recipes.styles.new_york.practice.cheese_dry_lead_min.range.0 }} to {{ recipes.styles.new_york.practice.cheese_dry_lead_min.range.1 }} minutes before and dry it with kitchen paper. Otherwise the pizza turns watery. Dried, grated mozzarella needs no preparation.
-
-### What happens if you use too many toppings
-
-In a {{ recipes.styles.new_york.bake.temp_c.value }} degree oven the pizza has only a few minutes. Everything on the dough must heat through before the base and the rim burn. So more toppings make the pizza worse:
-
-- **Too much sauce** (over {{ recipes.styles.new_york.practice.sauce_max_g.value }} g per pizza): the water in the sauce comes out, the middle stays wet and half-baked, the rim does not puff, and the pizza sticks to the paper. More tomato means a more watery pizza, not a tastier one.
-- **Too much cheese** (over {{ recipes.styles.new_york.practice.cheese_max_g.value }} g per pizza): the layer is heavy, heat reaches the dough late, and the fat separates and makes the pizza oily.
-- **Thick, heavy toppings:** they hold steam under themselves like a blanket. The base does not turn crisp, and the slice is heavy and floppy.
-- **Wet toppings** (fresh mushrooms, fresh tomato, courgette): they let out steam and water. Dry them or pre-cook them first.
-- **Wet dough:** if the dough gets wet before it goes in the oven, it sticks to the paper and the tray and tears when you move it.
-
-Simple rule: fewer toppings make a better pizza. The base should stay cooked and crisp to the end, with freshly melted cheese on top.
+> Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees. Do not oil the hot surface or pan. Oil in the dough, and a thin film on the rim, is fine.
 
 ## Bake-day checklist, warm method {methods=warm_2h}
 
@@ -281,22 +258,19 @@ Simple rule: fewer toppings make a better pizza. The base should stay cooked and
 - **First rise:** {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes in a warm place.
 - **Then:** divide into two and shape the balls. Switch on the oven and the tray.
 - **Rest the balls:** {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes, covered.
-- **About {{ recipes.timeline.shape_lead_min.value }} minutes before baking:** open the dough, add the toppings and bake.
-- **After baking:** basil, parmesan, olive oil.
+- **About {{ recipes.timeline.shape_lead_min.value }} minutes before baking:** open the dough, dress it and bake.
 
 ## Bake-day checklist, cold method {methods=cold_12_16h,cold_24h,cold_48h,cold_72h}
 
 - **{{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before shaping:** take the dough out of the fridge and keep the lid closed.
 - **{{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking:** oven at {{ recipes.styles.new_york.bake.temp_c.value }} degrees with the baking surface on the upper rack.
-- **Prepare:** sauce, cheese and toppings. Dry the wet ones.
-- **{{ recipes.timeline.shape_lead_min.value }} minutes before baking:** dust the table and open the dough.
-- **Top fast** and move the pizza onto the hot surface.
+- **{{ recipes.timeline.shape_lead_min.value }} minutes before baking:** dust the table, open the dough and dress it.
+- **Work fast** and move the pizza onto the hot surface.
 - **Bake** for {{ recipes.styles.new_york.bake.time_min.range.0 }} to {{ recipes.styles.new_york.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.new_york.bake.grill.last_min.range.0 }} to {{ recipes.styles.new_york.bake.grill.last_min.range.1 }} minutes.
-- **After baking:** basil, parmesan, olive oil.
 
 ## Troubleshooting
 
-- **The base is pale or stays soft.** The surface was not hot enough, or there are too many toppings. Heat the surface for {{ recipes.oven.preheat_min.range.1 }} minutes and use fewer toppings (see Sauce and toppings).
+- **The base is pale or stays soft.** The surface was not hot enough. Heat the surface for {{ recipes.oven.preheat_min.range.1 }} minutes.
 - **The dough springs back.** The gluten is tight, or the dough is cold. Rest it for {{ recipes.styles.new_york.practice.cold_dough_rest_min.range.0 }} to {{ recipes.styles.new_york.practice.cold_dough_rest_min.range.1 }} minutes.
 - **The dough is very sticky.** See the Kneading section, "The dough is sticky".
 - **The dough is very stiff.** See the Kneading section, "The dough is dry".
@@ -304,7 +278,6 @@ Simple rule: fewer toppings make a better pizza. The base should stay cooked and
 - **The rim did not puff.** You pressed the rim when you shaped it, or the dough had not risen enough.
 - **The dough tears.** Rest it. If it is cold, leave it out longer.
 - **The dough surface is dry and crusty.** The cover was not good (see Container, oil and cover).
-- **The cheese gives off water.** The cheese was wet or the toppings were watery. Use dried cheese and dry the toppings.
 - **The top is raw but the base is browned.** Move the rack higher and use the grill for the last {{ recipes.styles.new_york.bake.grill.last_min.range.0 }} to {{ recipes.styles.new_york.bake.grill.last_min.range.1 }} minutes.
 - **The base burned.** Move the rack one step down.
-- **You used too much yeast.** The dough is usually still usable, but it has risen too much. Keep it out of the fridge for only {{ recipes.styles.new_york.practice.over_yeast_out_min.value }} hour, do not knead the air out (just open it with your fingertips), use fewer toppings and bake fast. Next time use the amount from the calculator.
+- **You used too much yeast.** The dough is usually still usable, but it has risen too much. Keep it out of the fridge for only {{ recipes.styles.new_york.practice.over_yeast_out_min.value }} hour, do not knead the air out (just open it with your fingertips), and bake fast. Next time use the amount from the calculator.

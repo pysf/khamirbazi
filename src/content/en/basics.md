@@ -23,7 +23,7 @@ Traditional Neapolitan dough has no oil and no sugar, because a very hot oven br
 
 The warmer the dough, the faster the yeast works. So you either use more yeast and little time, or little yeast and a lot of time. A long, cool rise gives more flavour. The fridge slows the yeast down, which is why a cold dough can rest for days.
 
-Yeast amounts are ranges, not fixed numbers. They depend on your fridge temperature, the brand of yeast and your flour, and sources for the same schedule differ by up to {{ recipes.yeast.source_spread_x.value }} times. Use the calculator for the amount that fits your style and method, then adjust after you bake. Fresh yeast counts as {{ recipes.yeast.fresh_to_dry.value }} times the dry amount.
+Yeast amounts are ranges, not fixed numbers. They depend on your fridge temperature, your yeast and your flour, and sources for the same schedule differ by up to {{ recipes.yeast.source_spread_x.value }} times. Use the calculator for the amount that fits your style and method, then adjust after you bake. Fresh yeast counts as {{ recipes.yeast.fresh_to_dry.value }} times the dry amount.
 
 Some people find a long cold rise easier to digest. This guide does not claim it as a fact; it is a reason to choose it for flavour.
 

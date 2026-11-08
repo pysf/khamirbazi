@@ -14,7 +14,6 @@ eleventyComputed:
 {% set lang = rp.lang %}{% set t = i18n[lang] %}{% set r = t.recipe %}{% set id = rp.id %}
 {% set page_data = recipePage[id] %}{% set st = recipes.styles[id] %}
 {% set body = docs[lang].styles[id] if docs[lang].styles else undefined %}
-{% set basicsUrl = ('/' + lang + '/basics/') | url %}
 <header class="rhead">
   <a class="back" id="change" href="{{ ('/' + lang + '/') | url }}">{% icon "back", "dir-icon" %}{{ r.change }}</a>
   <h1>{{ t.styles[id].name }}</h1>
@@ -43,7 +42,7 @@ eleventyComputed:
   <section aria-labelledby="st-h">
     <h2 class="vh" id="st-h">{{ r.steps }}</h2>
     {% if body %}
-    {% set parts = body | recipeParts(lang, basicsUrl) %}
+    {% set parts = body | recipeParts(lang) %}
     {% for p in parts %}{% if p.main %}
     <div class="msec" data-method-section="{{ p.methods | join(' ') }}"{% if page_data.defaultMethod not in p.methods %} hidden{% endif %}>
       <h3 class="eyebrow">{{ p.title }}</h3>

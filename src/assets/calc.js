@@ -23,14 +23,6 @@ export function panArea(pan) {
   throw new RangeError("invalid_pan");
 }
 
-function toppingGrams(t, ctx) {
-  const a = t.amount.value;
-  if (t.basis === "pizza") return a * ctx.pizzas;
-  if (t.basis === "cm2") return a * ctx.area;
-  if (t.basis === "ref_area") return (a * ctx.area) / t.ref_area_cm2;
-  throw new Error(`unknown topping basis ${t.basis}`);
-}
-
 function buildTimeline({ data, style, method, methodId, bakeTime, bakeMinutes }) {
   const pre = data.oven.preheat_min.value;
   const shapeLead = data.timeline.shape_lead_min.value;
@@ -234,29 +226,6 @@ export function computeRecipe(input, data) {
 
   const panOilG = style.pan_oil ? (style.pan_oil.amount.value * area) / style.pan_oil.ref_area_cm2 : null;
 
-  // ---- Sauce, cheese, toppings --------------------------------------------
-  const ctx = { pizzas, area };
-  const toppings = style.toppings.map((t) => ({
-    id: t.id,
-    g: toppingGrams(t, ctx),
-    optional: !!t.optional,
-    after_bake: !!t.after_bake,
-    alt_group: t.alt_group ?? null,
-    blend: t.blend ?? null,
-  }));
-  const sauceTop = toppings.find((t) => t.id === "sauce");
-  const cheeseTop = toppings.find((t) => t.id === "cheese");
-  let sauce = null;
-  if (sauceTop) {
-    const rec = data.sauce_recipe;
-    const k = sauceTop.g / (rec.base_g.value + rec.parts_g.reduce((s, p) => s + p.g, 0));
-    sauce = {
-      g: sauceTop.g,
-      recipe: [{ id: "tomatoes", g: rec.base_g.value * k }, ...rec.parts_g.map((p) => ({ id: p.id, g: p.g * k, optional: !!p.optional }))],
-    };
-  }
-  const cheese = cheeseTop ? { g: cheeseTop.g, blend: cheeseTop.blend } : null;
-
   // ---- Oven and bake -------------------------------------------------------
   const bakeRange = style.bake.time_min.range;
   const oven = {
@@ -270,7 +239,7 @@ export function computeRecipe(input, data) {
       ? { last_min: style.bake.grill.last_min.range, max_min: style.bake.grill.max_min?.value ?? null }
       : null,
   };
-  const bake = { temp_c: oven.temp_c, time_min: bakeRange, layer_order: style.layer_order };
+  const bake = { temp_c: oven.temp_c, time_min: bakeRange };
 
   // ---- Timeline ------------------------------------------------------------
   const timeline = buildTimeline({
@@ -312,9 +281,6 @@ export function computeRecipe(input, data) {
     water: { total_g: waterTotal, add_g: waterToAdd, temp_c: method.water_temp_c.value },
     yeast: yeastInfo,
     pan_oil_g: panOilG,
-    sauce,
-    cheese,
-    toppings,
     oven,
     bake,
     timeline,

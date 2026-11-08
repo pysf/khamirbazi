@@ -232,24 +232,16 @@ test("pan styles scale with pan area x density", () => {
   near(d2.water.total_g, 2 * d1.water.total_g, 1e-9);
   near(d2.pan_oil_g, 17.5, 1e-9);
   near(d1.pan_oil_g, 8.75, 1e-9);
-  // Detroit cheese 0.275 g/cm2 and sauce 0.15 g/cm2 on 1000 cm2
-  near(d2.cheese.g, 275, 1e-9);
-  near(d2.sauce.g, 150, 1e-9);
-  assert.deepEqual(d2.cheese.blend, ["mozzarella", "butterkaese"]);
   // different pan shape with the same area gives the same dough
   const round = computeRecipe({ styleId: "detroit", methodId: "warm_2h", mode: { pans: [{ shape: "round", diameter: 2 * Math.sqrt(500 / Math.PI) }] } }, data);
   near(round.dough_g, 325, 1e-6);
-  // Chicago: two 20 cm pans: 628.32 g at 1.0 g/cm2; oil 20 g per 20 cm pan; cheese 227 g per pan; sauce 0.85 g/cm2
+  // Chicago: two 20 cm pans: 628.32 g at 1.0 g/cm2; oil 20 g per 20 cm pan
   const c = computeRecipe({ styleId: "chicago", methodId: "warm_2h", mode: round20x2 }, data);
   near(c.dough_g, 2 * Math.PI * 100, 1e-9);
   near(c.pan_oil_g, 40, 1e-9);
-  near(c.cheese.g, 454, 1e-9);
-  near(c.sauce.g, 0.85 * 2 * Math.PI * 100, 1e-9);
-  near(c.sauce.g, 534.07, 0.01);
   // an 18 cm pan holds less
   const c18 = computeRecipe({ styleId: "chicago", methodId: "warm_2h", mode: { pans: [{ shape: "round", diameter: 18 }] } }, data);
   near(c18.dough_g, Math.PI * 81, 1e-9);
-  near(c18.cheese.g, 227 * 81 / 100, 1e-9);
 });
 
 test("round styles: pizzas x ball weight; ball weight defaults come from the data", () => {
@@ -259,21 +251,6 @@ test("round styles: pizzas x ball weight; ball weight defaults come from the dat
   const r = computeRecipe({ styleId: "new_york", methodId: "cold_24h", mode: { pizzas: 4, ballWeight: 220 } }, data);
   near(r.dough_g, 880, 1e-9);
   near(r.flour_total_g, 880 / 1.6933, 1e-6);
-  // toppings per pizza: sauce 70 g, cheese 90 g
-  near(r.sauce.g, 280, 1e-9);
-  near(r.cheese.g, 360, 1e-9);
-  // sauce recipe: 150 g tomatoes per 162.5 g sauce
-  near(r.sauce.recipe.find((x) => x.id === "tomatoes").g, 280 * 150 / 162.5, 1e-9);
-});
-
-test("toppings: alternatives, after-bake items, optional items", () => {
-  const r = computeRecipe({ styleId: "new_york", methodId: "cold_24h", mode: two }, data);
-  const t = (id) => r.toppings.find((x) => x.id === id);
-  near(t("pepperoni").g, 80, 1e-9);
-  near(t("mushrooms").g, 120, 1e-9);
-  assert.equal(t("pepperoni").alt_group, "main");
-  assert.equal(t("basil").after_bake, true);
-  near(t("parmesan").g, 16, 1e-9);
 });
 
 test("oven settings and bake times per style", () => {
@@ -296,7 +273,6 @@ test("oven settings and bake times per style", () => {
   assert.deepEqual([de.oven.temp_c, de.bake.time_min], [250, [12, 15]]);
   const ch = get("chicago", round20x2);
   assert.deepEqual([ch.oven.temp_c, ch.bake.time_min, ch.oven.rack], [220, [20, 32], "lower"]);
-  assert.deepEqual(ch.bake.layer_order, ["cheese", "toppings", "sauce"]);
 });
 
 test("safety warnings: parchment rating, grill, olive oil smoke", () => {
@@ -476,4 +452,14 @@ test("size mode: Neapolitan works, 2-pizza minimum for the warm method still app
 test("the sizes list in recipes.json is the four sizes of the site", () => {
   assert.deepEqual(data.sizes.map((s) => s.id), ["round_26", "round_30", "round_32", "tray_30x40"]);
   near(panArea(data.sizes[3]), 1200, 1e-9);
+});
+
+test("dough only: no sauce, cheese or topping data or output", () => {
+  assert.equal(data.sauce_recipe, undefined);
+  for (const [id, st] of Object.entries(data.styles)) {
+    assert.equal(st.toppings, undefined, id);
+    assert.equal(st.layer_order, undefined, id);
+  }
+  const r = computeRecipe({ styleId: "new_york", methodId: "cold_24h", mode: two }, data);
+  for (const k of ["sauce", "cheese", "toppings"]) assert.equal(r[k], undefined, k);
 });

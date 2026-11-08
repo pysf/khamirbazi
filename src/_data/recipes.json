@@ -13,10 +13,10 @@
       "confidence": "high",
       "verified": false,
       "sources": [],
-      "note": "Berlin home oven (user's setup)."
+      "note": "Home oven up to 250 degrees (user's setup)."
     },
     "mode": "top_bottom",
-    "mode_note": "Top+bottom heat (Ober-/Unterhitze), no fan (Umluft).",
+    "mode_note": "Top and bottom heat, no fan.",
     "rack_round": "upper_third",
     "preheat_min": {
       "value": 60,
@@ -83,7 +83,7 @@
       "sources": [
         "https://www.thefreshloaf.com/node/72947"
       ],
-      "note": "Fresh yeast = 3x instant dry yeast (King Arthur Baker's Hotline, quoted in a Fresh Loaf thread). Active dry is often quoted as 2-2.5x; German Trockenhefe packets are instant."
+      "note": "Fresh yeast = 3x instant dry yeast (King Arthur Baker's Hotline, quoted in a Fresh Loaf thread). Active dry is often quoted as 2-2.5x; Common dry yeast packets are instant."
     },
     "source_spread_x": {
       "value": 5,
@@ -120,7 +120,7 @@
           "confidence": "medium",
           "verified": false,
           "sources": [],
-          "note": "One whole 7 g packet of Trockenhefe."
+          "note": "One whole common 7 g packet of instant dry yeast."
         },
         "water_g": {
           "value": 700,
@@ -146,7 +146,7 @@
           "confidence": "medium",
           "verified": false,
           "sources": [],
-          "note": "Half of a 42 g cube of Frischhefe."
+          "note": "Half of a common 42 g cube of fresh yeast."
         },
         "cube_g": {
           "value": 42,
@@ -154,7 +154,7 @@
           "confidence": "high",
           "verified": false,
           "sources": [],
-          "note": "Frischhefe cube size in German shops."
+          "note": "Common fresh yeast cube size; check your pack."
         },
         "water_g": {
           "value": 700,
@@ -180,7 +180,7 @@
       ]
     },
     "notes": [
-      "Dr. Oetker-style 7 g packets are instant yeast: they can be mixed straight into the flour and need no proofing (retailer descriptions; the official oetker.de page was not reachable). Check the packet text.",
+      "Common 7 g packets are instant yeast: they can be mixed straight into the flour and need no proofing (retailer descriptions; the official oetker.de page was not reachable). Check the packet text.",
       "A 7 g packet is meant for about 500 g flour (1.4%); this guide uses much less per dough for fridge methods."
     ]
   },
@@ -196,7 +196,7 @@
         "https://www.dm.de/p/d/1348548/",
         "https://kuechenfibel.de/faq/welches-backpapier-bei-250-grad"
       ],
-      "note": "Common German baking paper (Toppits, dm Profissimo) is rated to 220 C. Not advised with the grill function or touching oven walls. Some premium papers are rated 240-250 C; check the pack."
+      "note": "Common baking paper is rated to 220 C. Not advised with the grill function or touching oven walls. Some premium papers are rated 240-250 C; check the pack."
     },
     "evoo_smoke_c": {
       "value": 200,
@@ -210,43 +210,12 @@
       "sources": [
         "https://wtop.com/news/2021/04/why-you-should-stop-worrying-about-olive-oils-smoke-points/"
       ],
-      "note": "Extra-virgin olive oil smokes around 190-210 C (industry sites; UC Davis notes smoke point alone does not predict quality loss). At 250 C use refined olive oil or a neutral oil (rapeseed, sunflower) in pans. Oil mixed into the dough is fine."
+      "note": "Extra-virgin olive oil smokes around 190-210 C (industry sites; UC Davis notes smoke point alone does not predict quality loss). At 250 C use refined olive oil or a neutral oil (rapeseed, sunflower) in pans. Oil mixed into the dough is fine. The recipe pages brush a thin film of olive oil on the rim before baking (the original guide's advice); a refined or light olive oil resists smoke better."
     }
   },
   "limits": {
     "min_pan_area_cm2": 100,
     "note": "Design limit: pans smaller than this give a warning (very little dough)."
-  },
-  "sauce_recipe": {
-    "note": "Raw sauce, per 150 g crushed tomatoes. Scaled to the sauce amount needed.",
-    "base_g": {
-      "value": 150,
-      "unit": "g crushed tomatoes",
-      "confidence": "low",
-      "verified": false,
-      "sources": [],
-      "note": "Value from the user's guide v7 (untested, no external source checked)."
-    },
-    "parts_g": [
-      {
-        "id": "oil",
-        "g": 8
-      },
-      {
-        "id": "salt",
-        "g": 1.5
-      },
-      {
-        "id": "garlic",
-        "g": 2,
-        "optional": true
-      },
-      {
-        "id": "sugar",
-        "g": 1,
-        "optional": true
-      }
-    ]
   },
   "pan_presets": [
     {
@@ -262,7 +231,7 @@
       "sources": [
         "https://www.ebay.de/p/27052012905"
       ],
-      "note": "German built-in oven universal tray, about 44.5-46 x 37.5 cm depending on the model. Check your own tray."
+      "note": "Built-in oven universal tray, about 44.5-46 x 37.5 cm depending on the model. Check your own tray."
     },
     {
       "id": "tray_40x30",
@@ -1034,106 +1003,6 @@
           }
         }
       },
-      "toppings": [
-        {
-          "id": "sauce",
-          "basis": "pizza",
-          "amount": {
-            "value": 70,
-            "unit": "g per 30 cm pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked). Over 100 g makes the centre wet."
-          }
-        },
-        {
-          "id": "cheese",
-          "basis": "pizza",
-          "amount": {
-            "value": 90,
-            "unit": "g per 30 cm pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked). Dried, grated mozzarella; over 120 g is too heavy."
-          }
-        },
-        {
-          "id": "pepperoni",
-          "basis": "pizza",
-          "amount": {
-            "value": 40,
-            "unit": "g per 30 cm pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked)."
-          },
-          "alt_group": "main",
-          "optional": true
-        },
-        {
-          "id": "mushrooms",
-          "basis": "pizza",
-          "amount": {
-            "value": 60,
-            "unit": "g per 30 cm pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked). Dry or pre-cook them."
-          },
-          "alt_group": "main",
-          "optional": true
-        },
-        {
-          "id": "basil",
-          "basis": "pizza",
-          "amount": {
-            "value": 3,
-            "unit": "g per 30 cm pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked). Add after baking."
-          },
-          "after_bake": true,
-          "optional": true
-        },
-        {
-          "id": "parmesan",
-          "basis": "pizza",
-          "amount": {
-            "value": 8,
-            "unit": "g per 30 cm pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked). Add after baking."
-          },
-          "after_bake": true,
-          "optional": true
-        },
-        {
-          "id": "olive_oil",
-          "basis": "pizza",
-          "amount": {
-            "value": 5,
-            "unit": "g per 30 cm pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked). Guide v7 put 3-4 g on the rim before baking for browning; the page now oils the rim after baking because extra-virgin olive oil smokes below 250 degrees. Open decision for the user: keep the original before-baking advice?"
-          },
-          "optional": true
-        }
-      ],
-      "layer_order": [
-        "sauce",
-        "cheese",
-        "toppings"
-      ],
       "practice": {
         "oil_per_container_g": {
           "value": 3,
@@ -1365,44 +1234,6 @@
           "sources": [],
           "note": "From the user's guide v7 (untested, no external source checked)."
         },
-        "cheese_dry_lead_min": {
-          "range": [
-            20,
-            30
-          ],
-          "unit": "min",
-          "confidence": "low",
-          "verified": false,
-          "sources": [],
-          "note": "From the user's guide v7 (untested, no external source checked)."
-        },
-        "sauce_max_g": {
-          "value": 100,
-          "unit": "g",
-          "confidence": "low",
-          "verified": false,
-          "sources": [],
-          "note": "From the user's guide v7 (untested, no external source checked)."
-        },
-        "cheese_max_g": {
-          "value": 120,
-          "unit": "g",
-          "confidence": "low",
-          "verified": false,
-          "sources": [],
-          "note": "From the user's guide v7 (untested, no external source checked)."
-        },
-        "topping_types": {
-          "range": [
-            2,
-            3
-          ],
-          "unit": "types",
-          "confidence": "low",
-          "verified": false,
-          "sources": [],
-          "note": "From the user's guide v7 (untested, no external source checked)."
-        },
         "second_pizza_wait_min": {
           "range": [
             2,
@@ -1413,6 +1244,22 @@
           "verified": false,
           "sources": [],
           "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "rest_before_cut_min": {
+          "range": [
+            3,
+            5
+          ],
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [
+            "https://www.kingarthurbaking.com/recipes/flaky-puff-crust-pizza-recipe",
+            "https://www.kingarthurbaking.com/recipes/gluten-free-neapolitan-style-pizza-crust-recipe",
+            "https://www.foodie.com/1897195/frozen-pizza-cutting-mistake",
+            "https://chowhound.com/1555468/cut-pizza-cleanest-slices"
+          ],
+          "note": "King Arthur recipes: cool on a wire rack 3-5 minutes before slicing (5 for Neapolitan-style, 15 for thick pan pizza). Foodie: 2 minutes minimum. Chowhound disagrees and advises cutting at once while the crust is crisp. Thin 30 cm pizza; the 1-2 minute guess was not supported by the sources, so the range starts at 3. Shared by New York and Neapolitan."
         },
         "over_yeast_out_min": {
           "value": 60,
@@ -1612,50 +1459,6 @@
           }
         }
       },
-      "toppings": [
-        {
-          "id": "sauce",
-          "basis": "pizza",
-          "amount": {
-            "value": 60,
-            "unit": "g per pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked)."
-          }
-        },
-        {
-          "id": "cheese",
-          "basis": "pizza",
-          "amount": {
-            "value": 70,
-            "range": [
-              60,
-              80
-            ],
-            "unit": "g per pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked). Guide says 60-80 g."
-          }
-        },
-        {
-          "id": "basil",
-          "basis": "pizza",
-          "amount": {
-            "value": 3,
-            "unit": "g per pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Same as New York (guide). Add after baking."
-          },
-          "after_bake": true,
-          "optional": true
-        }
-      ],
       "practice": {
         "avpn_oven_c": {
           "range": [
@@ -1748,12 +1551,7 @@
           "note": "Home-oven recipes use more water than the AVPN range because the bake is longer (America's Test Kitchen about 76%). Blog and test-kitchen sources."
         },
         "_note": "Numbers that appear in the Neapolitan text and are not elsewhere in this file. Other numbers of that text reuse styles.new_york.practice."
-      },
-      "layer_order": [
-        "sauce",
-        "cheese",
-        "toppings"
-      ]
+      }
     },
     "roman_tonda": {
       "kind": "ball",
@@ -1859,42 +1657,7 @@
           "note": "Home sources: 4-8 min at 250 C on stone."
         },
         "rack": "upper_third"
-      },
-      "toppings": [
-        {
-          "id": "sauce",
-          "basis": "pizza",
-          "amount": {
-            "value": 50,
-            "unit": "g per pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked). Few, dry toppings keep it crisp."
-          }
-        },
-        {
-          "id": "cheese",
-          "basis": "pizza",
-          "amount": {
-            "value": 50,
-            "range": [
-              40,
-              60
-            ],
-            "unit": "g per pizza",
-            "confidence": "low",
-            "verified": false,
-            "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked). Guide says 40-60 g."
-          }
-        }
-      ],
-      "layer_order": [
-        "sauce",
-        "cheese",
-        "toppings"
-      ]
+      }
     },
     "al_taglio": {
       "kind": "pan",
@@ -2037,14 +1800,7 @@
         },
         "rack": "middle",
         "rack_note": "Rack not given in the guide; fond.kitchen uses middle/upper-middle. Place the tray on the hot cast-iron tray."
-      },
-      "toppings": [],
-      "toppings_note": "Light toppings only, often added halfway through. Amounts per area were not found in any source.",
-      "layer_order": [
-        "sauce",
-        "cheese",
-        "toppings"
-      ]
+      }
     },
     "detroit": {
       "kind": "pan",
@@ -2165,52 +1921,7 @@
         },
         "rack": "lower",
         "rack_note": "Low or middle rack, pan on the hot tray."
-      },
-      "toppings": [
-        {
-          "id": "cheese",
-          "basis": "cm2",
-          "amount": {
-            "value": 0.275,
-            "range": [
-              0.25,
-              0.3
-            ],
-            "unit": "g/cm2",
-            "confidence": "medium",
-            "verified": false,
-            "sources": [
-              "https://www.theperfectloaf.com/sourdough-detroit-style-pizza-recipe/",
-              "https://www.americastestkitchen.com/recipes/9775-detroit-style-pizza"
-            ],
-            "note": "Sources 0.19-0.37 g/cm2; 0.25-0.30 chosen. Spread to the pan walls so the edge caramelises. Mozzarella plus Butterkaese (not Gouda). Sources: Butterkaese is the Perfect Loaf's first choice for brick cheese; Gouda/Edam were not tested in any source. Blends of about 60/40 mozzarella to brick-style cheese appear in low-authority sources."
-          },
-          "blend": [
-            "mozzarella",
-            "butterkaese"
-          ]
-        },
-        {
-          "id": "sauce",
-          "basis": "cm2",
-          "amount": {
-            "value": 0.15,
-            "unit": "g/cm2",
-            "confidence": "medium",
-            "verified": false,
-            "sources": [
-              "https://www.theperfectloaf.com/sourdough-detroit-style-pizza-recipe/",
-              "https://www.americastestkitchen.com/recipes/9775-detroit-style-pizza"
-            ],
-            "note": "Sources 0.13-0.32 g/cm2. Replaces the guide's 0.10 (approved). Add in stripes on top of the cheese after the cheese."
-          }
-        }
-      ],
-      "layer_order": [
-        "cheese",
-        "toppings",
-        "sauce"
-      ]
+      }
     },
     "chicago": {
       "kind": "pan",
@@ -2285,7 +1996,7 @@
           "sources": [
             "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza"
           ],
-          "note": "Fine cornmeal (Maismehl), part of the total flour. America's Test Kitchen about 17%."
+          "note": "Fine cornmeal, part of the total flour. America's Test Kitchen about 17%."
         },
         "salt": {
           "value": 2,
@@ -2366,49 +2077,7 @@
           "note": "America's Test Kitchen 20-30 min, King Arthur 28-32 min. Replaces the guide's 35-45 min (approved). Lower rack. Move the pan up for the last minutes if the top is pale; a foil sheet is harmless if the top darkens early."
         },
         "rack": "lower"
-      },
-      "toppings": [
-        {
-          "id": "cheese",
-          "basis": "ref_area",
-          "ref_area_cm2": 314.1592653589793,
-          "amount": {
-            "value": 227,
-            "unit": "g",
-            "confidence": "medium",
-            "verified": false,
-            "sources": [
-              "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza",
-              "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
-            ],
-            "note": "227 g mozzarella per 20 cm pan, scaled by area (about 0.72 g/cm2). Sources 0.37-0.55 g/cm2 on larger pans."
-          }
-        },
-        {
-          "id": "sauce",
-          "basis": "cm2",
-          "amount": {
-            "value": 0.85,
-            "range": [
-              0.73,
-              0.95
-            ],
-            "unit": "g/cm2",
-            "confidence": "low",
-            "verified": false,
-            "sources": [
-              "https://www.americastestkitchen.com/recipes/5033-chicago-style-deep-dish-pizza",
-              "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
-            ],
-            "note": "Sauce 230-300 g per 20 cm pan (about 0.85 g/cm2). Sources 0.35-0.72 g/cm2; reduce the sauce until thick."
-          }
-        }
-      ],
-      "layer_order": [
-        "cheese",
-        "toppings",
-        "sauce"
-      ]
+      }
     }
   }
 }

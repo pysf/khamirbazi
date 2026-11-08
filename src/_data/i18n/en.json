@@ -51,8 +51,7 @@
     "optional": "optional",
     "more_details": "More details",
     "placeholder": "Detailed steps for this style are coming next.",
-    "gk": "Good to know",
-    "more": "More in Basics",
+    "why": "Why",
     "size_round": "{d} cm",
     "size_tray": "{l} × {w} cm tray",
     "pizza_one": "{n} pizza",
@@ -76,7 +75,7 @@
     "roman_tonda": {
       "name": "Roman tonda",
       "latin": "Pizza Romana Tonda",
-      "blurb": "Thin, crisp and light. The dough is rolled out with a rolling pin and topped lightly."
+      "blurb": "Thin, crisp and light. The dough is rolled out with a rolling pin."
     },
     "al_taglio": {
       "name": "Al taglio",
@@ -86,12 +85,12 @@
     "detroit": {
       "name": "Detroit",
       "latin": "Detroit-style pizza",
-      "blurb": "Thick, airy, with a fried crisp base and cheese baked to a dark edge. Sauce goes on top."
+      "blurb": "Thick, airy, with a fried crisp base, baked in a rectangular pan."
     },
     "chicago": {
       "name": "Chicago deep dish",
       "latin": "Chicago deep dish",
-      "blurb": "A tall pie in a deep pan. Cheese goes at the bottom, sauce on top."
+      "blurb": "A tall pie with a thick dough in a deep pan."
     }
   },
   "methods": {
@@ -121,7 +120,7 @@
     "yeast_fresh": "Fresh yeast"
   },
   "warn": {
-    "parchment": "Check the maximum temperature printed on your baking paper (Backpapier). Common brands are rated to {max_c} degrees, below this oven. Do not let it touch the heating elements or oven walls.",
+    "parchment": "Check the maximum temperature printed on the pack of your baking paper. Many baking papers are rated to {max_c} degrees, below this oven. Do not let it touch the heating elements or oven walls.",
     "oil_smoke": "Extra-virgin olive oil starts to smoke at about {min_c} to {max_c} degrees. In pans and on a hot tray use refined olive oil or a neutral oil (rapeseed, sunflower). Oil mixed into the dough is fine.",
     "min_batch": "This method needs at least {min_pizzas} pizzas, and you chose {pizzas}. The yeast would be under {min_g} g, and a scale that reads whole grams cannot measure that.",
     "batch_too_small": "This dough is too small to measure the yeast on a scale that shows whole grams. Make a bigger batch."
