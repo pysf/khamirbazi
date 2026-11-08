@@ -23,8 +23,7 @@ function render() {
 
   document.getElementById("ing-body").innerHTML = r.ingredients
     .map((i) => `<tr><th scope="row">${esc(localize(t.ing[i.id], lang))}${i.optional ? ` <span class="opt">(${esc(localize(t.recipe.optional, lang))})</span>` : ""}</th><td class="num">${formatNumber(i.g, lang)}</td></tr>`)
-    .join("");
-  document.getElementById("dough-total").textContent = fill(t.recipe.dough_total, { g: r.dough_g });
+    .join("") + `<tr class="total"><th scope="row">${esc(localize(t.recipe.dough_total, lang))}</th><td class="num">${formatNumber(r.dough_g, lang)}</td></tr>`;
 
   // The two warnings that change the table: too few pizzas for the warm method, or a batch too small to weigh the yeast.
   document.getElementById("ing-warn").innerHTML = r.warnings

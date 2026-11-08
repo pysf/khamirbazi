@@ -43,7 +43,7 @@
   "recipe": {
     "change": "Change",
     "ingredients": "Ingredients",
-    "dough_total": "Total dough: {g} g",
+    "dough_total": "Total dough",
     "th_ing": "Ingredient",
     "th_g": "Grams",
     "steps": "Steps",

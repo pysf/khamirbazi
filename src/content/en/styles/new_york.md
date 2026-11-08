@@ -49,27 +49,28 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
 
 > Warning: This method needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas. For one pizza the yeast would weigh less than {{ recipes.yeast.min_weigh_g.value }} g, and a kitchen scale cannot show that. For one pizza, use a cold method.
 
-1. **Stir the yeast into lukewarm water.** Use water at about {{ recipes.methods.warm_2h.water_temp_c.value }} degrees. Dry yeast needs no waiting.
+1. **Stir the yeast into lukewarm water** Use water at about {{ recipes.methods.warm_2h.water_temp_c.value }} degrees. Dry yeast needs no waiting.
    > Why: Yeast works fast between {{ recipes.styles.new_york.practice.yeast_works_c.range.0 }} and {{ recipes.styles.new_york.practice.yeast_works_c.range.1 }} degrees and dies above {{ recipes.styles.new_york.practice.yeast_dies_c.value }} degrees. Lukewarm water feels like a warm bath, not hot.
-2. **Add the flour and the salt.** Mix until you see no dry flour.
-3. **Add the sugar and the olive oil, then knead for {{ recipes.methods.warm_2h.knead_min.value }} minutes.** See the Kneading section below for how to knead.
+2. **Add the flour and the salt** Mix until you see no dry flour.
+3. **Add the sugar and the olive oil, then knead for {{ recipes.methods.warm_2h.knead_min.value }} minutes** See the Kneading section below for how to knead.
    > Why: There is little time, so kneading has to build the gluten that a long rest would build.
-4. **Let the dough rise.** Put it in an oiled container with a lid (see the section Container, oil and cover). Leave it in a warm place for {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes. A good temperature is {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees. The dough should grow to {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size, with a soft, puffy surface.
+4. **Let the dough rise** Put it in an oiled container with a lid (see the section Container, oil and cover). Leave it in a warm place for {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes. A good temperature is {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees. The dough should grow to {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size, with a soft, puffy surface.
    > Why: The yeast makes gas, and the gas makes the dough bigger and puffier. The air in the dough makes the rim puff in the oven.
-5. **Divide the dough and shape the balls.** Cut it into equal pieces, one for each pizza, and shape each piece into a ball (see the section Shaping).
-6. **Rest the balls, covered, for {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes.** At the same time, start heating the oven with the baking surface inside (see the section Oven and baking surface).
+5. **Divide the dough and shape the balls** Put the whole dough on the scale. The weight should be close to Total dough on the Ingredients card. Divide the weight by the number of pizzas. Cut off pieces of that weight and shape each into a ball (see the section Shaping). Keep them covered.
+   > Why: Equal balls bake evenly and make pizzas of the same size. A scale is more accurate than your eye.
+6. **Rest the balls, covered, for {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes** At the same time, start heating the oven with the baking surface inside (see the section Oven and baking surface).
    > Why: The gluten relaxes. A relaxed ball stretches easily and does not shrink back.
-7. **Open the first ball into a round.** Follow the section Shaping. Keep the other balls covered.
-8. **Dress the pizza.** Spread a thin layer of sauce and leave the rim bare (about {{ recipes.styles.new_york.practice.rim_cm.range.0 }} to {{ recipes.styles.new_york.practice.rim_cm.range.1 }} cm). Add cheese and any toppings you like, then brush the rim lightly with olive oil. Work fast, because dough that waits on the board or paper sticks.
+7. **Open the first ball into a round** Follow the section Shaping. Keep the other balls covered.
+8. **Dress the pizza** Spread a thin layer of sauce and leave the rim bare (about {{ recipes.styles.new_york.practice.rim_cm.range.0 }} to {{ recipes.styles.new_york.practice.rim_cm.range.1 }} cm). Add cheese and any toppings you like, then brush the rim lightly with olive oil. Work fast, because dough that waits on the board or paper sticks.
    > Why: Light toppings let the steam escape, so the base turns crisp. Heavy or wet toppings keep it soft. Pat wet toppings dry first, and use dry grated cheese.
 
     > Tip: A small pinch of garlic powder on top of the cheese tastes good. It is optional. Garlic powder burns less than fresh garlic.
-9. **Bake the pizza.** Slide it onto the hot baking surface from a board or peel (a flat paddle for pizza). Follow the section Oven and baking surface.
+9. **Bake the pizza** Slide it onto the hot baking surface from a board or peel (a flat paddle for pizza). Follow the section Oven and baking surface.
 
     > Safety: Baking paper is your choice. Without paper, open the dough on a board or peel dusted with a little semolina or flour, then slide it onto the hot surface. With paper, check the maximum temperature printed on the pack. Many papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is lower than this oven. Keep the paper away from the heating elements and the oven walls, and trim the edges. If you use paper, skip the grill unless the pack says it is safe.
 
     > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot baking surface. Oil inside the dough is fine. For the rim, use only a thin film, and choose refined or light olive oil because it smokes less.
-10. **Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it.** Leave it uncovered, on a rack if you have one. While it rests, add fresh or delicate extras: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings.
+10. **Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it** Leave it uncovered, on a rack if you have one. While it rests, add fresh or delicate extras: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings.
     > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base stays crisp. Fresh or delicate extras go on after baking so they do not burn or wilt.
 
 
@@ -79,35 +80,35 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
 
 You make the dough one or more days before baking. Take the amounts from the Ingredients card on this page. It shows the amounts for the time you chose on the Home page. Steps 1 to 6 are the first day. Steps 7 to 12 are baking day.
 
-1. **Make the yeast solution and mix the dough.** Stir one {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast into {{ recipes.yeast.solution.dry.water_g.value }} g of lukewarm water. With fresh yeast, stir half of a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube ({{ recipes.yeast.solution.fresh.yeast_g.value }} g) into {{ recipes.yeast.solution.fresh.water_g.value }} g of water. Then pour the cold water (about {{ recipes.methods.cold_24h.water_temp_c.value }} degrees) into a bowl. Add the amount of yeast solution shown on the Ingredients card, then the flour. Stir only until you see no dry flour.
+1. **Make the yeast solution and mix the dough** Stir one {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast into {{ recipes.yeast.solution.dry.water_g.value }} g of lukewarm water. With fresh yeast, stir half of a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube ({{ recipes.yeast.solution.fresh.yeast_g.value }} g) into {{ recipes.yeast.solution.fresh.water_g.value }} g of water. Then pour the cold water (about {{ recipes.methods.cold_24h.water_temp_c.value }} degrees) into a bowl. Add the amount of yeast solution shown on the Ingredients card, then the flour. Stir only until you see no dry flour.
    > Why: The yeast amount is too small to weigh on a kitchen scale, so you weigh part of the solution instead. The Ingredients card already takes that weight off the cold water.
-2. **Rest the dough, covered, for {{ recipes.methods.cold_24h.autolyse_min.range.0 }} to {{ recipes.methods.cold_24h.autolyse_min.range.1 }} minutes.** This rest is called autolyse.
+2. **Rest the dough, covered, for {{ recipes.methods.cold_24h.autolyse_min.range.0 }} to {{ recipes.methods.cold_24h.autolyse_min.range.1 }} minutes** This rest is called autolyse.
    > Why: The water and the enzymes in the flour start to build gluten by themselves, so you need less kneading.
-3. **Add the salt, the sugar and the olive oil, then knead.** Work them into the dough until it is even. Then knead for {{ recipes.methods.cold_24h.knead_min.range.0 }} to {{ recipes.methods.cold_24h.knead_min.range.1 }} minutes (see the section Kneading). If you prefer stretch and fold, skip the kneading and go to step 4.
+3. **Add the salt, the sugar and the olive oil, then knead** Work them into the dough until it is even. Then knead for {{ recipes.methods.cold_24h.knead_min.range.0 }} to {{ recipes.methods.cold_24h.knead_min.range.1 }} minutes (see the section Kneading). If you prefer stretch and fold, skip the kneading and go to step 4.
    > Why: Salt makes the gluten stronger and slows the yeast down.
-4. **Let the dough rise at room temperature.** Leave it, covered, at about {{ recipes.oven.room_c.value }} degrees for {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes, until it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger. If you chose stretch and fold, do it during this rise: {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds. Do the first round now and the next ones {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes apart. After the last round, leave the dough alone until the rise is over.
+4. **Let the dough rise at room temperature** Leave it, covered, at about {{ recipes.oven.room_c.value }} degrees for {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes, until it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger. If you chose stretch and fold, do it during this rise: {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds. Do the first round now and the next ones {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes apart. After the last round, leave the dough alone until the rise is over.
    > Why: The yeast needs a short warm start before it goes into the cold. Stretch and fold makes the dough strong while it rises, so the rounds and the rise happen in the same time.
-5. **Divide the dough and shape the balls.** Cut it into equal pieces, one for each pizza, and shape each piece into a ball (see the section Shaping). Put each ball in its own oiled container with a lid (see the section Container, oil and cover).
-6. **Put the containers in the fridge.** Keep them there for the time you chose: {{ recipes.methods.cold_12_16h.fridge_h.range.0 }} to {{ recipes.methods.cold_12_16h.fridge_h.range.1 }} hours (overnight), {{ recipes.methods.cold_24h.fridge_h.value }} hours, {{ recipes.methods.cold_48h.fridge_h.value }} hours or {{ recipes.methods.cold_72h.fridge_h.value }} hours. The yeast amount on the Ingredients card is for that time. To change the time, press "Change" at the top of the page. {{ recipes.methods.cold_72h.fridge_h.value }} hours is the longest this guide uses.
+5. **Divide the dough and shape the balls** Put the whole dough on the scale. The weight should be close to Total dough on the Ingredients card. Divide the weight by the number of pizzas. Cut off pieces of that weight and shape each into a ball (see the section Shaping). Put each ball in its own oiled container with a lid (see the section Container, oil and cover).
+6. **Put the containers in the fridge** Keep them there for the time you chose: {{ recipes.methods.cold_12_16h.fridge_h.range.0 }} to {{ recipes.methods.cold_12_16h.fridge_h.range.1 }} hours (overnight), {{ recipes.methods.cold_24h.fridge_h.value }} hours, {{ recipes.methods.cold_48h.fridge_h.value }} hours or {{ recipes.methods.cold_72h.fridge_h.value }} hours. The yeast amount on the Ingredients card is for that time. To change the time, press "Change" at the top of the page. {{ recipes.methods.cold_72h.fridge_h.value }} hours is the longest this guide uses.
    > Why: In the fridge the yeast works slowly, and the enzymes have time to build flavour. The result is a deeper taste and better browning.
-7. **On baking day, take the dough out of the fridge.** Do this {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you shape it. Keep the lid closed.
+7. **On baking day, take the dough out of the fridge** Do this {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you shape it. Keep the lid closed.
    > Why: Cold dough does not stretch well and it tears. This is the most common mistake with cold dough.
-8. **Start heating the oven and the baking surface.** Do this {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking, while the dough warms up (see the section Oven and baking surface).
-9. **Open the first ball into a round.** Follow the section Shaping. Keep the other balls covered.
-10. **Dress the pizza.** Spread a thin layer of sauce and leave the rim bare (about {{ recipes.styles.new_york.practice.rim_cm.range.0 }} to {{ recipes.styles.new_york.practice.rim_cm.range.1 }} cm). Add cheese and any toppings you like, then brush the rim lightly with olive oil. Work fast, because dough that waits on the board or paper sticks.
+8. **Start heating the oven and the baking surface** Do this {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking, while the dough warms up (see the section Oven and baking surface).
+9. **Open the first ball into a round** Follow the section Shaping. Keep the other balls covered.
+10. **Dress the pizza** Spread a thin layer of sauce and leave the rim bare (about {{ recipes.styles.new_york.practice.rim_cm.range.0 }} to {{ recipes.styles.new_york.practice.rim_cm.range.1 }} cm). Add cheese and any toppings you like, then brush the rim lightly with olive oil. Work fast, because dough that waits on the board or paper sticks.
     > Why: Light toppings let the steam escape, so the base turns crisp. Heavy or wet toppings keep it soft. Pat wet toppings dry first, and use dry grated cheese.
 
     > Tip: A small pinch of garlic powder on top of the cheese tastes good. It is optional. Garlic powder burns less than fresh garlic.
-11. **Bake the pizza.** Slide it onto the hot baking surface from a board or peel (a flat paddle for pizza). Follow the section Oven and baking surface.
+11. **Bake the pizza** Slide it onto the hot baking surface from a board or peel (a flat paddle for pizza). Follow the section Oven and baking surface.
 
     > Safety: Baking paper is your choice. Without paper, open the dough on a board or peel dusted with a little semolina or flour, then slide it onto the hot surface. With paper, check the maximum temperature printed on the pack. Many papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is lower than this oven. Keep the paper away from the heating elements and the oven walls, and trim the edges. If you use paper, skip the grill unless the pack says it is safe.
 
     > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot baking surface. Oil inside the dough is fine. For the rim, use only a thin film, and choose refined or light olive oil because it smokes less.
-12. **Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it.** Leave it uncovered, on a rack if you have one. While it rests, add fresh or delicate extras: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings.
+12. **Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it** Leave it uncovered, on a rack if you have one. While it rests, add fresh or delicate extras: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings.
     > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base stays crisp. Fresh or delicate extras go on after baking so they do not burn or wilt.
 
 
-> Tip: You can also keep the dough in the fridge as one piece. Take it out at the same time on baking day, then divide it and shape the balls right away, because cold dough is easier to shape. Then let the balls rest, covered, until you open them.
+> Tip: You can also keep the dough in the fridge as one piece. Take it out at the same time on baking day, then weigh it, divide it into equal balls and shape them right away, because cold dough is easier to shape. Then let the balls rest, covered, until you open them.
 
 > Tip: Mix the yeast solution right before you use it, and throw away what is left. No source says how long a yeast solution keeps, so this guide gives no shelf life.
 
@@ -237,17 +238,17 @@ Normal flour also works. Use a thin layer and shake off the extra, because too m
 
 The baking surface is a pizza stone, a baking steel or a cast-iron pan. Use the one you have. It stores heat. When the dough lands on it, the surface gives its heat to the base quickly, so the base turns crisp and the dough puffs fast. Steel and cast iron pass on heat better than stone. The advice about cast iron is home-tested, not tested in a controlled way.
 
-1. **Heat the baking surface for {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking.** Put it in the oven and set the oven to {{ recipes.styles.new_york.bake.temp_c.value }} degrees.
+1. **Heat the baking surface for {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking** Put it in the oven and set the oven to {{ recipes.styles.new_york.bake.temp_c.value }} degrees.
    > Why: A surface that is not fully hot gives a pale, soft base.
 2. **Put it on the upper rack** (about the upper third of the oven). Do this before you turn the oven on.
 3. **Use top and bottom heat** and **no fan**. If your oven has a fan mode, switch the fan off.
    > Why: The fan dries the surface of the dough and burns the top before the base is ready.
-4. **Move the pizza onto the hot surface fast.** Slide it from a board or peel onto the surface, with the paper if you use paper (then trim the edges).
+4. **Move the pizza onto the hot surface fast** Slide it from a board or peel onto the surface, with the paper if you use paper (then trim the edges).
    > Why: Every time you open the oven door, heat is lost. Be quick.
-5. **Bake for {{ recipes.styles.new_york.bake.time_min.range.0 }} to {{ recipes.styles.new_york.bake.time_min.range.1 }} minutes.** The pizza is done when the rim is golden to light brown and the base is crisp.
+5. **Bake for {{ recipes.styles.new_york.bake.time_min.range.0 }} to {{ recipes.styles.new_york.bake.time_min.range.1 }} minutes** The pizza is done when the rim is golden to light brown and the base is crisp.
 6. **For the last {{ recipes.styles.new_york.bake.grill.last_min.range.0 }} to {{ recipes.styles.new_york.bake.grill.last_min.range.1 }} minutes, turn on the grill** to colour the top. Skip this if you use baking paper, unless the pack says it is safe.
    > Why: A {{ recipes.styles.new_york.bake.temp_c.value }} degree oven gives too little heat from above.
-7. **For a second pizza, wait.** Keep its ball covered until the first pizza is out and the surface is hot again. This takes about {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes. Only then open the ball.
+7. **For a second pizza, wait** Keep its ball covered until the first pizza is out and the surface is hot again. This takes about {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes. Only then open the ball.
    > Why: Dough that waits on the board or paper gets wet and sticks.
 
 > Safety: Baking paper is your choice. If you use it, check the maximum temperature printed on the pack (many papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is lower than this oven) and trim the edges. The full note is in the bake step of your method.
@@ -258,7 +259,7 @@ The baking surface is a pizza stone, a baking steel or a cast-iron pan. Use the 
 
 - **Hour 0:** mix the yeast, lukewarm water, flour and salt. Then add the sugar and oil. Knead for {{ recipes.methods.warm_2h.knead_min.value }} minutes.
 - **First rise:** {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes in a warm place.
-- **Then:** divide the dough into one ball for each pizza.
+- **Then:** weigh the whole dough, divide the weight by the number of pizzas, and shape equal balls.
 - **Rest the balls:** {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes, covered. Turn on the oven with the baking surface inside at the same time.
 - **About {{ recipes.timeline.shape_lead_min.value }} minutes before baking:** open the dough, dress it and bake.
 

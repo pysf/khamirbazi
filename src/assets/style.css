@@ -105,6 +105,7 @@ a{color:inherit}
 .tbl th,.tbl td{padding:13px 16px;border-top:1px solid var(--border);text-align:start;font-weight:400}
 .tbl tbody th{font-weight:500}
 .tbl .num{text-align:end;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl tr.total th,.tbl tr.total td{border-top:2px solid var(--text);font-weight:700}
 .tbl thead th{font-size:var(--fs-xs);color:var(--text-muted);border-top:0;padding-block:6px}
 .steps{list-style:none;padding:0;display:grid;gap:36px;counter-reset:s}
 .steps li{counter-increment:s;display:grid;grid-template-columns:36px minmax(0,1fr);gap:16px;align-items:start}

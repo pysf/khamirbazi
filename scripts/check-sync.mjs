@@ -94,6 +94,16 @@ function checkMarkers(file, text) {
   if (/^> Why:/m.test(body)) fail(`content: ${file}: "> Why:" must be indented under a numbered step`);
 }
 
+// A bold step title (the bold lead-in of a numbered step) has no full stop at the end: "**Bake the pizza** detail".
+// "?", "!" and ":" are fine. English uses ".", Farsi may also use the Urdu-style "\u06D4".
+function checkStepTitles(file, text) {
+  const body = text.replace(/^---\n[\s\S]*?\n---/, "");
+  body.split("\n").forEach((line, i) => {
+    const m = line.match(/^\s*\d+\. \*\*((?:(?!\*\*).)+?)\*\*/);
+    if (m && /[.\u06D4]$/.test(m[1].trim())) fail(`content: ${file} line ${i + 1}: step title "${m[1]}" must not end with a full stop`);
+  });
+}
+
 const enDir = join(root, "src/content/en");
 const faDir = join(root, "src/content/fa");
 const enFiles = new Set(walk(enDir).map((p) => relative(enDir, p)));
@@ -101,7 +111,10 @@ const faFiles = new Set(walk(faDir).map((p) => relative(faDir, p)));
 for (const f of enFiles) if (!faFiles.has(f)) fail(`content: ${f} exists in en but not in fa`);
 for (const f of faFiles) if (!enFiles.has(f)) fail(`content: ${f} exists in fa but not in en`);
 for (const [dir, files] of [[enDir, enFiles], [faDir, faFiles]])
-  for (const f of files) checkMarkers(`${relative(root, dir)}/${f}`, readFileSync(join(dir, f), "utf8"));
+  for (const f of files) {
+    checkMarkers(`${relative(root, dir)}/${f}`, readFileSync(join(dir, f), "utf8"));
+    checkStepTitles(`${relative(root, dir)}/${f}`, readFileSync(join(dir, f), "utf8"));
+  }
 for (const f of enFiles) {
   if (!faFiles.has(f)) continue;
   const a = shape(readFileSync(join(enDir, f), "utf8"));

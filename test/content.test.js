@@ -86,3 +86,14 @@ test("the New York content has a main step section for every typical method", ()
   const main = splitSections(nyEn).filter((p) => p.main).flatMap((p) => p.methods);
   for (const m of ["warm_2h", "cold_12_16h", "cold_24h", "cold_48h", "cold_72h"]) assert.ok(main.includes(m), m);
 });
+
+test("the recipe page table ends with the total dough row, equal to the sum of the ingredients", async () => {
+  const { default: recipePage } = await import("../src/_data/recipePage.js");
+  for (const page of Object.values(recipePage)) {
+    const sum = page.rows.reduce((s, r) => s + r.g, 0);
+    assert.ok(Math.abs(sum - page.dough_g) < 1e-6);
+  }
+  const njk = readFileSync(new URL("../src/recipe.njk", import.meta.url), "utf8");
+  const body = njk.slice(njk.indexOf('id="ing-body"'), njk.indexOf("</tbody>"));
+  assert.ok(body.trimEnd().endsWith('<td class="num">{{ page_data.dough_g | num(lang) }}</td></tr>'), "total is the last row");
+});

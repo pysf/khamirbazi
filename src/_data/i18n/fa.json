@@ -43,7 +43,7 @@
   "recipe": {
     "change": "تغییر",
     "ingredients": "مواد لازم",
-    "dough_total": "کل خمیر: {g} گرم",
+    "dough_total": "مجموع خمیر",
     "th_ing": "ماده",
     "th_g": "گرم",
     "steps": "مراحل",
