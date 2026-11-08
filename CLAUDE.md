@@ -1,0 +1,96 @@
+# Khamirbazi: home pizza guide + calculator
+
+A simple static website (English and Farsi, built together) with accurate, step-by-step instructions for baking six pizza styles at home, plus a calculator that scales any recipe to any number of pizzas or any pan size.
+
+Keep it simple (KISS). Prefer fewer files, fewer dependencies, and plain code over clever code.
+
+## Stack (decided)
+
+- **Eleventy (11ty)** builds the static site. Output goes to `_site/`.
+- **Content** is Markdown, one file per section per language: `src/content/en/` and `src/content/fa/`, same file names in both. Write content once; never copy it into HTML.
+- **Languages:** English (LTR) and Farsi (RTL, `lang="fa" dir="rtl"`). Numbers, quantities and percentages live only in `recipes.json`, never in translated text; prose refers to them through template variables so the two languages cannot disagree. UI strings live in `src/_data/i18n/en.json` and `fa.json`. Latin names inside Farsi text use `<bdi>`/`dir="ltr"` isolation, not invisible characters. Farsi uses the rules in "Farsi writing rules" below. Language switch keeps the user on the same page.
+- **Delivery order:** work one pizza style at a time, and finish English and Farsi for that style together so the user can review both side by side. Start with New York.
+- **Data** is `src/_data/recipes.json`. It is the single source of truth for every number. Recipe tables and the calculator are both generated from it. Never hardcode a quantity in prose or in JS.
+- **Calculator** is one vanilla JS module, `src/assets/calc.js`, exporting pure functions (no DOM). The page script only reads inputs and renders results.
+- **Styling** is one hand-written responsive CSS file, mobile first. No CSS framework. The layout adapts; content never changes per screen size.
+- **No client framework** (React, Vue, etc.). No dependencies except Eleventy and dev tooling.
+- **Tests:** `node --test` on `calc.js`. Test every style/method combination against hand-computed values.
+- Commands (once scaffolded): `npm run dev`, `npm run build`, `npm test`.
+
+## Data model (`recipes.json`)
+
+- Store everything as **baker's percentages** of flour weight (flour = 100%): water, salt, sugar, oil, yeast, plus per-style `dough_density_g_per_cm2`, bake temperature/time, bake rack, topping amounts per pizza or per cm2.
+- Each style lists its **methods**: `warm_2h`, `room_8_12h`, `cold_12_16h`, `cold_24h`, `cold_48h`, `cold_72h`, each with yeast % (dry), water temperature, rise and rest times.
+- Fresh yeast = 3x dry yeast.
+- Cold methods use a yeast solution (see below), so the water in the recipe is reduced by the solution amount.
+- Every value that is not verified must carry `"verified": false` and a `"note"`. The footer disclaimer stays on the site.
+
+## Calculator rules
+
+- Inputs: style, method, yeast type (dry/fresh), and either number of pizzas + ball weight, or a pan (round diameter, or rectangle length x width; multiple pans allowed). Everything else is calculated.
+- Output: all ingredients in grams, the yeast solution instructions, sauce/cheese/topping amounts, a timeline that works backwards from the planned bake time (mix, rest, fridge, take out, preheat, open, bake), oven settings, and bake time.
+- **Do not round to friendly numbers.** Compute exactly; display at most 1 decimal.
+- **Assume a 1 g kitchen scale.** Never ask the user to weigh less than 1 g. Yeast is handled by a solution: dry yeast = one whole 7 g packet in 700 g water (1%); fresh yeast = half a 42 g cube (21 g) in 700 g water (3%). Then weigh out X g of solution, and subtract X from the recipe water.
+- Pan styles scale by pan area x dough density, not by pizza count.
+- Fridge temperature is an ordinary fridge (about 4-5 degrees C). Room temperature is 21 degrees C.
+
+## Styles in scope (all six in v1)
+
+New York (main recipe), Neapolitan, Roman tonda, al taglio, Detroit, Chicago deep dish.
+
+Reference quantities (for 300 g flour, about 2 pizzas) currently live in `pizza-guide-v7-raw.md` (Persian). That file is the **translation source**. Port its numbers into `recipes.json` (after the fact-check) and write each style in English and Farsi together, then retire it. Designer brief: `docs/ui-designer-prompt.md`.
+
+## Baker's setup the guide assumes (Berlin)
+
+- Oven max 250 degrees C, German modes (Ober-/Unterhitze, Umluft, Grill). Use top+bottom heat, no fan.
+- Flat cast-iron tray, preheated 45-60 min on the upper rack. Other users have different pans, so always offer pan-size alternatives.
+- Pizzamehl (Tipo 00), protein about 12-13 g per 100 g. Dry (Trockenhefe, 7 g packet) or fresh (Frischhefe, 42 g cube) yeast. No sourdough.
+- Dried, grated mozzarella. Parchment paper (Backpapier) used to launch the pizza.
+- Beginner to intermediate. Phone readers.
+
+## Working rules (subagents and facts)
+
+- **Use subagents for medium and large tasks.** Anything that needs more than a few tool calls (researching a style's numbers, porting and translating a style, scaffolding, writing a test suite, reviewing a large diff) goes to a subagent. Run independent ones in parallel. Brief each one fully: it starts with no context. Keep small edits and quick questions in the main session.
+- **Fact-based only.** Every number in `recipes.json` must come from a looked-up source (manufacturer, standards body such as AVPN, established baker/cookbook, food-science source). Record `source` URL(s) and `confidence` next to each value. A blog alone is low confidence. If sources disagree, store the range and say so. Research reports go to the scratchpad; only the verified results go in the repo.
+- If a lookup disagrees with a value from the user's earlier tests or instructions, report it and wait for approval before changing it.
+
+## Writing rules (English)
+
+- Plain English, short sentences. Explain **why** next to each step. Keep practical tips; do not cut details.
+- Every foreign or technical term is explained where it first appears and listed in the glossary.
+- Cross-reference by section number and name (for example "Section 3: Kneading").
+- Tables only for ingredients. Everything else is lists and short paragraphs.
+- Practical path first; concepts, history and comparisons go in the appendix at the end.
+- No jokey or vague names. No invented terms.
+- Temperatures in degrees Celsius, quantities in grams.
+
+## Farsi writing rules
+
+- Simple, fluent Farsi; short sentences; explain why next to each step. Phone readers.
+- Write temperatures as "250 degrees" in words (the letter C breaks right-to-left flow). Avoid `&` and complex Latin mixes.
+- Latin terms appear with a Farsi explanation (for example "al taglio (Pizza al Taglio)").
+- No unknown or meaningless Farsi phrases. Example: say "stretch the dough and fold it over itself (Stretch and Fold)", not a literal calque.
+- Section references use number and name, same as English.
+- The existing Persian guide (`pizza-guide-v7-raw.md`) shows the user's preferred tone; reuse its wording where the content is unchanged.
+
+## Accuracy rules
+
+- Never state an unverified number as fact. If unsure, say so and mark it.
+- Keep claims from web sources separate from my own reasoning; cite the source in a comment or note.
+- If a lookup suggests changing a user-tested or user-given value, do not change it silently. Report it and wait for approval.
+- Known unverified items: exact protein of REWE/Edeka Pizzamehl (about 11.8-13 g), dm dry yeast, yeast amounts for 12-16 h, 48 h, 72 h and room-temperature methods, al taglio / Detroit / Chicago dough density and fermentation ranges, history dates and names. No recipe has been test-baked yet.
+- Safety notes must be present: check the parchment paper's maximum temperature (many are rated 220-230 degrees C) before using it at 250 degrees or under the grill; olive oil smokes in a 250 degree pan.
+
+## Known content problems to fix while porting
+
+1. Yeast table lacks 12-16 h (overnight); recipes only show cold water/solution for 24 h. Derive other durations from the data.
+2. Cold method timeline is ambiguous (stretch-and-fold rounds vs the 1-1.5 h room-temperature rise). Make the sequence explicit.
+3. Neapolitan grill instruction contradicts the oven section. Use one rule: top+bottom heat, grill for the last 1-2 minutes.
+4. Second pizza waits on parchment while the first bakes: tell the user to open it only when the oven is ready.
+5. Verify the thin al taglio density and the Chicago pan load.
+
+## Git
+
+- Work on branches off `main`, never directly on `main`.
+- **Commit at the end of every step** (scaffold done, calculator done, one style finished in both languages, research results merged into `recipes.json`, and so on). One step, one commit, with a clear message. Run `npm test` and `npm run build` first once they exist. Do not push unless asked.
+- Commit messages end with the Co-Authored-By line from the session attribution.
