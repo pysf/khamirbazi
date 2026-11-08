@@ -1,4 +1,4 @@
-{% set t = i18n[lang] %}{% set other = t.other_lang %}<!doctype html>
+{% set t = i18n[lang] %}<!doctype html>
 <html lang="{{ lang }}" dir="{{ t.dir }}">
 <head>
   <meta charset="utf-8">
@@ -6,7 +6,7 @@
   <title>{{ title }} - {{ t.site_name }}</title>
   <meta name="description" content="{{ t.tagline }}">
   <meta name="color-scheme" content="light dark">
-  <link rel="icon" href="{{ '/assets/favicon.svg' | url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/assets/logo/favicon.svg' | url }}" type="image/svg+xml">
   <script>
     /* Apply the saved or system theme before the page paints. Works without storage. */
     (function () {
@@ -22,32 +22,26 @@
 </head>
 <body>
   <a class="skip" href="#main">{{ t.skip }}</a>
-  <header class="hdr">
-    <div class="wrap hdr-row">
+  <header class="nav">
+    <div class="wrap nav-row">
       <a class="brand" href="{{ ('/' + lang + '/') | url }}" aria-label="{{ t.site_name }}">
         <svg class="mk" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7"><path d="M88.07 32.25 A42 42 0 1 1 53.66 8.16"/><path d="M53 47 L60.5 11.8 A36 36 0 0 1 83.5 27.9 Z" stroke-width="5.5" stroke-linejoin="round"/></g><g fill="currentColor"><circle cx="66" cy="28" r="3.5"/><circle cx="26" cy="40" r="4.5"/><circle cx="35" cy="62" r="4.5"/><circle cx="52" cy="74" r="4.5"/><circle cx="70" cy="64" r="4.5"/><circle cx="44" cy="30" r="4.5"/></g></svg>
         <span class="wm" aria-hidden="true">{{ t.site_name }}</span>
       </a>
-      <div class="hdr-tools">
-        <div class="seg" role="group" aria-label="{{ t.lang_label }}">
-          <a class="seg-b" lang="en" hreflang="en" href="{{ (page.url | replace('/' + lang + '/', '/en/', 1)) | url }}"{% if lang == "en" %} aria-current="true"{% endif %}>English</a>
-          <a class="seg-b" lang="fa" hreflang="fa" href="{{ (page.url | replace('/' + lang + '/', '/fa/', 1)) | url }}"{% if lang == "fa" %} aria-current="true"{% endif %}>فارسی</a>
+      <div class="nav-r">
+        <a class="nav-link" href="{{ ('/' + lang + '/basics/') | url }}"{% if section == "basics" %} aria-current="page"{% endif %}>{{ t.nav.basics }}</a>
+        <div class="lang" role="group" aria-label="{{ t.lang_label }}" data-lang-switch>
+          <a lang="en" hreflang="en" aria-label="English" href="{{ (page.url | replace('/' + lang + '/', '/en/', 1)) | url }}"{% if lang == "en" %} aria-current="true"{% endif %}>EN</a>
+          <a lang="fa" hreflang="fa" aria-label="فارسی" href="{{ (page.url | replace('/' + lang + '/', '/fa/', 1)) | url }}"{% if lang == "fa" %} aria-current="true"{% endif %}>FA</a>
         </div>
-        <button type="button" class="theme-btn" data-theme-toggle aria-label="{{ t.theme.toggle }}">{% icon "moon", "i-moon" %}{% icon "sun", "i-sun" %}</button>
       </div>
-      <nav class="nav" aria-label="{{ t.nav.main }}">
-        <a href="{{ ('/' + lang + '/') | url }}"{% if section == "home" %} aria-current="page"{% endif %}>{{ t.nav.home }}</a>
-        <a href="{{ ('/' + lang + '/#styles') | url }}"{% if section == "styles" %} aria-current="page"{% endif %}>{{ t.nav.styles }}</a>
-        <a href="{{ ('/' + lang + '/calculator/') | url }}"{% if section == "calc" %} aria-current="page"{% endif %}>{{ t.nav.calculator }}</a>
-        <a href="{{ ('/' + lang + '/basics/') | url }}"{% if section == "basics" %} aria-current="page"{% endif %}>{{ t.nav.basics }}</a>
-      </nav>
     </div>
   </header>
   <main id="main" class="wrap main">
     {{ content | safe }}
   </main>
-  {% if sumbar %}{% include "sumbar.njk" %}{% endif %}
-  <footer class="ftr"><div class="wrap">{{ t.footer.disclaimer }}</div></footer>
+  <footer class="ftr"><div class="wrap ftr-row"><span>{{ t.footer.disclaimer }}</span><button type="button" class="theme-btn" data-theme-toggle aria-label="{{ t.theme.toggle }}">{% icon "moon", "i-moon" %}{% icon "sun", "i-sun" %}</button></div></footer>
   <script type="module" src="{{ '/assets/site.js' | url }}"></script>
+  {% if script %}<script type="module" src="{{ ('/assets/' + script) | url }}"></script>{% endif %}
 </body>
 </html>

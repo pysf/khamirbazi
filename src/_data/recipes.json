@@ -3,7 +3,8 @@
   "notes": [
     "Every dough amount is a baker's percentage of flour weight (flour = 100%). Flour for Chicago means wheat flour plus cornmeal.",
     "Values are objects: value (or range), confidence (high/medium/low), verified (true only when checked against a primary source by a person), sources (URLs), optional note.",
-    "No recipe has been test-baked yet. verified is false everywhere on purpose."
+    "No recipe has been test-baked yet. verified is false everywhere on purpose.",
+    "Sizes in 'sizes' (round 26/30/32 cm and the 30 x 40 cm oven tray) are the ones the site offers. Dough per pizza = size area x style.dough_density_g_per_cm2 (styles new_york and neapolitan)."
   ],
   "oven": {
     "max_c": {
@@ -380,6 +381,33 @@
         "https://www.kingarthurbaking.com/recipes/chicago-style-deep-dish-pizza-recipe"
       ],
       "note": "11 in."
+    }
+  ],
+  "sizes": [
+    {
+      "id": "round_26",
+      "shape": "round",
+      "diameter": 26
+    },
+    {
+      "id": "round_30",
+      "shape": "round",
+      "diameter": 30
+    },
+    {
+      "id": "round_32",
+      "shape": "round",
+      "diameter": 32
+    },
+    {
+      "id": "tray_30x40",
+      "shape": "rect",
+      "length": 30,
+      "width": 40,
+      "label_key": "tray",
+      "note": "Oven tray, one rectangle. 'Pizzas' then means trays. Dough amount uses the style's round-pizza density (dough_density_g_per_cm2) times the tray area, so a thin tray pizza; it is not the al taglio density.",
+      "verified": false,
+      "confidence": "low"
     }
   ],
   "methods": {
@@ -923,6 +951,14 @@
         ],
         "note": "About 30 cm pizza. Serious Eats (mirror) uses about 210 g for 12 in; 250 g is the user's guide value."
       },
+      "dough_density_g_per_cm2": {
+        "value": 0.35367765,
+        "unit": "g per cm2 of pizza",
+        "confidence": "low",
+        "verified": false,
+        "sources": [],
+        "note": "Derived from the user's guide v7 ball weight and diameter: 250 g for a 30 cm pizza = 250 / (pi x 15^2). Dough per pizza = pizza area x this density. Serious Eats uses about 210 g for 12 in (30 cm), which is lower."
+      },
       "dough": {
         "hydration": {
           "value": 63,
@@ -1455,6 +1491,16 @@
           "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
         ],
         "note": "AVPN allows 200-280 g, 22-35 cm. The guide uses 28-30 cm."
+      },
+      "dough_density_g_per_cm2": {
+        "value": 0.35367765,
+        "unit": "g per cm2 of pizza",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [
+          "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+        ],
+        "note": "Derived from the user's guide v7 ball weight and diameter: 250 g for a 30 cm pizza = 250 / (pi x 15^2). Dough per pizza = pizza area x this density. AVPN allows 200-280 g for 22-35 cm for Neapolitan."
       },
       "dough": {
         "hydration": {

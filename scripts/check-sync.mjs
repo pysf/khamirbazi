@@ -68,6 +68,8 @@ function shape(text) {
     safety: count(/^\s*> Safety:/gm),
     vars: [...body.matchAll(/\{\{\s*([^}|]+?)\s*(?:\|[^}]*)?\}\}/g)].map((m) => m[1]).sort().join(","),
     links: count(/\]\(/g),
+    // "## Heading {methods=a,b}" marks the main step list of those methods: same markers, same order in both languages
+    methodSections: [...body.matchAll(/^## .*\{methods=([\w,]+)\}\s*$/gm)].map((m) => m[1]).join(";"),
   };
 }
 // A blockquote must start with a known marker; later lines of the same quote may continue it.

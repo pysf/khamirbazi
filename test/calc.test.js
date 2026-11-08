@@ -429,3 +429,49 @@ test("data: pan presets", () => {
     assert.ok(ids.includes(want), want);
   }
 });
+
+// ---- By size (round diameter or tray) for ball styles ----------------------------------------------------------
+const round = (d) => ({ shape: "round", diameter: d });
+const tray = { shape: "rect", length: 30, width: 40 };
+
+test("size mode: dough = pizzas x area x density; the density is derived from 250 g at 30 cm", () => {
+  assert.equal(data.styles.new_york.dough_density_g_per_cm2.verified, false);
+  near(data.styles.new_york.dough_density_g_per_cm2.value * Math.PI * 15 * 15, 250, 1e-6, "250 g at 30 cm");
+  const r30 = computeRecipe({ styleId: "new_york", methodId: "cold_24h", mode: { pizzas: 2, size: round(30) } }, data);
+  near(r30.dough_g, 500, 1e-5);
+  near(r30.ball_g, 250, 1e-6);
+  near(r30.flour_total_g, 295.28, 0.01);
+  near(r30.water.add_g, 126.97, 0.01);
+  near(r30.yeast.solution.take_g, 59.06, 0.01);
+  // same as the ball-weight mode for 2 x 250 g
+  const ball = computeRecipe({ styleId: "new_york", methodId: "cold_24h", mode: { pizzas: 2, ballWeight: 250 } }, data);
+  near(r30.flour_total_g, ball.flour_total_g, 1e-4);
+});
+
+test("size mode: 26 cm, 32 cm and the 30 x 40 tray scale with area (hand-computed)", () => {
+  const d = data.styles.new_york.dough_density_g_per_cm2.value;
+  const dough = (size, n = 2) => computeRecipe({ styleId: "new_york", methodId: "cold_24h", mode: { pizzas: n, size } }, data).dough_g;
+  near(dough(round(26)), 2 * Math.PI * 169 * d, 1e-9); // about 375.6 g
+  near(dough(round(26)), 375.6, 0.1);
+  near(dough(round(32)), 568.9, 0.1);
+  near(dough(tray, 1), 1200 * d, 1e-9); // about 424.4 g for one tray
+  near(dough(tray, 1), 424.4, 0.1);
+  near(dough(tray, 3), 3 * dough(tray, 1), 1e-9);
+});
+
+test("size mode: Neapolitan works, 2-pizza minimum for the warm method still applies, styles without a density throw", () => {
+  const nea = computeRecipe({ styleId: "neapolitan", methodId: "cold_24h", mode: { pizzas: 2, size: round(30) } }, data);
+  near(nea.dough_g, 500, 1e-5);
+  const one = computeRecipe({ styleId: "new_york", methodId: "warm_2h", mode: { pizzas: 1, size: round(30) } }, data);
+  assert.equal(one.yeast.mode, "unavailable");
+  assert.ok(one.warnings.some((w) => w.id === "min_batch"));
+  const okTwo = computeRecipe({ styleId: "new_york", methodId: "warm_2h", mode: { pizzas: 2, size: round(30) } }, data);
+  assert.equal(okTwo.yeast.mode, "direct");
+  assert.throws(() => computeRecipe({ styleId: "roman_tonda", methodId: "cold_24h", mode: { pizzas: 2, size: round(30) } }, data), RangeError);
+  assert.throws(() => computeRecipe({ styleId: "new_york", methodId: "cold_24h", mode: { pizzas: 2, size: round(0) } }, data), RangeError);
+});
+
+test("the sizes list in recipes.json is the four sizes of the site", () => {
+  assert.deepEqual(data.sizes.map((s) => s.id), ["round_26", "round_30", "round_32", "tray_30x40"]);
+  near(panArea(data.sizes[3]), 1200, 1e-9);
+});

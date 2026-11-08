@@ -1,18 +1,19 @@
 # Khamirbazi: home pizza guide + calculator
 
-A simple static website (English and Farsi, built together) with accurate, step-by-step instructions for baking six pizza styles at home, plus a calculator that scales any recipe to any number of pizzas or any pan size.
+A simple static website (English and Farsi, built together) with accurate, step-by-step instructions for pizza dough at home and a calculator that scales the recipe to your pizza size and number of pizzas. The UI offers two styles now (New York, Neapolitan). calc.js, recipes.json, the tests and the i18n names still cover six styles, pans and a timeline; the UI does not expose them.
 
 Keep it simple (KISS). Prefer fewer files, fewer dependencies, and plain code over clever code.
 
 ## Stack (decided)
 
 - **Eleventy (11ty)** builds the static site. Output goes to `_site/`.
-- **Content** is Markdown, one file per section per language: `src/content/en/` and `src/content/fa/`, same file names in both (`basics.md`, `glossary.md`, `styles/<style_id>.md`). Write content once; never copy it into HTML. Convention (details and sample in README.md): ordered list = steps; an indented `> Why:` line under a step = expandable "Why?"; `> Tip:`, `> Warning:`, `> Safety:` = callouts (markers stay English in both languages); numbers only as `{{ recipes... }}` values; `<bdi>` around Latin terms in Farsi.
+- **Pages** (per language, `/en/`, `/fa/`): Home = the calculator (style, method, size, number of pizzas, yeast, then "Show recipe"); `/<lang>/recipe/<style_id>/?method=&size=&pizzas=&yeast=` = ingredients (computed in the browser with calc.js; a 2-pizza 30 cm table is the no-JS fallback) and the steps of the chosen method, then the other Markdown sections under "More details"; Basics. No style pages, no calculator page. The recipe is about dough only.
+- **Content** is Markdown, one file per section per language: `src/content/en/` and `src/content/fa/`, same file names in both (`basics.md`, `glossary.md`, `styles/<style_id>.md`). Write content once; never copy it into HTML. Convention (details and sample in README.md): ordered list = steps; an indented `> Why:` line under a step = the round "?" ("Good to know", with a link to Basics); `> Tip:`, `> Warning:`, `> Safety:` = callouts (markers stay English in both languages); numbers only as `{{ recipes... }}` values; `<bdi>` around Latin terms in Farsi.
 - **Languages:** English (LTR) and Farsi (RTL, `lang="fa" dir="rtl"`). Numbers, quantities and percentages live only in `recipes.json`, never in translated text; prose refers to them through template variables so the two languages cannot disagree. UI strings live in `src/_data/i18n/en.json` and `fa.json`. Latin names inside Farsi text use `<bdi>`/`dir="ltr"` isolation, not invisible characters. Farsi uses the rules in "Farsi writing rules" below. Language switch keeps the user on the same page.
 - **Delivery order:** work one pizza style at a time, and finish English and Farsi for that style together so the user can review both side by side. Start with New York.
 - **Data** is `src/_data/recipes.json`. It is the single source of truth for every number. Recipe tables and the calculator are both generated from it. Never hardcode a quantity in prose or in JS.
 - **Calculator** is one vanilla JS module, `src/assets/calc.js`, exporting pure functions (no DOM). The page script only reads inputs and renders results.
-- **Styling** is one hand-written responsive CSS file, mobile first. No CSS framework. The layout adapts; content never changes per screen size. The visual design is in `docs/design` (read-only reference; tokens are CSS variables with the design's names). Fonts are self-hosted (Inter, Newsreader, Vazirmatn, SIL OFL), never from Google Fonts. Dark mode follows the system with a header toggle (`data-theme` on `<html>`, saved in `localStorage` inside try/catch). Digits are Western (0-9) in Farsi too.
+- **Styling** is one hand-written responsive CSS file, mobile first. No CSS framework. The layout adapts; content never changes per screen size. The visual design is in `docs/design` (read-only reference; tokens are CSS variables with the design's names). Fonts are self-hosted (Inter, Vazirmatn, SIL OFL; one sans family), never from Google Fonts. Dark mode follows the system with a footer toggle (`data-theme` on `<html>`, saved in `localStorage` inside try/catch). Digits are Western (0-9) in Farsi too.
 - **No client framework** (React, Vue, etc.). No dependencies except Eleventy and dev tooling.
 - **Tests:** `node --test` on `calc.js`. Test every style/method combination against hand-computed values.
 - **Local commands go through the `Makefile`** (`make help` lists them): `make dev` (live server on port 8080), `make test`, `make check`, `make build`, `make ci` (test + check + build, exactly what CI runs), `make preview` (build with the GitHub Pages sub-path and serve it on port 8081), `make clean`. Add new build steps to the Makefile, not only to package.json, so local and CI never differ.
@@ -39,7 +40,7 @@ Keep it simple (KISS). Prefer fewer files, fewer dependencies, and plain code ov
 
 ## Calculator rules
 
-- Inputs: style, method, yeast type (dry/fresh), and either number of pizzas + ball weight, or a pan (round diameter, or rectangle length x width; multiple pans allowed). Everything else is calculated.
+- Inputs (UI): style, method, yeast type (dry/fresh), size (round 26/30/32 cm or the 30 x 40 cm oven tray, from `sizes` in `recipes.json`) and number of pizzas (trays for the tray). Dough per pizza = size area x the style's `dough_density_g_per_cm2`. calc.js also still supports ball weight, pans and the timeline (not shown in the UI).
 - Output: all ingredients in grams, the yeast solution instructions, sauce/cheese/topping amounts, a timeline that works backwards from the planned bake time (mix, rest, fridge, take out, preheat, open, bake), oven settings, and bake time.
 - **Do not round to friendly numbers.** Compute exactly; display at most 1 decimal.
 - **Assume a 1 g kitchen scale.** Never ask the user to weigh less than 1 g. Yeast is handled by a solution: dry yeast = one whole 7 g packet in 700 g water (1%); fresh yeast = half a 42 g cube (21 g) in 700 g water (3%). Then weigh out X g of solution, and subtract X from the recipe water.

@@ -99,7 +99,7 @@ function buildTimeline({ data, style, method, methodId, bakeTime, bakeMinutes })
 /**
  * Compute a full recipe.
  * input: {styleId, methodId, yeastType:'dry'|'fresh', mode, bakeTime?, thick?}
- *   mode: {pizzas, ballWeight?} for ball styles, {pans:[{shape,...}]} for pan styles.
+ *   mode: {pizzas, ballWeight?} or {pizzas, size:{shape,...}} (a round or rectangle; needs the style's dough_density_g_per_cm2) for ball styles, {pans:[{shape,...}]} for pan styles.
  * data: the parsed recipes.json.
  * Returns exact (unrounded) grams.
  */
@@ -122,6 +122,7 @@ export function computeRecipe(input, data) {
   let area = null;
   let pans = null;
   let densityUsed = null;
+  let sizeArea = null;
 
   if (style.kind === "pan") {
     if (!Array.isArray(mode.pans) || mode.pans.length === 0) throw new RangeError("missing_pans");
@@ -134,7 +135,17 @@ export function computeRecipe(input, data) {
     }
   } else {
     pizzas = positive(mode.pizzas, "invalid_pizzas");
-    ballWeight = mode.ballWeight == null ? style.ball_g.value : positive(mode.ballWeight, "invalid_ball_weight");
+    if (mode.size != null) {
+      // By size: one pizza (or tray) is a round or rectangle; dough = area x the style's dough density.
+      const density = style.dough_density_g_per_cm2?.value;
+      if (density == null) throw new RangeError("no_size_density");
+      sizeArea = panArea(mode.size);
+      ballWeight = sizeArea * density;
+      area = sizeArea * pizzas;
+      densityUsed = density;
+    } else {
+      ballWeight = mode.ballWeight == null ? style.ball_g.value : positive(mode.ballWeight, "invalid_ball_weight");
+    }
     doughG = pizzas * ballWeight;
   }
 
@@ -293,6 +304,7 @@ export function computeRecipe(input, data) {
     ball_g: ballWeight,
     pans,
     area_cm2: area,
+    size_area_cm2: sizeArea,
     density_g_per_cm2: densityUsed,
     dough_g: doughG,
     flour_total_g: flourTotal,

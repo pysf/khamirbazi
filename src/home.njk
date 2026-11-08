@@ -1,6 +1,7 @@
 ---
 layout: layout.njk
 section: home
+script: home.js
 pagination:
   data: site.langs
   size: 1
@@ -9,46 +10,29 @@ permalink: "/{{ lang }}/index.html"
 eleventyComputed:
   title: "{{ i18n[lang].home.title }}"
 ---
-{% from "ill.njk" import ill %}{% set t = i18n[lang] %}
+{% set t = i18n[lang] %}{% set h = t.home %}{% set first = site.uiStyles | first %}
 <section class="hero">
-  <div class="stack">
-    <h1>{{ t.home.title }}</h1>
-    <p class="lead">{{ t.home.pitch }}</p>
-    <p class="muted small">{{ t.home.oven_note | fill({ max_c: recipes.oven.max_c.value }, lang) }}</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="{{ ('/' + lang + '/calculator/') | url }}">{{ t.home.cta }}{% icon "arrow", "dir-icon" %}</a>
-      <a class="btn btn-secondary" href="{{ ('/' + lang + '/styles/new_york/') | url }}">{{ t.home.cta2 | fill({ name: t.styles.new_york.name }, lang) }}</a>
-    </div>
-  </div>
-  <div class="hero-ill" aria-hidden="true">
-    <svg viewBox="0 0 120 120" width="100%"><circle class="i-crust" cx="60" cy="60" r="56"></circle><circle class="i-sauce" cx="60" cy="60" r="46"></circle><circle class="i-cheese" cx="44" cy="46" r="11"></circle><circle class="i-cheese" cx="74" cy="50" r="12"></circle><circle class="i-cheese" cx="58" cy="78" r="13"></circle><circle class="i-leaf" cx="68" cy="72" r="5"></circle><circle class="i-leaf" cx="40" cy="68" r="4"></circle><circle class="i-leaf" cx="62" cy="36" r="4"></circle></svg>
-  </div>
+  <h1>{{ h.title }}</h1>
+  <p>{{ h.sub }}</p>
 </section>
-
-<section id="styles" class="stack">
-  <h2>{{ t.home.styles_heading }}</h2>
-  <div class="grid">
-    {% for id, st in recipes.styles %}{% set tb = tables[id] %}
-    <a class="card scard" href="{{ ('/' + lang + '/styles/' + id + '/') | url }}" aria-label="{{ t.card.open | fill({ name: t.styles[id].name }, lang) }}">
-      <div class="ill" aria-hidden="true">{{ ill(site.illustrations[id]) | safe }}</div>
-      <h3 class="sname">{{ t.styles[id].name }}</h3>
-      {% if lang == "fa" %}<span class="latin" dir="ltr">{{ t.styles[id].latin }}</span>{% endif %}
-      <p class="muted">{{ t.styles[id].blurb }}</p>
-      <dl class="smeta">
-        <div><dt>{{ t.card.difficulty }}</dt><dd>{{ t.difficulty[st.difficulty] }}</dd></div>
-        <div><dt>{{ t.card.ferment }}</dt><dd>{% if tb.methodIds.length > 1 %}{{ t.style.ferment_range | fill({ from: t.methods_short[tb.methodIds | first], to: t.methods_short[tb.methodIds | last] }, lang) }}{% else %}{{ t.methods_short[tb.methodIds | first] }}{% endif %}</dd></div>
-      </dl>
-      <span class="lnk">{{ t.card.open_short }}{% icon "arrow", "dir-icon" %}</span>
-    </a>
-    {% endfor %}
+<section class="calc" aria-label="{{ h.calc_label }}" id="calc"
+  data-min-pizzas="{{ recipes.methods.warm_2h.min_pizzas }}" data-min-g="{{ recipes.yeast.min_weigh_g.value }}">
+  <div class="card rows" role="group" aria-label="{{ h.calc_label }}">
+    <div class="row"><label class="k" for="f-style">{{ h.style }}</label>
+      <span class="selw"><select id="f-style" class="sel">{% for id in site.uiStyles %}<option value="{{ id }}" data-url="{{ ('/' + lang + '/recipe/' + id + '/') | url }}" data-methods="{{ recipes.styles[id].methods_typical | join(' ') }}" data-default="{{ recipes.styles[id].default_method }}">{{ t.styles[id].name }}</option>{% endfor %}</select>{% icon "chev", "chv" %}</span></div>
+    <div class="row"><label class="k" for="f-method">{{ h.method }}</label>
+      <span class="selw"><select id="f-method" class="sel">{% for m in recipes.styles[first].methods_typical %}<option value="{{ m }}"{% if m == recipes.styles[first].default_method %} selected{% endif %}>{{ t.methods_short[m] }}</option>{% endfor %}</select>{% icon "chev", "chv" %}</span></div>
+    <div class="row col"><span class="k" id="l-size">{{ h.size }}</span>
+      <div class="segc" role="group" aria-labelledby="l-size" data-group="size">
+        {% for s in recipes.sizes %}<button type="button" data-value="{{ s.id }}" aria-pressed="{{ 'true' if s.id == 'round_30' else 'false' }}">{% if s.shape == "round" %}{{ s.diameter }}<small>{{ h.round }}</small>{% else %}<bdi dir="ltr">{{ s.length }}×{{ s.width }}</bdi><small>{{ h.tray }}</small>{% endif %}</button>{% endfor %}
+      </div></div>
+    <div class="row"><span class="k" id="l-count">{{ h.count }}</span>
+      <div class="stp" role="group" aria-labelledby="l-count"><button type="button" data-step="-1" aria-label="{{ h.dec }}">−</button><span class="val" id="f-count" aria-live="polite">2</span><button type="button" data-step="1" aria-label="{{ h.inc }}">+</button></div></div>
+    <div class="row"><span class="k" id="l-yeast">{{ h.yeast }}</span>
+      <div class="segc inline" role="group" aria-labelledby="l-yeast" data-group="yeast"><button type="button" data-value="dry" aria-pressed="true">{{ h.dry }}</button><button type="button" data-value="fresh" aria-pressed="false">{{ h.fresh }}</button></div></div>
   </div>
-</section>
-
-<section class="stack">
-  <h2>{{ t.home.how_heading }}</h2>
-  <ol class="how">
-    {% for k in ["s1", "s2", "s3"] %}
-    <li><strong>{{ t.home.how[k].t }}</strong><span class="muted">{{ t.home.how[k].d }}</span></li>
-    {% endfor %}
-  </ol>
+    <p class="row-err" id="count-err" role="alert" hidden>{{ h.err_min_batch | fill({ min: recipes.methods.warm_2h.min_pizzas, min_g: recipes.yeast.min_weigh_g.value }, lang) }}</p>
+  <script type="application/json" id="method-labels">{{ t.methods_short | dump | safe }}</script>
+  <a class="btn btn-primary btn-lg" id="cta" href="{{ ('/' + lang + '/recipe/' + first + '/') | url }}">{{ h.cta }}</a>
+  <a class="lnk-card" href="{{ ('/' + lang + '/basics/') | url }}"><span><strong>{{ h.new_to }}</strong><br><span class="muted">{{ h.new_to_sub }}</span></span>{% icon "arrow", "dir-icon" %}</a>
 </section>
