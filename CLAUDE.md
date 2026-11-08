@@ -50,8 +50,6 @@ Keep it simple (KISS). Prefer fewer files, fewer dependencies, and plain code ov
 
 New York (main recipe) and Neapolitan.
 
-Reference quantities (for 300 g flour, about 2 pizzas) currently live in `pizza-guide-v7-raw.md` (Persian). That file is the **translation source**. Port its numbers into `recipes.json` (after the fact-check) and write each style in English and Farsi together, then retire it. Designer brief: `docs/ui-designer-prompt.md`.
-
 ## Baker's setup the guide assumes (maintainer's private context)
 
 This section is background for the maintainer. **It must not leak into published text** (content, UI strings, glossary, rendered data): no brands, stores, countries or cities, no local-language product terms. `make check` fails when a banned word appears (list in `scripts/check-sync.mjs`).
@@ -87,7 +85,6 @@ This section is background for the maintainer. **It must not leak into published
 - No Latin-script words on Farsi pages. Use the established Persian word (آرد، مخمر فوری، تخمیر سرد، ورز دادن، کفگیر/پیتزابر) and add a short Persian explanation when the term would be opaque. Write proper names in Persian script (تیپو 00، یونسکو). The only Latin on a Farsi page is the language-switch label "EN". `make check` fails on any Latin word in `src/content/fa/**` or in the values of `fa.json` (allow list in `scripts/check-sync.mjs`). Units in words: گرم، درجه، دقیقه، ساعت، سانتی‌متر.
 - No unknown or meaningless Farsi phrases. Example: say "کشیدن و تا کردن خمیر" (stretch the dough and fold it over itself), not a literal calque.
 - Section references use number and name, same as English.
-- The existing Persian guide (`pizza-guide-v7-raw.md`) shows the user's preferred tone; reuse its wording where the content is unchanged.
 
 ## Accuracy rules
 
