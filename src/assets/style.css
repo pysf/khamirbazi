@@ -115,8 +115,9 @@ a{color:inherit}
 .steps>li.titled{display:block}
 .steps>li.titled::before{content:none}
 .substeps{list-style:none;padding:0;display:grid;gap:10px;counter-reset:ss}
-.substeps>li{counter-increment:ss;display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:start}
-.substeps>li::before{content:counter(ss);width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center;font-size:var(--fs-xs)}
+.substeps>li{counter-increment:ss;position:relative;padding-inline-start:36px;min-width:0}
+.substeps>li>.bullets{margin-top:8px}
+.substeps>li::before{content:counter(ss);position:absolute;inset-inline-start:0;top:-1px;width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center;font-size:var(--fs-xs)}
 [dir=rtl] .substeps>li::before{content:counter(ss,persian)}
 .sb{display:grid;gap:8px;min-width:0}
 .sb p{color:var(--text-muted);font-size:var(--fs-base)}
