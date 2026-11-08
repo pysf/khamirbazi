@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Logotype</title>
+<title>Logo</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -13,52 +13,47 @@
 body{margin:0}
 .lgo{box-sizing:border-box;padding:40px 48px;font-family:Inter,system-ui,sans-serif;display:grid;gap:24px;background:#FBF6EC;color:#2B2A22}
 .lgo *{box-sizing:border-box}
-.lgo h1,.lgo h2,.lgo p{margin:0}
-.pn{border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:20px;align-items:flex-start;border:1px solid #D9CFB9}
+.lgo h1,.lgo p{margin:0}
+.pn{border-radius:20px;padding:32px;display:flex;flex-wrap:wrap;gap:32px;align-items:center;border:1px solid #D9CFB9}
 .pn.light{background:#FBF6EC;color:#2B2A22;--a:#B3321F}
 .pn.dark{background:#1C1A16;color:#F1E9D8;--a:#FF8A70;border-color:#4A443A}
-.lg{font:600 var(--s,96px)/1 Newsreader,Georgia,serif;letter-spacing:-.01em;display:inline-block;padding-block:.08em;white-space:nowrap}
-.di{position:relative;display:inline-block}
-.di::after{content:"";position:absolute;left:50%;top:.2em;width:.17em;height:.17em;border-radius:50%;background:var(--a);transform:translateX(-50%)}
-.fa{font:700 var(--s,84px)/1.5 Vazirmatn,sans-serif;direction:rtl;display:inline-flex;align-items:baseline;white-space:nowrap}
-.ld{display:inline-block;width:.17em;height:.17em;border-radius:50%;background:var(--a);margin-inline-start:.1em}
-.row{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end}
-.ic{width:96px;height:96px;border-radius:24px;background:var(--a);color:#FFFDF8;display:grid;place-items:center;font:600 64px/1 Newsreader,Georgia,serif;position:relative}
-.pn.dark .ic{color:#1C1A16}
-.ic.fa{font:700 56px/1 Vazirmatn,sans-serif;direction:rtl}
-.ic .k{position:relative;display:inline-block}
-.ic .k::after{content:"";position:absolute;right:-.06em;top:.1em;width:.14em;height:.14em;border-radius:50%;background:currentColor}
-.ic.fa .k::after{display:none}
-.cap{font-size:15px;color:#5B5849}
-.pn.dark .cap{color:#C4BAA4}
+.pn.red{background:#B3321F;color:#FBF6EC;--a:#FBF6EC;border-color:#B3321F}
+.mk{color:var(--a);flex:none}
+.lock{display:flex;align-items:center;gap:14px}
+.wm{font:600 var(--s,28px)/1.2 Newsreader,Georgia,serif;letter-spacing:-.01em;white-space:nowrap}
+.wmf{font:700 var(--s,26px)/1.5 Vazirmatn,sans-serif;direction:rtl;white-space:nowrap}
+.app{width:96px;height:96px;border-radius:22px;background:#B3321F;display:grid;place-items:center}
+.cap{font-size:15px;color:#5B5849;max-width:760px}
 ul{margin:0;padding-inline-start:20px;line-height:1.7}
 </style>
 </helmet>
 <div class="lgo">
-<h1 style="font:600 34px/1.2 Newsreader,Georgia,serif">Logotype</h1>
-<p class="cap" style="max-width:720px;color:#5B5849">A pure wordmark, no pictogram. The two dots of the Latin <b>i</b> become tomato-red circles (sauce, or a ball of dough seen from above). Set in Newsreader 600; the dotless ı is a normal character, so the logo is live text. The Farsi wordmark is Vazirmatn 700 with one matching tomato dot, because the Farsi letter dots cannot be coloured separately.</p>
+<h1 style="font:600 34px/1.2 Newsreader,Georgia,serif">Logo</h1>
+<p class="cap">The mark is a top-down pizza drawn with one ring, one cut-out slice and six dots: one per style. It is traced as clean SVG from the supplied concept. The name sits next to it in Newsreader 600 (English) or Vazirmatn 700 (Farsi). The mark has no left or right, so it works in both directions.</p>
+
 <div class="pn light">
-<span class="lg" aria-label="Khamirbazi">Kham<span class="di">ı</span>baz<span class="di">ı</span></span>
-<span class="fa" aria-label="خمیربازی">خمیربازی<span class="ld"></span></span>
+<svg class="mk" width="220" height="220" viewBox="0 0 100 100" role="img" aria-label="Khamirbazi mark"><g fill="none" stroke="currentColor" stroke-width="7"><path d="M88.07 32.25 A42 42 0 1 1 53.66 8.16"></path><path d="M53 47 L60.5 11.8 A36 36 0 0 1 83.5 27.9 Z" stroke-width="5.5" stroke-linejoin="round"></path></g><g fill="currentColor"><circle cx="66" cy="28" r="3.5"></circle><circle cx="26" cy="40" r="4.5"></circle><circle cx="35" cy="62" r="4.5"></circle><circle cx="52" cy="74" r="4.5"></circle><circle cx="70" cy="64" r="4.5"></circle><circle cx="44" cy="30" r="4.5"></circle></g></svg>
+<div style="display:grid;gap:20px">
+<div class="lock"><svg class="mk" width="56" height="56" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7"><path d="M88.07 32.25 A42 42 0 1 1 53.66 8.16"></path><path d="M53 47 L60.5 11.8 A36 36 0 0 1 83.5 27.9 Z" stroke-width="5.5" stroke-linejoin="round"></path></g><g fill="currentColor"><circle cx="66" cy="28" r="3.5"></circle><circle cx="26" cy="40" r="4.5"></circle><circle cx="35" cy="62" r="4.5"></circle><circle cx="52" cy="74" r="4.5"></circle><circle cx="70" cy="64" r="4.5"></circle><circle cx="44" cy="30" r="4.5"></circle></g></svg><span class="wm" style="--s:44px">Khamirbazi</span></div>
+<div class="lock" dir="rtl"><svg class="mk" width="56" height="56" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7"><path d="M88.07 32.25 A42 42 0 1 1 53.66 8.16"></path><path d="M53 47 L60.5 11.8 A36 36 0 0 1 83.5 27.9 Z" stroke-width="5.5" stroke-linejoin="round"></path></g><g fill="currentColor"><circle cx="66" cy="28" r="3.5"></circle><circle cx="26" cy="40" r="4.5"></circle><circle cx="35" cy="62" r="4.5"></circle><circle cx="52" cy="74" r="4.5"></circle><circle cx="70" cy="64" r="4.5"></circle><circle cx="44" cy="30" r="4.5"></circle></g></svg><span class="wmf" style="--s:40px">خمیربازی</span></div>
 </div>
+</div>
+
 <div class="pn dark">
-<span class="lg" aria-label="Khamirbazi">Kham<span class="di">ı</span>baz<span class="di">ı</span></span>
-<span class="fa" aria-label="خمیربازی">خمیربازی<span class="ld"></span></span>
+<div class="lock"><svg class="mk" width="56" height="56" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7"><path d="M88.07 32.25 A42 42 0 1 1 53.66 8.16"></path><path d="M53 47 L60.5 11.8 A36 36 0 0 1 83.5 27.9 Z" stroke-width="5.5" stroke-linejoin="round"></path></g><g fill="currentColor"><circle cx="66" cy="28" r="3.5"></circle><circle cx="26" cy="40" r="4.5"></circle><circle cx="35" cy="62" r="4.5"></circle><circle cx="52" cy="74" r="4.5"></circle><circle cx="70" cy="64" r="4.5"></circle><circle cx="44" cy="30" r="4.5"></circle></g></svg><span class="wm" style="--s:44px">Khamirbazi</span></div>
+<div class="lock" dir="rtl"><svg class="mk" width="56" height="56" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7"><path d="M88.07 32.25 A42 42 0 1 1 53.66 8.16"></path><path d="M53 47 L60.5 11.8 A36 36 0 0 1 83.5 27.9 Z" stroke-width="5.5" stroke-linejoin="round"></path></g><g fill="currentColor"><circle cx="66" cy="28" r="3.5"></circle><circle cx="26" cy="40" r="4.5"></circle><circle cx="35" cy="62" r="4.5"></circle><circle cx="52" cy="74" r="4.5"></circle><circle cx="70" cy="64" r="4.5"></circle><circle cx="44" cy="30" r="4.5"></circle></g></svg><span class="wmf" style="--s:40px">خمیربازی</span></div>
 </div>
+
 <div class="pn light">
-<p class="cap">Header size (26 px) and app icon / favicon</p>
-<div class="row">
-<span class="lg" style="--s:26px" aria-label="Khamirbazi">Kham<span class="di">ı</span>baz<span class="di">ı</span></span>
-<span class="fa" style="--s:24px" aria-label="خمیربازی">خمیربازی<span class="ld"></span></span>
-<span class="ic" aria-label="Khamirbazi icon"><span class="k">k</span></span>
-<span class="ic fa" aria-label="خمیربازی icon"><span class="k">خ</span></span>
+<div class="app"><svg width="64" height="64" viewBox="0 0 100 100" aria-hidden="true" style="color:#FBF6EC"><g fill="none" stroke="currentColor" stroke-width="8"><path d="M88.07 32.25 A42 42 0 1 1 53.66 8.16"></path><path d="M53 47 L60.5 11.8 A36 36 0 0 1 83.5 27.9 Z" stroke-linejoin="round"></path></g><g fill="currentColor"><circle cx="35" cy="58" r="5"></circle><circle cx="56" cy="68" r="5"></circle></g></svg></div>
+<p class="cap" style="max-width:420px">App icon and favicon: the mark simplified to the ring, the slice and two dots, so it still reads at 16 px. File: <code>favicon.svg</code>.</p>
+<div class="pn red" style="padding:16px 24px;border-radius:14px"><svg class="mk" width="40" height="40" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="8"><path d="M88.07 32.25 A42 42 0 1 1 53.66 8.16"></path><path d="M53 47 L60.5 11.8 A36 36 0 0 1 83.5 27.9 Z" stroke-linejoin="round"></path></g><g fill="currentColor"><circle cx="35" cy="58" r="5"></circle><circle cx="56" cy="68" r="5"></circle></g></svg><span style="font-weight:600">One-colour on red</span></div>
 </div>
-</div>
+
 <ul class="cap">
-<li>Minimum width: 96 px for the Latin wordmark. Below that, use the square icon.</li>
-<li>Clear space: the height of the “K” on every side.</li>
-<li>Colour: ink + accent only. On photos or the accent colour, use a single colour (all cream or all charcoal).</li>
-<li>No outlines, shadows, or rotation.</li>
+<li>Files in the repo: <code>docs/design/logo/</code> — mark.svg (red), mark-ink.svg, mark-cream.svg, mark-on-dark.svg, favicon.svg.</li>
+<li>Minimum size: 16 px for the favicon version, 24 px for the full mark. Clear space: the width of one ring thickness times three on every side.</li>
+<li>Colours: tomato #B3321F on light, #FF8A70 on dark, charcoal #2B2A22 or cream #FBF6EC for one colour. No gradients, shadows or rotation.</li>
 </ul>
 </div>
 </x-dc>

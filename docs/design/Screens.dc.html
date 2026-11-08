@@ -48,6 +48,9 @@ background:var(--bg);color:var(--text);font:400 var(--fs-base)/1.65 var(--font-b
 .di{position:relative;display:inline-block}
 .di::after{content:"";position:absolute;left:50%;top:.2em;width:.17em;height:.17em;border-radius:50%;background:var(--accent);transform:translateX(-50%)}
 .ld{display:inline-block;width:.17em;height:.17em;border-radius:50%;background:var(--accent);margin-inline-start:.1em}
+.mk{width:36px;height:36px;flex:none;color:var(--accent)}
+.wm{font:600 24px/1.2 var(--font-head);letter-spacing:-.01em}
+.kb[dir=rtl] .wm{font-weight:700;font-size:22px}
 .nav{display:flex;order:3;width:100%}
 .nav a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text-muted);font-weight:600;font-size:var(--fs-sm);border-bottom:3px solid transparent;padding-inline:4px;text-align:center}
 .nav a[aria-current=page]{color:var(--accent);border-bottom-color:var(--accent)}
@@ -239,8 +242,8 @@ code,.mono{font-family:ui-monospace,Menlo,monospace;font-size:13px}
 <header class="hdr">
 <div class="wrap hdr-row">
 <a class="brand" href="#" aria-label="{{t.brand}}">
-<sc-if value="{{enOn}}" hint-placeholder-val="{{ true }}"><span class="lg" aria-hidden="true">Kham<span class="di">ı</span>baz<span class="di">ı</span></span></sc-if>
-<sc-if value="{{faOn}}" hint-placeholder-val="{{ false }}"><span class="lg fa" aria-hidden="true">خمیربازی<span class="ld"></span></span></sc-if>
+<svg class="mk" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7"><path d="M88.07 32.25 A42 42 0 1 1 53.66 8.16"></path><path d="M53 47 L60.5 11.8 A36 36 0 0 1 83.5 27.9 Z" stroke-width="5.5" stroke-linejoin="round"></path></g><g fill="currentColor"><circle cx="66" cy="28" r="3.5"></circle><circle cx="26" cy="40" r="4.5"></circle><circle cx="35" cy="62" r="4.5"></circle><circle cx="52" cy="74" r="4.5"></circle><circle cx="70" cy="64" r="4.5"></circle><circle cx="44" cy="30" r="4.5"></circle></g></svg>
+<span class="wm" aria-hidden="true">{{t.brand}}</span>
 </a>
 <div class="seg" role="group" aria-label="{{t.langLabel}}">
 <button type="button" class="seg-b" lang="en" aria-pressed="{{enOn}}">English</button>
