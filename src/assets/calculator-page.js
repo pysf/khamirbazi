@@ -181,9 +181,11 @@ function readInput() {
   } else {
     const pizzas = parseNum($("f-count").value);
     const ball = parseNum($("f-ball").value);
-    fieldError("f-count", pizzas > 0 ? null : t.calc.err.invalid_pizzas);
+    const minPizzas = data.methods[input.methodId].min_pizzas ?? 0;
+    const tooFew = pizzas > 0 && pizzas < minPizzas;
+    fieldError("f-count", pizzas > 0 ? (tooFew ? f(t.calc.err.min_batch, { min: minPizzas, min_g: data.yeast.min_weigh_g.value }) : null) : t.calc.err.invalid_pizzas);
     fieldError("f-ball", ball > 0 ? null : t.calc.err.invalid_ball_weight);
-    error = pizzas > 0 && ball > 0 ? null : t.calc.err.invalid_pizzas;
+    error = pizzas > 0 && ball > 0 && !tooFew ? null : tooFew ? f(t.calc.err.min_batch, { min: minPizzas, min_g: data.yeast.min_weigh_g.value }) : t.calc.err.invalid_pizzas;
     input.mode = { pizzas, ballWeight: ball };
   }
   return error ? { error } : { input };

@@ -189,6 +189,7 @@
     "method_not_typical": "This method is not the usual choice for this style. It still works, but check the notes.",
     "solution_exceeds_water": "The yeast solution would be more than all the water in the recipe, so the yeast is weighed directly.",
     "scale_resolution": "This yeast amount is small for a scale that shows whole grams. A little more or less changes the rise, so watch the dough and adjust next time.",
+    "min_batch": "This method needs at least {min_pizzas} pizzas, and you chose {pizzas}. The yeast would be under {min_g} g, and a scale that reads whole grams cannot measure that.",
     "batch_too_small": "This dough is too small to measure the yeast on a scale that shows whole grams. Make a bigger batch.",
     "pan_small": "This pan is very small, so there is very little dough."
   },
@@ -265,6 +266,7 @@
       "invalid_ball_weight": "The ball weight must be above zero.",
       "missing_pans": "Add at least one pan.",
       "pan_too_small": "This pan is too small. A pan needs at least {min} cm² of area. Try a larger size.",
+      "min_batch": "The 2-hour warm method needs at least {min} pizzas. One pizza needs less than {min_g} g of yeast, and a scale that reads whole grams cannot measure that. Choose a cold method, or bake {min} pizzas.",
       "invalid_number": "Enter a number above zero."
     },
     "hm": "{h} h {m} min",

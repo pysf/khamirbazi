@@ -433,7 +433,9 @@
         "sources": [],
         "note": "Rest after dividing/balling (or in the pan), 30-45 min. Planning uses the upper end."
       },
-      "fridge_h": null
+      "fridge_h": null,
+      "min_pizzas": 2,
+      "min_pizzas_note": "1 pizza needs under 1 g yeast; scale reads whole grams"
     },
     "room_8_12h": {
       "yeast_pct_dry": {
@@ -590,6 +592,24 @@
         "verified": false,
         "sources": [],
         "note": "Take the dough out of the fridge 1.5-2 h before baking (cold dough tears). Planning uses the upper end."
+      },
+      "stretch_fold": {
+        "rounds": {
+          "value": 3,
+          "unit": "rounds",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together."
+        },
+        "gap_min": {
+          "value": 30,
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        }
       }
     },
     "cold_24h": {
@@ -667,6 +687,24 @@
         "verified": false,
         "sources": [],
         "note": "1.5-2 h before baking."
+      },
+      "stretch_fold": {
+        "rounds": {
+          "value": 3,
+          "unit": "rounds",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together."
+        },
+        "gap_min": {
+          "value": 30,
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        }
       }
     },
     "cold_48h": {
@@ -744,6 +782,24 @@
         "verified": false,
         "sources": [],
         "note": "1.5-2 h before baking."
+      },
+      "stretch_fold": {
+        "rounds": {
+          "value": 3,
+          "unit": "rounds",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together."
+        },
+        "gap_min": {
+          "value": 30,
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        }
       }
     },
     "cold_72h": {
@@ -821,6 +877,24 @@
         "verified": false,
         "sources": [],
         "note": "1.5-2 h before baking."
+      },
+      "stretch_fold": {
+        "rounds": {
+          "value": 3,
+          "unit": "rounds",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together."
+        },
+        "gap_min": {
+          "value": 30,
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        }
       }
     }
   },
@@ -1014,7 +1088,7 @@
             "confidence": "low",
             "verified": false,
             "sources": [],
-            "note": "Value from the user's guide v7 (untested, no external source checked). 3-4 g on the rim before baking, the rest after."
+            "note": "Value from the user's guide v7 (untested, no external source checked). Guide v7 put 3-4 g on the rim before baking for browning; the page now oils the rim after baking because extra-virgin olive oil smokes below 250 degrees. Open decision for the user: keep the original before-baking advice?"
           },
           "optional": true
         }
@@ -1023,7 +1097,338 @@
         "sauce",
         "cheese",
         "toppings"
-      ]
+      ],
+      "practice": {
+        "oil_per_container_g": {
+          "value": 3,
+          "unit": "g",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "container_l": {
+          "value": 1,
+          "unit": "l",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "bench_flour_g": {
+          "value": 10,
+          "unit": "g",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "sticky_add_flour_g": {
+          "value": 5,
+          "unit": "g",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "sticky_max_flour_g": {
+          "value": 10,
+          "unit": "g",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "dry_add_water_g": {
+          "value": 5,
+          "unit": "g",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "dry_max_water_g": {
+          "value": 15,
+          "unit": "g",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "sticky_rest_min": {
+          "range": [
+            10,
+            15
+          ],
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "sticky_fold_rounds": {
+          "range": [
+            2,
+            3
+          ],
+          "unit": "rounds",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "sticky_fold_gap_min": {
+          "value": 15,
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "dry_rest_min": {
+          "value": 15,
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "windowpane_extra_knead_min": {
+          "range": [
+            2,
+            3
+          ],
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "windowpane_rest_min": {
+          "value": 10,
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "kneading_early_min": {
+          "range": [
+            1,
+            2
+          ],
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "kneading_mid_min": {
+          "range": [
+            3,
+            5
+          ],
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "machine_knead_min": {
+          "range": [
+            5,
+            7
+          ],
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "rim_cm": {
+          "range": [
+            1.5,
+            2
+          ],
+          "unit": "cm",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "shape_diameter_cm": {
+          "value": 30,
+          "unit": "cm",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "warm_place_c": {
+          "range": [
+            26,
+            28
+          ],
+          "unit": "C",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "rise_factor": {
+          "range": [
+            1.5,
+            2
+          ],
+          "unit": "x",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "cold_rise_pct": {
+          "value": 25,
+          "unit": "%",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "yeast_works_c": {
+          "range": [
+            25,
+            35
+          ],
+          "unit": "C",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "yeast_dies_c": {
+          "value": 45,
+          "unit": "C",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "hot_room_c": {
+          "value": 25,
+          "unit": "C",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "towel_max_min": {
+          "value": 30,
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "cheese_dry_lead_min": {
+          "range": [
+            20,
+            30
+          ],
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "sauce_max_g": {
+          "value": 100,
+          "unit": "g",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "cheese_max_g": {
+          "value": 120,
+          "unit": "g",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "topping_types": {
+          "range": [
+            2,
+            3
+          ],
+          "unit": "types",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "second_pizza_wait_min": {
+          "range": [
+            2,
+            3
+          ],
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "over_yeast_out_min": {
+          "value": 60,
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "flour_protein_g": {
+          "range": [
+            12,
+            13
+          ],
+          "unit": "g per 100 g",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "flour_protein_max_g": {
+          "value": 14,
+          "unit": "g per 100 g",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "shrink_rest_min": {
+          "range": [
+            10,
+            15
+          ],
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "cold_dough_rest_min": {
+          "range": [
+            15,
+            30
+          ],
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked)."
+        },
+        "_note": "Numbers that appear in the New York step text. All come from the user's guide v7 and are untested."
+      }
     },
     "neapolitan": {
       "kind": "ball",

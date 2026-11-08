@@ -146,6 +146,9 @@ export function computeRecipe(input, data) {
   const freshX = data.yeast.fresh_to_dry.value;
   const yeastFactor = yeastType === "fresh" ? freshX : 1;
   const threshold = data.yeast.solution_threshold_dry_g.value;
+  // Some methods need a minimum number of pizzas (the warm method: 1 pizza needs under 1 g of yeast).
+  const minPizzas = method.min_pizzas ?? 0;
+  const tooFew = style.kind === "ball" && pizzas < minPizzas;
   const minWeigh = data.yeast.min_weigh_g.value;
 
   // Decide direct or solution from the dry-equivalent amount (dry yeast mass in the dough).
@@ -160,7 +163,7 @@ export function computeRecipe(input, data) {
   const sol = data.yeast.solution[yeastType];
   const solutionG = (dryE) => (dryE * yeastFactor) / (sol.concentration_pct.value / 100);
 
-  if (yeastMode === "solution" && solutionG(dryEq) > waterTotal) {
+  if (!tooFew && yeastMode === "solution" && solutionG(dryEq) > waterTotal) {
     // The solution would be more than all the water: fall back to weighing the yeast.
     warn("solution_exceeds_water", "info", {});
     yeastMode = "direct";
@@ -170,7 +173,11 @@ export function computeRecipe(input, data) {
   }
 
   let yeastInfo;
-  if (yeastMode === "solution") {
+  if (tooFew) {
+    yeastMode = "unavailable";
+    yeastInfo = { mode: "unavailable", type: yeastType, dry_equivalent_g: dryEq, amount_g: dryEq * yeastFactor, weigh_g: null };
+    warn("min_batch", "warning", { min_pizzas: minPizzas, pizzas, min_g: minWeigh });
+  } else if (yeastMode === "solution") {
     const take = solutionG(dryEq);
     yeastInfo = {
       mode: "solution",

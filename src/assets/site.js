@@ -16,6 +16,8 @@ if (tabs && table) {
   const show = (method) => {
     tabs.querySelectorAll("[data-method]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.method === method)));
     table.querySelectorAll("[data-m]").forEach((c) => { c.hidden = c.dataset.m !== method; });
+    // Sections that belong to some methods only (style content: "## Heading {methods=a,b}").
+    document.querySelectorAll("[data-method-section]").forEach((sec) => { sec.hidden = !sec.dataset.methodSection.split(" ").includes(method); });
     if (calcLink) calcLink.href = calcLink.href.replace(/method=[^&]*/, `method=${method}`);
   };
   tabs.addEventListener("click", (e) => {

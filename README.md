@@ -39,6 +39,8 @@ Prose for a style lives in `src/content/<lang>/styles/<style_id>.md` (ids as in 
 - `> Tip: ...`, `> Warning: ...` and `> Safety: ...` become callouts. The marker words stay in English in both languages; the visible label ("Tip", "نکته") comes from the UI strings. Every blockquote must start with one of the four markers.
 - Bullet lists become the bulleted list (for example troubleshooting: `- **Problem.** Fix.`).
 - Numbers come from `recipes.json`: write `{{ recipes.styles.new_york.bake.temp_c.value }}`, never the number. A wrong path stops the build. Do not put links in content (they would need the sub-path prefix).
+- A `##` heading that ends with `{methods=id1,id2}` (method ids from `recipes.json`) starts a method section: it runs until the next `##` heading and is shown only when one of those methods is selected with the method buttons on the style page (all are shown without JavaScript). The marker is removed from the visible heading. Use the same marker in both languages.
+- Style pages with written content do not repeat the generated parchment, grill, olive oil and yeast notes at the top; write them as `> Safety:` / `> Warning:` callouts in the content (with values from `recipes.safety`).
 - Latin terms inside Farsi text: wrap in `<bdi>...</bdi>`. Write temperatures in words ("degrees"), not with the letter C.
 
 Sample (a test fixture, see `test/content.test.js`, not real content):
@@ -57,7 +59,7 @@ Sample (a test fixture, see `test/content.test.js`, not real content):
 - **Sample problem.** Sample answer.
 ```
 
-Safety callouts on style pages (parchment limit, olive oil smoke point) are generated from `recipes.json` safety data, not written in Markdown.
+Until a style has a content file, its page shows the generated safety notes (parchment limit, olive oil smoke point) from `recipes.json` and a placeholder for the steps. Numbers used only in prose (for example `styles.new_york.practice`) also live in `recipes.json`. A method can set `min_pizzas` (the warm 2-hour method needs 2): the calculator then reports `min_batch` instead of a yeast amount.
 
 ## Fonts and theme
 

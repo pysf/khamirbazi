@@ -62,7 +62,8 @@ eleventyComputed:
   <section class="col" aria-label="{{ t.style.steps }}">
     {# Safety and notes come from recipes.json (safety data, warnings), so they cannot disagree between languages. #}
     <div class="callouts">
-      {% for w in tb.warnings %}{% if w.id != "method_not_typical" and w.id != "scale_resolution" %}
+      {# When the style has written content, that content carries these notes (as Safety and Warning callouts in the steps), so they are not repeated here. #}
+      {% for w in tb.warnings %}{% if w.id != "method_not_typical" and w.id != "scale_resolution" and not (body and w.id in ["parchment", "parchment_grill", "oil_smoke", "yeast_varies"]) %}
       {% set kind = "safe" if w.severity == "safety" else ("warn" if w.severity == "warning" else "note") %}
       <div class="callout {{ 'tip' if kind == 'note' else kind }}" role="note">{% icon kind %}<div><strong>{{ t.callout[kind] }}</strong>{{ t.warn[w.id] | fill(w.params, lang) }}</div></div>
       {% endif %}{% endfor %}

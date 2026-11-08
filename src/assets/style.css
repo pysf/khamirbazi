@@ -332,6 +332,7 @@ select.inp{appearance:auto}
 
 /* Markdown-rendered content (style pages, basics) */
 .col h2,.col h3{margin:0}
+[data-method-section]{display:grid;gap:16px;min-width:0}
 .col p,.col li p{margin:0}
 .col h2:not(:first-child){margin-top:8px}
 .callout div p,.callout p{margin:0}

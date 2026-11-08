@@ -154,7 +154,7 @@ test("never instruct weighing under 1 g (all styles, methods, yeast types, sizes
           if (r.yeast.mode === "direct") assert.ok(r.yeast.weigh_g >= 1, label);
           if (r.yeast.mode === "unavailable") {
             assert.equal(r.yeast.weigh_g, null, label);
-            assert.ok(r.warnings.some((w) => w.id === "batch_too_small"), label);
+            assert.ok(r.warnings.some((w) => w.id === "batch_too_small" || w.id === "min_batch"), label);
             assert.equal(r.ingredients.some((i) => i.id.startsWith("yeast")), false, label);
           }
           if (r.yeast.mode === "solution") assert.ok(r.yeast.solution.take_g >= 1, label);
@@ -166,10 +166,40 @@ test("never instruct weighing under 1 g (all styles, methods, yeast types, sizes
   }
 });
 
-test("a dough too small for any yeast amount is reported, not rounded", () => {
-  const r = computeRecipe({ styleId: "new_york", methodId: "warm_2h", mode: { pizzas: 1 } }, data);
+test("the warm method needs at least min_pizzas pizzas: min_batch warning, no yeast amount", () => {
+  assert.equal(data.methods.warm_2h.min_pizzas, 2);
+  for (const styleId of ["new_york", "neapolitan", "roman_tonda"]) {
+    for (const yeastType of ["dry", "fresh"]) {
+      for (const mode of [{ pizzas: 1 }, { pizzas: 1.5 }, { pizzas: 1, ballWeight: 400 }]) {
+        const r = computeRecipe({ styleId, methodId: "warm_2h", yeastType, mode }, data);
+        const w = r.warnings.find((x) => x.id === "min_batch");
+        assert.ok(w, `${styleId} ${yeastType} ${JSON.stringify(mode)}`);
+        assert.deepEqual([w.params.min_pizzas, w.params.pizzas, w.params.min_g], [2, mode.pizzas, 1]);
+        assert.equal(r.yeast.mode, "unavailable");
+        assert.equal(r.yeast.weigh_g, null);
+        assert.equal(r.warnings.some((x) => x.id === "batch_too_small" || x.id === "solution_exceeds_water"), false);
+        assert.equal(r.ingredients.some((i) => i.id.startsWith("yeast")), false);
+      }
+    }
+  }
+});
+
+test("exactly min_pizzas pizzas is allowed; cold methods work for one pizza", () => {
+  const two = computeRecipe({ styleId: "new_york", methodId: "warm_2h", mode: { pizzas: 2 } }, data);
+  assert.equal(two.yeast.mode, "direct");
+  assert.equal(two.warnings.some((x) => x.id === "min_batch"), false);
+  for (const methodId of ["cold_12_16h", "cold_24h", "cold_48h", "cold_72h", "room_8_12h"]) {
+    const r = computeRecipe({ styleId: "new_york", methodId, mode: { pizzas: 1 } }, data);
+    assert.equal(r.yeast.mode, "solution", methodId);
+    assert.equal(r.warnings.some((x) => x.id === "min_batch"), false, methodId);
+  }
+});
+
+test("a pan dough too small for any yeast amount is still reported as batch_too_small", () => {
+  const r = computeRecipe({ styleId: "chicago", methodId: "warm_2h", mode: rect(1, 10, 10) }, data);
   assert.equal(r.yeast.mode, "unavailable");
   assert.ok(r.warnings.some((w) => w.id === "batch_too_small"));
+  assert.equal(r.warnings.some((w) => w.id === "min_batch"), false);
 });
 
 test("panArea: round and rectangle", () => {
