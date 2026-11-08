@@ -33,6 +33,7 @@ a{color:inherit}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .skip{position:absolute;inset-inline-start:8px;top:-80px;background:var(--text);color:var(--bg)!important;padding:10px 16px;border-radius:var(--r-md);z-index:20}
 .skip:focus{top:8px}
+.main:focus{outline:none}
 .wrap{max-width:1040px;margin-inline:auto;padding-inline:20px}
 @media(min-width:768px){.wrap{padding-inline:32px}}
 .muted{color:var(--text-muted)}
@@ -46,10 +47,11 @@ a{color:inherit}
 .wm{font:600 21px/1.2 var(--font);letter-spacing:-.02em}
 [dir="rtl"] .wm{font-weight:700;font-size:20px}
 .nav-r{display:flex;align-items:center;gap:8px}
+@media(max-width:339px){.wm{display:none}.nav-link{padding-inline:6px}}
 .nav-link{min-height:44px;display:inline-flex;align-items:center;padding-inline:10px;text-decoration:none;font-size:var(--fs-sm);font-weight:500;color:var(--text-muted);border-radius:var(--r-pill)}
 .nav-link[aria-current=page]{color:var(--text);font-weight:700}
 .lang{display:inline-flex;background:var(--fill);border-radius:var(--r-pill);padding:2px}
-.lang a{min-height:40px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--r-pill);color:var(--text-muted);font:600 14px/1 var(--font);text-decoration:none}
+.lang a{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--r-pill);color:var(--text-muted);font:600 14px/1 var(--font);text-decoration:none}
 .lang a[aria-current=true]{background:var(--thumb);color:var(--text);box-shadow:var(--shadow-1)}
 /* buttons */
 .btn{min-height:48px;padding:0 24px;border-radius:var(--r-pill);border:0;font:500 var(--fs-base)/1.2 var(--font);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;cursor:pointer}
@@ -79,7 +81,7 @@ a{color:inherit}
 .segc button small{font-size:13px;color:var(--text-muted);font-weight:400}
 .segc button[aria-pressed=true]{background:var(--thumb);box-shadow:var(--shadow-1);font-weight:700}
 .segc.inline{min-width:170px}
-.segc.inline button{min-height:40px}
+.segc.inline button{min-height:44px}
 .stp{display:flex;align-items:center;gap:14px}
 .stp button{width:44px;height:44px;border-radius:50%;border:0;background:var(--fill);color:var(--text);font:500 24px/1 var(--font);cursor:pointer}
 .stp .val{min-width:28px;text-align:center;font-weight:600;font-size:var(--fs-md);font-variant-numeric:tabular-nums}
