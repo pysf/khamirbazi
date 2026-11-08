@@ -32,10 +32,7 @@ function render() {
     .map((i) => `<tr><th scope="row">${esc(localize(t.ing[i.id], lang))}${i.optional ? ` <span class="opt">(${esc(localize(t.recipe.optional, lang))})</span>` : ""}</th><td class="num">${formatNumber(i.g, lang)}</td></tr>`)
     .join("") + `<tr class="total"><th scope="row">${esc(localize(t.recipe.dough_total, lang))}</th><td class="num">${formatNumber(r.dough_g, lang)}</td></tr>`;
 
-  // One ball per pizza: the steps refer to this line instead of a fixed weight.
-  document.getElementById("ball-line").textContent = fill(t.recipe.each_ball, { g: r.ball_g });
-
-  // The yeast instruction (solution or weighed yeast, from calc.js) and the warnings that replace the yeast amount.
+  // The warnings that replace the yeast amount, and the 1 g scale note (from calc.js).
   document.getElementById("ing-yeast").innerHTML = yeastCard(r, data).map(yeastHtml).join("");
 
   const sizeText = fill(t.recipe.size_round, { d: size.diameter });

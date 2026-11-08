@@ -15,6 +15,6 @@ export default Object.fromEntries(
     const size = recipes.sizes.find((s) => s.id === "round_30");
     const r = computeRecipe({ styleId: id, methodId: style.default_method, yeastType: "dry", mode: { pizzas: 2, size } }, recipes);
     const data = slim({ ...recipes, styles: { [id]: style }, sizes: undefined });
-    return [id, { data, size, defaultMethod: style.default_method, dough_g: r.dough_g, ball_g: r.ball_g, yeastLines: yeastCard(r, recipes), rows: r.ingredients.map((i) => ({ id: i.id, g: i.g, optional: !!i.optional })) }];
+    return [id, { data, size, defaultMethod: style.default_method, dough_g: r.dough_g, yeastLines: yeastCard(r, recipes), rows: r.ingredients.map((i) => ({ id: i.id, g: i.g, optional: !!i.optional })) }];
   }),
 );

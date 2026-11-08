@@ -35,8 +35,6 @@ eleventyComputed:
         {% endfor %}<tr class="total"><th scope="row">{{ r.dough_total }}</th><td class="num">{{ page_data.dough_g | num(lang) }}</td></tr>
       </tbody>
     </table>
-    <p class="ball-line" id="ball-line">{{ r.each_ball | fill({ g: page_data.ball_g }, lang) }}</p>
-    {# The yeast instruction (solution or weighed yeast). Same lines as recipe.js renders, from yeastCard() in calc.js. #}
     <div id="ing-yeast">{% for l in page_data.yeastLines %}{% if l.group == "warn" %}<div class="callout warn" role="note">{% icon "warn" %}<div><p>{{ t.warn[l.key] | fill(l.params, lang) }}</p></div></div>{% else %}<p class="ynote">{{ t.card[l.key] | fill(l.params, lang) }}</p>{% endif %}{% endfor %}</div>
     <noscript><p class="muted small ing-note">{{ r.noscript }}</p></noscript>
   </details>

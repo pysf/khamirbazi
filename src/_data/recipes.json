@@ -1125,6 +1125,17 @@
           ],
           "note": "CHANGED from 45 (user's guide v7) to 50 after the Validation review 2026-11 (m3): America's Test Kitchen says yeast dies quickly at 54-60 C and there is a risk above about 49 C. 45 C is a safe ceiling for the water, not the point where yeast dies. Text: 'starts to die from about 50 degrees'."
         },
+        "yeast_check_min": {
+          "range": [
+            5,
+            10
+          ],
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "Owner's request 2026-11: optional check for old yeast (stir into lukewarm water with a pinch of sugar, it should foam). The usual home-baking rule of thumb; no source checked."
+        },
         "hot_room_c": {
           "value": 25,
           "unit": "C",
