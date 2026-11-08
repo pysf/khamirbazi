@@ -108,9 +108,16 @@ a{color:inherit}
 .tbl tr.total th,.tbl tr.total td{border-top:2px solid var(--text);font-weight:700}
 .tbl thead th{font-size:var(--fs-xs);color:var(--text-muted);border-top:0;padding-block:6px}
 .steps{list-style:none;padding:0;display:grid;gap:36px;counter-reset:s}
-.steps li{counter-increment:s;display:grid;grid-template-columns:36px minmax(0,1fr);gap:16px;align-items:start}
-.steps li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center;font-size:var(--fs-sm)}
-[dir=rtl] .steps li::before{content:counter(s,persian)} /* Persian digits ۰-۹ (not Arabic-Indic) */
+.steps>li{counter-increment:s;display:grid;grid-template-columns:36px minmax(0,1fr);gap:16px;align-items:start}
+.steps>li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center;font-size:var(--fs-sm)}
+[dir=rtl] .steps>li::before{content:counter(s,persian)} /* Persian digits ۰-۹ (not Arabic-Indic) */
+/* A step with a bold title is a heading: no number. Its numbered sub-steps carry the numbers. */
+.steps>li.titled{display:block}
+.steps>li.titled::before{content:none}
+.substeps{list-style:none;padding:0;display:grid;gap:10px;counter-reset:ss}
+.substeps>li{counter-increment:ss;display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:start}
+.substeps>li::before{content:counter(ss);width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center;font-size:var(--fs-xs)}
+[dir=rtl] .substeps>li::before{content:counter(ss,persian)}
 .sb{display:grid;gap:8px;min-width:0}
 .sb p{color:var(--text-muted);font-size:var(--fs-base)}
 .why{display:grid;gap:2px;padding-inline-start:12px;border-inline-start:2px solid var(--fill);color:var(--text-muted);font-size:var(--fs-sm)}

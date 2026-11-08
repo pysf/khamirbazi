@@ -70,6 +70,7 @@ function shape(text) {
     headings: [1, 2, 3, 4].map((n) => count(new RegExp(`^#{${n}} `, "gm"))).join("/"),
     steps: count(/^\d+\. /gm),
     bullets: count(/^\s*[-*] /gm),
+    substeps: count(/^\s+\d+\. /gm),
     // Markers stay in English in both languages: Why (under a step), Tip, Warning, Safety.
     why: count(/^\s*> Why:/gm),
     tips: count(/^\s*> Tip:/gm),
