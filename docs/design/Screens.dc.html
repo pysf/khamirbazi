@@ -191,13 +191,13 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:13px}
 <span class="selw"><select id="f-method" class="sel"><option>{{t.mt1}}</option><option>{{t.mt2}}</option><option>{{t.mt3}}</option><option selected>{{t.mt4}}</option><option>{{t.mt5}}</option><option>{{t.mt6}}</option></select><svg class="ic chv" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></div>
 <div class="row col"><span class="k" id="l-size">{{t.fSize}}</span>
 <div class="segc" role="group" aria-labelledby="l-size">
-<button type="button" aria-pressed="false">26<small>{{t.round}}</small></button>
-<button type="button" aria-pressed="true">30<small>{{t.round}}</small></button>
-<button type="button" aria-pressed="false">32<small>{{t.round}}</small></button>
-<button type="button" aria-pressed="false">30×40<small>{{t.tray}}</small></button>
+<button type="button" aria-pressed="false">{{n.s26}}<small>{{t.round}}</small></button>
+<button type="button" aria-pressed="true">{{n.s30}}<small>{{t.round}}</small></button>
+<button type="button" aria-pressed="false">{{n.s32}}<small>{{t.round}}</small></button>
+<button type="button" aria-pressed="false">{{n.tray}}<small>{{t.tray}}</small></button>
 </div></div>
 <div class="row"><span class="k" id="l-count">{{t.fCount}}</span>
-<div class="stp" role="group" aria-labelledby="l-count"><button type="button" aria-label="{{t.dec}}">−</button><span class="val">2</span><button type="button" aria-label="{{t.inc}}">+</button></div></div>
+<div class="stp" role="group" aria-labelledby="l-count"><button type="button" aria-label="{{t.dec}}">−</button><span class="val">{{n.count}}</span><button type="button" aria-label="{{t.inc}}">+</button></div></div>
 <div class="row"><span class="k" id="l-yeast">{{t.fYeast}}</span>
 <div class="segc inline" role="group" aria-labelledby="l-yeast"><button type="button" aria-pressed="true">{{t.yDry}}</button><button type="button" aria-pressed="false">{{t.yFresh}}</button></div></div>
 </div>
@@ -223,12 +223,12 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:13px}
 <caption class="vh">{{t.ingH}}</caption>
 <thead><tr><th scope="col">{{t.thIng}}</th><th scope="col" class="num">{{t.thG}}</th></tr></thead>
 <tbody>
-<tr><th scope="row">{{t.iFlour}}</th><td class="num">296.7</td></tr>
-<tr><th scope="row">{{t.iWater}}</th><td class="num">127.6</td></tr>
-<tr><th scope="row">{{t.iSol}}</th><td class="num">59.3</td></tr>
-<tr><th scope="row">{{t.iSalt}}</th><td class="num">7.4</td></tr>
-<tr><th scope="row">{{t.iSugar}}</th><td class="num">3.0</td></tr>
-<tr><th scope="row">{{t.iOil}}</th><td class="num">5.9</td></tr>
+<tr><th scope="row">{{t.iFlour}}</th><td class="num">{{n.flour}}</td></tr>
+<tr><th scope="row">{{t.iWater}}</th><td class="num">{{n.water}}</td></tr>
+<tr><th scope="row">{{t.iSol}}</th><td class="num">{{n.sol}}</td></tr>
+<tr><th scope="row">{{t.iSalt}}</th><td class="num">{{n.salt}}</td></tr>
+<tr><th scope="row">{{t.iSugar}}</th><td class="num">{{n.sugar}}</td></tr>
+<tr><th scope="row">{{t.iOil}}</th><td class="num">{{n.oil}}</td></tr>
 </tbody>
 </table>
 </details>
@@ -303,7 +303,7 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:13px}
 <span dir="rtl" lang="fa" style="font-size: {{y.px}}; font-family:'Vazirmatn',sans-serif; font-weight:700; line-height:1.5">{{y.fa}}</span>
 </div>
 </sc-for>
-<p class="muted">Latin: Inter (closest open font to Apple’s SF Pro) 400/500/600. Farsi: Vazirmatn 400/700. Headlines: weight 600 and −0.03em tracking, line height 1.1. Body: 17 px / 1.47, −0.011em. <b>Farsi gets 0 letter spacing</b> (tracking breaks the joined letters) and line height 1.8. At 768 px and up: <code>--fs-md</code> 24, <code>--fs-lg</code> 34, <code>--fs-xl</code> 48, <code>--fs-2xl</code> 64. Digits are Western (0–9).</p>
+<p class="muted">Latin: Inter (closest open font to Apple’s SF Pro) 400/500/600. Farsi: Vazirmatn 400/700. Headlines: weight 600 and −0.03em tracking, line height 1.1. Body: 17 px / 1.47, −0.011em. <b>Farsi gets 0 letter spacing</b> (tracking breaks the joined letters) and line height 1.8. At 768 px and up: <code>--fs-md</code> 24, <code>--fs-lg</code> 34, <code>--fs-xl</code> 48, <code>--fs-2xl</code> 64. Digits: Western (0–9) in English, Persian (۰–۹) in Farsi, with the Persian decimal separator (٫).</p>
 </section>
 <section style="display:grid;gap:16px"><h2>Spacing, radius, shadow</h2>
 <div class="rw">
@@ -383,10 +383,10 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:13px}
 <a class="btn btn-primary" href="#">نمایش دستور</a></div>
 <div class="rtlbox" dir="rtl" lang="fa"><span class="sp-t">Rows</span>
 <div class="card rows"><div class="row"><span class="k">سبک</span><span class="selw"><select class="sel" aria-label="سبک"><option>نیویورک</option></select><svg class="ic chv" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></div>
-<div class="row"><span class="k">تعداد پیتزا</span><div class="stp"><button type="button" aria-label="کم کردن">−</button><span class="val">2</span><button type="button" aria-label="زیاد کردن">+</button></div></div>
+<div class="row"><span class="k">تعداد پیتزا</span><div class="stp"><button type="button" aria-label="کم کردن">−</button><span class="val">۲</span><button type="button" aria-label="زیاد کردن">+</button></div></div>
 <div class="row"><span class="k">مخمر</span><div class="segc inline"><button type="button" aria-pressed="true">خشک</button><button type="button" aria-pressed="false">تازه</button></div></div></div></div>
 <div class="rtlbox" dir="rtl" lang="fa"><span class="sp-t">Step with ? hint</span>
-<ol class="steps"><li><div class="sb"><h3>محلول مخمر را درست کنید.</h3><p>یک بستهٔ کامل را در 700 گرم آب حل کنید.</p><details class="gk" open><summary aria-label="خوب است بدانید"></summary><div class="gkb"><strong>محلول مخمر</strong><p class="muted">ترازو گرم کامل نشان می‌دهد.</p></div></details></div></li></ol></div>
+<ol class="steps"><li><div class="sb"><h3>محلول مخمر را درست کنید.</h3><p>یک بستهٔ کامل را در ۷۰۰ گرم آب حل کنید.</p><details class="gk" open><summary aria-label="خوب است بدانید"></summary><div class="gkb"><strong>محلول مخمر</strong><p class="muted">ترازو گرم کامل نشان می‌دهد.</p></div></details></div></li></ol></div>
 </div></section>
 </div>
 </sc-if>
@@ -558,8 +558,20 @@ class Component extends DCLogic {
       { name: '--sp-5', px: '24px' }, { name: '--sp-6', px: '32px' }, { name: '--sp-7', px: '48px' }, { name: '--sp-8', px: '64px' }, { name: '--sp-9', px: '96px' }
     ];
 
+    // Persian digits and decimal separator in Farsi pages (Latin terms such as "Tipo 00" stay as they are)
+    const D = (s) => s.replace(/Tipo 00/g, '\u0001').replace(/(\d)\.(\d)/g, '$1٫$2').replace(/\d/g, (d) => '۰۱۲۳۴۵۶۷۸۹'[d]).replace(/\u0001/g, 'Tipo 00');
+    const conv = (v) => {
+      if (!fa) return v;
+      if (typeof v === 'string') return D(v);
+      if (Array.isArray(v)) return v.map(conv);
+      if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, conv(x)]));
+      return v;
+    };
+    const n = conv({ flour: '296.7', water: '127.6', sol: '59.3', salt: '7.4', sugar: '3.0', oil: '5.9', count: '2', s26: '26', s30: '30', s32: '32', tray: '30×40' });
+
     return {
-      dir: fa ? 'rtl' : 'ltr', lang, theme, font: p.font === 'noto' ? 'noto' : 'vazirmatn', t, pills, steps, styles, basics, gloss, swatches, contrast, typeScale, spacing,
+      dir: fa ? 'rtl' : 'ltr', lang, theme, font: p.font === 'noto' ? 'noto' : 'vazirmatn', n,
+      t: conv(t), pills: conv(pills), steps: conv(steps), styles: conv(styles), basics: conv(basics), gloss: conv(gloss), swatches, contrast, typeScale, spacing,
       isFa: fa, enOn: !fa, faOn: fa,
       basicsCur: screen === 'basics' ? 'page' : undefined,
       showChrome: !(screen === 'tokens' || screen === 'components'),
