@@ -1,2 +1,4 @@
-node_modules
 _site
+node_modules
+.preview
+.DS_Store

@@ -11,6 +11,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("fill", (str, params, lang) => interpolate(str, params, lang));
 
   return {
+    pathPrefix: process.env.PATH_PREFIX || "/",
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
     templateFormats: ["njk", "md"],
     htmlTemplateEngine: "njk",

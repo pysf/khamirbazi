@@ -49,7 +49,7 @@ eleventyComputed:
     </tbody>
   </table>
   <p class="muted">{{ t.style.table_note | fill({ x: recipes.yeast.fresh_to_dry.value }, lang) }}</p>
-  <p><a class="button" href="/{{ lang }}/calculator/?style={{ id }}&amp;method={{ st.default_method }}">{{ t.style.calc_link }}</a></p>
+  <p><a class="button" href="{{ ('/' + lang + '/calculator/') | url }}?style={{ id }}&amp;method={{ st.default_method }}">{{ t.style.calc_link }}</a></p>
 
   <h2>{{ t.style.steps }}</h2>
   <p>{{ t.style.body_placeholder }}</p>

@@ -11,17 +11,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap">
   {% endif %}
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
 </head>
 <body>
   <a class="skip" href="#main">{{ t.skip }}</a>
   <header class="site-header">
-    <a class="brand" href="/{{ lang }}/">{{ t.site_name }}</a>
+    <a class="brand" href="{{ ('/' + lang + '/') | url }}">{{ t.site_name }}</a>
     <nav aria-label="{{ t.nav.styles }}">
-      <a href="/{{ lang }}/">{{ t.nav.home }}</a>
-      <a href="/{{ lang }}/calculator/">{{ t.nav.calculator }}</a>
+      <a href="{{ ('/' + lang + '/') | url }}">{{ t.nav.home }}</a>
+      <a href="{{ ('/' + lang + '/calculator/') | url }}">{{ t.nav.calculator }}</a>
     </nav>
-    <a class="lang-switch" lang="{{ t.other_lang }}" hreflang="{{ t.other_lang }}" href="{{ page.url | replace('/' + lang + '/', '/' + t.other_lang + '/') }}">{{ t.other_lang_name }}</a>
+    <a class="lang-switch" lang="{{ t.other_lang }}" hreflang="{{ t.other_lang }}" href="{{ page.url | replace('/' + lang + '/', '/' + t.other_lang + '/') | url }}">{{ t.other_lang_name }}</a>
   </header>
   <main id="main">
     {{ content | safe }}

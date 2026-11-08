@@ -4,16 +4,18 @@ A static, bilingual (English and Farsi) home pizza guide with a dough calculator
 
 ## Run
 
-Needs Node 20 or newer.
+Needs Node 20 or newer and `make`.
 
 ```
-npm install
-npm run dev      # local server with live reload, http://localhost:8080/
-npm run build    # writes the site to _site/
-npm test         # node --test on the calculator and the data
+make help      # list commands
+make dev       # local server with live reload, http://localhost:8080/
+make ci        # tests + English/Farsi sync check + build (what GitHub Actions runs)
+make preview   # build with the GitHub Pages sub-path, http://localhost:8081/khamirbazi/
 ```
 
-The site is built to `_site/` with URLs `/en/...` and `/fa/...`; `/` redirects to `/en/`. Serve `_site/` from a web root (asset links start with `/assets/`).
+`make test`, `make check`, `make build` and `make clean` run the single steps.
+
+The site is built to `_site/` with URLs `/en/...` and `/fa/...`; `/` redirects to `/en/`. It is published with GitHub Actions to GitHub Pages (`.github/workflows/pages.yml`). Set `PATH_PREFIX=/khamirbazi/` to build for the Pages sub-path; all internal links use Eleventy's `url` filter for this.
 
 ## Where things are
 

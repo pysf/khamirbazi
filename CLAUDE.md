@@ -15,7 +15,19 @@ Keep it simple (KISS). Prefer fewer files, fewer dependencies, and plain code ov
 - **Styling** is one hand-written responsive CSS file, mobile first. No CSS framework. The layout adapts; content never changes per screen size.
 - **No client framework** (React, Vue, etc.). No dependencies except Eleventy and dev tooling.
 - **Tests:** `node --test` on `calc.js`. Test every style/method combination against hand-computed values.
-- Commands (once scaffolded): `npm run dev`, `npm run build`, `npm test`.
+- **Local commands go through the `Makefile`** (`make help` lists them): `make dev` (live server on port 8080), `make test`, `make check`, `make build`, `make ci` (test + check + build, exactly what CI runs), `make preview` (build with the GitHub Pages sub-path and serve it on port 8081), `make clean`. Add new build steps to the Makefile, not only to package.json, so local and CI never differ.
+
+## Publishing (GitHub Pages)
+
+- The site is public on GitHub Pages at `https://pysf.github.io/khamirbazi/`, deployed by GitHub Actions (`.github/workflows/pages.yml`): every push and pull request runs `make ci`; pushes to `main` also deploy `_site/`.
+- The workflow sets `PATH_PREFIX=/<repo name>/`. **Every internal link, stylesheet and script URL must go through Eleventy's `url` filter** (for example `{{ '/assets/style.css' | url }}`), never a bare absolute path. JS must use relative imports. Test with `make preview`.
+- Only `main` is deployed. Nothing is pushed or merged without the user's say-so. The user must enable Pages once in the repo settings (Source: GitHub Actions).
+
+## Language sync (always)
+
+- English and Farsi must always describe the same recipe. `make check` (`scripts/check-sync.mjs`) runs in CI and fails the build when the two drift: it compares UI string keys and `{placeholders}`, requires every style and method in `recipes.json` to be named in both languages, and compares each pair of files in `src/content/en` and `src/content/fa` (same file names, front matter keys, heading, step, bullet and callout counts, template variables and links).
+- Any change to a recipe, step, tip or warning in one language is made in the other in the same commit. Never merge a step that exists in only one language.
+- If you add a kind of content that the check cannot see, extend the check in the same commit.
 
 ## Data model (`recipes.json`)
 
@@ -91,6 +103,6 @@ Reference quantities (for 300 g flour, about 2 pizzas) currently live in `pizza-
 
 ## Git
 
-- Work on branches off `main`, never directly on `main`.
-- **Commit at the end of every step** (scaffold done, calculator done, one style finished in both languages, research results merged into `recipes.json`, and so on). One step, one commit, with a clear message. Run `npm test` and `npm run build` first once they exist. Do not push unless asked.
+- Work on branches off `main`, never directly on `main`. Pushing and merging are the user's call.
+- **Commit at the end of every step** (scaffold done, calculator done, one style finished in both languages, research results merged into `recipes.json`, and so on). One step, one commit, with a clear message. Run `make ci` first. Do not push unless asked.
 - Commit messages end with the Co-Authored-By line from the session attribution.

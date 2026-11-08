@@ -7,11 +7,11 @@ permalink: /index.html
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Khamirbazi</title>
-  <meta http-equiv="refresh" content="0; url=/en/">
-  <link rel="canonical" href="/en/">
-  <script>location.replace("/en/");</script>
+  <meta http-equiv="refresh" content="0; url={{ '/en/' | url }}">
+  <link rel="canonical" href="{{ '/en/' | url }}">
+  <script>location.replace("{{ '/en/' | url }}");</script>
 </head>
 <body>
-  <p><a href="/en/">English</a> | <a href="/fa/">فارسی</a></p>
+  <p><a href="{{ '/en/' | url }}">English</a> | <a href="{{ '/fa/' | url }}">فارسی</a></p>
 </body>
 </html>

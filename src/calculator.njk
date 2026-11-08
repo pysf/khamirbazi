@@ -69,4 +69,4 @@ eleventyComputed:
 </div>
 
 <script type="application/json" id="calc-data">{{ { recipes: recipes, strings: t, lang: lang } | dump | safe }}</script>
-<script type="module" src="/assets/calculator-page.js"></script>
+<script type="module" src="{{ '/assets/calculator-page.js' | url }}"></script>
