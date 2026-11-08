@@ -30,7 +30,7 @@
       <div class="nav-r">
         <a class="nav-link" href="{{ ('/' + lang + '/basics/') | url }}"{% if section == "basics" %} aria-current="page"{% endif %}>{{ t.nav.basics }}</a>
         <div class="lang" role="group" aria-label="{{ t.lang_label }}" data-lang-switch>
-          <a lang="en" hreflang="en" aria-label="English" href="{{ (page.url | replace('/' + lang + '/', '/en/', 1)) | url }}"{% if lang == "en" %} aria-current="true"{% endif %}>EN</a>
+          <a lang="en" hreflang="en" aria-label="{{ 'English' if lang == 'en' else 'انگلیسی' }}" href="{{ (page.url | replace('/' + lang + '/', '/en/', 1)) | url }}"{% if lang == "en" %} aria-current="true"{% endif %}>EN</a>
           <a lang="fa" hreflang="fa" aria-label="فارسی" href="{{ (page.url | replace('/' + lang + '/', '/fa/', 1)) | url }}"{% if lang == "fa" %} aria-current="true"{% endif %}>FA</a>
         </div>
       </div>

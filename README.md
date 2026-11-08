@@ -35,13 +35,13 @@ Prose for a style lives in `src/content/<lang>/styles/<style_id>.md` (ids as in 
 
 - `##` headings are the sections (for example the steps, then troubleshooting).
 - An ordered list is the list of steps. Write the action as the item text.
-- A blockquote line `> Why: ...`, indented under a step, is always shown as a muted note directly below that step, with the small label "Why" (no toggle, no JavaScript). Write the step as `**Action.** one line of detail.`; the bold part is shown as the step title.
+- A blockquote line `> Why: ...`, indented under a step, is always shown as a muted note directly below that step, without a label (no toggle, no JavaScript). Write the step as `**Action.** one line of detail.`; the bold part is shown as the step title.
 - `> Tip: ...`, `> Warning: ...` and `> Safety: ...` become callouts. The marker words stay in English in both languages; the visible label ("Tip", "نکته") comes from the UI strings. Every blockquote must start with one of the four markers.
 - Bullet lists become the bulleted list (for example troubleshooting: `- **Problem.** Fix.`).
 - Numbers come from `recipes.json`: write `{{ recipes.styles.new_york.bake.temp_c.value }}`, never the number. A wrong path stops the build. Do not put links in content (they would need the sub-path prefix).
 - A `##` heading that ends with `{methods=id1,id2}` (method ids from `recipes.json`) whose section contains an ordered list is the **main step list** of those methods: the recipe page shows it first, only for the selected method (without JavaScript, the style's default method). Every other `##` section (also method-specific ones without steps, such as a checklist) goes under "More details" as a collapsible block, in file order. Use the same markers in both languages; `make check` compares them.
 - Recipe pages with written content do not repeat the generated parchment, grill, olive oil and yeast notes at the top; write them as `> Safety:` / `> Warning:` callouts in the content (with values from `recipes.safety`).
-- Latin terms inside Farsi text: wrap in `<bdi>...</bdi>`. Write temperatures in words ("degrees"), not with the letter C.
+- No Latin words on Farsi pages: use the Persian term and write proper names in Persian script (the only Latin is the language-switch label "EN"). `make check` enforces it. Write temperatures and units in words ("درجه", "گرم"), not with letters.
 
 Sample (a test fixture, see `test/content.test.js`, not real content):
 
@@ -63,4 +63,4 @@ Until a style has a content file, its recipe page shows the ingredients, a place
 
 ## Fonts and theme
 
-Fonts are self-hosted (`src/assets/fonts/`, woff2 subsets, `font-display: swap`; Inter, and Vazirmatn for Farsi); nothing loads from Google Fonts. Dark mode follows `prefers-color-scheme`; the footer button sets `data-theme` on `<html>` and remembers the choice in `localStorage` (the page works without storage). English pages use Western digits. Farsi pages show Persian digits and the decimal separator ٫ everywhere (Latin terms such as "Tipo 00" keep theirs): authors write 0-9 in Farsi sources, `lib/persian-html.js` converts the visible text of /fa/ pages at build time, and the page scripts use `toPersianDigits`/`formatNumber` from `src/assets/i18n.js`. recipes.json, URLs, query strings and input values stay Western.
+Fonts are self-hosted (`src/assets/fonts/`, woff2 subsets, `font-display: swap`; Inter, and Vazirmatn for Farsi); nothing loads from Google Fonts. Dark mode follows `prefers-color-scheme`; the footer button sets `data-theme` on `<html>` and remembers the choice in `localStorage` (the page works without storage). English pages use Western digits. Farsi pages show Persian digits and the decimal separator ٫ everywhere: authors write 0-9 in Farsi sources, `lib/persian-html.js` converts the visible text of /fa/ pages at build time, and the page scripts use `toPersianDigits`/`formatNumber` from `src/assets/i18n.js`. recipes.json, URLs, query strings and input values stay Western.

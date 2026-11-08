@@ -17,7 +17,6 @@ eleventyComputed:
 <header class="rhead">
   <a class="back" id="change" href="{{ ('/' + lang + '/') | url }}">{% icon "back", "dir-icon" %}{{ r.change }}</a>
   <h1>{{ t.styles[id].name }}</h1>
-  {% if lang == "fa" %}<span class="latin" dir="ltr">{{ t.styles[id].latin }}</span>{% endif %}
   <div class="pills" id="pills">
     <span class="pill">{{ r.size_round | fill({ d: page_data.size.diameter }, lang) }}</span>
     <span class="pill">{{ r.pizza_other | fill({ n: 2 }, lang) }}</span>

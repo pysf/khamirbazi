@@ -30,7 +30,7 @@ test("steps become steps and Why becomes a visible note", () => {
   assert.match(html, /<ol class="steps">/);
   assert.equal((html.match(/<li><div class="sb">/g) || []).length, 2);
   assert.match(html, /<p class="act">First sample step\.<\/p>/);
-  assert.match(html, /<div class="why"><span class="why-l">Why<\/span>/);
+  assert.match(html, /<div class="why">\s*<p>Sample reason/);
   assert.match(html, /Sample reason for the first step\./);
   assert.doesNotMatch(html, /<button|<details/);
 });
@@ -48,7 +48,7 @@ test("Tip, Warning and Safety become callouts with a translated label", () => {
   assert.match(en, /<div class="callout safe" role="note">.*<strong>Safety<\/strong>/s);
   const fa = renderContent(md, SAMPLE, "fa");
   assert.match(fa, /<strong>نکته<\/strong>/);
-  assert.match(fa, /<span class="why-l">چرا؟<\/span>/);
+  assert.doesNotMatch(fa, /why-l/);
   assert.doesNotMatch(en, /Tip:|Warning:|Safety:|Why:/);
 });
 

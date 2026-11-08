@@ -22,9 +22,8 @@ test("toPersianDigits: times, ranges, thousands, percent and sentence ends", () 
   assert.equal(toPersianDigits("نه 4.بعد"), "نه ۴.بعد");
 });
 
-test("toPersianDigits: Latin terms keep Latin digits", () => {
-  assert.equal(toPersianDigits("آرد (Tipo 00) و Typ 00 و 2 بسته"), "آرد (Tipo 00) و Typ 00 و ۲ بسته");
-  assert.equal(toPersianDigits("Tipo 00"), "Tipo 00");
+test("toPersianDigits: every digit is converted, no exceptions", () => {
+  assert.equal(toPersianDigits("آرد «تیپو 00» و 2 بسته"), "آرد «تیپو ۰۰» و ۲ بسته");
 });
 
 test("localize and interpolate: fa converts, en does not", () => {
@@ -37,7 +36,7 @@ test("localize and interpolate: fa converts, en does not", () => {
 test("persianizeHtml: converts text and readable attributes only", () => {
   const html = `<html lang="fa" dir="rtl"><head><title>خمیر 2</title><style>.a{width:30px}</style>
 <script>var x = 12.5;</script></head><body>
-<a href="/fa/recipe/new_york/?size=30&pizzas=2" class="c3" id="x1" data-n="5" aria-label="تعداد 2" title="3 تا">متن 12.5 و <bdi>Tipo 00</bdi> &#8211; &amp;2</a>
+<a href="/fa/recipe/new_york/?size=30&pizzas=2" class="c3" id="x1" data-n="5" aria-label="تعداد 2" title="3 تا">متن 12.5 و <bdi>تیپو 00</bdi> &#8211; &amp;2</a>
 <select><option value="warm_2h">2 ساعته</option></select>
 <button value="12" aria-pressed="true" data-value="30">30</button>
 <script type="application/json" id="recipe-data">{"n":[1,2.5],"s":"روش 2"}</script>
@@ -48,7 +47,7 @@ test("persianizeHtml: converts text and readable attributes only", () => {
   assert.match(out, /var x = 12\.5;/);
   assert.match(out, /href="\/fa\/recipe\/new_york\/\?size=30&pizzas=2" class="c3" id="x1" data-n="5"/);
   assert.match(out, /aria-label="تعداد ۲" title="۳ تا"/);
-  assert.match(out, />متن ۱۲٫۵ و <bdi>Tipo 00<\/bdi> &#8211; &amp;۲</);
+  assert.match(out, />متن ۱۲٫۵ و <bdi>تیپو ۰۰<\/bdi> &#8211; &amp;۲</);
   assert.match(out, /<option value="warm_2h">۲ ساعته<\/option>/);
   assert.match(out, /<button value="12" aria-pressed="true" data-value="30">۳۰<\/button>/);
   assert.match(out, /\{"n":\[1,2\.5\],"s":"روش 2"\}/);

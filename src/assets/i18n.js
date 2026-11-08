@@ -1,18 +1,12 @@
 // Small helpers shared by the build (Eleventy filters) and the calculator page.
 import { formatNumber } from "./calc.js";
 
-// Latin terms that keep their Latin digits inside Farsi text.
-export const LATIN_TERMS = ["Tipo 00", "Typ 00"];
-const PROTECTED = new RegExp(`(${LATIN_TERMS.map((x) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`);
 const PERSIAN = "۰۱۲۳۴۵۶۷۸۹";
 
-/** Farsi display: digits 0-9 -> ۰-۹ and a decimal point between digits -> ٫. Latin terms (LATIN_TERMS) are left as they are.
+/** Farsi display: digits 0-9 -> ۰-۹ and a decimal point between digits -> ٫.
  *  Commas, colons, "%" and a full stop that ends a sentence are not touched. Pure text: never call it on HTML, URLs or input values. */
 export function toPersianDigits(text) {
-  return String(text)
-    .split(PROTECTED)
-    .map((part, i) => (i % 2 ? part : part.replace(/(\d)\.(?=\d)/g, "$1٫").replace(/\d/g, (d) => PERSIAN[d])))
-    .join("");
+  return String(text).replace(/(\d)\.(?=\d)/g, "$1٫").replace(/\d/g, (d) => PERSIAN[d]);
 }
 
 /** Text for the page in this language: Persian digits for "fa", unchanged otherwise. */

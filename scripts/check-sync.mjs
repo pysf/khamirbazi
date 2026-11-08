@@ -26,7 +26,10 @@ const placeholders = (s) =>
 
 const en = flatten(readJson("src/_data/i18n/en.json"));
 const fa = flatten(readJson("src/_data/i18n/fa.json"));
+// "latin" (the Latin name of a style) exists only in English; Farsi pages show no Latin names.
+const ENGLISH_ONLY = /\.latin$/;
 for (const k of Object.keys(en)) {
+  if (ENGLISH_ONLY.test(k)) continue;
   if (!(k in fa)) fail(`i18n: key "${k}" is in en.json but missing in fa.json`);
   else if (placeholders(en[k]) !== placeholders(fa[k]))
     fail(`i18n: key "${k}" has different {placeholders} in en and fa`);
@@ -138,6 +141,38 @@ const scanned = [
 for (const [where, text] of scanned) {
   const m = text.match(BANNED_RE);
   if (m) fail(`banned word "${m[1]}" in ${where.startsWith(root) ? relative(root, where) : where}`);
+}
+
+// 6. Farsi pages contain no Latin words (CLAUDE.md, Farsi writing rules). Proper names are written in Persian script.
+// Not checked: template syntax, {placeholders}, {methods=...} markers, the blockquote marker words and URLs.
+// ALLOW holds the only exceptions; the "EN"/"FA" language-switch codes live in the layout template, not in these sources.
+const ALLOW = new Set([]);
+function latinWords(line) {
+  const s = line
+    .replace(/\{\{[^}]*\}\}/g, " ")
+    .replace(/\{methods=[\w,]+\}/g, " ")
+    .replace(/\{\w+\}/g, " ")
+    .replace(/^(\s*>\s*)(Why|Tip|Warning|Safety):/, "$1")
+    .replace(/(https?:\/\/|\/)[^\s)"]*/g, " ");
+  return (s.match(/[A-Za-z][A-Za-z'\u2019-]*/g) || []).filter((w) => !ALLOW.has(w));
+}
+function checkLatin(file, lines) {
+  lines.forEach((line, i) => {
+    for (const w of latinWords(line)) fail(`latin: ${file} line ${i + 1}: "${w}" (write it in Persian script)`);
+  });
+}
+for (const f of faFiles) {
+  const text = readFileSync(join(faDir, f), "utf8").replace(/^---\n[\s\S]*?\n---/, (m) => m.replace(/[^\n]/g, ""));
+  checkLatin(`src/content/fa/${f}`, text.split("\n"));
+}
+// fa.json: check the values only (keys are identifiers). Line numbers come from the raw file.
+{
+  const raw = readFileSync(join(root, "src/_data/i18n/fa.json"), "utf8").split("\n");
+  raw.forEach((line, i) => {
+    const m = line.match(/^\s*"([^"]+)":\s*"(.*)",?\s*$/);
+    if (m && !["lang", "dir"].includes(m[1])) // "lang" and "dir" are the HTML attribute values
+      for (const w of latinWords(m[2])) fail(`latin: src/_data/i18n/fa.json line ${i + 1}: "${w}" (write it in Persian script)`);
+  });
 }
 
 if (problems.length) {

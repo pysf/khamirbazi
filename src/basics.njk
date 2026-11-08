@@ -20,7 +20,7 @@ eleventyComputed:
     <dl>
       {% for id in site.uiStyles %}{% set st = recipes.styles[id] %}
       <div>
-        <dt><a href="{{ ('/' + lang + '/recipe/' + id + '/') | url }}">{{ t.styles[id].name }}</a>{% if lang == "fa" %} <bdi class="latin-i" dir="ltr">({{ t.styles[id].latin }})</bdi>{% endif %}</dt>
+        <dt><a href="{{ ('/' + lang + '/recipe/' + id + '/') | url }}">{{ t.styles[id].name }}</a></dt>
         <dd>{{ t.styles[id].blurb }}<br><span class="small">{{ t.basics.hydration }}: {{ st.dough.hydration.value | num(lang) }}{{ "%" }} · {{ t.basics.bake }}: {{ t.basics.bake_value | fill({ temp: st.bake.temp_c.value, from: st.bake.time_min.range[0], to: st.bake.time_min.range[1] }, lang) }}</span></dd>
       </div>
       {% endfor %}

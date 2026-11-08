@@ -70,7 +70,7 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
 
     > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. Oil mixed into the dough is fine.
 10. **Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it.** Leave it uncovered, on a rack if you have one. While it rests, add what you like that is fresh or delicate: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings.
-   > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base keeps its crispness. Cut with a sharp pizza wheel or a large knife. Fresh or delicate things go on after the bake so they do not burn or wilt.
+    > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base keeps its crispness. Cut with a sharp pizza wheel or a large knife. Fresh or delicate things go on after the bake so they do not burn or wilt.
 
 
 > Tip: A switched-off oven with the light on is a good warm place. Make sure the oven is not heating while the dough is inside.
@@ -95,7 +95,7 @@ You make the dough one or more days before baking. Take the amounts from the Ing
 8. **Start heating the oven and the tray {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking** (see Oven and baking surface).
 9. **Shape the dough** (see Shaping).
 10. **Dress the pizza.** Spread a thin layer of sauce and leave the rim bare (about {{ recipes.styles.new_york.practice.rim_cm.range.0 }} to {{ recipes.styles.new_york.practice.rim_cm.range.1 }} cm). Add cheese and any toppings you like, then brush the rim lightly with olive oil. Work fast, because dough that waits on the paper sticks.
-   > Why: Keep it light. A heavy or wet topping holds steam under the dough, so the base stays soft and the pizza sticks to the paper. Dry wet ingredients or pre-cook them, and use dry grated cheese or dry it first. Use olive oil only as a thin film on the rim; a refined or light olive oil resists smoke better (see the Safety note below).
+    > Why: Keep it light. A heavy or wet topping holds steam under the dough, so the base stays soft and the pizza sticks to the paper. Dry wet ingredients or pre-cook them, and use dry grated cheese or dry it first. Use olive oil only as a thin film on the rim; a refined or light olive oil resists smoke better (see the Safety note below).
 
     > Tip: After adding the cheese, a small pinch of garlic powder sprinkled on top tastes good. It is optional. Garlic powder burns less than fresh garlic.
 11. **Bake** (see Oven and baking surface).
@@ -104,7 +104,7 @@ You make the dough one or more days before baking. Take the amounts from the Ing
 
     > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. Oil mixed into the dough is fine.
 12. **Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it.** Leave it uncovered, on a rack if you have one. While it rests, add what you like that is fresh or delicate: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings.
-   > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base keeps its crispness. Cut with a sharp pizza wheel or a large knife. Fresh or delicate things go on after the bake so they do not burn or wilt.
+    > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base keeps its crispness. Cut with a sharp pizza wheel or a large knife. Fresh or delicate things go on after the bake so they do not burn or wilt.
 
 
 > Tip: If you put the dough in the fridge as one piece, take it out at the same time, but divide it and shape the balls first. Cold dough shapes more easily. Then let the balls rest, covered.

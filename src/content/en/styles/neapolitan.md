@@ -77,7 +77,6 @@ You mix the dough in the morning and bake in the evening, or the other way round
 
     > Why: Keep it light. A heavy or wet topping holds steam under the dough, so the centre stays wet and the pizza sticks to the board. Dry wet ingredients or pre-cook them, and use dry grated cheese or dry it first. Use olive oil only as a thin film on the rim; a refined or light olive oil resists smoke better (see the Safety note below).
 
-    > Tip: After adding the cheese, a small pinch of garlic powder sprinkled on top tastes good. It is optional. Garlic powder burns less than fresh garlic.
 10. **Slide the pizza onto the hot surface fast.** Move it from a board or peel (the wooden or metal paddle for pizzas) onto the surface.
 
     > Why: Every time the oven door opens, heat is lost. Be quick.
@@ -136,7 +135,6 @@ You make the dough the day before baking. Take the amounts from the Ingredients 
 
     > Why: Keep it light. A heavy or wet topping holds steam under the dough, so the centre stays wet and the pizza sticks to the board. Dry wet ingredients or pre-cook them, and use dry grated cheese or dry it first. Use olive oil only as a thin film on the rim; a refined or light olive oil resists smoke better (see the Safety note below).
 
-    > Tip: After adding the cheese, a small pinch of garlic powder sprinkled on top tastes good. It is optional. Garlic powder burns less than fresh garlic.
 11. **Slide the pizza onto the hot surface fast.** Move it from a board or peel (the wooden or metal paddle for pizzas) onto the surface.
 
     > Why: Every time the oven door opens, heat is lost. Be quick.
@@ -189,7 +187,6 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
 
     > Why: Keep it light. A heavy or wet topping holds steam under the dough, so the centre stays wet and the pizza sticks to the board. Dry wet ingredients or pre-cook them, and use dry grated cheese or dry it first. Use olive oil only as a thin film on the rim; a refined or light olive oil resists smoke better (see the Safety note below).
 
-    > Tip: After adding the cheese, a small pinch of garlic powder sprinkled on top tastes good. It is optional. Garlic powder burns less than fresh garlic.
 9. **Slide the pizza onto the hot surface fast.** Move it from a board or peel (the wooden or metal paddle for pizzas) onto the surface.
 
     > Why: Every time the oven door opens, heat is lost. Be quick.
