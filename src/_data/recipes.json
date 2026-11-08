@@ -4,7 +4,8 @@
     "Every dough amount is a baker's percentage of flour weight (flour = 100%).",
     "Values are objects: value (or range), confidence (high/medium/low), verified (true only when checked against a primary source by a person), sources (URLs), optional note.",
     "No recipe has been test-baked yet. verified is false everywhere on purpose.",
-    "Sizes in 'sizes' (round 26, 30 and 32 cm) are the ones the site offers. Dough per pizza = round area x style.dough_density_g_per_cm2 (styles new_york and neapolitan)."
+    "Sizes in 'sizes' (round 26, 30 and 32 cm) are the ones the site offers. Dough per pizza = round area x style.dough_density_g_per_cm2 (styles new_york and neapolitan).",
+    "Validation review 2026-11: values changed after an independent review are noted in their 'note' fields; none was test-baked. See docs/test-bake-plan.md."
   ],
   "oven": {
     "max_c": {
@@ -62,6 +63,15 @@
         "https://www.americastestkitchen.com/recipes/16948-neapolitan-style-pizza"
       ],
       "note": "Pizza stone, baking steel or cast-iron pan are all fine. Steel and cast iron conduct heat better than stone (America's Test Kitchen). Cast-iron advice is home-tested only; no controlled test was found."
+    },
+    "mode_info": {
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        "https://support.aeg.co.uk/support-articles/article/best-setting-and-shelf-for-pizza-what-is-true-fan-and-bottom-heat-setting-function",
+        "https://www.samsung.com/au/support/home-appliances/oven-cooking-modes"
+      ],
+      "note": "Validation review 2026-11 (m1): the guide keeps top and bottom heat with no fan. Reason: in plain fan mode the bottom element is often off, so the base gets less heat, and moving air dries and browns the top faster. Oven makers recommend a pizza mode (fan plus bottom heat); the site mentions it as an option to try. Advice varies by oven. The earlier reason ('the fan burns the top before the base is ready') was overstated."
     }
   },
   "timeline": {
@@ -174,10 +184,29 @@
         }
       },
       "use_immediately": true,
-      "note": "Use immediately. A shelf life for a diluted yeast solution was not found in any source, so none is stated. Yeast dissolved in water loses vigour with time (secondhand source).",
+      "note": "Use immediately. A shelf life for a diluted yeast solution was not found in any source, so none is stated. Yeast dissolved in water loses vigour with time (secondhand source). Stir again right before weighing out the amount, because the yeast settles (validation M6).",
       "sources": [
         "https://www.thefreshloaf.com/node/72947"
-      ]
+      ],
+      "water_temp_c": {
+        "range": [
+          30,
+          35
+        ],
+        "unit": "C",
+        "confidence": "medium",
+        "verified": false,
+        "sources": [],
+        "note": "Validation review 2026-11 (M6): lukewarm water for the yeast solution, given as a number. The user's guide said only 'lukewarm'. Well below the about 50 C where yeast starts to die."
+      },
+      "dissolve_wait_min": {
+        "value": 5,
+        "unit": "min",
+        "confidence": "low",
+        "verified": false,
+        "sources": [],
+        "note": "Validation review 2026-11 (M6): stir until no lumps are left, wait about 5 minutes for dry yeast to dissolve, then stir again right before pouring out the amount; yeast settles within minutes. Food-science reasoning, no source. See docs/test-bake-plan.md, item 5."
+      }
     },
     "notes": [
       "Common 7 g packets are instant yeast: they can be mixed straight into the flour and need no proofing (retailer descriptions; the official oetker.de page was not reachable). Check the packet text.",
@@ -194,9 +223,10 @@
         "https://www.dm.de/p/d/1110733/",
         "https://www.rewe.de/shop/p/toppits-backpapier-8m/5907411",
         "https://www.dm.de/p/d/1348548/",
-        "https://kuechenfibel.de/faq/welches-backpapier-bei-250-grad"
+        "https://kuechenfibel.de/faq/welches-backpapier-bei-250-grad",
+        "https://www.target.com/p/-/A-14725932"
       ],
-      "note": "Common baking paper is rated to 220 C. Not advised with the grill function or touching oven walls. Some premium papers are rated 240-250 C; check the pack."
+      "note": "Common baking paper is rated to 220 C. Not advised with the grill function or touching oven walls. Some premium papers are rated 240-250 C; check the pack. Not wax paper (it is not made for the oven). If the paper is rated below the oven temperature, pull it out after the first 2-3 minutes (validation m8)."
     },
     "evoo_smoke_c": {
       "value": 200,
@@ -211,6 +241,19 @@
         "https://wtop.com/news/2021/04/why-you-should-stop-worrying-about-olive-oils-smoke-points/"
       ],
       "note": "Extra-virgin olive oil smokes around 190-210 C (industry sites; UC Davis notes smoke point alone does not predict quality loss). At 250 C use refined olive oil or a neutral oil (rapeseed, sunflower) in pans. Oil mixed into the dough is fine. The recipe pages brush a thin film of olive oil on the rim before baking (the original guide's advice); a refined or light olive oil resists smoke better."
+    },
+    "parchment_pull_min": {
+      "range": [
+        2,
+        3
+      ],
+      "unit": "min",
+      "confidence": "low",
+      "verified": false,
+      "sources": [
+        "https://www.target.com/p/-/A-14725932"
+      ],
+      "note": "Validation review 2026-11 (m8): if the paper is rated below the oven temperature, pull it out from under the pizza after the first 2-3 minutes, when the base has set. Practice advice, untested. See docs/test-bake-plan.md, item 6."
     }
   },
   "sizes": [
@@ -238,15 +281,17 @@
         "confidence": "low",
         "verified": false,
         "sources": [],
-        "note": "2 g per 300 g flour (0.667%). Typical straight-dough rule of thumb is 0.5-0.7% instant yeast (pizzamaking forum, secondhand); Reinhart NY about 0.71%. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+        "note": "2 g per 300 g flour (0.667%). Typical straight-dough rule of thumb is 0.5-0.7% instant yeast (pizzamaking forum, secondhand); Reinhart NY about 0.71%. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking. Validation review 2026-11 (m12): plausible at 26-28 C, at the low end for a 1.5-2x rise in 45-60 min; in a 21 C room it can take up to 90 min. See docs/test-bake-plan.md, item 1 (raise to about 0.8-1% if the rise takes more than 75 min at 26-28 C)."
       },
       "water_temp_c": {
         "value": 30,
         "unit": "C",
         "confidence": "medium",
         "verified": false,
-        "sources": [],
-        "note": "Lukewarm. Yeast works at 25-35 C and dies above about 45 C (guide)."
+        "sources": [
+          "https://www.americastestkitchen.com/cooksillustrated/how_tos/8363-the-impact-of-too-hot-water-on-yeast"
+        ],
+        "note": "Lukewarm. Yeast works well at 25-35 C and starts to die from about 50 C (validation m3; America's Test Kitchen: dies quickly at 54-60 C, risk above about 49 C)."
       },
       "autolyse_min": 0,
       "knead_min": {
@@ -267,7 +312,7 @@
         "confidence": "medium",
         "verified": false,
         "sources": [],
-        "note": "Bulk rise in a warm place (26-28 C), 45-60 min, until 1.5-2x. Planning uses the upper end."
+        "note": "Bulk rise in a warm place (26-28 C), 45-60 min, until 1.5-2x. Planning uses the upper end. Validation review 2026-11 (M3): start heating the oven about halfway through this rise, so the baking surface is hot when the balls are ready; take the dough out first if it rises in the oven."
       },
       "final_rest_min": {
         "value": 45,
@@ -283,7 +328,15 @@
       },
       "fridge_h": null,
       "min_pizzas": 2,
-      "min_pizzas_note": "1 pizza needs under 1 g yeast; scale reads whole grams"
+      "min_pizzas_note": "1 pizza needs under 1 g dry yeast (0.98 g at 30 cm) and the scale reads whole grams. Fresh yeast for 1 pizza would be about 2.2-3.3 g (weighable), but the user's rule (at least 2 pizzas for the warm method) is kept for both yeast types; the owner confirmed this rule after the validation (m4).",
+      "bulk_slow_max_min": {
+        "value": 90,
+        "unit": "min",
+        "confidence": "low",
+        "verified": false,
+        "sources": [],
+        "note": "Validation review 2026-11 (m12): without a warm place (about 21 C) the rise can take up to 90 minutes. Wait for the size, not the clock. Estimate, no source. See docs/test-bake-plan.md, item 1."
+      }
     },
     "room_8_12h": {
       "yeast_pct_dry": {
@@ -294,7 +347,7 @@
         "sources": [
           "https://community.fornobravo.com/forum/pizza-quest-with-peter-reinhart/pizza/9849-optimum-yeast-percentage"
         ],
-        "note": "Only a home-recipe data point (0.3% overnight) and a forum reply (\"no single right percentage\") were found. May be too low. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+        "note": "Only a home-recipe data point (0.3% overnight) and a forum reply (\"no single right percentage\") were found. May be too low. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking. See docs/test-bake-plan.md, item 2."
       },
       "water_temp_c": {
         "value": 15,
@@ -371,7 +424,7 @@
         "sources": [
           "https://pizzalogic.app/blog/how-to-cold-ferment-pizza-dough/"
         ],
-        "note": "ESTIMATE, interpolated between the 24 h and warm values; no source gives a 12-16 h figure. Lehmann (secondhand) quotes 0.375% for up to 3 days. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+        "note": "ESTIMATE, interpolated between the 24 h and warm values; no source gives a 12-16 h figure. Lehmann (secondhand) quotes 0.375% for up to 3 days. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking. See docs/test-bake-plan.md, item 3."
       },
       "water_temp_c": {
         "value": 15,
@@ -448,7 +501,7 @@
           "confidence": "low",
           "verified": false,
           "sources": [],
-          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together."
+          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together. Rounds at 0, 30 and 60 minutes; with stretch and fold the rise runs the full 90 minutes so the dough rests after the last round (validation m7)."
         },
         "gap_min": {
           "value": 30,
@@ -470,7 +523,7 @@
           "https://moondogapps.com/crust/how-much-yeast-cold-ferment-pizza-dough.html",
           "https://pizzalogic.app/blog/how-to-cold-ferment-pizza-dough/"
         ],
-        "note": "Moon Dog table 0.07-0.10%, Lehmann (secondhand) 0.375%, guide 0.2%. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+        "note": "Moon Dog table 0.07-0.10%, Lehmann (secondhand) 0.375%, guide 0.2%. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking. Validation review 2026-11 (m11): possibly on the high side for a 4-5 C fridge with 1-1.5 h at 21 C before. Untested; See docs/test-bake-plan.md, item 3."
       },
       "water_temp_c": {
         "value": 15,
@@ -543,7 +596,7 @@
           "confidence": "low",
           "verified": false,
           "sources": [],
-          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together."
+          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together. Rounds at 0, 30 and 60 minutes; with stretch and fold the rise runs the full 90 minutes so the dough rests after the last round (validation m7)."
         },
         "gap_min": {
           "value": 30,
@@ -563,9 +616,10 @@
         "verified": false,
         "sources": [
           "https://moondogapps.com/crust/how-much-yeast-cold-ferment-pizza-dough.html",
-          "https://pizzalogic.app/blog/how-to-cold-ferment-pizza-dough/"
+          "https://pizzalogic.app/blog/how-to-cold-ferment-pizza-dough/",
+          "https://www.pizzamaking.com/forum/index.php?msg=271453"
         ],
-        "note": "Agrees with pizzalogic (0.15-0.2%); Moon Dog says 0.03-0.05%. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+        "note": "Agrees with pizzalogic (0.15-0.2%); Moon Dog says 0.03-0.05%. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking. Validation review 2026-11 (m11): probably on the high side for a 4-5 C fridge (a pizzamaking.com prediction model gives about 0.1% for 48 h at 3 C). Consider 0.1% if the test bake over-rises (alcohol smell, slack balls, big bubbles). Untested; See docs/test-bake-plan.md, item 3."
       },
       "water_temp_c": {
         "value": 15,
@@ -638,7 +692,7 @@
           "confidence": "low",
           "verified": false,
           "sources": [],
-          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together."
+          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together. Rounds at 0, 30 and 60 minutes; with stretch and fold the rise runs the full 90 minutes so the dough rests after the last round (validation m7)."
         },
         "gap_min": {
           "value": 30,
@@ -658,9 +712,10 @@
         "verified": false,
         "sources": [
           "https://moondogapps.com/crust/how-much-yeast-cold-ferment-pizza-dough.html",
-          "https://pizzalogic.app/blog/how-to-cold-ferment-pizza-dough/"
+          "https://pizzalogic.app/blog/how-to-cold-ferment-pizza-dough/",
+          "https://www.pizzamaking.com/forum/index.php?msg=271453"
         ],
-        "note": "Agrees with pizzalogic (0.10-0.15%); Lehmann (secondhand) 0.25% for 4-5 days. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking."
+        "note": "Agrees with pizzalogic (0.10-0.15%); Lehmann (secondhand) 0.25% for 4-5 days. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking. Validation review 2026-11 (m11): probably on the high side. Consider 0.07% if the test bake over-rises. Untested; See docs/test-bake-plan.md, item 3."
       },
       "water_temp_c": {
         "value": 15,
@@ -733,7 +788,7 @@
           "confidence": "low",
           "verified": false,
           "sources": [],
-          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together."
+          "note": "Three rounds of stretch and fold instead of kneading (guide v7). The guide also says 3-4 rounds. Done during the room-temperature rise: this site's reading of the guide, which did not say how the rounds and the 1-1.5 h rise fit together. Rounds at 0, 30 and 60 minutes; with stretch and fold the rise runs the full 90 minutes so the dough rests after the last round (validation m7)."
         },
         "gap_min": {
           "value": 30,
@@ -837,7 +892,7 @@
           "confidence": "low",
           "verified": false,
           "sources": [],
-          "note": "From the user's guide; no source found for NY bake time at 250 C on a hot tray."
+          "note": "From the user's guide; no source found for NY bake time at 250 C on a hot tray. Validation review 2026-11 (m13): plausible on steel or cast iron; on a stone at 250 C, 9-12 min is common. See docs/test-bake-plan.md, item 4."
         },
         "rack": "upper_third",
         "grill": {
@@ -851,6 +906,14 @@
             "sources": [],
             "note": "Grill for the last 1-2 minutes for top colour (a 250 C oven is short on top heat)."
           }
+        },
+        "stone_max_min": {
+          "value": 12,
+          "unit": "min",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "Validation review 2026-11 (m13): on a pizza stone the bake can take up to about 12 minutes at 250 C. No source; See docs/test-bake-plan.md, item 4."
         }
       },
       "practice": {
@@ -1011,14 +1074,6 @@
           "sources": [],
           "note": "From the user's guide v7 (untested, no external source checked)."
         },
-        "shape_diameter_cm": {
-          "value": 30,
-          "unit": "cm",
-          "confidence": "low",
-          "verified": false,
-          "sources": [],
-          "note": "From the user's guide v7 (untested, no external source checked)."
-        },
         "warm_place_c": {
           "range": [
             26,
@@ -1061,12 +1116,14 @@
           "note": "From the user's guide v7 (untested, no external source checked)."
         },
         "yeast_dies_c": {
-          "value": 45,
+          "value": 50,
           "unit": "C",
-          "confidence": "low",
+          "confidence": "medium",
           "verified": false,
-          "sources": [],
-          "note": "From the user's guide v7 (untested, no external source checked)."
+          "sources": [
+            "https://www.americastestkitchen.com/cooksillustrated/how_tos/8363-the-impact-of-too-hot-water-on-yeast"
+          ],
+          "note": "CHANGED from 45 (user's guide v7) to 50 after the Validation review 2026-11 (m3): America's Test Kitchen says yeast dies quickly at 54-60 C and there is a risk above about 49 C. 45 C is a safe ceiling for the water, not the point where yeast dies. Text: 'starts to die from about 50 degrees'."
         },
         "hot_room_c": {
           "value": 25,
@@ -1086,14 +1143,14 @@
         },
         "second_pizza_wait_min": {
           "range": [
-            2,
-            3
+            5,
+            10
           ],
           "unit": "min",
           "confidence": "low",
           "verified": false,
           "sources": [],
-          "note": "From the user's guide v7 (untested, no external source checked)."
+          "note": "CHANGED from 2-3 min (user's guide v7) to 5-10 min after the Validation review 2026-11 (m6): a 250 C surface needs longer to recover after a pizza and an open door (home-baker forum reports for steel, low quality). LOW CONFIDENCE, measure it: See docs/test-bake-plan.md, item 4."
         },
         "rest_before_cut_min": {
           "range": [
@@ -1130,13 +1187,13 @@
           "sources": [],
           "note": "From the user's guide v7 (untested, no external source checked)."
         },
-        "flour_protein_max_g": {
+        "high_gluten_protein_g": {
           "value": 14,
           "unit": "g per 100 g",
-          "confidence": "low",
+          "confidence": "medium",
           "verified": false,
           "sources": [],
-          "note": "From the user's guide v7 (untested, no external source checked)."
+          "note": "CHANGED meaning after the Validation review 2026-11 (m2): the user's guide v7 said 'above 14 g the dough turns stiff and rubbery'. Classic New York pizzerias use high-gluten flour at about 14 g protein; the dough is stronger and springs back more, so it needs longer rests when shaped. General trade knowledge (high-gluten flour is sold for pizza and bagels), no source fetched."
         },
         "shrink_rest_min": {
           "range": [
@@ -1160,7 +1217,7 @@
           "sources": [],
           "note": "From the user's guide v7 (untested, no external source checked)."
         },
-        "_note": "Numbers that appear in the New York step text. All come from the user's guide v7 and are untested."
+        "_note": "Numbers that appear in the New York step text. Most come from the user's guide v7 and are untested; values changed by the 2026-11 validation say so in their note. The pizza size is no longer here: the text refers to the size chosen on the Home page (validation M2; the guide's 30 cm was removed)."
       }
     },
     "neapolitan": {
@@ -1186,7 +1243,7 @@
         "sources": [
           "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
         ],
-        "note": "AVPN allows 200-280 g, 22-35 cm. The guide uses 28-30 cm."
+        "note": "AVPN allows 200-280 g, 22-35 cm. The site no longer states a fixed ball or size in the steps (validation M2): the Ingredients card shows the ball weight for the size chosen on the Home page (26, 30 or 32 cm = about 188, 250 or 284 g). The 32 cm ball is just over the AVPN maximum of 280 g (n5); the EU TSG reportedly gives 180-250 g (secondary)."
       },
       "dough_density_g_per_cm2": {
         "value": 0.35367765,
@@ -1217,8 +1274,8 @@
         "salt": {
           "value": 2.67,
           "range": [
-            2.4,
-            3.5
+            2.2,
+            3.75
           ],
           "unit": "% of flour",
           "confidence": "medium",
@@ -1226,7 +1283,7 @@
           "sources": [
             "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
           ],
-          "note": "AVPN 40-60 g per litre of water (about 2.4-3.5% of flour); STG reportedly 50-55 g/L (secondary summary)."
+          "note": "AVPN 40-60 g per litre of water with 1.6-1.8 kg flour = about 2.2-3.75% of flour (validation n4 corrected the earlier '2.4-3.5%'); STG reportedly 50-55 g/L (secondary summary)."
         },
         "sugar": {
           "value": 0.7,
@@ -1253,11 +1310,14 @@
       "flags": {
         "no_oil_no_sugar": {
           "traditional": true,
-          "source_level": "avpn_secondary",
+          "source_level": "eu_tsg",
           "confidence": "medium",
           "verified": false,
-          "sources": [],
-          "note": "The traditional recipe is flour, water, salt, yeast, no oil and no sugar. This is stated by secondary sources (thepizzacraft, doughdorks); the AVPN page text that was fetched did not list prohibited ingredients. Check the official disciplinare."
+          "sources": [
+            "https://www.legislation.gov.uk/eur/2010/97/annexes",
+            "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+          ],
+          "note": "The official EU specification for Pizza Napoletana (Commission Regulation (EU) No 97/2010, Traditional Speciality Guaranteed) lists only flour, water, salt and yeast for the dough; olive oil is used only on top (validation m10). The AVPN page lists no forbidden ingredients. Not re-read by a person for this site (the validator read it; a re-fetch during the fix failed), so verified stays false."
         }
       },
       "bake": {
@@ -1374,17 +1434,6 @@
           ],
           "note": "AVPN rule, read from the AVPN page by a summarizing tool; re-check the official disciplinare. Pizza diameter up to 35 cm (secondary sources)."
         },
-        "shape_diameter_cm": {
-          "range": [
-            28,
-            30
-          ],
-          "unit": "cm",
-          "confidence": "low",
-          "verified": false,
-          "sources": [],
-          "note": "From the user's guide v7 (untested, no external source checked). Section 8: 28-30 cm."
-        },
         "home_hydration_pct": {
           "range": [
             65,
@@ -1399,7 +1448,7 @@
           ],
           "note": "Home-oven recipes use more water than the AVPN range because the bake is longer (America's Test Kitchen about 76%). Blog and test-kitchen sources."
         },
-        "_note": "Numbers that appear in the Neapolitan text and are not elsewhere in this file. Other numbers of that text reuse styles.new_york.practice."
+        "_note": "Numbers that appear in the Neapolitan text and are not elsewhere in this file. Other numbers of that text reuse styles.new_york.practice. The guide's 28-30 cm shaping size was removed (validation M2): the text refers to the size chosen on the Home page."
       }
     }
   }

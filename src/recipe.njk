@@ -35,7 +35,9 @@ eleventyComputed:
         {% endfor %}<tr class="total"><th scope="row">{{ r.dough_total }}</th><td class="num">{{ page_data.dough_g | num(lang) }}</td></tr>
       </tbody>
     </table>
-    <div id="ing-warn"></div>
+    <p class="ball-line" id="ball-line">{{ r.each_ball | fill({ g: page_data.ball_g }, lang) }}</p>
+    {# The yeast instruction (solution or weighed yeast). Same lines as recipe.js renders, from yeastCard() in calc.js. #}
+    <div id="ing-yeast">{% for l in page_data.yeastLines %}{% if l.group == "warn" %}<div class="callout warn" role="note">{% icon "warn" %}<div><p>{{ t.warn[l.key] | fill(l.params, lang) }}</p></div></div>{% else %}<p class="ynote">{{ t.card[l.key] | fill(l.params, lang) }}</p>{% endif %}{% endfor %}</div>
     <noscript><p class="muted small ing-note">{{ r.noscript }}</p></noscript>
   </details>
   <section aria-labelledby="st-h">
@@ -60,10 +62,10 @@ eleventyComputed:
     {% else %}
     <p class="card placeholder">{{ r.placeholder }}</p>
     <div class="callouts">
-      <div class="callout safe" role="note">{% icon "safe" %}<div><strong>{{ t.callout.safe }}</strong><p>{{ t.warn.parchment | fill({ max_c: recipes.safety.parchment_max_c.value }, lang) }}</p></div></div>
+      <div class="callout safe" role="note">{% icon "safe" %}<div><strong>{{ t.callout.safe }}</strong><p>{{ t.warn.parchment | fill({ max_c: recipes.safety.parchment_max_c.value, pull_min: recipes.safety.parchment_pull_min.range[0], pull_max: recipes.safety.parchment_pull_min.range[1] }, lang) }}</p></div></div>
       <div class="callout safe" role="note">{% icon "safe" %}<div><strong>{{ t.callout.safe }}</strong><p>{{ t.warn.oil_smoke | fill({ min_c: recipes.safety.evoo_smoke_c.range[0], max_c: recipes.safety.evoo_smoke_c.range[1] }, lang) }}</p></div></div>
     </div>
     {% endif %}
   </section>
 </div>
-<script type="application/json" id="recipe-data">{{ { styleId: id, lang: lang, data: page_data.data, sizes: recipes.sizes, strings: { ing: t.ing, recipe: r, methods_short: t.methods_short, warn: t.warn } } | dump | safe }}</script>
+<script type="application/json" id="recipe-data">{{ { styleId: id, lang: lang, data: page_data.data, sizes: recipes.sizes, strings: { ing: t.ing, recipe: r, methods_short: t.methods_short, warn: t.warn, card: t.card } } | dump | safe }}</script>

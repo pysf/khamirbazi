@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { computeRecipe, roundArea, formatNumber } from "../src/assets/calc.js";
+import { computeRecipe, roundArea, formatNumber, yeastCard } from "../src/assets/calc.js";
 
 const data = JSON.parse(readFileSync(new URL("../src/_data/recipes.json", import.meta.url)));
 
@@ -309,4 +309,70 @@ test("dough only: no sauce, cheese or topping data or output", () => {
   }
   const r = computeRecipe({ styleId: "new_york", methodId: "cold_24h", mode: two }, data);
   for (const k of ["sauce", "cheese", "toppings"]) assert.equal(r[k], undefined, k);
+});
+
+// ---- Ingredients card: the yeast instruction (yeastCard) ---------------------------------
+const card = (styleId, methodId, pizzas, d = 30, yeastType = "dry") =>
+  yeastCard(computeRecipe({ styleId, methodId, yeastType, mode: { pizzas, size: round(d) } }, data), data);
+
+test("yeastCard: a yeast solution with the packet, the lukewarm temperature, the wait and the grams to pour", () => {
+  const [l, ...rest] = card("new_york", "cold_24h", 2);
+  assert.equal(rest.length, 0);
+  assert.deepEqual([l.group, l.key], ["card", "solution_dry"]);
+  assert.deepEqual([l.params.yeast_g, l.params.water_g, l.params.t_min, l.params.t_max, l.params.wait], [7, 700, 30, 35, 5]);
+  near(l.params.take, 59.06, 0.01);
+  const [f] = card("new_york", "cold_24h", 2, 30, "fresh");
+  assert.deepEqual([f.key, f.params.yeast_g, f.params.cube_g], ["solution_fresh", 21, 42]);
+  near(f.params.take, 59.06, 0.01);
+});
+
+test("yeastCard: big cold batches weigh the yeast directly (no solution row, no solution line)", () => {
+  // New York 24 h, 6 x 30 cm: 1.77 g dry; Neapolitan 24 h, 5 x 30 cm: 1.51 g dry
+  for (const [st, n, dry] of [["new_york", 6, 1.77], ["neapolitan", 5, 1.51]]) {
+    const r = computeRecipe({ styleId: st, methodId: "cold_24h", mode: { pizzas: n, size: round(30) } }, data);
+    const lines = yeastCard(r, data);
+    assert.deepEqual(lines.map((l) => l.key), ["direct_dry"], st);
+    near(lines[0].params.g, dry, 0.01, st);
+    assert.equal(r.ingredients.some((i) => i.id === "yeast_solution"), false);
+    near(g(r, "yeast_dry"), lines[0].params.g, 1e-9);
+  }
+});
+
+test("yeastCard: warm method, 2 x 26 cm: weigh 1.47 g, say why there is no solution, and warn about the 1 g scale", () => {
+  const lines = card("new_york", "warm_2h", 2, 26);
+  assert.deepEqual(lines.map((l) => l.key), ["direct_dry", "solution_exceeds_water", "scale_resolution"]);
+  near(lines[0].params.g, 1.47, 0.01);
+  assert.deepEqual([lines[2].params.lo, lines[2].params.hi], [1, 2]);
+  // 2 x 30 cm (1.96 g) needs no extra lines
+  assert.deepEqual(card("new_york", "warm_2h", 2).map((l) => l.key), ["direct_dry"]);
+});
+
+test("yeastCard: no amount gives the warning instead of an instruction", () => {
+  assert.deepEqual(card("new_york", "warm_2h", 1).map((l) => [l.group, l.key]), [["warn", "min_batch"]]);
+  assert.deepEqual(card("neapolitan", "warm_2h", 1, 30, "fresh").map((l) => [l.group, l.key]), [["warn", "min_batch"]]);
+  const tiny = yeastCard(computeRecipe({ styleId: "new_york", methodId: "warm_2h", mode: { pizzas: 2, ballWeight: 60 } }, data), data);
+  assert.deepEqual(tiny.map((l) => [l.group, l.key]), [["warn", "batch_too_small"]]);
+});
+
+test("yeastCard agrees with the ingredients table for every style, method, yeast, size and count; every line has a UI string", () => {
+  const strings = ["en", "fa"].map((l) => JSON.parse(readFileSync(new URL(`../src/_data/i18n/${l}.json`, import.meta.url))));
+  for (const styleId of Object.keys(data.styles))
+    for (const methodId of Object.keys(data.methods))
+      for (const yeastType of ["dry", "fresh"])
+        for (const d of [26, 30, 32])
+          for (const pizzas of [1, 2, 3, 5, 6, 10]) {
+            const r = computeRecipe({ styleId, methodId, yeastType, mode: { pizzas, size: round(d) } }, data);
+            const lines = yeastCard(r, data);
+            const label = `${styleId} ${methodId} ${yeastType} ${d} cm x ${pizzas}`;
+            assert.ok(lines.length > 0, label);
+            const first = lines[0];
+            const hasSolutionRow = r.ingredients.some((i) => i.id === "yeast_solution");
+            const directRow = r.ingredients.find((i) => i.id === `yeast_${yeastType}`);
+            assert.equal(first.key === `solution_${yeastType}`, hasSolutionRow, label);
+            if (hasSolutionRow) near(first.params.take, g(r, "yeast_solution"), 1e-9, label);
+            assert.equal(first.key === `direct_${yeastType}`, !!directRow, label);
+            if (directRow) near(first.params.g, directRow.g, 1e-9, label);
+            if (first.group === "warn") assert.equal(r.yeast.mode, "unavailable", label);
+            for (const t of strings) for (const l of lines) assert.ok(t[l.group][l.key], `${label}: ${l.group}.${l.key}`);
+          }
 });

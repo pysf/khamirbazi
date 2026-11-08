@@ -181,6 +181,42 @@ export function computeRecipe(input, data) {
   };
 }
 
+/**
+ * What the Ingredients card says about the yeast, as language-free lines for the page to fill with UI strings.
+ * r: a computeRecipe result; data: recipes.json (or the slim copy on the recipe page).
+ * Returns [{ group: "card" | "warn", key, params }]: group "card" = an instruction (strings t.card[key]),
+ * group "warn" = a warning (strings t.warn[key]). The steps only say "add the yeast as shown on the Ingredients card",
+ * so this is the one place that says whether to make a solution or weigh the yeast.
+ */
+export function yeastCard(r, data) {
+  const y = r.yeast;
+  const has = (id) => r.warnings.find((w) => w.id === id);
+  const lines = [];
+  if (y.mode === "solution") {
+    const s = data.yeast.solution;
+    const t = s.water_temp_c.range;
+    const params = { water_g: y.solution.water_g, yeast_g: y.solution.yeast_g, t_min: t[0], t_max: t[1], wait: s.dissolve_wait_min.value, take: y.solution.take_g };
+    if (y.type === "fresh") params.cube_g = s.fresh.cube_g.value;
+    lines.push({ group: "card", key: `solution_${y.type}`, params });
+  } else if (y.mode === "direct") {
+    lines.push({ group: "card", key: `direct_${y.type}`, params: { g: y.weigh_g } });
+    if (has("solution_exceeds_water")) lines.push({ group: "card", key: "solution_exceeds_water", params: {} });
+    const sr = has("scale_resolution");
+    if (sr) {
+      const g = sr.params.yeast_g;
+      const lo = Math.floor(g);
+      const hi = Math.ceil(g);
+      if (hi > lo) lines.push({ group: "card", key: "scale_resolution", params: { g, lo, hi } });
+    }
+  } else {
+    for (const id of ["min_batch", "batch_too_small"]) {
+      const w = has(id);
+      if (w) lines.push({ group: "warn", key: id, params: w.params });
+    }
+  }
+  return lines;
+}
+
 /** Display helper: at most 1 decimal. English: 12.5. Farsi: Persian digits and the decimal separator, ۱۲٫۵ (the design decides). Never use for calculation or for URLs and input values. */
 export function formatNumber(n, locale = "en") {
   if (n == null || Number.isNaN(n)) return "";

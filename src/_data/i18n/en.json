@@ -38,12 +38,13 @@
     "cta": "Show recipe",
     "new_to": "New to dough?",
     "new_to_sub": "Read the basics",
-    "err_min_batch": "The 2-hour warm method needs at least {min} pizzas. For one pizza the yeast would weigh less than {min_g} g, and a kitchen scale cannot show that. Choose another method, or make {min} pizzas."
+    "err_min_batch": "The 2-hour warm method needs at least {min} pizzas, with dry or fresh yeast. For one pizza the dry yeast would weigh less than {min_g} g, which a kitchen scale cannot show. Choose another method, or make {min} pizzas."
   },
   "recipe": {
     "change": "Change",
     "ingredients": "Ingredients",
     "dough_total": "Total dough",
+    "each_ball": "Each ball: {g} g",
     "th_ing": "Ingredient",
     "th_g": "Grams",
     "steps": "Steps",
@@ -53,7 +54,6 @@
     "size_round": "{d} cm",
     "pizza_one": "{n} pizza",
     "pizza_other": "{n} pizzas",
-    "table_note": "The weight of the yeast solution is already taken off the water.",
     "noscript": "JavaScript is off, so this page shows amounts for 2 pizzas of 30 cm. Turn JavaScript on to choose your own amounts."
   },
   "styles": {
@@ -95,10 +95,18 @@
     "yeast_fresh": "Fresh yeast"
   },
   "warn": {
-    "parchment": "Baking paper is optional. If you use it, check the maximum temperature printed on the pack. Many papers are rated to {max_c} degrees, which is lower than this oven. Keep the paper away from the heating elements and the oven walls.",
+    "parchment": "Baking paper is optional. If you use it, check the maximum temperature printed on the pack. Many papers are rated to {max_c} degrees, which is lower than this oven. Keep the paper away from the heating elements and the oven walls. Do not use wax paper. If your paper is rated below the oven temperature, pull it out from under the pizza after the first {pull_min} to {pull_max} minutes.",
     "oil_smoke": "Extra-virgin olive oil starts to smoke at about {min_c} to {max_c} degrees. Do not oil the hot baking surface. Oil mixed into the dough is fine.",
-    "min_batch": "This method needs at least {min_pizzas} pizzas, but you chose {pizzas}. With fewer pizzas the yeast would weigh less than {min_g} g, which a kitchen scale cannot show.",
-    "batch_too_small": "This batch is too small. The yeast would weigh less than a kitchen scale can show. Make more pizzas."
+    "min_batch": "This method needs at least {min_pizzas} pizzas, but you chose {pizzas}. For one pizza the dry yeast would weigh less than {min_g} g, which a kitchen scale cannot show. This guide uses the same rule for fresh yeast.",
+    "batch_too_small": "This batch is too small: the yeast would weigh less than a kitchen scale can show, even as a yeast solution. Make more pizzas."
+  },
+  "card": {
+    "solution_dry": "Yeast solution: stir one whole {yeast_g} g packet of dry yeast into {water_g} g of lukewarm water (about {t_min} to {t_max} degrees) until no lumps are left. Wait about {wait} minutes, stir again, then pour {take} g of it into the dough right away. The water in the table already has this weight taken off. Throw away the rest.",
+    "solution_fresh": "Yeast solution: crumble half of a {cube_g} g cube of fresh yeast ({yeast_g} g) into {water_g} g of lukewarm water (about {t_min} to {t_max} degrees) and stir until no lumps are left. Stir again right before you pour {take} g of it into the dough. The water in the table already has this weight taken off. Throw away the rest.",
+    "direct_dry": "Yeast: weigh {g} g of dry yeast and stir it into the water. No yeast solution is needed for this amount.",
+    "direct_fresh": "Yeast: weigh {g} g of fresh yeast, crumble it into the water and stir until no lumps are left. No yeast solution is needed for this amount.",
+    "solution_exceeds_water": "A yeast solution would need more liquid than all the water in this recipe, so you weigh the yeast directly.",
+    "scale_resolution": "A kitchen scale shows whole grams, and {g} g lies between {lo} and {hi} g. Use the heavier reading ({hi} g). A little more yeast only makes the dough rise a little faster, so watch its size."
   },
   "basics": {
     "title": "The basics",

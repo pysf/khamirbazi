@@ -5,7 +5,7 @@ Hydration is the weight of water as a percentage of the weight of flour. The New
 - Stiffer dough is easy to handle and bakes crisp.
 - Softer, stickier dough gives an open, airy crumb (the inside of the crust) but is harder to handle.
 
-This guide keeps the hydration moderate because of the home oven. An oven that tops out at {{ recipes.oven.max_c.value }} degrees gives less heat, so the bake takes longer. A very wet dough can dry out before it browns.
+This guide keeps the hydration moderate. A very wet dough is hard for a beginner to handle and browns slowly. A very stiff dough can turn dry and hard in a long home-oven bake.
 
 ## Gluten
 
@@ -29,7 +29,11 @@ Some people say a long cold rise is easier to digest. This guide does not make t
 
 ## Fermentation and its names
 
-Fermentation is the yeast eating sugar and making gas and flavour. Cold fermentation means letting the dough do this in the fridge. Other names for the same thing are cold proofing and cold retarding. The faster version, at room temperature or in a warm place, is called a warm rise.
+Fermentation is the yeast eating sugar and making gas and flavour. Cold fermentation means letting the dough do this in the fridge. Other names for the same thing are cold proofing and cold retarding. Dough that rises at room temperature has a room-temperature rise; in a warm place, a warm rise.
+
+## Raw dough
+
+Do not eat or taste raw dough. Raw flour can carry harmful bacteria, such as E. coli, that only baking kills.
 
 ## Where the styles come from
 

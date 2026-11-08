@@ -20,14 +20,15 @@ The site is built to `_site/` with URLs `/en/` (Home = calculator), `/en/recipe/
 ## Where things are
 
 - `src/_data/recipes.json`: every number (baker's percentages, methods, yeast, bake settings, safety data), each with `confidence`, `verified`, `sources` and notes. Single source of truth.
-- `src/assets/calc.js`: pure calculator (`computeRecipe`, `roundArea`, `formatNumber`). No DOM. Results are exact; only `formatNumber` rounds, to at most one decimal. Round sizes: `mode: { pizzas, size: { shape: "round", diameter } }`, dough = pizzas x area x the style's `dough_density_g_per_cm2` (derived from 250 g for 30 cm; `sizes` in `recipes.json` lists the three sizes of the site (26, 30 and 32 cm)).
-- `src/assets/home.js`: the Home inputs; "Show recipe" is a link with the choices in the query string. `src/assets/recipe.js`: reads the query string, renders the ingredients with `calc.js`, shows the steps of the chosen method. `src/assets/site.js`: theme toggle, language switch that keeps the query string.
+- `src/assets/calc.js`: pure calculator (`computeRecipe`, `roundArea`, `formatNumber`, and `yeastCard`, which turns a result into the yeast lines of the Ingredients card: make the solution and pour X g, or weigh X g of yeast, plus scale and batch warnings). No DOM. Results are exact; only `formatNumber` rounds, to at most one decimal. Round sizes: `mode: { pizzas, size: { shape: "round", diameter } }`, dough = pizzas x area x the style's `dough_density_g_per_cm2` (derived from 250 g for 30 cm; `sizes` in `recipes.json` lists the three sizes of the site (26, 30 and 32 cm)).
+- `src/assets/home.js`: the Home inputs; "Show recipe" is a link with the choices in the query string. `src/assets/recipe.js`: reads the query string, renders the ingredients with `calc.js` (table with Total dough as the last row, an "Each ball: X g" line, and the yeast lines from `yeastCard`), shows the steps of the chosen method. The no-JS default table in `recipe.njk` renders the same lines at build time (`recipePage.js`). `src/assets/site.js`: theme toggle, language switch that keeps the query string.
 - `src/_data/i18n/en.json`, `fa.json`: UI strings. `src/_data/recipePage.js`: per-style data for the recipe page and its no-JS default table.
 - `src/_includes/layout.njk`, `src/home.njk`, `src/recipe.njk`, `src/basics.njk`: templates. `src/assets/style.css`: the only stylesheet (tokens ported from `docs/design`, which is read-only reference).
 - `src/assets/fonts/`: self-hosted Inter and Vazirmatn (SIL OFL, license in `OFL.txt`). `src/assets/logo/`: logo mark and favicon.
 - `lib/content.js`: renders the Markdown content (steps, Why notes, callouts, `{{ }}` values). `lib/icons.js`: the inline SVG icons.
 - `src/content/<lang>/`: Markdown prose, same file names in `en` and `fa`: `basics.md`, `glossary.md`, and `styles/<style_id>.md` (the body of a recipe page; until a file exists the page shows a placeholder).
-- `test/calc.test.js`: tests with hand-computed expectations for every style and several methods.
+- `test/calc.test.js`: tests with hand-computed expectations for every style and several methods, and for the card yeast lines (`yeastCard`) against the ingredients table.
+- `docs/test-bake-plan.md`: the test bakes still to do and how to update `recipes.json` afterwards (not published).
 
 ## Writing content (Markdown convention)
 
@@ -40,6 +41,7 @@ Prose for a style lives in `src/content/<lang>/styles/<style_id>.md` (ids as in 
 - Bullet lists become the bulleted list (for example troubleshooting: `- **Problem.** Fix.`).
 - Numbers come from `recipes.json`: write `{{ recipes.styles.new_york.bake.temp_c.value }}`, never the number. A wrong path stops the build. Do not put links in content (they would need the sub-path prefix).
 - A `##` heading that ends with `{methods=id1,id2}` (method ids from `recipes.json`) whose section contains an ordered list is the **main step list** of those methods: the recipe page shows it first, only for the selected method (without JavaScript, the style's default method). Every other `##` section (also method-specific ones without steps, such as a checklist) goes under "More details" as a collapsible block, in file order. Use the same markers in both languages; `make check` compares them.
+- The Ingredients card is the only place with the exact yeast instruction and the ball weight. Steps say "add the yeast as shown on the Ingredients card", refer to "Each ball" on the card and to "the size you chose on the Home page"; never write a fixed yeast method, ball weight or pizza diameter in a step (facts about the original style, such as the AVPN limits, are fine when labelled as such).
 - Recipe pages with written content do not repeat the generated parchment, grill, olive oil and yeast notes at the top; write them as `> Safety:` / `> Warning:` callouts in the content (with values from `recipes.safety`).
 - No Latin words on Farsi pages: use the Persian term and write proper names in Persian script (the only Latin is the language-switch label "EN"). `make check` enforces it. Write temperatures and units in words ("درجه", "گرم"), not with letters.
 

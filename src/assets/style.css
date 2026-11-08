@@ -146,7 +146,10 @@ a{color:inherit}
 [dir="rtl"] .act.lead>strong:first-child{font-weight:700;line-height:1.5}
 .callout.tip{background:var(--surface-2);color:var(--text)}
 .callouts{display:grid;gap:12px;margin-top:20px}
-#ing-warn .callout{margin:8px 8px 4px}
+#ing-yeast .callout{margin:8px 8px 4px}
+/* below the table: the weight of one ball, then the yeast instruction from calc.js (yeastCard) */
+.ball-line{padding:10px 16px 2px;font-weight:600}
+.ynote{margin:8px 8px 4px;padding:12px 14px;border-radius:var(--r-md);background:var(--surface-2);font-size:var(--fs-sm);line-height:1.5}
 .ing-note{padding-inline:16px}
 .placeholder{padding:20px 24px}
 .msec{display:grid;gap:20px}
