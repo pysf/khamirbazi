@@ -8,230 +8,148 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:wght@500;600&family=Vazirmatn:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap">
 <style>
 body{margin:0}
 sc-for,sc-if{display:contents}
-.kb{--bg:#FBF6EC;--surface:#FFFDF8;--surface-2:#F3EBDB;--text:#2B2A22;--text-muted:#5B5849;--border:#D9CFB9;--border-strong:#8A8167;--accent:#B3321F;--accent-hover:#8F2616;--accent-ink:#FFFFFF;--accent-soft:#F8DDD3;--olive:#4A5A22;--tip-bg:#E6EDD2;--tip-ink:#2F3A12;--warn-bg:#FFF0C7;--warn-ink:#5C4300;--safe-bg:#FBE3DF;--safe-ink:#7A1D10;--focus:#1F5FBF;--ill-crust:#E3B873;--ill-edge:#C98B3C;--ill-sauce:#C8452E;--ill-cheese:#F6E3A8;--ill-leaf:#5E7A2E;--shadow-1:0 1px 2px rgba(43,42,34,.12);--shadow-2:0 6px 18px rgba(43,42,34,.14);
---sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:48px;--sp-8:64px;--r-sm:6px;--r-md:12px;--r-lg:20px;--r-pill:999px;
---fs-sm:15px;--fs-base:17px;--fs-md:19px;--fs-lg:22px;--fs-xl:28px;--fs-2xl:34px;
---font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--font-head:"Newsreader",Georgia,serif;
-background:var(--bg);color:var(--text);font:400 var(--fs-base)/1.65 var(--font-body);min-height:100vh;box-sizing:border-box;-webkit-text-size-adjust:100%}
-.kb[data-theme=dark]{--bg:#1C1A16;--surface:#26231E;--surface-2:#312D26;--text:#F1E9D8;--text-muted:#C4BAA4;--border:#4A443A;--border-strong:#8C8472;--accent:#FF8A70;--accent-hover:#FFA28C;--accent-ink:#1C1A16;--accent-soft:#4A2A22;--olive:#B7C57A;--tip-bg:#2C3318;--tip-ink:#D5E2A3;--warn-bg:#3B3010;--warn-ink:#F5D57A;--safe-bg:#4A2018;--safe-ink:#FFC1B2;--focus:#8DB8FF;--ill-crust:#C99A55;--ill-edge:#A9772F;--ill-sauce:#D9573E;--ill-cheese:#E8CF8C;--ill-leaf:#8AAA52;--shadow-1:0 1px 2px rgba(0,0,0,.5);--shadow-2:0 6px 18px rgba(0,0,0,.5)}
+.kb{--bg:#FBF6EC;--surface:#FFFDF8;--surface-2:#F3EBDB;--thumb:#FFFFFF;--fill:rgba(90,80,50,.10);--nav-bg:rgba(251,246,236,.82);--text:#2B2A22;--text-muted:#5B5849;--border:#E4DAC5;--border-strong:#8A8167;--accent:#B3321F;--accent-hover:#8F2616;--accent-ink:#FFFFFF;--accent-soft:#F8DDD3;--safe-bg:#FBE3DF;--safe-ink:#7A1D10;--focus:#1F5FBF;--shadow-1:0 1px 2px rgba(43,42,34,.10);--shadow-2:0 8px 30px rgba(43,42,34,.08);
+--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:48px;--sp-8:64px;--sp-9:96px;
+--r-sm:10px;--r-md:14px;--r-lg:22px;--r-xl:28px;--r-pill:980px;
+--fs-xs:14px;--fs-sm:15px;--fs-base:17px;--fs-md:21px;--fs-lg:26px;--fs-xl:34px;--fs-2xl:42px;
+--font:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+background:var(--bg);color:var(--text);font:400 var(--fs-base)/1.47 var(--font);letter-spacing:-.011em;min-height:100vh;box-sizing:border-box;-webkit-text-size-adjust:100%}
+.kb[data-theme=dark]{--bg:#1C1A16;--surface:#26231E;--surface-2:#312D26;--thumb:#4A443A;--fill:rgba(255,255,255,.10);--nav-bg:rgba(28,26,22,.8);--text:#F1E9D8;--text-muted:#C4BAA4;--border:#3A352D;--border-strong:#8C8472;--accent:#FF8A70;--accent-hover:#FFA28C;--accent-ink:#1C1A16;--accent-soft:#4A2A22;--safe-bg:#4A2018;--safe-ink:#FFC1B2;--focus:#8DB8FF;--shadow-1:0 1px 2px rgba(0,0,0,.5);--shadow-2:0 8px 30px rgba(0,0,0,.4)}
 .kb *,.kb *::before,.kb *::after{box-sizing:border-box}
-.kb[dir=rtl],.kb [dir=rtl]{--font-body:"Vazirmatn","Inter",system-ui,sans-serif;--font-head:"Vazirmatn","Inter",system-ui,sans-serif}
-.kb [dir=rtl]{font-family:var(--font-body);line-height:1.95}
-.kb[dir=rtl]{line-height:1.95}
-.kb h1,.kb h2,.kb h3,.kb p,.kb ol,.kb ul,.kb dl,.kb dd,.kb figure{margin:0}
-.kb h1,.kb h2,.kb h3{font-family:var(--font-head);line-height:1.25;font-weight:600}
-.kb[dir=rtl] h1,.kb[dir=rtl] h2,.kb[dir=rtl] h3,.kb [dir=rtl] h1,.kb [dir=rtl] h2,.kb [dir=rtl] h3{line-height:1.5;font-weight:700}
-.kb h1{font-size:var(--fs-2xl)}.kb h2{font-size:var(--fs-xl)}.kb h3{font-size:var(--fs-lg)}
-@media(min-width:768px){.kb{--fs-2xl:44px;--fs-xl:32px}}
+.kb[dir=rtl],.kb [dir=rtl]{--font:"Vazirmatn","Inter",system-ui,sans-serif}
+.kb [dir=rtl]{font-family:var(--font)}
+.kb[dir=rtl],.kb[dir=rtl] *,.kb [dir=rtl],.kb [dir=rtl] *{letter-spacing:0!important}
+.kb[dir=rtl],.kb [dir=rtl]{line-height:1.8}
+.kb h1,.kb h2,.kb h3,.kb p,.kb ol,.kb ul,.kb dl,.kb dd{margin:0}
+.kb h1,.kb h2,.kb h3{font-weight:600;line-height:1.1;letter-spacing:-.03em}
+.kb[dir=rtl] h1,.kb[dir=rtl] h2,.kb[dir=rtl] h3{line-height:1.4;font-weight:700}
+.kb h1{font-size:var(--fs-2xl)}.kb h2{font-size:var(--fs-lg)}.kb h3{font-size:var(--fs-md);line-height:1.2}
+@media(min-width:768px){.kb{--fs-md:24px;--fs-lg:34px;--fs-xl:48px;--fs-2xl:64px}}
 .kb a{color:inherit}
 .kb :focus-visible,.kb .is-focus{outline:3px solid var(--focus);outline-offset:3px}
-@media(prefers-reduced-motion:reduce){.kb *{transition:none!important;animation:none!important}}
+@media(prefers-reduced-motion:reduce){.kb *{transition:none!important}}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:absolute;inset-inline-start:8px;top:-80px;background:var(--text);color:var(--bg)!important;padding:10px 16px;border-radius:var(--r-md);z-index:5}
+.skip{position:absolute;inset-inline-start:8px;top:-80px;background:var(--text);color:var(--bg)!important;padding:10px 16px;border-radius:var(--r-md);z-index:20}
 .skip:focus{top:8px}
-.wrap{max-width:1120px;margin-inline:auto;padding-inline:16px}
+.wrap{max-width:1040px;margin-inline:auto;padding-inline:20px}
 @media(min-width:768px){.wrap{padding-inline:32px}}
-.muted{color:var(--text-muted)}.small{font-size:var(--fs-sm)}
-.latin{font-size:var(--fs-sm);color:var(--text-muted);display:block;direction:ltr;text-align:start;unicode-bidi:isolate}
+.muted{color:var(--text-muted)}
 .ic{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.kb[dir=rtl] .dir-icon,.kb [dir=rtl] .dir-icon{transform:scaleX(-1)}
-/* header */
-.hdr{background:var(--surface);border-bottom:1px solid var(--border)}
-.hdr-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 12px;padding-top:8px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 24px/1.2 var(--font-head);min-height:48px}
-.lg{font:600 28px/1 "Newsreader",Georgia,serif;letter-spacing:-.01em;display:inline-block;white-space:nowrap}
-.lg.fa{font:700 24px/1.5 "Vazirmatn",sans-serif;display:inline-flex;align-items:baseline}
-.di{position:relative;display:inline-block}
-.di::after{content:"";position:absolute;left:50%;top:.2em;width:.17em;height:.17em;border-radius:50%;background:var(--accent);transform:translateX(-50%)}
-.ld{display:inline-block;width:.17em;height:.17em;border-radius:50%;background:var(--accent);margin-inline-start:.1em}
-.mk{width:36px;height:36px;flex:none;color:var(--accent)}
-.wm{font:600 24px/1.2 var(--font-head);letter-spacing:-.01em}
-.kb[dir=rtl] .wm{font-weight:700;font-size:22px}
-.nav{display:flex;order:3;width:100%}
-.nav a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text-muted);font-weight:600;font-size:var(--fs-sm);border-bottom:3px solid transparent;padding-inline:4px;text-align:center}
-.nav a[aria-current=page]{color:var(--accent);border-bottom-color:var(--accent)}
-@media(min-width:768px){.hdr-row{flex-wrap:nowrap;padding-top:0}.nav{order:0;width:auto;flex:1;justify-content:center;gap:8px}.nav a{flex:none;padding-inline:16px;font-size:var(--fs-base)}.brand{min-height:64px}}
-/* controls */
-.seg{display:inline-flex;border:2px solid var(--border-strong);border-radius:var(--r-pill);overflow:hidden;background:var(--surface)}
-.seg-b{min-height:44px;min-width:60px;padding:0 16px;border:0;background:transparent;color:var(--text);font:600 15px/1 var(--font-body);cursor:pointer}
-.seg-b[aria-pressed=true]{background:var(--text);color:var(--bg)}
-.seg.lg .seg-b{min-height:48px;flex:1;font-size:var(--fs-base)}
-.seg.lg{display:flex}
-.btn{min-height:52px;padding:0 22px;border-radius:var(--r-md);border:2px solid transparent;font:600 var(--fs-base)/1.2 var(--font-body);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;cursor:pointer;text-align:center}
+.kb[dir=rtl] .dir-icon{transform:scaleX(-1)}
+/* nav */
+.nav{position:sticky;top:0;z-index:10;background:var(--nav-bg);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:48px}
+.mk{width:32px;height:32px;flex:none;color:var(--accent)}
+.wm{font:600 21px/1.2 var(--font);letter-spacing:-.02em}
+.kb[dir=rtl] .wm{font-weight:700;font-size:20px}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nav-link{min-height:44px;display:inline-flex;align-items:center;padding-inline:10px;text-decoration:none;font-size:var(--fs-sm);font-weight:500;color:var(--text-muted);border-radius:var(--r-pill)}
+.nav-link[aria-current=page]{color:var(--text);font-weight:700}
+.lang{display:inline-flex;background:var(--fill);border-radius:var(--r-pill);padding:2px}
+.lang button{min-height:40px;min-width:44px;border:0;border-radius:var(--r-pill);background:transparent;color:var(--text-muted);font:600 14px/1 var(--font);cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--thumb);color:var(--text);box-shadow:var(--shadow-1)}
+/* buttons */
+.btn{min-height:48px;padding:0 24px;border-radius:var(--r-pill);border:0;font:500 var(--fs-base)/1.2 var(--font);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;cursor:pointer}
 .btn-primary{background:var(--accent);color:var(--accent-ink)!important}
 .btn-primary:hover,.btn-primary.is-hover{background:var(--accent-hover)}
-.btn-secondary{background:transparent;border-color:var(--text);color:var(--text)!important}
-.btn-secondary:hover,.btn-secondary.is-hover{background:var(--surface-2)}
-.btn-ghost{background:transparent;color:var(--accent)!important;text-decoration:underline;text-underline-offset:4px}
-.btn[disabled]{background:var(--surface-2);color:var(--text-muted)!important;border:2px dashed var(--border-strong);cursor:not-allowed}
-.btn-row{display:flex;flex-wrap:wrap;gap:12px}
-.field{display:grid;gap:6px}
-.lbl{font-weight:600;font-size:var(--fs-base)}
-.hint{font-size:var(--fs-sm);color:var(--text-muted)}
-.inp{min-height:52px;width:100%;border:2px solid var(--border-strong);border-radius:var(--r-md);background:var(--surface);color:var(--text);padding:0 14px;font:500 var(--fs-base)/1.2 var(--font-body)}
-.stepper{display:inline-flex;align-items:stretch;border:2px solid var(--border-strong);border-radius:var(--r-md);overflow:hidden;background:var(--surface)}
-.stepper button{width:52px;min-height:52px;border:0;background:var(--surface-2);color:var(--text);font:600 26px/1 var(--font-body);cursor:pointer}
-.stepper input{width:80px;text-align:center;border:0;background:transparent;color:var(--text);font:600 20px/1 var(--font-body);min-width:0}
-.stepper .u{align-self:center;padding-inline-end:12px;color:var(--text-muted);font-size:var(--fs-sm)}
-.field.err .inp,.field.err .stepper{border-color:var(--safe-ink)}
-.msg-err{display:flex;gap:8px;align-items:flex-start;color:var(--safe-ink);font-weight:600;font-size:var(--fs-sm)}
-.rg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.rc{display:grid;gap:4px;justify-items:start;text-align:start;padding:14px;border:2px solid var(--border-strong);border-radius:var(--r-md);background:var(--surface);color:var(--text);font:600 var(--fs-base)/1.3 var(--font-body);cursor:pointer;min-height:76px}
-.rc .rc-s{font-weight:400;font-size:var(--fs-sm);color:var(--text-muted)}
-.rc .rc-c{display:none}
-.rc[aria-checked=true]{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
-.rc[aria-checked=true] .rc-c{display:inline-flex}
-.rc .rc-h{display:flex;gap:8px;align-items:center;justify-content:space-between;width:100%}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{min-height:44px;padding:0 14px;border-radius:var(--r-pill);border:2px solid var(--border-strong);background:var(--surface);color:var(--text);font:500 var(--fs-sm)/1 var(--font-body);display:inline-flex;align-items:center;gap:6px;cursor:pointer}
-.tabs{display:flex;flex-wrap:wrap;gap:8px}
-.tab{min-height:48px;padding:0 16px;border-radius:var(--r-pill);border:2px solid var(--border-strong);background:var(--surface);color:var(--text);font:600 var(--fs-sm)/1 var(--font-body);cursor:pointer}
-.tab[aria-pressed=true]{background:var(--text);color:var(--bg);border-color:var(--text)}
-.sw{display:flex;align-items:center;gap:12px;min-height:52px;background:transparent;border:0;color:var(--text);font:600 var(--fs-base)/1.2 var(--font-body);cursor:pointer;padding:0;text-align:start}
-.sw .trk{width:52px;height:30px;border-radius:var(--r-pill);border:2px solid var(--border-strong);background:var(--surface-2);position:relative;flex:none}
-.sw .trk::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:20px;height:20px;border-radius:50%;background:var(--text-muted)}
-.sw[aria-checked=true] .trk{background:var(--accent);border-color:var(--accent)}
-.sw[aria-checked=true] .trk::after{inset-inline-start:25px;background:var(--accent-ink)}
-.sw .st{font-weight:500;font-size:var(--fs-sm);color:var(--text-muted)}
-/* cards, grid */
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-1);padding:16px}
-@media(min-width:768px){.card{padding:24px}}
-.main{padding-block:24px 8px;display:grid;gap:32px;min-width:0}
-.stack{display:grid;gap:16px}
-.lead{font-size:var(--fs-md);color:var(--text-muted);max-width:60ch}
-.hero{display:grid;gap:24px;align-items:center}
-.hero .stack{gap:20px}
-@media(min-width:768px){.hero{grid-template-columns:1.3fr .7fr}}
-.hero-ill{width:min(240px,60%);justify-self:center}
-.grid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
-@media(min-width:640px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(min-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.scard{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit}
-.ill{background:var(--surface-2);border-radius:var(--r-md);height:124px;display:grid;place-items:center}
-.ill svg{height:104px;width:auto}
-.i-crust{fill:var(--ill-crust)}.i-edge{fill:var(--ill-edge)}.i-sauce{fill:var(--ill-sauce)}.i-cheese{fill:var(--ill-cheese)}.i-leaf{fill:var(--ill-leaf)}
-.sname{font-size:var(--fs-lg)}
-.smeta{display:flex;gap:24px}
-.smeta dt{font-size:var(--fs-sm);color:var(--text-muted)}
-.smeta dd{font-weight:600}
-.lnk{color:var(--accent);font-weight:600;display:inline-flex;gap:6px;align-items:center;text-decoration:underline;text-underline-offset:4px;margin-top:auto;min-height:44px}
-.how{list-style:none;padding:0;display:grid;gap:12px;counter-reset:h}
-@media(min-width:768px){.how{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.how li{counter-increment:h;display:grid;gap:4px;padding:16px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface)}
-.how li::before{content:counter(h);width:32px;height:32px;border-radius:50%;background:var(--olive);color:var(--bg);display:grid;place-items:center;font-weight:700;margin-bottom:4px}
-/* style page */
-.crumb a{display:inline-flex;gap:6px;align-items:center;min-height:44px;color:var(--text-muted);font-weight:600;text-decoration:none}
-.sh{display:grid;gap:12px}
-.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface);overflow:hidden}
-.fact{padding:12px;border-inline-end:1px solid var(--border)}
-.fact:last-child{border-inline-end:0}
-.fact dt{font-size:var(--fs-sm);color:var(--text-muted)}
-.fact dd{font-weight:700;font-size:var(--fs-base);line-height:1.4}
-.cols{display:grid;gap:32px;grid-template-columns:minmax(0,1fr)}
-@media(min-width:1000px){.cols{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}}
-.col{display:grid;gap:16px;min-width:0}
-.tbl{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md)}
-.tbl th,.tbl td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:start;font-weight:400}
+.btn-secondary{background:var(--fill);color:var(--text)!important}
+.btn-lg{min-height:56px;font-size:var(--fs-md);font-weight:600;width:100%}
+@media(min-width:768px){.btn-lg{width:auto;min-width:280px;font-size:19px}}
+.btn[disabled]{background:var(--fill);color:var(--text-muted)!important;cursor:not-allowed}
+.link{color:var(--accent);text-decoration:none;font-weight:500;display:inline-flex;align-items:center;gap:6px;min-height:44px}
+/* home */
+.hero{text-align:center;padding-block:32px 24px;display:grid;gap:12px;justify-items:center}
+.hero p{font-size:var(--fs-md);color:var(--text-muted);max-width:30ch;font-weight:400;line-height:1.3}
+@media(min-width:768px){.hero{padding-block:72px 40px;gap:16px}.hero p{max-width:34ch}}
+.calc{display:grid;gap:20px;max-width:560px;margin-inline:auto;width:100%;justify-items:stretch}
+.card{background:var(--surface);border-radius:var(--r-xl);box-shadow:var(--shadow-2)}
+.rows{display:grid;padding-inline:4px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;padding-inline:16px;border-bottom:1px solid var(--border)}
+.row:last-child{border-bottom:0}
+.row .k{font-weight:500}
+.row.col{flex-direction:column;align-items:stretch;gap:10px;padding-block:14px}
+.selw{position:relative;display:flex;align-items:center;justify-content:flex-end;flex:1;min-width:0}
+.sel{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:var(--accent);font:500 var(--fs-base)/1.2 var(--font);text-align:end;min-height:56px;padding-inline:0 24px;max-width:100%;cursor:pointer}
+.chv{position:absolute;inset-inline-end:0;width:16px;height:16px;color:var(--text-muted);pointer-events:none}
+.segc{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;background:var(--fill);border-radius:12px;padding:3px;gap:2px}
+.segc button{min-height:52px;border:0;border-radius:10px;background:transparent;color:var(--text);font:500 var(--fs-sm)/1.2 var(--font);display:grid;place-content:center;gap:1px;padding:4px 6px;cursor:pointer}
+.segc button small{font-size:13px;color:var(--text-muted);font-weight:400}
+.segc button[aria-pressed=true]{background:var(--thumb);box-shadow:var(--shadow-1);font-weight:700}
+.segc.inline{min-width:170px}
+.segc.inline button{min-height:40px}
+.stp{display:flex;align-items:center;gap:14px}
+.stp button{width:44px;height:44px;border-radius:50%;border:0;background:var(--fill);color:var(--text);font:500 24px/1 var(--font);cursor:pointer}
+.stp .val{min-width:28px;text-align:center;font-weight:600;font-size:var(--fs-md);font-variant-numeric:tabular-nums}
+.lnk-card{display:flex;align-items:center;justify-content:space-between;gap:16px;text-decoration:none;background:var(--surface-2);border-radius:var(--r-lg);padding:20px 24px;min-height:72px}
+.lnk-card .ic{color:var(--accent)}
+.main{padding-bottom:16px;display:grid;gap:40px;min-width:0}
+/* recipe */
+.rhead{display:grid;gap:12px;padding-top:20px}
+.back{display:inline-flex;align-items:center;gap:4px;min-height:44px;color:var(--accent);text-decoration:none;font-weight:500;justify-self:start}
+.latin{font-size:var(--fs-sm);color:var(--text-muted);display:block;direction:ltr;text-align:start;unicode-bidi:isolate}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{background:var(--surface-2);border-radius:var(--r-pill);padding:6px 14px;font-size:var(--fs-sm);font-weight:500}
+.rgrid{display:grid;gap:40px;grid-template-columns:minmax(0,1fr);align-items:start}
+@media(min-width:900px){.rgrid{grid-template-columns:360px minmax(0,1fr);gap:72px}.ing{position:sticky;top:80px}}
+.ing{padding:8px 8px 12px}
+.ing summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding-inline:16px}
+.ing summary::-webkit-details-marker{display:none}
+.ing summary h2{font-size:var(--fs-md)}
+.ing .chv2{transition:transform .2s;color:var(--text-muted)}
+.ing[open] .chv2{transform:rotate(180deg)}
+.tbl{width:100%;border-collapse:collapse}
+.tbl th,.tbl td{padding:13px 16px;border-top:1px solid var(--border);text-align:start;font-weight:400}
 .tbl tbody th{font-weight:500}
-.tbl thead th{font-size:var(--fs-sm);color:var(--text-muted);font-weight:600;background:var(--surface-2)}
-.tbl .num{text-align:end;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
-.tbl tr:last-child th,.tbl tr:last-child td{border-bottom:0}
-.steps{list-style:none;padding:0;display:grid;gap:12px;counter-reset:s}
-.steps li{counter-increment:s;display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:14px}
-.steps li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:700;display:grid;place-items:center}
-.act{font-weight:700;line-height:1.5;display:block}
-.why summary{list-style:none;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:4px}
-.why summary::-webkit-details-marker{display:none}
-.why .chev{transition:transform .2s}
-.why[open] .chev{transform:rotate(180deg)}
-.why p{color:var(--text-muted);padding-bottom:4px}
-.callout{display:flex;gap:12px;padding:14px 16px;border-radius:var(--r-md);border:1px solid currentColor}
-.callout .ic{margin-top:3px;width:24px;height:24px}
+.tbl .num{text-align:end;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl thead th{font-size:var(--fs-xs);color:var(--text-muted);border-top:0;padding-block:6px}
+.steps{list-style:none;padding:0;display:grid;gap:36px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:36px minmax(0,1fr);gap:16px;align-items:start}
+.steps li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center;font-size:var(--fs-sm)}
+.sb{display:grid;gap:8px;min-width:0}
+.sb p{color:var(--text-muted);font-size:var(--fs-base)}
+.gk summary{list-style:none;cursor:pointer;width:44px;height:44px;display:grid;place-items:center;margin-inline-start:-8px}
+.gk summary::-webkit-details-marker{display:none}
+.gk summary::before{content:"?";width:28px;height:28px;border-radius:50%;background:var(--fill);color:var(--text);display:grid;place-items:center;font-weight:700;font-size:var(--fs-sm)}
+.gk[open] summary::before{background:var(--text);color:var(--bg)}
+.gkb{background:var(--surface);border-radius:var(--r-md);padding:14px 16px;display:grid;gap:6px;box-shadow:var(--shadow-1)}
+.gkb p{font-size:var(--fs-sm)}
+.callout{display:flex;gap:12px;padding:14px 16px;border-radius:var(--r-md);background:var(--safe-bg);color:var(--safe-ink)}
+.callout .ic{margin-top:2px;width:24px;height:24px}
 .callout strong{display:block}
-.callout.tip{background:var(--tip-bg);color:var(--tip-ink)}
-.callout.warn{background:var(--warn-bg);color:var(--warn-ink)}
-.callout.safe{background:var(--safe-bg);color:var(--safe-ink)}
-.bullets{padding:0;list-style:none;display:grid;gap:10px}
-.bullets li{padding-inline-start:20px;position:relative}
-.bullets li::before{content:"";position:absolute;inset-inline-start:2px;top:.75em;width:8px;height:8px;border-radius:2px;background:var(--olive);transform:rotate(45deg)}
-/* calculator */
-.calc{display:grid;gap:24px;grid-template-columns:minmax(0,1fr);align-items:start}
-@media(min-width:900px){.calc.two{grid-template-columns:minmax(340px,420px) minmax(0,1fr);gap:32px}.calc.two .form{position:sticky;top:16px}.sumbar{display:none!important}}
-.form{display:grid;gap:20px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.pans{list-style:none;padding:0;display:grid;gap:8px}
-.pans li{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface-2)}
-.pans li.bad{border:2px solid var(--safe-ink);background:var(--safe-bg);color:var(--safe-ink)}
-.pans .rm{min-height:44px;min-width:44px;border:0;background:transparent;color:inherit;font-weight:600;text-decoration:underline;cursor:pointer;font-size:var(--fs-sm);font-family:inherit}
-.results{display:grid;gap:16px;min-width:0}
-.sum{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:center;background:var(--text);color:var(--bg);border-radius:var(--r-lg);padding:16px 20px}
-.sum .big{font:600 32px/1.2 var(--font-head)}
-.sum small{font-size:var(--fs-sm)}
-.editbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
-.ybox{border:2px solid var(--olive);border-radius:var(--r-lg);background:var(--surface);padding:16px;display:grid;gap:10px}
-.ybox h2{font-size:var(--fs-lg);display:flex;gap:8px;align-items:center}
-.ybox ol{list-style:none;padding:0;display:grid;gap:8px;counter-reset:y}
-.ybox li{counter-increment:y;display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px}
-.ybox li::before{content:counter(y);width:26px;height:26px;border-radius:6px;background:var(--olive);color:var(--bg);display:grid;place-items:center;font-weight:700;font-size:var(--fs-sm)}
-.dl2{display:grid;gap:0}
-.dl2 div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
-.dl2 div:last-child{border-bottom:0}
-.dl2 dd{font-weight:700;font-variant-numeric:tabular-nums}
-.tl{list-style:none;padding:0}
-.tl li{display:grid;grid-template-columns:64px 22px minmax(0,1fr);gap:10px;padding-bottom:18px}
-.tl li:last-child{padding-bottom:0}
-.tl .tm{font-weight:700;font-variant-numeric:tabular-nums;text-align:end;line-height:1.4;padding-top:2px}
-.tl .tm small{display:block;font-weight:400;color:var(--text-muted);font-size:13px}
-.tl .rail{position:relative;display:flex;justify-content:center}
-.tl .rail::before{content:"";position:absolute;top:16px;bottom:-18px;width:2px;background:var(--border-strong)}
-.tl li:last-child .rail::before{display:none}
-.tl .dot{width:14px;height:14px;border-radius:50%;background:var(--accent);margin-top:8px;position:relative;z-index:1;box-shadow:0 0 0 4px var(--surface)}
-.tl .dot.big{width:20px;height:20px;margin-top:5px;background:var(--surface);border:5px solid var(--accent)}
-.tl .tx strong{display:block;line-height:1.4}
-.tl .tx span{color:var(--text-muted);font-size:var(--fs-sm)}
-.actions{display:grid;gap:8px}
-@media(min-width:640px){.actions{grid-template-columns:repeat(2,auto);justify-content:start;align-items:center;gap:12px 24px}}
-.sumbar{position:sticky;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border-top:2px solid var(--border-strong);padding:10px 16px;box-shadow:0 -6px 18px rgba(0,0,0,.12);z-index:3}
-.sumbar b{font-variant-numeric:tabular-nums}
-.sumbar .btn{min-height:48px;padding:0 16px}
-/* basics, quiet */
-.quiet{max-width:760px;display:grid;gap:28px}
-.quiet h1{font-size:var(--fs-xl)}
-.quiet h2{font-size:var(--fs-lg)}
-.quiet section{border-top:1px solid var(--border);padding-top:20px;display:grid;gap:10px}
-.quiet dl div{padding:10px 0;border-bottom:1px solid var(--border)}
-.quiet dt{font-weight:700}
-.quiet dd{color:var(--text-muted)}
+.callout p{color:inherit!important}
+/* basics */
+.long{max-width:680px;display:grid;gap:48px;padding-top:24px}
+.long h1{font-size:var(--fs-xl)}
+.long section{display:grid;gap:12px}
+.long p{font-size:19px;line-height:1.5}
+.long dl div{padding:14px 0;border-top:1px solid var(--border)}
+.long dt{font-weight:600}
+.long dd{color:var(--text-muted)}
 /* footer */
-.ftr{margin-top:48px;border-top:1px solid var(--border);padding-block:24px;color:var(--text-muted);font-size:var(--fs-sm);background:var(--surface)}
-/* print */
-.pr{background:#fff;color:#000;--text:#000;--text-muted:#333;--border:#999;--surface:#fff;--surface-2:#eee;--accent:#000;--olive:#000;--bg:#fff;padding:40px 48px;min-height:0}
-.pr .tbl{border:1px solid #000}.pr .tbl th,.pr .tbl td{border-color:#999}
-.pr h1{font-size:28px}.pr h2{font-size:19px;margin-top:20px}
-.pr .ybox{border:1.5px solid #000;border-radius:8px}
-.pr .tl .dot{background:#000;box-shadow:none}.pr .tl .dot.big{background:#fff;border-color:#000}.pr .tl .rail::before{background:#666}
-.pr-ftr{margin-top:28px;border-top:1px solid #000;padding-top:8px;font-size:13px}
+.ftr{margin-top:64px;padding-block:32px;color:var(--text-muted);font-size:var(--fs-xs);border-top:1px solid var(--border)}
 /* sheets */
-.sheet{display:grid;gap:40px}
-.sheet h2{font-size:26px;border-bottom:1px solid var(--border);padding-bottom:8px}
-.sw-grid{display:grid;grid-template-columns:150px 1fr 1fr 1.3fr;gap:8px 16px;align-items:center;font-size:var(--fs-sm)}
-.sw-grid .hd{font-weight:700;color:var(--text-muted)}
-.sw-cell{display:flex;gap:10px;align-items:center}
-.sw-chip{width:44px;height:32px;border-radius:var(--r-sm);border:1px solid var(--border-strong);flex:none}
-code,.mono{font-family:ui-monospace,Menlo,monospace;font-size:13px}
-.pre{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-md);padding:16px;font:13px/1.6 ui-monospace,Menlo,monospace;white-space:pre-wrap;color:var(--text)}
-.row{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end}
-.spec-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}
-.spec{border:1px dashed var(--border-strong);border-radius:var(--r-md);padding:16px;display:grid;gap:12px;align-content:start;min-width:0}
-.spec-t{font:600 13px/1.2 var(--font-body);text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted)}
-.rtlbox{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px;display:grid;gap:12px;align-content:start}
-.sp-bar{height:16px;background:var(--accent);border-radius:3px}
+.sheet{display:grid;gap:56px;padding-top:24px}
+.sheet h1{font-size:var(--fs-xl)}
+.sheet h2{font-size:26px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.g{display:grid;grid-template-columns:150px 1fr 1fr 1.3fr;gap:8px 16px;align-items:center;font-size:var(--fs-sm)}
+.g .hd{font-weight:700;color:var(--text-muted)}
+.g .c{display:flex;gap:10px;align-items:center}
+.g .chip{width:44px;height:32px;border-radius:8px;border:1px solid var(--border-strong);flex:none}
+code{font-family:ui-monospace,Menlo,monospace;font-size:13px}
+.pre{background:var(--surface-2);border-radius:var(--r-md);padding:16px;font:13px/1.6 ui-monospace,Menlo,monospace;white-space:pre-wrap;letter-spacing:0}
+.rw{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end}
+.sg{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}
+.sp{border:1px dashed var(--border-strong);border-radius:var(--r-lg);padding:16px;display:grid;gap:12px;align-content:start;min-width:0}
+.sp-t{font:600 13px/1.2 var(--font);color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.rtlbox{background:var(--bg);border-radius:var(--r-lg);padding:16px;display:grid;gap:12px;align-content:start;border:1px solid var(--border)}
+.bar{height:16px;background:var(--accent);border-radius:3px}
 .rd{width:72px;height:72px;background:var(--surface-2);border:2px solid var(--border-strong)}
-.shd{width:120px;height:72px;background:var(--surface);border-radius:var(--r-md)}
+.shd{width:120px;height:72px;background:var(--surface)}
 </style>
 </helmet>
 
@@ -239,96 +157,67 @@ code,.mono{font-family:ui-monospace,Menlo,monospace;font-size:13px}
 
 <sc-if value="{{showChrome}}" hint-placeholder-val="{{ true }}">
 <a class="skip" href="#main">{{t.skip}}</a>
-<header class="hdr">
-<div class="wrap hdr-row">
+<header class="nav">
+<div class="wrap nav-row">
 <a class="brand" href="#" aria-label="{{t.brand}}">
 <svg class="mk" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7"><path d="M88.07 32.25 A42 42 0 1 1 53.66 8.16"></path><path d="M53 47 L60.5 11.8 A36 36 0 0 1 83.5 27.9 Z" stroke-width="5.5" stroke-linejoin="round"></path></g><g fill="currentColor"><circle cx="66" cy="28" r="3.5"></circle><circle cx="26" cy="40" r="4.5"></circle><circle cx="35" cy="62" r="4.5"></circle><circle cx="52" cy="74" r="4.5"></circle><circle cx="70" cy="64" r="4.5"></circle><circle cx="44" cy="30" r="4.5"></circle></g></svg>
 <span class="wm" aria-hidden="true">{{t.brand}}</span>
 </a>
-<div class="seg" role="group" aria-label="{{t.langLabel}}">
-<button type="button" class="seg-b" lang="en" aria-pressed="{{enOn}}">English</button>
-<button type="button" class="seg-b" lang="fa" aria-pressed="{{faOn}}">فارسی</button>
+<div class="nav-r">
+<a class="nav-link" href="#" aria-current="{{basicsCur}}">{{t.nBasics}}</a>
+<div class="lang" role="group" aria-label="{{t.langLabel}}">
+<button type="button" lang="en" aria-label="English" aria-pressed="{{enOn}}">EN</button>
+<button type="button" lang="fa" aria-label="فارسی" aria-pressed="{{faOn}}">فا</button>
 </div>
-<nav class="nav" aria-label="{{t.navLabel}}">
-<sc-for list="{{nav}}" as="n" hint-placeholder-count="4">
-<a href="#" aria-current="{{n.current}}">{{n.label}}</a>
-</sc-for>
-</nav>
+</div>
 </div>
 </header>
 </sc-if>
 
 <main id="main" class="wrap main">
 
-<!-- HOME -->
+<!-- HOME: calculator first -->
 <sc-if value="{{isHome}}" hint-placeholder-val="{{ true }}">
 <section class="hero">
-<div class="stack">
 <h1>{{t.homeH1}}</h1>
-<p class="lead">{{t.homeLead}}</p>
-<div class="btn-row">
-<a class="btn btn-primary" href="#">{{t.cta}}<svg class="ic dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-<a class="btn btn-secondary" href="#">{{t.cta2}}</a>
-</div>
-</div>
-<div class="hero-ill" aria-hidden="true">
-<svg viewBox="0 0 120 120" width="100%"><circle class="i-crust" cx="60" cy="60" r="56"></circle><circle class="i-sauce" cx="60" cy="60" r="46"></circle><circle class="i-cheese" cx="44" cy="46" r="11"></circle><circle class="i-cheese" cx="74" cy="50" r="12"></circle><circle class="i-cheese" cx="58" cy="78" r="13"></circle><circle class="i-leaf" cx="68" cy="72" r="5"></circle><circle class="i-leaf" cx="40" cy="68" r="4"></circle><circle class="i-leaf" cx="62" cy="36" r="4"></circle></svg>
-</div>
+<p>{{t.homeSub}}</p>
 </section>
-<section id="styles" class="stack">
-<h2>{{t.stylesH}}</h2>
-<div class="grid">
-<sc-for list="{{cards}}" as="c" hint-placeholder-count="6">
-<a class="card scard" href="#">
-<div class="ill" aria-hidden="true">
-<svg viewBox="0 0 120 100">
-<sc-if value="{{c.round}}" hint-placeholder-val="{{ true }}"><circle class="i-crust" cx="60" cy="50" r="46"></circle><circle class="i-sauce" cx="60" cy="50" r="{{c.sauceR}}"></circle><circle class="i-cheese" cx="48" cy="40" r="8"></circle><circle class="i-cheese" cx="72" cy="46" r="8"></circle><circle class="i-cheese" cx="56" cy="64" r="9"></circle><circle class="i-leaf" cx="66" cy="60" r="3.5"></circle></sc-if>
-<sc-if value="{{c.rect}}" hint-placeholder-val="{{ false }}"><rect class="i-crust" x="8" y="22" width="104" height="56" rx="8"></rect><rect class="i-sauce" x="15" y="29" width="90" height="42" rx="4"></rect><circle class="i-cheese" cx="34" cy="42" r="7"></circle><circle class="i-cheese" cx="62" cy="56" r="7"></circle><circle class="i-cheese" cx="88" cy="40" r="7"></circle><circle class="i-leaf" cx="76" cy="58" r="3"></circle></sc-if>
-<sc-if value="{{c.square}}" hint-placeholder-val="{{ false }}"><rect class="i-crust" x="22" y="6" width="76" height="88" rx="8"></rect><rect class="i-edge" x="26" y="10" width="68" height="80" rx="5"></rect><rect class="i-sauce" x="34" y="18" width="52" height="64" rx="3"></rect><circle class="i-cheese" cx="50" cy="34" r="7"></circle><circle class="i-cheese" cx="70" cy="56" r="7"></circle><circle class="i-cheese" cx="50" cy="68" r="6"></circle></sc-if>
-<sc-if value="{{c.deep}}" hint-placeholder-val="{{ false }}"><circle class="i-edge" cx="60" cy="50" r="46"></circle><circle class="i-crust" cx="60" cy="50" r="40"></circle><circle class="i-sauce" cx="60" cy="50" r="30"></circle><circle class="i-cheese" cx="50" cy="42" r="7"></circle><circle class="i-cheese" cx="70" cy="50" r="7"></circle><circle class="i-leaf" cx="56" cy="62" r="3.5"></circle></sc-if>
-</svg>
+<section class="calc" aria-label="{{t.calcL}}">
+<div class="card rows" role="group" aria-label="{{t.calcL}}">
+<div class="row"><label class="k" for="f-style">{{t.fStyle}}</label>
+<span class="selw"><select id="f-style" class="sel"><option selected>{{t.n1}}</option><option>{{t.n2}}</option></select><svg class="ic chv" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></div>
+<div class="row"><label class="k" for="f-method">{{t.fMethod}}</label>
+<span class="selw"><select id="f-method" class="sel"><option>{{t.mt1}}</option><option>{{t.mt2}}</option><option>{{t.mt3}}</option><option selected>{{t.mt4}}</option><option>{{t.mt5}}</option><option>{{t.mt6}}</option></select><svg class="ic chv" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></div>
+<div class="row col"><span class="k" id="l-size">{{t.fSize}}</span>
+<div class="segc" role="group" aria-labelledby="l-size">
+<button type="button" aria-pressed="false">26<small>{{t.round}}</small></button>
+<button type="button" aria-pressed="true">30<small>{{t.round}}</small></button>
+<button type="button" aria-pressed="false">32<small>{{t.round}}</small></button>
+<button type="button" aria-pressed="false">30×40<small>{{t.tray}}</small></button>
+</div></div>
+<div class="row"><span class="k" id="l-count">{{t.fCount}}</span>
+<div class="stp" role="group" aria-labelledby="l-count"><button type="button" aria-label="{{t.dec}}">−</button><span class="val">2</span><button type="button" aria-label="{{t.inc}}">+</button></div></div>
+<div class="row"><span class="k" id="l-yeast">{{t.fYeast}}</span>
+<div class="segc inline" role="group" aria-labelledby="l-yeast"><button type="button" aria-pressed="true">{{t.yDry}}</button><button type="button" aria-pressed="false">{{t.yFresh}}</button></div></div>
 </div>
-<h3 class="sname">{{c.name}}</h3>
-<sc-if value="{{isFa}}" hint-placeholder-val="{{ false }}"><span class="latin" dir="ltr">{{c.latin}}</span></sc-if>
-<p class="muted">{{c.desc}}</p>
-<dl class="smeta"><div><dt>{{t.diffL}}</dt><dd>{{c.diff}}</dd></div><div><dt>{{t.fermL}}</dt><dd>{{c.time}}</dd></div></dl>
-<span class="lnk">{{t.openStyle}}<svg class="ic dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
-</a>
-</sc-for>
-</div>
-</section>
-<section class="stack">
-<h2>{{t.howH}}</h2>
-<ol class="how">
-<sc-for list="{{how}}" as="h" hint-placeholder-count="3">
-<li><strong>{{h.t}}</strong><span class="muted">{{h.d}}</span></li>
-</sc-for>
-</ol>
+<a class="btn btn-primary btn-lg" href="#" style="justify-self:center">{{t.cta}}</a>
+<a class="lnk-card" href="#"><span><strong>{{t.newTo}}</strong><br><span class="muted">{{t.newToS}}</span></span><svg class="ic dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </section>
 </sc-if>
 
-<!-- STYLE PAGE -->
-<sc-if value="{{isStyle}}" hint-placeholder-val="{{ false }}">
-<div class="crumb"><a href="#"><svg class="ic dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>{{t.back}}</a></div>
-<header class="sh">
+<!-- RECIPE: ingredients + steps -->
+<sc-if value="{{isRecipe}}" hint-placeholder-val="{{ false }}">
+<header class="rhead">
+<a class="back" href="#"><svg class="ic dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>{{t.change}}</a>
 <h1>{{t.sName}}</h1>
 <sc-if value="{{isFa}}" hint-placeholder-val="{{ false }}"><span class="latin" dir="ltr">New York</span></sc-if>
-<p class="lead">{{t.sDesc}}</p>
-<dl class="facts">
-<sc-for list="{{facts}}" as="f" hint-placeholder-count="3">
-<div class="fact"><dt>{{f.l}}</dt><dd>{{f.v}}</dd></div>
-</sc-for>
-</dl>
-</header>
-<div class="cols">
-<section class="col" aria-labelledby="ing-h">
-<h2 id="ing-h">{{t.ingH}}</h2>
-<div class="tabs" role="group" aria-label="{{t.methodL}}">
-<sc-for list="{{methods}}" as="m" hint-placeholder-count="5">
-<button type="button" class="tab" aria-pressed="{{m.on}}">{{m.label}}</button>
-</sc-for>
+<div class="pills">
+<sc-for list="{{pills}}" as="p" hint-placeholder-count="4"><span class="pill">{{p}}</span></sc-for>
 </div>
-<p class="muted">{{t.ingFor}}</p>
+</header>
+<div class="rgrid">
+<details class="card ing" open>
+<summary><h2>{{t.ingH}}</h2><span class="muted">{{t.doughTotal}}</span><svg class="ic chv2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <table class="tbl">
 <caption class="vh">{{t.ingH}}</caption>
 <thead><tr><th scope="col">{{t.thIng}}</th><th scope="col" class="num">{{t.thG}}</th></tr></thead>
@@ -341,337 +230,162 @@ code,.mono{font-family:ui-monospace,Menlo,monospace;font-size:13px}
 <tr><th scope="row">{{t.iOil}}</th><td class="num">5.9</td></tr>
 </tbody>
 </table>
-<p class="muted small">{{t.ingNote}}</p>
-<div class="btn-row"><a class="btn btn-secondary" href="#">{{t.changeAmt}}<svg class="ic dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
-</section>
-<section class="col" aria-labelledby="st-h">
-<h2 id="st-h">{{t.stepsH}}</h2>
+</details>
+<section aria-labelledby="st-h">
+<h2 class="vh" id="st-h">{{t.stepsH}}</h2>
 <ol class="steps">
-<sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
-<li><div>
-<strong class="act">{{s.action}}</strong>
-<details class="why" open="{{s.open}}"><summary>{{t.why}}<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p>{{s.why}}</p></details>
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="7">
+<li><div class="sb">
+<h3>{{s.action}}</h3>
+<p>{{s.body}}</p>
+<sc-if value="{{s.hasHint}}" hint-placeholder-val="{{ false }}">
+<details class="gk" open="{{s.open}}"><summary aria-label="{{t.gk}}"></summary><div class="gkb"><strong>{{s.hintT}}</strong><p class="muted">{{s.hint}}</p><a class="link" href="#" style="min-height:36px">{{t.more}}<svg class="ic dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></details>
+</sc-if>
+<sc-if value="{{s.safe}}" hint-placeholder-val="{{ false }}">
+<div class="callout" role="note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z"></path><path d="M12 8v5M12 16.5h.01"></path></svg><div><strong>{{t.safeL}}</strong><p>{{t.safeT}}</p></div></div>
+</sc-if>
 </div></li>
 </sc-for>
 </ol>
-<div class="callout safe" role="note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z"></path><path d="M12 8v5M12 16.5h.01"></path></svg><div><strong>{{t.safeL}}</strong>{{t.safeT}}</div></div>
-<div class="callout warn" role="note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l10 18H2z"></path><path d="M12 10v5M12 18h.01"></path></svg><div><strong>{{t.warnL}}</strong>{{t.warnT}}</div></div>
-<div class="callout tip" role="note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 0 0-4-10z"></path></svg><div><strong>{{t.tipL}}</strong>{{t.tipT}}</div></div>
-<h2 style="margin-top:12px">{{t.troubleH}}</h2>
-<ul class="bullets">
-<sc-for list="{{trouble}}" as="q" hint-placeholder-count="2">
-<li><strong>{{q.q}}</strong> {{q.a}}</li>
-</sc-for>
-</ul>
 </section>
-</div>
-</sc-if>
-
-<!-- CALCULATOR -->
-<sc-if value="{{isCalc}}" hint-placeholder-val="{{ false }}">
-<div class="stack">
-<h1>{{t.calcH}}</h1>
-<p class="lead">{{t.calcSub}}</p>
-</div>
-<div class="{{calcClass}}">
-
-<sc-if value="{{showForm}}" hint-placeholder-val="{{ true }}">
-<form class="card form" aria-label="{{t.calcH}}">
-<div class="field"><label class="lbl" for="f-style">{{t.fStyle}}</label>
-<select id="f-style" class="inp"><option selected>{{t.n1}}</option><option>{{t.n2}}</option><option>{{t.n3}}</option><option>{{t.n4}}</option><option>{{t.n5}}</option><option>{{t.n6}}</option></select></div>
-<div class="field"><label class="lbl" for="f-method">{{t.fMethod}}</label>
-<select id="f-method" class="inp"><option>{{t.mt1}}</option><option>{{t.mt2}}</option><option>{{t.mt3}}</option><option selected>{{t.mt4}}</option><option>{{t.mt5}}</option><option>{{t.mt6}}</option></select></div>
-<div class="field"><span class="lbl" id="l-yeast">{{t.fYeast}}</span>
-<div class="seg lg" role="group" aria-labelledby="l-yeast"><button type="button" class="seg-b" aria-pressed="true">{{t.yDry}}</button><button type="button" class="seg-b" aria-pressed="false">{{t.yFresh}}</button></div></div>
-<div class="field"><span class="lbl" id="l-mode">{{t.fMode}}</span>
-<div class="rg" role="radiogroup" aria-labelledby="l-mode">
-<button type="button" role="radio" class="rc" aria-checked="{{modePizzaOn}}"><span class="rc-h">{{t.modePizza}}<svg class="ic rc-c" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span><span class="rc-s">{{t.modePizzaS}}</span></button>
-<button type="button" role="radio" class="rc" aria-checked="{{modePanOn}}"><span class="rc-h">{{t.modePan}}<svg class="ic rc-c" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span><span class="rc-s">{{t.modePanS}}</span></button>
-</div></div>
-
-<sc-if value="{{modePizzaOn}}" hint-placeholder-val="{{ true }}">
-<div class="row2">
-<div class="field"><label class="lbl" for="f-count">{{t.fCount}}</label>
-<div class="stepper"><button type="button" aria-label="{{t.dec}}">−</button><input id="f-count" type="text" inputmode="numeric" value="2"><button type="button" aria-label="{{t.inc}}">+</button></div></div>
-<div class="field"><label class="lbl" for="f-ball">{{t.fBall}}</label>
-<div class="stepper"><button type="button" aria-label="{{t.dec}}">−</button><input id="f-ball" type="text" inputmode="numeric" value="250"><button type="button" aria-label="{{t.inc}}">+</button></div><span class="hint">{{t.unitG}}</span></div>
-</div>
-</sc-if>
-
-<sc-if value="{{modePanOn}}" hint-placeholder-val="{{ false }}">
-<div class="field"><span class="lbl">{{t.fPans}}</span>
-<ul class="pans">
-<li class="{{pan1Class}}"><span><strong>{{pan1}}</strong><br><span class="small">{{pan1Area}}</span></span><button type="button" class="rm">{{t.remove}}</button></li>
-<li><span><strong>{{pan2}}</strong><br><span class="small">{{pan2Area}}</span></span><button type="button" class="rm">{{t.remove}}</button></li>
-</ul>
-<sc-if value="{{isError}}" hint-placeholder-val="{{ false }}"><p class="msg-err" role="alert"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5h.01"></path></svg>{{t.panErr}}</p></sc-if>
-<span class="hint">{{t.presetL}}</span>
-<div class="chips"><button type="button" class="chip">{{t.pre1}}</button><button type="button" class="chip">{{t.pre2}}</button><button type="button" class="chip">{{t.pre3}}</button></div>
-<div class="btn-row"><button type="button" class="btn btn-secondary">+ {{t.addPan}}</button></div>
-</div>
-</sc-if>
-
-<div class="field"><label class="lbl" for="f-bake">{{t.fBake}}</label>
-<input id="f-bake" class="inp" type="text" value="{{t.bakeVal}}"></div>
-</form>
-</sc-if>
-
-<sc-if value="{{showRes}}" hint-placeholder-val="{{ false }}">
-<div class="results">
-<sc-if value="{{isResultOnly}}" hint-placeholder-val="{{ false }}">
-<div class="card editbar"><span><strong>{{t.resSub}}</strong><br><span class="muted small">{{t.resAmt}}</span></span><a class="btn btn-secondary" href="#">{{t.editAmt}}</a></div>
-</sc-if>
-<section class="sum" aria-label="{{t.sumDough}}">
-<div><small>{{t.sumDough}}</small><div class="big">{{t.doughTotal}}</div></div>
-<div><small>{{t.sumFlour}}</small><div class="big">{{t.flourG}}</div></div>
-</section>
-<section class="card stack" aria-labelledby="r-ing">
-<h2 id="r-ing" style="font-size:var(--fs-lg)">{{t.ingH}}</h2>
-<table class="tbl">
-<caption class="vh">{{t.ingH}}</caption>
-<thead><tr><th scope="col">{{t.thIng}}</th><th scope="col" class="num">{{t.thG}}</th></tr></thead>
-<tbody>
-<tr><th scope="row">{{t.iFlour}}</th><td class="num">296.7</td></tr>
-<tr><th scope="row">{{t.iWater}}</th><td class="num">127.6</td></tr>
-<tr><th scope="row">{{t.iSol}}</th><td class="num">59.3</td></tr>
-<tr><th scope="row">{{t.iSalt}}</th><td class="num">7.4</td></tr>
-<tr><th scope="row">{{t.iSugar}}</th><td class="num">3.0</td></tr>
-<tr><th scope="row">{{t.iOil}}</th><td class="num">5.9</td></tr>
-</tbody>
-</table>
-</section>
-<section class="ybox" aria-labelledby="r-y">
-<h2 id="r-y"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"></path></svg>{{t.yH}}</h2>
-<ol><li>{{t.y1}}</li><li>{{t.y2}}</li><li>{{t.y3}}</li></ol>
-</section>
-<section class="card stack" aria-labelledby="r-top">
-<h2 id="r-top" style="font-size:var(--fs-lg)">{{t.topH}}</h2>
-<dl class="dl2"><div><dt>{{t.sauce}}</dt><dd>{{t.sauceG}}</dd></div><div><dt>{{t.cheese}}</dt><dd>{{t.cheeseG}}</dd></div></dl>
-</section>
-<section class="card stack" aria-labelledby="r-tl">
-<div><h2 id="r-tl" style="font-size:var(--fs-lg)">{{t.tlH}}</h2><span class="muted small">{{t.tlSub}}</span></div>
-<ol class="tl">
-<sc-for list="{{timeline}}" as="e" hint-placeholder-count="6">
-<li><div class="tm">{{e.time}}<small>{{e.day}}</small></div><div class="rail"><span class="{{e.dotClass}}"></span></div><div class="tx"><strong>{{e.title}}</strong><span>{{e.desc}}</span></div></li>
-</sc-for>
-</ol>
-</section>
-<section class="card stack" aria-labelledby="r-ov">
-<h2 id="r-ov" style="font-size:var(--fs-lg)">{{t.ovenH}}</h2>
-<ul class="bullets"><li>{{t.o1}}</li><li>{{t.o2}}</li><li>{{t.o3}}</li></ul>
-</section>
-<div class="actions">
-<button type="button" class="btn btn-primary"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V6a2 2 0 0 1 2-2h8"></path></svg>{{t.copy}}</button>
-<button type="button" class="btn btn-secondary"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z"></path></svg>{{t.print}}</button>
-<button type="button" class="sw" role="switch" aria-checked="true"><span class="trk"></span><span>{{t.awake}}<br><span class="st">{{t.on}}</span></span></button>
-</div>
-</div>
-</sc-if>
-
 </div>
 </sc-if>
 
 <!-- BASICS -->
 <sc-if value="{{isBasics}}" hint-placeholder-val="{{ false }}">
-<div class="quiet">
+<div class="long">
 <h1>{{t.basicsH}}</h1>
 <sc-for list="{{basics}}" as="b" hint-placeholder-count="3">
 <section><h2>{{b.h}}</h2><p>{{b.p}}</p></section>
 </sc-for>
-<section><h2>{{t.compH}}</h2>
+<section><h2>{{t.stylesH}}</h2>
 <dl>
-<sc-for list="{{cards}}" as="c" hint-placeholder-count="6">
-<div><dt>{{c.name}}</dt><dd>{{c.desc}} · {{c.time}}</dd></div>
+<sc-for list="{{styles}}" as="c" hint-placeholder-count="2">
+<div><dt>{{c.name}}</dt><dd>{{c.desc}}</dd></div>
 </sc-for>
 </dl></section>
 <section><h2>{{t.glossH}}</h2>
 <dl>
-<sc-for list="{{gloss}}" as="g" hint-placeholder-count="5">
+<sc-for list="{{gloss}}" as="g" hint-placeholder-count="4">
 <div><dt>{{g.term}}</dt><dd>{{g.def}}</dd></div>
 </sc-for>
 </dl></section>
 </div>
 </sc-if>
 
-<!-- PRINT -->
-<sc-if value="{{isPrint}}" hint-placeholder-val="{{ false }}">
-<div class="pr">
-<div style="font:700 14px var(--font-body);letter-spacing:.06em;text-transform:uppercase">{{t.brand}}</div>
-<h1>{{t.resSub}}</h1>
-<p class="muted">{{t.resAmt}} · {{t.tlSub}}</p>
-<h2>{{t.ingH}}</h2>
-<table class="tbl">
-<caption class="vh">{{t.ingH}}</caption>
-<thead><tr><th scope="col">{{t.thIng}}</th><th scope="col" class="num">{{t.thG}}</th></tr></thead>
-<tbody>
-<tr><th scope="row">{{t.iFlour}}</th><td class="num">296.7</td></tr>
-<tr><th scope="row">{{t.iWater}}</th><td class="num">127.6</td></tr>
-<tr><th scope="row">{{t.iSol}}</th><td class="num">59.3</td></tr>
-<tr><th scope="row">{{t.iSalt}}</th><td class="num">7.4</td></tr>
-<tr><th scope="row">{{t.iSugar}}</th><td class="num">3.0</td></tr>
-<tr><th scope="row">{{t.iOil}}</th><td class="num">5.9</td></tr>
-</tbody>
-</table>
-<h2>{{t.yH}}</h2>
-<div class="ybox"><ol><li>{{t.y1}}</li><li>{{t.y2}}</li><li>{{t.y3}}</li></ol></div>
-<h2>{{t.topH}}</h2>
-<dl class="dl2"><div><dt>{{t.sauce}}</dt><dd>{{t.sauceG}}</dd></div><div><dt>{{t.cheese}}</dt><dd>{{t.cheeseG}}</dd></div></dl>
-<h2>{{t.tlH}}</h2>
-<ol class="tl">
-<sc-for list="{{timeline}}" as="e" hint-placeholder-count="6">
-<li><div class="tm">{{e.time}}<small>{{e.day}}</small></div><div class="rail"><span class="{{e.dotClass}}"></span></div><div class="tx"><strong>{{e.title}}</strong><span>{{e.desc}}</span></div></li>
-</sc-for>
-</ol>
-<h2>{{t.ovenH}}</h2>
-<ul class="bullets"><li>{{t.o1}}</li><li>{{t.o2}}</li><li>{{t.o3}}</li></ul>
-<div class="pr-ftr">{{t.disclaimer}}</div>
-</div>
-</sc-if>
-
-<!-- TOKENS SHEET -->
+<!-- TOKENS -->
 <sc-if value="{{isTokens}}" hint-placeholder-val="{{ false }}">
 <div class="sheet">
-<div class="stack"><h1>Design tokens</h1><p class="lead">Copy these into one <code>:root</code> block. Dark values override under <code>[data-theme="dark"]</code> and the <code>prefers-color-scheme: dark</code> media query. Contrast ratios were computed with the WCAG formula.</p></div>
-<section class="stack"><h2>Colour</h2>
-<div class="sw-grid">
-<div class="hd">Token</div><div class="hd">Light</div><div class="hd">Dark</div><div class="hd">Use and contrast (light / dark)</div>
+<div style="display:grid;gap:12px"><h1>Design tokens</h1><p class="muted" style="font-size:19px;max-width:60ch">Apple-inspired: one sans family, large tight headlines, 17 px body at 1.47 line height, wide spacing, filled surfaces instead of borders, soft shadows, pill buttons. Colours are unchanged. Copy the CSS block into one <code>:root</code>; dark values override under <code>[data-theme="dark"]</code> and <code>prefers-color-scheme: dark</code>.</p></div>
+<section style="display:grid;gap:16px"><h2>Colour</h2>
+<div class="g">
+<div class="hd">Token</div><div class="hd">Light</div><div class="hd">Dark</div><div class="hd">Use</div>
 <sc-for list="{{swatches}}" as="s" hint-placeholder-count="12">
 <code>{{s.name}}</code>
-<div class="sw-cell"><span class="sw-chip" style="background: {{s.l}}"></span><code>{{s.l}}</code></div>
-<div class="sw-cell"><span class="sw-chip" style="background: {{s.d}}"></span><code>{{s.d}}</code></div>
+<div class="c"><span class="chip" style="background: {{s.l}}"></span><code>{{s.l}}</code></div>
+<div class="c"><span class="chip" style="background: {{s.d}}"></span><code>{{s.d}}</code></div>
 <span>{{s.use}}</span>
 </sc-for>
 </div></section>
-<section class="stack"><h2>Contrast checks (WCAG AA, text needs 4.5:1, UI 3:1)</h2>
-<div class="sw-grid" style="grid-template-columns:1.6fr .5fr .5fr .6fr">
+<section style="display:grid;gap:16px"><h2>Contrast (WCAG AA: text 4.5, UI 3)</h2>
+<div class="g" style="grid-template-columns:1.6fr .5fr .5fr .6fr">
 <div class="hd">Pair</div><div class="hd">Light</div><div class="hd">Dark</div><div class="hd">Result</div>
 <sc-for list="{{contrast}}" as="c" hint-placeholder-count="10">
-<span>{{c.pair}}</span><b>{{c.l}}</b><b>{{c.d}}</b><span>{{c.res}}</span>
+<span>{{c.pair}}</span><b>{{c.l}}</b><b>{{c.d}}</b><span>Pass</span>
 </sc-for>
 </div></section>
-<section class="stack"><h2>Type scale</h2>
-<div class="stack">
-<sc-for list="{{typeScale}}" as="y" hint-placeholder-count="6">
-<div class="row" style="align-items:baseline;border-bottom:1px solid var(--border);padding-bottom:8px">
-<code style="width:130px">{{y.name}} · {{y.px}}</code>
-<span style="font-size: {{y.px}}; font-family: var(--font-head); font-weight:600; line-height:1.3">{{y.sample}}</span>
-<span dir="rtl" lang="fa" style="font-size: {{y.px}}; font-family:'Vazirmatn',sans-serif; font-weight:700; line-height:1.6">پیتزای خانگی</span>
+<section style="display:grid;gap:16px"><h2>Type scale</h2>
+<sc-for list="{{typeScale}}" as="y" hint-placeholder-count="7">
+<div class="rw" style="align-items:baseline;border-bottom:1px solid var(--border);padding-bottom:10px">
+<code style="width:210px">{{y.name}} · {{y.px}} · {{y.use}}</code>
+<span style="font-size: {{y.px}}; font-weight:600; letter-spacing:-.02em; line-height:1.15">{{y.sample}}</span>
+<span dir="rtl" lang="fa" style="font-size: {{y.px}}; font-family:'Vazirmatn',sans-serif; font-weight:700; line-height:1.5">{{y.fa}}</span>
 </div>
 </sc-for>
-<p class="muted small">Body: Inter 400/600 (Latin), Vazirmatn 400/700 (Farsi). Headings: Newsreader 600 (Latin), Vazirmatn 700 (Farsi). Line height 1.65 Latin, 1.95 Farsi body, 1.25 / 1.5 headings. Desktop (768 px and up) raises <code>--fs-xl</code> to 32 and <code>--fs-2xl</code> to 44. Digits are Western (0-9) in both languages so they match the scale and oven display.</p>
-</div></section>
-<section class="stack"><h2>Spacing, radius, shadow</h2>
-<div class="row">
-<sc-for list="{{spacing}}" as="s" hint-placeholder-count="8">
-<div style="width:80px"><div class="sp-bar" style="width: {{s.px}}"></div><code>{{s.name}}</code><br><code>{{s.px}}</code></div>
+<p class="muted">Latin: Inter (closest open font to Apple’s SF Pro) 400/500/600. Farsi: Vazirmatn 400/700. Headlines: weight 600 and −0.03em tracking, line height 1.1. Body: 17 px / 1.47, −0.011em. <b>Farsi gets 0 letter spacing</b> (tracking breaks the joined letters) and line height 1.8. At 768 px and up: <code>--fs-md</code> 24, <code>--fs-lg</code> 34, <code>--fs-xl</code> 48, <code>--fs-2xl</code> 64. Digits are Western (0–9).</p>
+</section>
+<section style="display:grid;gap:16px"><h2>Spacing, radius, shadow</h2>
+<div class="rw">
+<sc-for list="{{spacing}}" as="s" hint-placeholder-count="9">
+<div style="width:84px"><div class="bar" style="width: {{s.px}}"></div><code>{{s.name}}</code><br><code>{{s.px}}</code></div>
 </sc-for>
 </div>
-<div class="row">
-<div><div class="rd" style="border-radius:6px"></div><code>--r-sm 6</code></div>
-<div><div class="rd" style="border-radius:12px"></div><code>--r-md 12</code></div>
-<div><div class="rd" style="border-radius:20px"></div><code>--r-lg 20</code></div>
-<div><div class="rd" style="border-radius:999px"></div><code>--r-pill</code></div>
-<div><div class="shd" style="box-shadow:var(--shadow-1)"></div><code>--shadow-1</code></div>
-<div><div class="shd" style="box-shadow:var(--shadow-2)"></div><code>--shadow-2</code></div>
+<p class="muted">Use: 8 px inside controls, 16 px between rows, 24 px card padding, 40 px between page blocks, 64–96 px between big sections on desktop.</p>
+<div class="rw">
+<div><div class="rd" style="border-radius:10px"></div><code>--r-sm 10</code></div>
+<div><div class="rd" style="border-radius:14px"></div><code>--r-md 14</code></div>
+<div><div class="rd" style="border-radius:22px"></div><code>--r-lg 22</code></div>
+<div><div class="rd" style="border-radius:28px"></div><code>--r-xl 28</code></div>
+<div><div class="rd" style="border-radius:980px"></div><code>--r-pill</code></div>
+<div><div class="shd" style="border-radius:22px;box-shadow:var(--shadow-1)"></div><code>--shadow-1</code></div>
+<div><div class="shd" style="border-radius:22px;box-shadow:var(--shadow-2)"></div><code>--shadow-2</code></div>
 </div></section>
-<section class="stack"><h2>CSS variables</h2>
+<section style="display:grid;gap:16px"><h2>CSS variables</h2>
 <pre class="pre">:root {
-  --bg:#FBF6EC; --surface:#FFFDF8; --surface-2:#F3EBDB;
-  --text:#2B2A22; --text-muted:#5B5849;
-  --border:#D9CFB9; --border-strong:#8A8167;
+  --bg:#FBF6EC; --surface:#FFFDF8; --surface-2:#F3EBDB; --thumb:#FFFFFF;
+  --fill:rgba(90,80,50,.10); --nav-bg:rgba(251,246,236,.82);
+  --text:#2B2A22; --text-muted:#5B5849; --border:#E4DAC5; --border-strong:#8A8167;
   --accent:#B3321F; --accent-hover:#8F2616; --accent-ink:#FFFFFF; --accent-soft:#F8DDD3;
-  --olive:#4A5A22; --focus:#1F5FBF;
-  --tip-bg:#E6EDD2; --tip-ink:#2F3A12; --warn-bg:#FFF0C7; --warn-ink:#5C4300;
-  --safe-bg:#FBE3DF; --safe-ink:#7A1D10;
-  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:32px; --sp-7:48px; --sp-8:64px;
-  --r-sm:6px; --r-md:12px; --r-lg:20px; --r-pill:999px;
-  --fs-sm:15px; --fs-base:17px; --fs-md:19px; --fs-lg:22px; --fs-xl:28px; --fs-2xl:34px;
-  --shadow-1:0 1px 2px rgba(43,42,34,.12); --shadow-2:0 6px 18px rgba(43,42,34,.14);
-  --font-body:"Inter",system-ui,sans-serif; --font-head:"Newsreader",Georgia,serif;
+  --safe-bg:#FBE3DF; --safe-ink:#7A1D10; --focus:#1F5FBF;
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:32px; --sp-7:48px; --sp-8:64px; --sp-9:96px;
+  --r-sm:10px; --r-md:14px; --r-lg:22px; --r-xl:28px; --r-pill:980px;
+  --fs-xs:14px; --fs-sm:15px; --fs-base:17px; --fs-md:21px; --fs-lg:26px; --fs-xl:34px; --fs-2xl:42px;
+  --shadow-1:0 1px 2px rgba(43,42,34,.10); --shadow-2:0 8px 30px rgba(43,42,34,.08);
+  --font:"Inter",system-ui,-apple-system,sans-serif;
 }
-[dir="rtl"] { --font-body:"Vazirmatn","Inter",system-ui,sans-serif; --font-head:"Vazirmatn","Inter",system-ui,sans-serif; }
+@media (min-width:768px) { :root { --fs-md:24px; --fs-lg:34px; --fs-xl:48px; --fs-2xl:64px; } }
+[dir="rtl"] { --font:"Vazirmatn","Inter",system-ui,sans-serif; letter-spacing:0; line-height:1.8; }
 [data-theme="dark"] {
-  --bg:#1C1A16; --surface:#26231E; --surface-2:#312D26;
-  --text:#F1E9D8; --text-muted:#C4BAA4;
-  --border:#4A443A; --border-strong:#8C8472;
+  --bg:#1C1A16; --surface:#26231E; --surface-2:#312D26; --thumb:#4A443A;
+  --fill:rgba(255,255,255,.10); --nav-bg:rgba(28,26,22,.8);
+  --text:#F1E9D8; --text-muted:#C4BAA4; --border:#3A352D; --border-strong:#8C8472;
   --accent:#FF8A70; --accent-hover:#FFA28C; --accent-ink:#1C1A16; --accent-soft:#4A2A22;
-  --olive:#B7C57A; --focus:#8DB8FF;
-  --tip-bg:#2C3318; --tip-ink:#D5E2A3; --warn-bg:#3B3010; --warn-ink:#F5D57A;
-  --safe-bg:#4A2018; --safe-ink:#FFC1B2;
-  --shadow-1:0 1px 2px rgba(0,0,0,.5); --shadow-2:0 6px 18px rgba(0,0,0,.5);
+  --safe-bg:#4A2018; --safe-ink:#FFC1B2; --focus:#8DB8FF;
+  --shadow-1:0 1px 2px rgba(0,0,0,.5); --shadow-2:0 8px 30px rgba(0,0,0,.4);
 }</pre></section>
 </div>
 </sc-if>
 
-<!-- COMPONENTS SHEET -->
+<!-- COMPONENTS -->
 <sc-if value="{{isComps}}" hint-placeholder-val="{{ false }}">
 <div class="sheet">
-<div class="stack"><h1>Components and states</h1><p class="lead">Every control is a real button, link, input or label. Selected states use fill and a check mark as well as colour. Tap targets are at least 44 px; primary controls are 52 px.</p></div>
-
-<section class="stack"><h2>Controls (English)</h2>
-<div class="spec-grid">
-<div class="spec"><span class="spec-t">Buttons: default, hover, focus, disabled</span>
-<div class="btn-row"><button type="button" class="btn btn-primary">Open the calculator</button><button type="button" class="btn btn-primary is-hover">Hover</button><button type="button" class="btn btn-primary is-focus">Focus</button></div>
-<div class="btn-row"><button type="button" class="btn btn-secondary">Print</button><button type="button" class="btn btn-ghost">Ghost link</button><button type="button" class="btn btn-primary" disabled>Disabled</button></div></div>
-<div class="spec"><span class="spec-t">Language switcher and segmented control</span>
-<div class="seg" role="group" aria-label="Language"><button type="button" class="seg-b" aria-pressed="true">English</button><button type="button" class="seg-b" aria-pressed="false">فارسی</button></div>
-<div class="seg lg" role="group" aria-label="Yeast"><button type="button" class="seg-b" aria-pressed="true">Dry</button><button type="button" class="seg-b" aria-pressed="false">Fresh</button></div></div>
-<div class="spec"><span class="spec-t">Method tabs (selected, default)</span>
-<div class="tabs"><button type="button" class="tab" aria-pressed="false">2 h warm</button><button type="button" class="tab" aria-pressed="false">Overnight</button><button type="button" class="tab" aria-pressed="true">24 h cold</button><button type="button" class="tab" aria-pressed="false">48 h cold</button><button type="button" class="tab" aria-pressed="false">72 h cold</button></div></div>
-<div class="spec"><span class="spec-t">Number stepper: default, focus, error</span>
-<div class="row"><div class="stepper"><button type="button" aria-label="Decrease">−</button><input type="text" value="2" aria-label="Number of pizzas"><button type="button" aria-label="Increase">+</button></div>
-<div class="stepper is-focus"><button type="button" aria-label="Decrease">−</button><input type="text" value="250" aria-label="Ball weight"><button type="button" aria-label="Increase">+</button></div></div>
-<div class="field err"><div class="stepper"><button type="button" aria-label="Decrease">−</button><input type="text" value="0" aria-label="Number of pizzas"><button type="button" aria-label="Increase">+</button></div><p class="msg-err" role="alert"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5h.01"></path></svg>Enter at least 1 pizza.</p></div></div>
-<div class="spec"><span class="spec-t">Select and text input</span>
-<div class="field"><label class="lbl" for="c-sel">Style</label><select id="c-sel" class="inp"><option>New York</option></select></div>
-<div class="field"><label class="lbl" for="c-in">Planned bake time (optional)</label><input id="c-in" class="inp" type="text" value="Sat 19:00"></div></div>
-<div class="spec"><span class="spec-t">Radio cards (selected, default)</span>
-<div class="rg" role="radiogroup" aria-label="Measure by"><button type="button" role="radio" class="rc" aria-checked="true"><span class="rc-h">Pizzas<svg class="ic rc-c" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span><span class="rc-s">Count and ball weight</span></button><button type="button" role="radio" class="rc" aria-checked="false"><span class="rc-h">Pan<svg class="ic rc-c" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span><span class="rc-s">Round or rectangle</span></button></div></div>
-<div class="spec"><span class="spec-t">Switch (on, off) and preset chips</span>
-<button type="button" class="sw" role="switch" aria-checked="true"><span class="trk"></span><span>Keep screen awake<br><span class="st">On</span></span></button>
-<button type="button" class="sw" role="switch" aria-checked="false"><span class="trk"></span><span>Keep screen awake<br><span class="st">Off</span></span></button>
-<div class="chips"><button type="button" class="chip">Oven tray 30 × 40 cm</button><button type="button" class="chip">Round 26 cm</button></div></div>
-<div class="spec"><span class="spec-t">Pan list with error</span>
-<ul class="pans"><li><span><strong>Round · 30 cm</strong><br><span class="small">707 cm²</span></span><button type="button" class="rm">Remove</button></li><li class="bad"><span><strong>Round · 8 cm</strong><br><span class="small">50 cm²</span></span><button type="button" class="rm">Remove</button></li></ul>
-<p class="msg-err" role="alert"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5h.01"></path></svg>This pan is too small for one pizza. Try a larger diameter.</p></div>
+<div style="display:grid;gap:12px"><h1>Components and states</h1><p class="muted" style="font-size:19px;max-width:60ch">Real buttons, links, inputs and labels. Selected states use a raised white thumb and bold text, not colour alone. Tap targets are at least 44 px.</p></div>
+<section style="display:grid;gap:16px"><h2>English</h2>
+<div class="sg">
+<div class="sp"><span class="sp-t">Buttons: default, hover, focus, disabled</span>
+<div class="rw"><a class="btn btn-primary" href="#">Show recipe</a><a class="btn btn-primary is-hover" href="#">Hover</a><a class="btn btn-primary is-focus" href="#">Focus</a></div>
+<div class="rw"><a class="btn btn-secondary" href="#">Secondary</a><button type="button" class="btn btn-primary" disabled>Disabled</button><a class="link" href="#">Text link</a></div></div>
+<div class="sp"><span class="sp-t">Navigation: language switch, current link</span>
+<div class="rw"><a class="nav-link" href="#" aria-current="page">Basics</a><a class="nav-link" href="#">Home</a>
+<div class="lang" role="group" aria-label="Language"><button type="button" aria-label="English" aria-pressed="true">EN</button><button type="button" aria-label="فارسی" aria-pressed="false">فا</button></div></div></div>
+<div class="sp"><span class="sp-t">Grouped rows: picker, stepper, 2-way and 4-way segmented</span>
+<div class="card rows">
+<div class="row"><span class="k">Style</span><span class="selw"><select class="sel" aria-label="Style"><option>New York</option></select><svg class="ic chv" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></div>
+<div class="row col"><span class="k">Size</span><div class="segc"><button type="button" aria-pressed="false">26<small>round</small></button><button type="button" aria-pressed="true">30<small>round</small></button><button type="button" aria-pressed="false">32<small>round</small></button><button type="button" aria-pressed="false">30×40<small>tray</small></button></div></div>
+<div class="row"><span class="k">Pizzas</span><div class="stp"><button type="button" aria-label="Decrease">−</button><span class="val">2</span><button type="button" aria-label="Increase">+</button></div></div>
+<div class="row"><span class="k">Yeast</span><div class="segc inline"><button type="button" aria-pressed="true">Dry</button><button type="button" aria-pressed="false">Fresh</button></div></div>
+</div></div>
+<div class="sp"><span class="sp-t">Pills (read-only summary)</span>
+<div class="pills"><span class="pill">30 cm</span><span class="pill">2 pizzas</span><span class="pill">24 h cold</span><span class="pill">Dry yeast</span></div>
+<span class="sp-t">Link card</span>
+<a class="lnk-card" href="#"><span><strong>New to dough?</strong><br><span class="muted">Read the basics</span></span><svg class="ic dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+<div class="sp"><span class="sp-t">Ingredients card (open)</span>
+<details class="card ing" open style="position:static"><summary><h2>Ingredients</h2><span class="muted">500 g</span><svg class="ic chv2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><table class="tbl"><caption class="vh">Ingredients</caption><thead><tr><th scope="col">Ingredient</th><th scope="col" class="num">Grams</th></tr></thead><tbody><tr><th scope="row">Flour</th><td class="num">296.7</td></tr><tr><th scope="row">Water</th><td class="num">127.6</td></tr><tr><th scope="row">Salt</th><td class="num">7.4</td></tr></tbody></table></details></div>
+<div class="sp"><span class="sp-t">Step with “?” hint (closed, open) and safety callout</span>
+<ol class="steps" style="gap:20px"><li><div class="sb"><h3>Make the yeast solution.</h3><p>Dissolve 1 whole packet in 700 g of water.</p><details class="gk"><summary aria-label="Good to know"></summary><div class="gkb"><strong>Yeast solution</strong><p class="muted">A scale reads whole grams, so a packet in 700 g of water gives an amount you can weigh.</p></div></details></div></li>
+<li><div class="sb"><h3>Preheat the oven.</h3><p>250 °C, top and bottom heat.</p><details class="gk" open><summary aria-label="Good to know"></summary><div class="gkb"><strong>Hot surface</strong><p class="muted">A hot surface cooks the base fast.</p></div></details><div class="callout" role="note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z"></path><path d="M12 8v5M12 16.5h.01"></path></svg><div><strong>Safety</strong><p>Check your parchment paper’s maximum temperature.</p></div></div></div></li></ol></div>
 </div></section>
-
-<section class="stack"><h2>Content components (English)</h2>
-<div class="spec-grid">
-<div class="spec"><span class="spec-t">Callouts: safety, warning, tip (icon + label + colour)</span>
-<div class="callout safe" role="note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z"></path><path d="M12 8v5M12 16.5h.01"></path></svg><div><strong>Safety</strong>Check your parchment paper’s maximum temperature.</div></div>
-<div class="callout warn" role="note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l10 18H2z"></path><path d="M12 10v5M12 18h.01"></path></svg><div><strong>Careful</strong>Change one thing at a time.</div></div>
-<div class="callout tip" role="note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 0 0-4-10z"></path></svg><div><strong>Tip</strong>Flour your hands, not the surface.</div></div></div>
-<div class="spec"><span class="spec-t">Step with “Why?” (expanded, collapsed)</span>
-<ol class="steps"><li><div><strong class="act">Make the yeast solution.</strong><details class="why" open><summary>Why?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p>A whole packet in 700 g of water gives you an amount you can weigh.</p></details></div></li><li><div><strong class="act">Mix the dough.</strong><details class="why"><summary>Why?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Wet flour starts building gluten.</p></details></div></li></ol></div>
-<div class="spec"><span class="spec-t">Ingredient table (the only table)</span>
-<table class="tbl"><caption class="vh">Ingredients</caption><thead><tr><th scope="col">Ingredient</th><th scope="col" class="num">Grams</th></tr></thead><tbody><tr><th scope="row">Flour</th><td class="num">296.7</td></tr><tr><th scope="row">Water</th><td class="num">127.6</td></tr><tr><th scope="row">Salt</th><td class="num">7.4</td></tr></tbody></table></div>
-<div class="spec"><span class="spec-t">Key facts strip</span>
-<dl class="facts"><div class="fact"><dt>Hydration</dt><dd>63%</dd></div><div class="fact"><dt>Bake</dt><dd>250 °C · 7 min</dd></div><div class="fact"><dt>Ferment</dt><dd>2 h to 72 h</dd></div></dl></div>
-<div class="spec"><span class="spec-t">Yeast solution box</span>
-<section class="ybox"><h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"></path></svg>Yeast solution</h2><ol><li>Dissolve 1 packet (7 g) of dry yeast in 700 g of water.</li><li>Weigh out 59.3 g of the solution.</li></ol></section></div>
-<div class="spec"><span class="spec-t">Timeline (vertical, counts back from bake)</span>
-<ol class="tl"><li><div class="tm">18:00<small>Fri</small></div><div class="rail"><span class="dot"></span></div><div class="tx"><strong>Mix the dough</strong><span>Make the yeast solution first.</span></div></li><li><div class="tm">18:30<small>Sat</small></div><div class="rail"><span class="dot"></span></div><div class="tx"><strong>Shape and top</strong><span>Open the oven only when ready.</span></div></li><li><div class="tm">19:00<small>Sat</small></div><div class="rail"><span class="dot big"></span></div><div class="tx"><strong>Bake</strong><span>7 minutes</span></div></li></ol></div>
-<div class="spec"><span class="spec-t">Sticky result summary bar (mobile calculator)</span>
-<div class="sumbar" style="position:static;display:flex!important"><span>Dough <b>500 g</b> · Flour <b>296.7 g</b></span><a class="btn btn-primary" href="#">See recipe</a></div></div>
-<div class="spec"><span class="spec-t">Style card</span>
-<a class="card scard" href="#"><div class="ill" aria-hidden="true"><svg viewBox="0 0 120 100"><circle class="i-crust" cx="60" cy="50" r="46"></circle><circle class="i-sauce" cx="60" cy="50" r="40"></circle><circle class="i-cheese" cx="48" cy="40" r="8"></circle><circle class="i-cheese" cx="72" cy="46" r="8"></circle><circle class="i-cheese" cx="56" cy="64" r="9"></circle></svg></div><h3 class="sname">New York</h3><p class="muted">Large, thin, foldable slices.</p><dl class="smeta"><div><dt>Difficulty</dt><dd>Easy</dd></div><div><dt>Fermentation</dt><dd>1–3 days</dd></div></dl><span class="lnk">Open recipe<svg class="ic dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a></div>
-</div></section>
-
-<section class="stack"><h2>Same components in Farsi (RTL)</h2>
-<div class="spec-grid">
-<div class="rtlbox" dir="rtl" lang="fa"><span class="spec-t">Language switcher, tabs</span>
-<div class="seg" role="group" aria-label="زبان"><button type="button" class="seg-b" lang="en" aria-pressed="false">English</button><button type="button" class="seg-b" lang="fa" aria-pressed="true">فارسی</button></div>
-<div class="tabs"><button type="button" class="tab" aria-pressed="false">2 ساعت گرم</button><button type="button" class="tab" aria-pressed="false">یک شب</button><button type="button" class="tab" aria-pressed="true">24 ساعت سرد</button></div></div>
-<div class="rtlbox" dir="rtl" lang="fa"><span class="spec-t">Stepper, button with arrow</span>
-<div class="stepper"><button type="button" aria-label="کم کردن">−</button><input type="text" value="250" aria-label="وزن هر گلوله"><button type="button" aria-label="زیاد کردن">+</button></div>
-<div class="btn-row"><a class="btn btn-primary" href="#">باز کردن ماشین‌حساب<svg class="ic dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></div>
-<div class="rtlbox" dir="rtl" lang="fa"><span class="spec-t">Step, callout</span>
-<ol class="steps"><li><div><strong class="act">محلول مخمر را درست کنید.</strong><details class="why" open><summary>چرا؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p>یک بستهٔ کامل در 700 گرم آب مقدار قابل‌وزن‌کردن می‌دهد.</p></details></div></li></ol>
-<div class="callout safe" role="note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z"></path><path d="M12 8v5M12 16.5h.01"></path></svg><div><strong>ایمنی</strong>روغن زیتون در تابهٔ 250 درجه دود می‌کند.</div></div></div>
-<div class="rtlbox" dir="rtl" lang="fa"><span class="spec-t">Timeline and table (mirrored)</span>
-<ol class="tl"><li><div class="tm">18:00<small>جمعه</small></div><div class="rail"><span class="dot"></span></div><div class="tx"><strong>خمیر را مخلوط کنید</strong><span>اول محلول مخمر را درست کنید.</span></div></li><li><div class="tm">19:00<small>شنبه</small></div><div class="rail"><span class="dot big"></span></div><div class="tx"><strong>بپزید</strong><span>7 دقیقه</span></div></li></ol>
-<table class="tbl"><caption class="vh">مواد لازم</caption><thead><tr><th scope="col">ماده</th><th scope="col" class="num">گرم</th></tr></thead><tbody><tr><th scope="row">آرد</th><td class="num">296.7</td></tr><tr><th scope="row">نمک</th><td class="num">7.4</td></tr></tbody></table></div>
+<section style="display:grid;gap:16px"><h2>Farsi (RTL)</h2>
+<div class="sg">
+<div class="rtlbox" dir="rtl" lang="fa"><span class="sp-t">Nav and buttons</span>
+<div class="rw"><a class="nav-link" href="#" aria-current="page">مبانی</a><div class="lang"><button type="button" aria-label="English" aria-pressed="false">EN</button><button type="button" aria-label="فارسی" aria-pressed="true">فا</button></div></div>
+<a class="btn btn-primary" href="#">نمایش دستور</a></div>
+<div class="rtlbox" dir="rtl" lang="fa"><span class="sp-t">Rows</span>
+<div class="card rows"><div class="row"><span class="k">سبک</span><span class="selw"><select class="sel" aria-label="سبک"><option>نیویورک</option></select><svg class="ic chv" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></div>
+<div class="row"><span class="k">تعداد پیتزا</span><div class="stp"><button type="button" aria-label="کم کردن">−</button><span class="val">2</span><button type="button" aria-label="زیاد کردن">+</button></div></div>
+<div class="row"><span class="k">مخمر</span><div class="segc inline"><button type="button" aria-pressed="true">خشک</button><button type="button" aria-pressed="false">تازه</button></div></div></div></div>
+<div class="rtlbox" dir="rtl" lang="fa"><span class="sp-t">Step with ? hint</span>
+<ol class="steps"><li><div class="sb"><h3>محلول مخمر را درست کنید.</h3><p>یک بستهٔ کامل را در 700 گرم آب حل کنید.</p><details class="gk" open><summary aria-label="خوب است بدانید"></summary><div class="gkb"><strong>محلول مخمر</strong><p class="muted">ترازو گرم کامل نشان می‌دهد.</p></div></details></div></li></ol></div>
 </div></section>
 </div>
 </sc-if>
@@ -679,19 +393,12 @@ code,.mono{font-family:ui-monospace,Menlo,monospace;font-size:13px}
 </main>
 
 <sc-if value="{{showChrome}}" hint-placeholder-val="{{ true }}">
-<sc-if value="{{showSumbar}}" hint-placeholder-val="{{ false }}">
-<div class="sumbar" role="region" aria-label="{{t.sumDough}}">
-<sc-if value="{{isError}}" hint-placeholder-val="{{ false }}"><span class="msg-err">{{t.sumNone}}</span></sc-if>
-<sc-if value="{{sumOk}}" hint-placeholder-val="{{ true }}"><span>{{t.sumDough}} <b>{{t.doughTotal}}</b> · {{t.sumFlour}} <b>{{t.flourG}}</b></span></sc-if>
-<a class="btn btn-primary" href="#">{{t.seeRecipe}}</a>
-</div>
-</sc-if>
 <footer class="ftr"><div class="wrap">{{t.disclaimer}}</div></footer>
 </sc-if>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"screen":{"editor":"enum","options":["home","style","calc","basics","print","tokens","components"],"default":"home"},"lang":{"editor":"enum","options":["en","fa"],"default":"en"},"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"view":{"editor":"enum","options":["input","result","both"],"default":"input"},"mode":{"editor":"enum","options":["pizzas","pan"],"default":"pizzas"},"state":{"editor":"enum","options":["ok","error"],"default":"ok"},"$preview":{"width":390,"height":1900}}'>
+<script type="text/x-dc" data-dc-script data-props='{"screen":{"editor":"enum","options":["home","recipe","basics","tokens","components"],"default":"home"},"lang":{"editor":"enum","options":["en","fa"],"default":"en"},"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"$preview":{"width":390,"height":1200}}'>
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
@@ -699,31 +406,38 @@ class Component extends DCLogic {
     const fa = lang === 'fa';
     const theme = p.theme === 'dark' ? 'dark' : 'light';
     const screen = p.screen || 'home';
-    const view = p.view || 'input';
-    const mode = p.mode === 'pan' ? 'pan' : 'pizzas';
-    const isError = p.state === 'error' && screen === 'calc' && mode === 'pan';
     const P = (e, f) => (fa ? f : e);
 
     const t = {
       brand: P('Khamirbazi', 'خمیربازی'),
       skip: P('Skip to content', 'رفتن به محتوا'),
       langLabel: P('Language', 'زبان'),
-      navLabel: P('Main', 'منوی اصلی'),
-      homeH1: P('Bake six pizza styles at home, step by step', 'شش سبک پیتزا را در خانه، قدم‌به‌قدم بپزید'),
-      homeLead: P('Exact amounts in grams, a clear reason for every step, and a calculator that scales the dough to your oven, your pan or the number of pizzas.', 'مقدارها دقیق و به گرم، دلیل هر مرحله روشن، و یک ماشین‌حساب که خمیر را با فر، تابه یا تعداد پیتزای شما هماهنگ می‌کند.'),
-      cta: P('Open the calculator', 'باز کردن ماشین‌حساب'),
-      cta2: P('Start with New York', 'شروع با نیویورک'),
-      stylesH: P('Six styles', 'شش سبک پیتزا'),
-      howH: P('How it works', 'روش کار'),
-      openStyle: P('Open recipe', 'دیدن دستور'),
-      diffL: P('Difficulty', 'سختی'),
-      fermL: P('Fermentation', 'تخمیر'),
-      back: P('All styles', 'همهٔ سبک‌ها'),
+      nBasics: P('Basics', 'مبانی'),
+      homeH1: P('Pizza dough, calculated for your oven.', 'خمیر پیتزا، حساب‌شده برای فر شما.'),
+      homeSub: P('Choose a style and a size. Get exact grams and clear steps.', 'سبک و اندازه را انتخاب کنید. مقدارهای دقیق به گرم و مراحل روشن را بگیرید.'),
+      calcL: P('Dough calculator', 'ماشین‌حساب خمیر'),
+      fStyle: P('Style', 'سبک'),
+      fMethod: P('Method', 'روش تخمیر'),
+      fSize: P('Size, cm', 'اندازه، سانتی‌متر'),
+      round: P('round', 'گرد'),
+      tray: P('tray', 'سینی'),
+      fCount: P('Pizzas', 'تعداد پیتزا'),
+      fYeast: P('Yeast', 'مخمر'),
+      yDry: P('Dry', 'خشک'),
+      yFresh: P('Fresh', 'تازه'),
+      dec: P('Decrease', 'کم کردن'),
+      inc: P('Increase', 'زیاد کردن'),
+      cta: P('Show recipe', 'نمایش دستور'),
+      newTo: P('New to dough?', 'با خمیر آشنا نیستید؟'),
+      newToS: P('Read the basics', 'مبانی را بخوانید'),
+      n1: P('New York', 'نیویورک'),
+      n2: P('Neapolitan', 'نئاپولی'),
+      mt1: P('2 h warm', '2 ساعت گرم'), mt2: P('Overnight', 'یک شب'), mt3: P('12–16 h cold', '12 تا 16 ساعت سرد'),
+      mt4: P('24 h cold', '24 ساعت سرد'), mt5: P('48 h cold', '48 ساعت سرد'), mt6: P('72 h cold', '72 ساعت سرد'),
+      change: P('Change', 'تغییر'),
       sName: P('New York', 'نیویورک'),
-      sDesc: P('Large, thin, foldable slices with a crisp, chewy crust.', 'برش‌های بزرگ، نازک و تاشو با لبه‌ای ترد و کشسان.'),
-      methodL: P('Fermentation method', 'روش تخمیر'),
       ingH: P('Ingredients', 'مواد لازم'),
-      ingFor: P('For 2 pizzas, 250 g of dough each', 'برای 2 پیتزا، هر کدام 250 گرم خمیر'),
+      doughTotal: P('Dough 500 g', 'خمیر 500 گرم'),
       thIng: P('Ingredient', 'ماده'),
       thG: P('Grams', 'گرم'),
       iFlour: P('Flour (Pizzamehl, Tipo 00)', 'آرد پیتزا (Tipo 00)'),
@@ -732,223 +446,124 @@ class Component extends DCLogic {
       iSalt: P('Salt', 'نمک'),
       iSugar: P('Sugar', 'شکر'),
       iOil: P('Olive oil', 'روغن زیتون'),
-      ingNote: P('Water plus yeast solution is 186.9 g in total.', 'مجموع آب و محلول مخمر 186.9 گرم است.'),
-      changeAmt: P('Change amount in the calculator', 'تغییر مقدار در ماشین‌حساب'),
       stepsH: P('Steps', 'مراحل'),
-      why: P('Why?', 'چرا؟'),
+      gk: P('Good to know', 'خوب است بدانید'),
+      more: P('More in Basics', 'بیشتر در مبانی'),
       safeL: P('Safety', 'ایمنی'),
       safeT: P('Check the maximum temperature on your parchment paper. Many are rated 220–230 °C. Olive oil smokes in a 250 °C pan.', 'حداکثر دمای کاغذ پخت (Backpapier) را بررسی کنید. بسیاری از آن‌ها برای 220 تا 230 درجه ساخته شده‌اند. روغن زیتون در تابهٔ 250 درجه دود می‌کند.'),
-      warnL: P('Careful', 'احتیاط'),
-      warnT: P('Change one thing at a time. If you change the yeast and the time together, you cannot tell which one made the difference.', 'هر بار فقط یک چیز را تغییر دهید. اگر مخمر و زمان را با هم عوض کنید، نمی‌فهمید کدام اثر گذاشته است.'),
-      tipL: P('Tip', 'نکته'),
-      tipT: P('Put a little flour on your hands and none under the dough. A bare surface grips the dough and helps you shape it.', 'کمی آرد روی دست‌ها بزنید و زیر خمیر آرد نریزید. سطح بدون آرد خمیر را می‌گیرد و شکل‌دادن را آسان‌تر می‌کند.'),
-      troubleH: P('Troubleshooting', 'عیب‌یابی'),
-      calcH: P('Calculator', 'ماشین‌حساب'),
-      calcSub: P('Choose your dough and amount. The recipe updates as you change anything.', 'خمیر و مقدار را انتخاب کنید. دستور با هر تغییر به‌روز می‌شود.'),
-      fStyle: P('Style', 'سبک'),
-      fMethod: P('Method', 'روش'),
-      fYeast: P('Yeast', 'مخمر'),
-      yDry: P('Dry', 'خشک'),
-      yFresh: P('Fresh', 'تازه'),
-      fMode: P('Measure by', 'اندازه‌گیری بر اساس'),
-      modePizza: P('Pizzas', 'تعداد پیتزا'),
-      modePizzaS: P('Count and ball weight', 'تعداد و وزن گلوله'),
-      modePan: P('Pan', 'تابه'),
-      modePanS: P('Round or rectangle', 'گرد یا مستطیل'),
-      fCount: P('Number of pizzas', 'تعداد پیتزا'),
-      fBall: P('Ball weight', 'وزن هر گلوله'),
-      unitG: P('grams', 'گرم'),
-      dec: P('Decrease', 'کم کردن'),
-      inc: P('Increase', 'زیاد کردن'),
-      fPans: P('Pans', 'تابه‌ها'),
-      remove: P('Remove', 'حذف'),
-      presetL: P('Presets', 'گزینه‌های آماده'),
-      pre1: P('Oven tray 30 × 40 cm', 'سینی فر 30 × 40 سانتی‌متر'),
-      pre2: P('Round 26 cm', 'گرد 26 سانتی‌متر'),
-      pre3: P('Round 30 cm', 'گرد 30 سانتی‌متر'),
-      addPan: P('Add another pan', 'افزودن تابهٔ دیگر'),
-      panErr: P('This pan is too small for one pizza. Try a larger diameter.', 'این تابه برای یک پیتزا خیلی کوچک است. قطر بزرگ‌تری امتحان کنید.'),
-      fBake: P('Planned bake time (optional)', 'زمان پخت (اختیاری)'),
-      bakeVal: P('Sat 19:00', 'شنبه 19:00'),
-      n1: P('New York', 'نیویورک'), n2: P('Neapolitan', 'نئاپولی'), n3: P('Roman tonda', 'رومانا تونّدا'),
-      n4: P('al taglio', 'آل تالیو'), n5: P('Detroit', 'دیترویت'), n6: P('Chicago deep dish', 'شیکاگو دیپ‌دیش'),
-      mt1: P('2 h warm', '2 ساعت گرم'), mt2: P('Overnight', 'یک شب'), mt3: P('12–16 h cold', '12 تا 16 ساعت سرد'),
-      mt4: P('24 h cold', '24 ساعت سرد'), mt5: P('48 h cold', '48 ساعت سرد'), mt6: P('72 h cold', '72 ساعت سرد'),
-      sumDough: P('Dough', 'خمیر'),
-      sumFlour: P('Flour', 'آرد'),
-      doughTotal: P('500 g', '500 گرم'),
-      flourG: P('296.7 g', '296.7 گرم'),
-      sumNone: P('Fix the pan to see the recipe', 'برای دیدن دستور، تابه را اصلاح کنید'),
-      seeRecipe: P('See recipe', 'دیدن دستور'),
-      editAmt: P('Edit amount', 'ویرایش مقدار'),
-      resSub: P('New York · 24 h cold · dry yeast', 'نیویورک · 24 ساعت سرد · مخمر خشک'),
-      resAmt: P('2 pizzas × 250 g of dough', '2 پیتزا × 250 گرم خمیر'),
-      yH: P('Yeast solution', 'محلول مخمر'),
-      y1: P('Dissolve 1 whole packet (7 g) of dry yeast in 700 g of water and stir.', 'یک بستهٔ کامل (7 گرم) مخمر خشک را در 700 گرم آب حل کنید و هم بزنید.'),
-      y2: P('Weigh out 59.3 g of this solution.', '59.3 گرم از این محلول را وزن کنید.'),
-      y3: P('Use it as part of the recipe water. Add only 127.6 g of plain water.', 'آن را بخشی از آب دستور حساب کنید. فقط 127.6 گرم آب ساده اضافه کنید.'),
-      topH: P('Sauce, cheese, toppings', 'سس، پنیر و رویه'),
-      sauce: P('Tomato sauce', 'سس گوجه‌فرنگی'),
-      sauceG: P('110 g', '110 گرم'),
-      cheese: P('Grated mozzarella', 'پنیر موزارلای رنده‌شده'),
-      cheeseG: P('150 g', '150 گرم'),
-      tlH: P('Timeline', 'زمان‌بندی'),
-      tlSub: P('Counting back from Sat 19:00', 'محاسبه از شنبه 19:00 به عقب'),
-      ovenH: P('Oven', 'فر'),
-      o1: P('250 °C, top and bottom heat, no fan', '250 درجه، گرمای بالا و پایین، بدون فن'),
-      o2: P('Pan or stone on the upper rack', 'تابه یا سنگ روی طبقهٔ بالایی'),
-      o3: P('Bake for 7 minutes', '7 دقیقه بپزید'),
-      copy: P('Copy as text', 'کپی به‌صورت متن'),
-      print: P('Print', 'چاپ'),
-      awake: P('Keep screen awake', 'روشن ماندن صفحه'),
-      on: P('On', 'روشن'),
       basicsH: P('The basics', 'مبانی'),
-      compH: P('Style comparison', 'مقایسهٔ سبک‌ها'),
+      stylesH: P('Two styles', 'دو سبک'),
       glossH: P('Glossary', 'واژه‌نامه'),
       disclaimer: P('Amounts and times are approximate; change one thing at a time.', 'مقدارها و زمان‌ها تقریبی‌اند؛ هر بار فقط یک چیز را تغییر دهید.')
     };
 
-    const nav = [
-      { label: P('Home', 'خانه'), cur: 'home' },
-      { label: P('Styles', 'سبک‌ها'), cur: 'style' },
-      { label: P('Calculator', 'ماشین‌حساب'), cur: 'calc' },
-      { label: P('Basics', 'مبانی'), cur: 'basics' }
-    ].map((n) => ({ label: n.label, current: n.cur === screen ? 'page' : undefined }));
-
-    const raw = [
-      { kind: 'round', sauceR: 40, name: P('New York', 'نیویورک'), latin: 'New York', desc: P('Large, thin, foldable slices with a crisp, chewy crust.', 'برش‌های بزرگ، نازک و تاشو با لبه‌ای ترد و کشسان.'), diff: P('Easy', 'آسان'), time: P('1–3 days', '1 تا 3 روز') },
-      { kind: 'round', sauceR: 36, name: P('Neapolitan', 'نئاپولی'), latin: 'Neapolitan', desc: P('Soft, puffy rim and a tender centre, baked very hot and fast.', 'لبهٔ نرم و باد‌کرده و مرکز لطیف، پخته‌شده با گرمای زیاد و در زمان کوتاه.'), diff: P('Hard', 'سخت'), time: P('8–24 h', '8 تا 24 ساعت') },
-      { kind: 'round', sauceR: 43, name: P('Roman tonda', 'رومانا تونّدا'), latin: 'Roman tonda', desc: P('Thin, crisp and round, with a light bite.', 'نازک، ترد و گرد، با طعمی سبک.'), diff: P('Medium', 'متوسط'), time: P('24–48 h', '24 تا 48 ساعت') },
-      { kind: 'rect', name: P('al taglio', 'آل تالیو'), latin: 'al taglio', desc: P('Baked in a tray, airy, cut into slices.', 'پخته‌شده در سینی، هوادار، و برش‌برش.'), diff: P('Medium', 'متوسط'), time: P('24–72 h', '24 تا 72 ساعت') },
-      { kind: 'square', name: P('Detroit', 'دیترویت'), latin: 'Detroit', desc: P('Thick rectangle with crispy cheese edges.', 'مستطیل ضخیم با لبه‌های پنیریِ ترد.'), diff: P('Easy', 'آسان'), time: P('24 h', '24 ساعت') },
-      { kind: 'deep', name: P('Chicago deep dish', 'شیکاگو دیپ‌دیش'), latin: 'Chicago deep dish', desc: P('Tall crust, filled like a pie, cheese under the sauce.', 'لبهٔ بلند، شبیه پای، با پنیر زیر سس.'), diff: P('Medium', 'متوسط'), time: P('2–24 h', '2 تا 24 ساعت') }
-    ];
-    const cards = raw.map((c) => ({
-      name: c.name, latin: c.latin, desc: c.desc, diff: c.diff, time: c.time,
-      sauceR: c.sauceR || 40,
-      round: c.kind === 'round', rect: c.kind === 'rect', square: c.kind === 'square', deep: c.kind === 'deep'
-    }));
-
-    const how = [
-      { t: P('Pick a style', 'یک سبک انتخاب کنید'), d: P('Six styles, each with the same clear layout.', 'شش سبک، همه با ساختاری یکسان و روشن.') },
-      { t: P('Set your amount', 'مقدار را تنظیم کنید'), d: P('Number of pizzas, or the size of your pan.', 'تعداد پیتزا یا اندازهٔ تابهٔ خودتان.') },
-      { t: P('Follow the timeline', 'زمان‌بندی را دنبال کنید'), d: P('It counts backwards from the time you want to eat.', 'از زمانی که می‌خواهید بخورید به عقب حساب می‌شود.') }
-    ];
-
-    const facts = [
-      { l: P('Hydration', 'درصد آب'), v: '63%' },
-      { l: P('Bake', 'پخت'), v: P('250 °C · 7 min', '250 درجه · 7 دقیقه') },
-      { l: P('Fermentation', 'تخمیر'), v: P('2 h to 72 h', '2 تا 72 ساعت') }
-    ];
-
-    const methods = [
-      { label: P('2 h warm', '2 ساعت گرم'), on: false },
-      { label: P('Overnight', 'یک شب'), on: false },
-      { label: P('24 h cold', '24 ساعت سرد'), on: true },
-      { label: P('48 h cold', '48 ساعت سرد'), on: false },
-      { label: P('72 h cold', '72 ساعت سرد'), on: false }
+    const pills = [
+      P('30 cm', '30 سانتی‌متر'), P('2 pizzas', '2 پیتزا'), P('24 h cold', '24 ساعت سرد'), P('Dry yeast', 'مخمر خشک')
     ];
 
     const steps = [
-      { open: true, action: P('Make the yeast solution.', 'محلول مخمر را درست کنید.'), why: P('Your scale reads whole grams, so it cannot weigh half a gram of yeast. A whole packet in 700 g of water gives you a larger amount you can weigh.', 'ترازوی شما گرم کامل نشان می‌دهد و نیم گرم مخمر را وزن نمی‌کند. یک بستهٔ کامل در 700 گرم آب، مقدار بزرگ‌تری می‌دهد که می‌توانید وزن کنید.') },
-      { open: false, action: P('Mix flour, water, yeast solution and salt until no dry flour is left.', 'آرد، آب، محلول مخمر و نمک را مخلوط کنید تا آرد خشک باقی نماند.'), why: P('Wet flour starts building gluten, the stretchy network that holds gas in the dough.', 'آرد خیس شروع به ساختن گلوتن می‌کند؛ شبکهٔ کشسانی که گاز را در خمیر نگه می‌دارد.') },
-      { open: false, action: P('Cover the dough and put it in the fridge for 24 hours.', 'خمیر را بپوشانید و 24 ساعت در یخچال بگذارید.'), why: P('Cold slows the yeast. The dough gains flavour without rising too fast.', 'سرما مخمر را کند می‌کند. خمیر بدون اینکه زیاد باد کند، طعم می‌گیرد.') },
-      { open: false, action: P('Preheat the pan or stone for 45–60 minutes at 250 °C.', 'تابه یا سنگ را 45 تا 60 دقیقه در 250 درجه گرم کنید.'), why: P('A fully hot surface cooks the base fast, so the crust turns out crisp.', 'سطح کاملاً داغ کف پیتزا را سریع می‌پزد و پوسته ترد می‌شود.') }
-    ];
+      { action: P('Make the yeast solution.', 'محلول مخمر را درست کنید.'),
+        body: P('Dissolve 1 whole packet (7 g) of dry yeast in 700 g of water and stir. Weigh out 59.3 g of this solution.', 'یک بستهٔ کامل (7 گرم) مخمر خشک را در 700 گرم آب حل کنید و هم بزنید. 59.3 گرم از این محلول را وزن کنید.'),
+        hintT: P('Yeast solution', 'محلول مخمر'),
+        hint: P('Your scale reads whole grams, so it cannot weigh half a gram of yeast. A whole packet in 700 g of water gives you an amount you can weigh.', 'ترازوی شما گرم کامل نشان می‌دهد و نیم گرم مخمر را وزن نمی‌کند. یک بستهٔ کامل در 700 گرم آب، مقداری می‌دهد که می‌توانید وزن کنید.'),
+        has: true, open: true },
+      { action: P('Mix the dough.', 'خمیر را مخلوط کنید.'),
+        body: P('Mix 296.7 g of flour, 127.6 g of water, the yeast solution, salt, sugar and olive oil until no dry flour is left.', '296.7 گرم آرد، 127.6 گرم آب، محلول مخمر، نمک، شکر و روغن زیتون را مخلوط کنید تا آرد خشک باقی نماند.'),
+        hintT: P('Hydration', 'درصد آب خمیر'),
+        hint: P('63% hydration means 63 g of water for every 100 g of flour. More water makes a softer, stickier dough.', '63 درصد یعنی برای هر 100 گرم آرد، 63 گرم آب. آب بیشتر خمیر را نرم‌تر و چسبناک‌تر می‌کند.'),
+        has: true, open: false },
+      { action: P('Rest, then divide.', 'استراحت دهید، بعد تقسیم کنید.'),
+        body: P('Cover the dough and let it rest for 1.5 hours. Divide it into 2 equal balls.', 'خمیر را بپوشانید و 1.5 ساعت استراحت دهید. آن را به 2 گلولهٔ مساوی تقسیم کنید.'),
+        hintT: P('Gluten', 'گلوتن'),
+        hint: P('Resting lets the gluten relax, so the dough stretches without tearing.', 'استراحت گلوتن را شل می‌کند و خمیر بدون پاره‌شدن کشیده می‌شود.'),
+        has: true, open: false },
+      { action: P('Chill for 24 hours.', '24 ساعت در یخچال بگذارید.'),
+        body: P('Put the balls in a covered container in the fridge.', 'گلوله‌ها را در ظرف دردار در یخچال بگذارید.'),
+        hintT: P('Cold fermentation', 'تخمیر سرد'),
+        hint: P('Cold slows the yeast. The dough gains flavour without rising too fast.', 'سرما مخمر را کند می‌کند. خمیر بدون اینکه زیاد باد کند، طعم می‌گیرد.'),
+        has: true, open: false },
+      { action: P('Warm up the dough.', 'خمیر را از یخچال دربیاورید.'),
+        body: P('Leave the balls on the counter until they are soft.', 'گلوله‌ها را روی میز بگذارید تا نرم شوند.'),
+        hintT: '', hint: '', has: false, open: false },
+      { action: P('Preheat the oven.', 'فر را گرم کنید.'),
+        body: P('Put the pan or stone on the upper rack. Heat to 250 °C, top and bottom heat, no fan, for 45–60 minutes.', 'تابه یا سنگ را روی طبقهٔ بالایی بگذارید. فر را با گرمای بالا و پایین و بدون فن روی 250 درجه تنظیم کنید و 45 تا 60 دقیقه صبر کنید.'),
+        hintT: P('Hot surface', 'سطح داغ'),
+        hint: P('A fully hot surface cooks the base fast, so the crust turns out crisp.', 'سطح کاملاً داغ کف پیتزا را سریع می‌پزد و پوسته ترد می‌شود.'),
+        has: true, open: false, safe: true },
+      { action: P('Shape the dough.', 'خمیر را شکل دهید.'),
+        body: P('Stretch each ball to 30 cm.', 'هر گلوله را تا 30 سانتی‌متر بکشید.'),
+        hintT: '', hint: '', has: false, open: false },
+      { action: P('Bake.', 'بپزید.'),
+        body: P('Add your toppings, slide the pizza onto the hot surface and bake for about 7 minutes.', 'رویهٔ دلخواه را بگذارید، پیتزا را روی سطح داغ بگذارید و حدود 7 دقیقه بپزید.'),
+        hintT: '', hint: '', has: false, open: false }
+    ].map((s) => ({ action: s.action, body: s.body, hintT: s.hintT, hint: s.hint, hasHint: s.has, open: s.open, safe: !!s.safe }));
 
-    const trouble = [
-      { q: P('The base is pale.', 'کف پیتزا رنگ نگرفته.'), a: P('Preheat longer, or bake on the upper rack.', 'پیش‌گرمایش را طولانی‌تر کنید یا روی طبقهٔ بالایی بپزید.') },
-      { q: P('The dough tears when you stretch it.', 'خمیر موقع کشیدن پاره می‌شود.'), a: P('Let it rest a little longer and try again.', 'کمی بیشتر استراحت دهید و دوباره امتحان کنید.') }
+    const styles = [
+      { name: P('New York', 'نیویورک'), desc: P('Large, thin, foldable slices with a crisp, chewy crust.', 'برش‌های بزرگ، نازک و تاشو با لبه‌ای ترد و کشسان.') },
+      { name: P('Neapolitan', 'نئاپولی'), desc: P('Soft, puffy rim and a tender centre, baked very hot and fast.', 'لبهٔ نرم و باد‌کرده و مرکز لطیف، پخته‌شده با گرمای زیاد و در زمان کوتاه.') }
     ];
-
-    const timeline = [
-      { time: '18:00', day: P('Fri', 'جمعه'), title: P('Mix the dough', 'خمیر را مخلوط کنید'), desc: P('Make the yeast solution first.', 'اول محلول مخمر را درست کنید.'), big: false },
-      { time: '19:30', day: P('Fri', 'جمعه'), title: P('Rest, then into the fridge', 'استراحت، بعد یخچال'), desc: P('Cover the dough and chill it.', 'خمیر را بپوشانید و در یخچال بگذارید.'), big: false },
-      { time: '16:30', day: P('Sat', 'شنبه'), title: P('Take the dough out', 'خمیر را از یخچال دربیاورید'), desc: P('Let it warm up on the counter.', 'بگذارید روی میز گرم شود.'), big: false },
-      { time: '18:00', day: P('Sat', 'شنبه'), title: P('Start preheating', 'پیش‌گرمایش را شروع کنید'), desc: P('Pan on the upper rack, 250 °C.', 'تابه روی طبقهٔ بالایی، 250 درجه.'), big: false },
-      { time: '18:30', day: P('Sat', 'شنبه'), title: P('Shape and top', 'شکل دهید و رویه بگذارید'), desc: P('Open the oven only when it is ready.', 'در فر را فقط وقتی آماده است باز کنید.'), big: false },
-      { time: '19:00', day: P('Sat', 'شنبه'), title: P('Bake', 'بپزید'), desc: P('7 minutes', '7 دقیقه'), big: true }
-    ].map((e) => ({ time: e.time, day: e.day, title: e.title, desc: e.desc, dotClass: e.big ? 'dot big' : 'dot' }));
 
     const basics = [
       { h: P('Hydration', 'درصد آب خمیر (Hydration)'), p: P('Hydration is the weight of water as a percentage of the weight of flour. 63% means 63 g of water for every 100 g of flour. More water makes a softer, stickier dough.', 'درصد آب خمیر یعنی وزن آب نسبت به وزن آرد. 63 درصد یعنی برای هر 100 گرم آرد، 63 گرم آب. آب بیشتر خمیر را نرم‌تر و چسبناک‌تر می‌کند.') },
       { h: P('Gluten', 'گلوتن (Gluten)'), p: P('Gluten is the stretchy network that forms when the proteins in flour meet water. Kneading, folding and resting make it stronger. It holds the gas the yeast makes, so the dough can rise.', 'گلوتن شبکهٔ کشسانی است که وقتی پروتئین‌های آرد با آب تماس پیدا می‌کنند ساخته می‌شود. ورز دادن، تا کردن و استراحت آن را قوی‌تر می‌کند. گلوتن گازی را که مخمر می‌سازد نگه می‌دارد تا خمیر باد کند.') },
       { h: P('Yeast and time', 'مخمر و زمان'), p: P('Less yeast with more time gives more flavour. The fridge slows the yeast, so a cold dough can rest for days. Fresh yeast counts as three times dry yeast.', 'مخمر کمتر با زمان بیشتر طعم بهتری می‌دهد. یخچال مخمر را کند می‌کند، پس خمیر سرد می‌تواند چند روز استراحت کند. مخمر تازه سه برابر مخمر خشک حساب می‌شود.') }
     ];
-
     const gloss = [
       { term: P('Baker’s percentage', 'درصد نانوا (Baker’s percentage)'), def: P('Every ingredient is written as a percentage of the flour weight. Flour is always 100%.', 'هر ماده به‌صورت درصدی از وزن آرد نوشته می‌شود. آرد همیشه 100 درصد است.') },
       { term: P('Tipo 00', 'آرد Tipo 00'), def: P('A very finely ground Italian flour, sold as Pizzamehl in German shops.', 'آرد ایتالیایی بسیار نرم که در فروشگاه‌های آلمان با نام Pizzamehl فروخته می‌شود.') },
-      { term: P('Stretch and fold', 'کشیدن و تا کردن (Stretch and fold)'), def: P('Pull one side of the dough up and fold it over itself, turn the bowl, and repeat. It strengthens the dough without hard kneading.', 'یک طرف خمیر را بکشید و روی خودش تا کنید، کاسه را بچرخانید و تکرار کنید. بدون ورز سخت، خمیر را قوی‌تر می‌کند.') },
       { term: P('Yeast solution', 'محلول مخمر'), def: P('Yeast dissolved in a known amount of water, so you can weigh a small amount of yeast on a 1 g scale.', 'مخمر حل‌شده در مقدار مشخصی آب، تا بتوانید مقدار کم مخمر را با ترازوی یک‌گرمی وزن کنید.') },
       { term: P('Parchment paper (Backpapier)', 'کاغذ پخت (Backpapier)'), def: P('Baking paper used to slide the pizza into the oven. Check its maximum temperature first.', 'کاغذی که برای انداختن پیتزا در فر استفاده می‌شود. اول حداکثر دمای آن را بررسی کنید.') }
     ];
 
     const swatches = [
-      { name: '--bg', l: '#FBF6EC', d: '#1C1A16', use: 'Page background (flour cream / warm charcoal)' },
-      { name: '--surface', l: '#FFFDF8', d: '#26231E', use: 'Cards, header, table' },
-      { name: '--surface-2', l: '#F3EBDB', d: '#312D26', use: 'Illustration backdrop, table head, stepper buttons' },
-      { name: '--text', l: '#2B2A22', d: '#F1E9D8', use: 'Body text · 13.4 / 14.4' },
-      { name: '--text-muted', l: '#5B5849', d: '#C4BAA4', use: 'Secondary text · 6.6 / 9.0' },
-      { name: '--border', l: '#D9CFB9', d: '#4A443A', use: 'Hairlines (decorative)' },
-      { name: '--border-strong', l: '#8A8167', d: '#8C8472', use: 'Input and control outlines · 3.6 / 4.7 (UI needs 3)' },
-      { name: '--accent', l: '#B3321F', d: '#FF8A70', use: 'Tomato: primary button, links, active nav · 5.7 / 7.5' },
-      { name: '--accent-ink', l: '#FFFFFF', d: '#1C1A16', use: 'Text on accent · 6.2 / 7.5' },
-      { name: '--accent-soft', l: '#F8DDD3', d: '#4A2A22', use: 'Selected radio card' },
-      { name: '--olive', l: '#4A5A22', d: '#B7C57A', use: 'Yeast box, markers, quiet accents · 7.0 / 9.3' },
-      { name: '--tip-bg / --tip-ink', l: '#E6EDD2 / #2F3A12', d: '#2C3318 / #D5E2A3', use: 'Tip callout · 10.0 / 9.6' },
-      { name: '--warn-bg / --warn-ink', l: '#FFF0C7 / #5C4300', d: '#3B3010 / #F5D57A', use: 'Warning callout · 8.2 / 9.1' },
-      { name: '--safe-bg / --safe-ink', l: '#FBE3DF / #7A1D10', d: '#4A2018 / #FFC1B2', use: 'Safety and error · 8.5 / 8.9' },
-      { name: '--focus', l: '#1F5FBF', d: '#8DB8FF', use: '3 px focus ring, offset 3 px' }
+      { name: '--bg', l: '#FBF6EC', d: '#1C1A16', use: 'Page background' },
+      { name: '--surface', l: '#FFFDF8', d: '#26231E', use: 'Cards (no border, soft shadow)' },
+      { name: '--surface-2', l: '#F3EBDB', d: '#312D26', use: 'Pills, link card' },
+      { name: '--thumb', l: '#FFFFFF', d: '#4A443A', use: 'Selected segment thumb, active language' },
+      { name: '--fill', l: 'rgba(90,80,50,.10)', d: 'rgba(255,255,255,.10)', use: 'Segmented track, round buttons, language switch' },
+      { name: '--nav-bg', l: 'rgba(251,246,236,.82)', d: 'rgba(28,26,22,.8)', use: 'Sticky glass bar (blur 20 px)' },
+      { name: '--text', l: '#2B2A22', d: '#F1E9D8', use: 'Text' },
+      { name: '--text-muted', l: '#5B5849', d: '#C4BAA4', use: 'Secondary text' },
+      { name: '--border', l: '#E4DAC5', d: '#3A352D', use: 'Hairlines between rows' },
+      { name: '--border-strong', l: '#8A8167', d: '#8C8472', use: 'Dashed specimen outlines only' },
+      { name: '--accent', l: '#B3321F', d: '#FF8A70', use: 'Tomato: buttons, links, picker values' },
+      { name: '--accent-ink', l: '#FFFFFF', d: '#1C1A16', use: 'Text on accent' },
+      { name: '--accent-soft', l: '#F8DDD3', d: '#4A2A22', use: 'Step number badge' },
+      { name: '--safe-bg / --safe-ink', l: '#FBE3DF / #7A1D10', d: '#4A2018 / #FFC1B2', use: 'Safety callout' },
+      { name: '--focus', l: '#1F5FBF', d: '#8DB8FF', use: '3 px focus ring' }
     ];
     const contrast = [
       { pair: '--text on --bg', l: '13.4', d: '14.4' },
       { pair: '--text-muted on --bg', l: '6.6', d: '9.0' },
       { pair: '--text-muted on --surface-2', l: '6.0', d: '7.1' },
+      { pair: '--text on --thumb', l: '14.4', d: '8.0' },
+      { pair: '--text-muted on --thumb (13 px sublabels)', l: '7.2', d: '5.0' },
       { pair: '--accent on --bg', l: '5.7', d: '7.5' },
-      { pair: '--accent-ink on --accent (buttons)', l: '6.2', d: '7.5' },
-      { pair: '--accent on --accent-soft', l: '4.8', d: '5.5' },
-      { pair: '--olive on --bg', l: '7.0', d: '9.3' },
-      { pair: 'tip ink on tip bg', l: '10.0', d: '9.6' },
-      { pair: 'warning ink on warning bg', l: '8.2', d: '9.1' },
-      { pair: 'safety ink on safety bg', l: '8.5', d: '8.9' },
-      { pair: '--border-strong on --bg (controls, UI 3:1)', l: '3.6', d: '4.7' }
-    ].map((c) => ({ pair: c.pair, l: c.l, d: c.d, res: 'Pass' }));
-    const typeScale = [
-      { name: '--fs-sm', px: '15px', sample: 'Why? Hydration' },
-      { name: '--fs-base', px: '17px', sample: 'Mix until no dry flour is left' },
-      { name: '--fs-md', px: '19px', sample: 'Lead paragraph' },
-      { name: '--fs-lg', px: '22px', sample: 'Ingredients' },
-      { name: '--fs-xl', px: '28px', sample: 'Six styles' },
-      { name: '--fs-2xl', px: '34px', sample: 'New York' }
+      { pair: '--accent on --surface (picker values)', l: '6.1', d: '6.8' },
+      { pair: '--accent-ink on --accent', l: '6.2', d: '7.5' },
+      { pair: '--safe-ink on --safe-bg', l: '8.5', d: '8.9' }
     ];
+    const typeScale = [
+      { name: '--fs-xs', px: '14px', use: 'footer', sample: 'Amounts are approximate', fa: 'تقریبی' },
+      { name: '--fs-sm', px: '15px', use: 'labels, hints', sample: 'Good to know', fa: 'خوب است بدانید' },
+      { name: '--fs-base', px: '17px', use: 'body, rows', sample: 'Mix until no dry flour is left', fa: 'خمیر را مخلوط کنید' },
+      { name: '--fs-md', px: '21px / 24px', use: 'step titles, subhead', sample: 'Preheat the oven.', fa: 'فر را گرم کنید.' },
+      { name: '--fs-lg', px: '26px / 34px', use: 'section heading', sample: 'Ingredients', fa: 'مواد لازم' },
+      { name: '--fs-xl', px: '34px / 48px', use: 'page title', sample: 'New York', fa: 'نیویورک' },
+      { name: '--fs-2xl', px: '42px / 64px', use: 'home headline', sample: 'Pizza dough.', fa: 'خمیر پیتزا' }
+    ].map((y) => ({ name: y.name, px: y.px.split(' ')[0], use: y.use, sample: y.sample, fa: y.fa }));
     const spacing = [
       { name: '--sp-1', px: '4px' }, { name: '--sp-2', px: '8px' }, { name: '--sp-3', px: '12px' }, { name: '--sp-4', px: '16px' },
-      { name: '--sp-5', px: '24px' }, { name: '--sp-6', px: '32px' }, { name: '--sp-7', px: '48px' }, { name: '--sp-8', px: '64px' }
+      { name: '--sp-5', px: '24px' }, { name: '--sp-6', px: '32px' }, { name: '--sp-7', px: '48px' }, { name: '--sp-8', px: '64px' }, { name: '--sp-9', px: '96px' }
     ];
 
-    const showChrome = !(screen === 'tokens' || screen === 'components' || screen === 'print');
-    const showForm = view !== 'result';
-    const showRes = view !== 'input' && !isError;
-    const showSumbar = screen === 'calc' && view === 'input';
-
     return {
-      dir: fa ? 'rtl' : 'ltr',
-      lang, theme, t, nav, cards, how, facts, methods, steps, trouble, timeline, basics, gloss,
-      swatches, contrast, typeScale, spacing,
+      dir: fa ? 'rtl' : 'ltr', lang, theme, t, pills, steps, styles, basics, gloss, swatches, contrast, typeScale, spacing,
       isFa: fa, enOn: !fa, faOn: fa,
-      showChrome,
-      isHome: screen === 'home', isStyle: screen === 'style', isCalc: screen === 'calc', isBasics: screen === 'basics',
-      isPrint: screen === 'print', isTokens: screen === 'tokens', isComps: screen === 'components',
-      calcClass: view === 'both' ? 'calc two' : 'calc',
-      showForm, showRes, showSumbar, isError, sumOk: !isError,
-      isResultOnly: view === 'result',
-      modePizzaOn: mode === 'pizzas', modePanOn: mode === 'pan',
-      pan1: isError ? P('Round · 8 cm', 'گرد · 8 سانتی‌متر') : P('Round · 30 cm', 'گرد · 30 سانتی‌متر'),
-      pan1Area: isError ? P('50 cm²', '50 سانتی‌متر مربع') : P('707 cm²', '707 سانتی‌متر مربع'),
-      pan1Class: isError ? 'bad' : '',
-      pan2: P('Rectangle · 30 × 40 cm', 'مستطیل · 30 × 40 سانتی‌متر'),
-      pan2Area: P('1200 cm²', '1200 سانتی‌متر مربع')
+      basicsCur: screen === 'basics' ? 'page' : undefined,
+      showChrome: !(screen === 'tokens' || screen === 'components'),
+      isHome: screen === 'home', isRecipe: screen === 'recipe', isBasics: screen === 'basics',
+      isTokens: screen === 'tokens', isComps: screen === 'components'
     };
   }
 }
