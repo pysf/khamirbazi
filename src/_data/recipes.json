@@ -1656,6 +1656,99 @@
           "optional": true
         }
       ],
+      "practice": {
+        "avpn_oven_c": {
+          "range": [
+            430,
+            480
+          ],
+          "unit": "C",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+          ],
+          "note": "AVPN rule, read from the AVPN page by a summarizing tool; re-check the official disciplinare. A real Neapolitan wood oven."
+        },
+        "avpn_bake_s": {
+          "range": [
+            60,
+            90
+          ],
+          "unit": "s",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+          ],
+          "note": "AVPN rule, read from the AVPN page by a summarizing tool; re-check the official disciplinare. Bake time in the 430-480 C oven."
+        },
+        "avpn_ferment_h": {
+          "range": [
+            8,
+            24
+          ],
+          "unit": "h",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+          ],
+          "note": "AVPN rule, read from the AVPN page by a summarizing tool; re-check the official disciplinare. Minimum 8 h, maximum 24 h; temperature not set (room temperature in Naples practice)."
+        },
+        "avpn_rim_cm": {
+          "range": [
+            1,
+            2
+          ],
+          "unit": "cm",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+          ],
+          "note": "AVPN rule, read from the AVPN page by a summarizing tool; re-check the official disciplinare. Rim (cornicione) 1-2 cm."
+        },
+        "avpn_diameter_cm": {
+          "range": [
+            22,
+            35
+          ],
+          "unit": "cm",
+          "confidence": "medium",
+          "verified": false,
+          "sources": [
+            "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+          ],
+          "note": "AVPN rule, read from the AVPN page by a summarizing tool; re-check the official disciplinare. Pizza diameter up to 35 cm (secondary sources)."
+        },
+        "shape_diameter_cm": {
+          "range": [
+            28,
+            30
+          ],
+          "unit": "cm",
+          "confidence": "low",
+          "verified": false,
+          "sources": [],
+          "note": "From the user's guide v7 (untested, no external source checked). Section 8: 28-30 cm."
+        },
+        "home_hydration_pct": {
+          "range": [
+            65,
+            76
+          ],
+          "unit": "% of flour",
+          "confidence": "low",
+          "verified": false,
+          "sources": [
+            "https://www.americastestkitchen.com/recipes/16948-neapolitan-style-pizza",
+            "https://bakingsteel.com/blogs/recipes/how-to-make-neapolitan-style-pizza-in-a-home-oven"
+          ],
+          "note": "Home-oven recipes use more water than the AVPN range because the bake is longer (America's Test Kitchen about 76%). Blog and test-kitchen sources."
+        },
+        "_note": "Numbers that appear in the Neapolitan text and are not elsewhere in this file. Other numbers of that text reuse styles.new_york.practice."
+      },
       "layer_order": [
         "sauce",
         "cheese",

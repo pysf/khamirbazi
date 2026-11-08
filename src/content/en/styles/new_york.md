@@ -10,7 +10,7 @@ A New York pizza is thin to medium in the middle, with a crisp base that still b
 
 ## Choosing a method
 
-There are two ways to make this dough. Both give a good pizza. They differ in time and taste. Use the method buttons next to the Ingredients table to see the amounts for each.
+There are two ways to make this dough. Both give a good pizza. They differ in time and taste. You choose the method on the Home page, and the Ingredients card on this page shows the amounts for it. To try another method, press "Change" at the top of the page.
 
 **Warm 2-hour method: when you are in a hurry.** You mix the dough and bake about two hours later.
 
@@ -35,7 +35,7 @@ There are two ways to make this dough. Both give a good pizza. They differ in ti
 - **Why more protein is better:** more protein means stronger gluten. Gluten is the stretchy net that holds the gas of the yeast. The dough stretches better, tears less when you shape it, and handles a long cold rest better.
 - **Not too much:** above {{ recipes.styles.new_york.practice.flour_protein_max_g.value }} g the dough turns stiff and rubbery.
 
-**Yeast.** Use what you have. The Ingredients table shows dry yeast. For fresh yeast, use the calculator.
+**Yeast.** Use what you have. The Ingredients card shows the yeast you chose on the Home page (dry or fresh).
 
 - **Dry yeast (Trockenhefe):** {{ recipes.yeast.solution.dry.yeast_g.value }} g packets, found at REWE and dm. It is instant yeast. It needs no proofing (no waiting in water first). You can stir it straight into the flour or the water. Close an opened packet tightly. Check the text on your packet.
 - **Fresh yeast (Frischhefe):** a small soft cube of {{ recipes.yeast.solution.fresh.cube_g.value }} g in the fridge section. It has a short shelf life. Wrap what is left and keep it in the fridge.
@@ -45,7 +45,7 @@ There are two ways to make this dough. Both give a good pizza. They differ in ti
 
 ## Warm 2-hour method {methods=warm_2h}
 
-You mix the dough and bake about two hours later. Take the amounts from the warm 2-hour column in the Ingredients section at the top of this page.
+You mix the dough and bake about two hours later. Take the amounts from the Ingredients card on this page.
 
 > Warning: This method needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas. For one pizza the yeast would weigh less than {{ recipes.yeast.min_weigh_g.value }} g, and a scale that shows whole grams cannot measure that. For one pizza use a cold method.
 
@@ -61,14 +61,18 @@ You mix the dough and bake about two hours later. Take the amounts from the warm
    > Why: The gluten relaxes. A relaxed ball opens easily and does not shrink back when you stretch it.
 7. **Shape the dough, add the toppings and bake** (see Shaping, Sauce and toppings, and Oven and baking surface).
 
+    > Safety: Check the highest temperature printed on your baking paper (Backpapier) before you use it. Common brands are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put baking paper under the grill, and do not let it touch the heating elements or the oven walls. If your paper is not rated high enough, bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+
+    > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. Oil mixed into the dough is fine. For the rim, a small amount of oil after baking is fine.
+
 > Tip: A switched-off oven with the light on is a good warm place. Make sure the oven is not heating while the dough is inside.
 
 ## Cold fermentation {methods=cold_12_16h,cold_24h,cold_48h,cold_72h}
 
-You make the dough one or more days before baking. Take the amounts from the column of the fermentation time you choose in the Ingredients section at the top of this page. Steps 1 to 6 are the first day. Steps 7 to 9 are baking day.
+You make the dough one or more days before baking. Take the amounts from the Ingredients card on this page. It shows the amounts for the fermentation time you chose on the Home page. Steps 1 to 6 are the first day. Steps 7 to 9 are baking day.
 
-1. **Make the yeast solution, then mix the cold water, the yeast solution and the flour.** Pour the cold water (about {{ recipes.methods.cold_24h.water_temp_c.value }} degrees) into a bowl. Add the amount of yeast solution from the table. Add the flour and stir only until you see no dry flour.
-   > Why: The yeast amount is so small that a kitchen scale cannot weigh it. So you dissolve a whole {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast in {{ recipes.yeast.solution.dry.water_g.value }} g of lukewarm water. With fresh yeast, use half of a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube ({{ recipes.yeast.solution.fresh.yeast_g.value }} g) in {{ recipes.yeast.solution.fresh.water_g.value }} g of water. Then you weigh out a part of the solution. The solution counts as part of the water, so the table already takes it off the cold water.
+1. **Make the yeast solution, then mix the cold water, the yeast solution and the flour.** Pour the cold water (about {{ recipes.methods.cold_24h.water_temp_c.value }} degrees) into a bowl. Add the amount of yeast solution from the Ingredients card. Add the flour and stir only until you see no dry flour.
+   > Why: The yeast amount is so small that a kitchen scale cannot weigh it. So you dissolve a whole {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast in {{ recipes.yeast.solution.dry.water_g.value }} g of lukewarm water. With fresh yeast, use half of a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube ({{ recipes.yeast.solution.fresh.yeast_g.value }} g) in {{ recipes.yeast.solution.fresh.water_g.value }} g of water. Then you weigh out a part of the solution. The solution counts as part of the water, so the Ingredients card already takes it off the cold water.
 2. **Rest for {{ recipes.methods.cold_24h.autolyse_min.range.0 }} to {{ recipes.methods.cold_24h.autolyse_min.range.1 }} minutes, covered.** This rest is called autolyse.
    > Why: Water and the enzymes in the flour start building gluten by themselves, so you need less kneading.
 3. **Add the salt, the sugar and the olive oil.** Work them into the dough until it is even. Then knead for {{ recipes.methods.cold_24h.knead_min.range.0 }} to {{ recipes.methods.cold_24h.knead_min.range.1 }} minutes (see Kneading). If you prefer stretch and fold instead of kneading, skip the kneading and go to step 4.
@@ -76,12 +80,16 @@ You make the dough one or more days before baking. Take the amounts from the col
 4. **Rise at room temperature** (about {{ recipes.oven.room_c.value }} degrees) for {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes, until the dough is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger. If you chose stretch and fold, do it during this rise: {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds, the first one right now, the next ones {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes apart. After the last round leave the dough alone until the rise is over.
    > Why: The yeast needs a short warm start before it goes into the cold. The folds make the dough strong while it rises, so the rounds and the rise are one period, not two.
 5. **Divide the dough into two equal pieces and shape each into a ball** (see Shaping). Put each ball in its own oiled container with a lid (see Container, oil and cover).
-6. **Put the containers in the fridge.** Choose how long: {{ recipes.methods.cold_12_16h.fridge_h.range.0 }} to {{ recipes.methods.cold_12_16h.fridge_h.range.1 }} hours (overnight), {{ recipes.methods.cold_24h.fridge_h.value }} hours, {{ recipes.methods.cold_48h.fridge_h.value }} hours or {{ recipes.methods.cold_72h.fridge_h.value }} hours. The yeast amount in the table is for the time you chose, so use the column of that time. {{ recipes.methods.cold_72h.fridge_h.value }} hours is the longest this guide uses.
+6. **Put the containers in the fridge.** Choose how long: {{ recipes.methods.cold_12_16h.fridge_h.range.0 }} to {{ recipes.methods.cold_12_16h.fridge_h.range.1 }} hours (overnight), {{ recipes.methods.cold_24h.fridge_h.value }} hours, {{ recipes.methods.cold_48h.fridge_h.value }} hours or {{ recipes.methods.cold_72h.fridge_h.value }} hours. The yeast amount on the Ingredients card is for the time you chose on the Home page. To change the time, press "Change" at the top of the page. {{ recipes.methods.cold_72h.fridge_h.value }} hours is the longest this guide uses.
    > Why: In the fridge the yeast works slowly, and the enzymes have time to build flavour. The result is a deeper taste and better browning.
 7. **On baking day, take the dough out of the fridge {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you shape it.** Keep the lid closed.
    > Why: Cold dough does not stretch and tears. This is the most common mistake in cold fermentation.
 8. **Start heating the oven and the tray {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking** (see Oven and baking surface).
 9. **Shape the dough, add the toppings and bake** (see Shaping, Sauce and toppings, and Oven and baking surface).
+
+    > Safety: Check the highest temperature printed on your baking paper (Backpapier) before you use it. Common brands are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put baking paper under the grill, and do not let it touch the heating elements or the oven walls. If your paper is not rated high enough, bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+
+    > Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. Oil mixed into the dough is fine. For the rim, a small amount of oil after baking is fine.
 
 > Tip: If you put the dough in the fridge as one piece, take it out at the same time, but divide it and shape the balls first. Cold dough shapes more easily. Then let the balls rest, covered.
 
@@ -222,13 +230,13 @@ The baking surface stores heat. When the dough lands on it, the surface gives it
 7. **Second pizza:** keep its dough covered until the first pizza is out and the surface is hot again, which takes about {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes. Only then open it and put on the toppings.
    > Why: Dough that waits on the paper gets wet and sticks.
 
-> Safety: Check the highest temperature printed on your baking paper (Backpapier) before you use it. Common brands are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put baking paper under the grill, and do not let it touch the heating elements or the oven walls. If your paper is not rated high enough, bake without paper: open the dough on a board dusted with semolina or flour and slide it onto the hot surface.
+> Safety: Baking paper (Backpapier) on common brands is rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is below this oven. Never put it under the grill. The full note is in the last step of your method.
 
-> Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees, and this oven is at {{ recipes.styles.new_york.bake.temp_c.value }} degrees. Do not oil the hot surface or pan. Oil mixed into the dough is fine. For the rim, a small amount of oil after baking is fine.
+> Safety: Extra-virgin olive oil starts to smoke at about {{ recipes.safety.evoo_smoke_c.range.0 }} to {{ recipes.safety.evoo_smoke_c.range.1 }} degrees. Do not oil the hot surface or pan. Oil in the dough, and a little on the rim after baking, is fine.
 
 ## Sauce and toppings
 
-Make the sauce from crushed tomatoes from a tin, a little olive oil and salt. Add grated garlic and a little sugar if you like. Use it **raw**, because it cooks in the oven. The calculator gives the amounts for your number of pizzas, and the "Change the amount in the calculator" button is in the Ingredients section at the top of this page.
+Make the sauce from crushed tomatoes from a tin, a little olive oil and salt. Add grated garlic and a little sugar if you like. Use it **raw**, because it cooks in the oven. The Ingredients card shows the dough for the size and number of pizzas you chose on the Home page. The amounts below are for one pizza.
 
 For one pizza of {{ recipes.styles.new_york.practice.shape_diameter_cm.value }} cm:
 
