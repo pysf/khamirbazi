@@ -142,11 +142,9 @@ a{color:inherit}
 .hdr{background:var(--surface);border-bottom:1px solid var(--border)}
 .hdr-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 12px;padding-top:8px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 24px/1.2 var(--font-head);min-height:48px}
-.lg{font:600 28px/1 "Newsreader",Georgia,serif;letter-spacing:-.01em;display:inline-block;white-space:nowrap}
-.lg.fa{font:700 24px/1.5 "Vazirmatn",sans-serif;display:inline-flex;align-items:baseline}
-.di{position:relative;display:inline-block}
-.di::after{content:"";position:absolute;left:50%;top:.2em;width:.17em;height:.17em;border-radius:50%;background:var(--accent);transform:translateX(-50%)}
-.ld{display:inline-block;width:.17em;height:.17em;border-radius:50%;background:var(--accent);margin-inline-start:.1em}
+.mk{width:36px;height:36px;flex:none;color:var(--accent)}
+.wm{font:600 24px/1.2 var(--font-head);letter-spacing:-.01em;color:var(--text);white-space:nowrap}
+[dir=rtl] .wm{font-family:"Vazirmatn",sans-serif;font-weight:700;font-size:22px}
 .nav{display:flex;order:3;width:100%}
 .nav a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text-muted);font-weight:600;font-size:var(--fs-sm);border-bottom:3px solid transparent;padding-inline:4px;text-align:center}
 .nav a[aria-current=page]{color:var(--accent);border-bottom-color:var(--accent)}
@@ -314,7 +312,7 @@ a.seg-b{display:inline-flex;align-items:center;justify-content:center;text-decor
 .theme-btn .i-sun{display:none}
 :root[data-theme=dark] .theme-btn .i-sun{display:inline-block}
 :root[data-theme=dark] .theme-btn .i-moon{display:none}
-.brand .lg{color:var(--text)}
+
 .logo-ft{font-size:15px;color:var(--text-muted)}
 
 /* buttons that are real <button>s with the .btn look keep the page font */

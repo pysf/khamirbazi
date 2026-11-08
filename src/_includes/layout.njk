@@ -25,7 +25,8 @@
   <header class="hdr">
     <div class="wrap hdr-row">
       <a class="brand" href="{{ ('/' + lang + '/') | url }}" aria-label="{{ t.site_name }}">
-        {% if lang == "fa" %}<span class="lg fa" aria-hidden="true">خمیربازی<span class="ld"></span></span>{% else %}<span class="lg" aria-hidden="true">Kham<span class="di">ı</span>baz<span class="di">ı</span></span>{% endif %}
+        <svg class="mk" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7"><path d="M88.07 32.25 A42 42 0 1 1 53.66 8.16"/><path d="M53 47 L60.5 11.8 A36 36 0 0 1 83.5 27.9 Z" stroke-width="5.5" stroke-linejoin="round"/></g><g fill="currentColor"><circle cx="66" cy="28" r="3.5"/><circle cx="26" cy="40" r="4.5"/><circle cx="35" cy="62" r="4.5"/><circle cx="52" cy="74" r="4.5"/><circle cx="70" cy="64" r="4.5"/><circle cx="44" cy="30" r="4.5"/></g></svg>
+        <span class="wm" aria-hidden="true">{{ t.site_name }}</span>
       </a>
       <div class="hdr-tools">
         <div class="seg" role="group" aria-label="{{ t.lang_label }}">

@@ -28,11 +28,15 @@ check: ## Check English and Farsi stay in sync
 
 ci: test check build ## Everything CI runs: tests, language sync, build
 
-preview: ## Build as GitHub Pages would and serve it at http://localhost:8081/khamirbazi/
+PORT ?= 8081
+
+preview: ## Build as GitHub Pages would and serve it at http://localhost:8081/khamirbazi/ (change with PORT=8082)
+	@if lsof -nP -iTCP:$(PORT) -sTCP:LISTEN >/dev/null 2>&1; then \
+	  echo "Port $(PORT) is already in use. Stop that process or run: make preview PORT=8082"; exit 1; fi
 	PATH_PREFIX=/khamirbazi/ $(MAKE) build
 	@rm -rf .preview && mkdir -p .preview && cp -R _site .preview/khamirbazi
-	@echo "Serving http://localhost:8081/khamirbazi/  (Ctrl+C to stop)"
-	cd .preview && python3 -m http.server 8081
+	@echo "Serving http://localhost:$(PORT)/khamirbazi/  (Ctrl+C to stop)"
+	cd .preview && python3 -m http.server $(PORT)
 
 clean: ## Remove build output
 	rm -rf _site .preview
