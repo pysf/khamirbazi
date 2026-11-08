@@ -14,6 +14,8 @@
     "RecipeDesktopFa.dc.html": { "x": 1788, "y": 1450, "w": 1280, "h": 1700, "title": "Recipe · desktop · FA · light", "expand": "fill" },
     "BasicsEn.dc.html": { "x": 0, "y": 4300, "w": 390, "h": 2000, "title": "Basics · mobile · EN · light", "expand": "fill" },
     "BasicsFaDark.dc.html": { "x": 470, "y": 4300, "w": 1280, "h": 1700, "title": "Basics · desktop · FA · dark", "expand": "fill" },
+    "FontVazirmatn.dc.html": { "x": 0, "y": 6600, "w": 390, "h": 2600, "title": "Farsi font · Vazirmatn", "expand": "fill" },
+    "FontNoto.dc.html": { "x": 470, "y": 6600, "w": 390, "h": 2600, "title": "Farsi font · Noto Sans Arabic", "expand": "fill" },
     "Tokens.dc.html": { "x": 0, "y": -2600, "w": 1280, "h": 1900, "title": "Design tokens", "expand": "fill" },
     "Components.dc.html": { "x": 1360, "y": -2600, "w": 1280, "h": 1900, "title": "Components and states", "expand": "fill" },
     "Notes.dc.html": { "x": 2720, "y": -2600, "w": 900, "h": 1500, "title": "Decisions, fonts, assumptions", "expand": "fill" },
@@ -23,14 +25,15 @@
   "order": [
     "Main.dc.html", "HomeFaDark.dc.html", "HomeDesktop.dc.html",
     "RecipeEn.dc.html", "RecipeFaDark.dc.html", "RecipeTablet.dc.html", "RecipeDesktopFa.dc.html",
-    "BasicsEn.dc.html", "BasicsFaDark.dc.html",
+    "BasicsEn.dc.html", "BasicsFaDark.dc.html", "FontVazirmatn.dc.html", "FontNoto.dc.html",
     "Tokens.dc.html", "Components.dc.html", "Notes.dc.html", "Logo.dc.html", "Screens.dc.html"
   ],
   "notes": {
     "t1": { "x": 0, "y": -2830, "text": "Khamirbazi: tokens, components, notes", "kind": "title1", "maxW": 4700 },
     "t2": { "x": 0, "y": -230, "text": "1 · Home: the calculator", "kind": "title1", "maxW": 2220 },
     "t3": { "x": 0, "y": 1220, "text": "2 · Recipe: ingredients and steps", "kind": "title1", "maxW": 3068 },
-    "t4": { "x": 0, "y": 4070, "text": "3 · Basics", "kind": "title1", "maxW": 1750 }
+    "t4": { "x": 0, "y": 4070, "text": "3 · Basics", "kind": "title1", "maxW": 1750 },
+    "t5": { "x": 0, "y": 6360, "text": "4 · Farsi font: Vazirmatn vs Noto Sans Arabic", "kind": "title1", "maxW": 860 }
   },
   "designSystems": []
 }

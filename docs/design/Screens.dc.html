@@ -8,7 +8,7 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap">
 <style>
 body{margin:0}
 sc-for,sc-if{display:contents}
@@ -21,6 +21,7 @@ background:var(--bg);color:var(--text);font:400 var(--fs-base)/1.47 var(--font);
 .kb[data-theme=dark]{--bg:#1C1A16;--surface:#26231E;--surface-2:#312D26;--thumb:#4A443A;--fill:rgba(255,255,255,.10);--nav-bg:rgba(28,26,22,.8);--text:#F1E9D8;--text-muted:#C4BAA4;--border:#3A352D;--border-strong:#8C8472;--accent:#FF8A70;--accent-hover:#FFA28C;--accent-ink:#1C1A16;--accent-soft:#4A2A22;--safe-bg:#4A2018;--safe-ink:#FFC1B2;--focus:#8DB8FF;--shadow-1:0 1px 2px rgba(0,0,0,.5);--shadow-2:0 8px 30px rgba(0,0,0,.4)}
 .kb *,.kb *::before,.kb *::after{box-sizing:border-box}
 .kb[dir=rtl],.kb [dir=rtl]{--font:"Vazirmatn","Inter",system-ui,sans-serif}
+.kb[data-font=noto][dir=rtl],.kb[data-font=noto] [dir=rtl]{--font:"Noto Sans Arabic","Inter",system-ui,sans-serif}
 .kb [dir=rtl]{font-family:var(--font)}
 .kb[dir=rtl],.kb[dir=rtl] *,.kb [dir=rtl],.kb [dir=rtl] *{letter-spacing:0!important}
 .kb[dir=rtl],.kb [dir=rtl]{line-height:1.8}
@@ -153,7 +154,7 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:13px}
 </style>
 </helmet>
 
-<div class="kb" dir="{{dir}}" lang="{{lang}}" data-theme="{{theme}}">
+<div class="kb" dir="{{dir}}" lang="{{lang}}" data-theme="{{theme}}" data-font="{{font}}">
 
 <sc-if value="{{showChrome}}" hint-placeholder-val="{{ true }}">
 <a class="skip" href="#main">{{t.skip}}</a>
@@ -398,7 +399,7 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:13px}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"screen":{"editor":"enum","options":["home","recipe","basics","tokens","components"],"default":"home"},"lang":{"editor":"enum","options":["en","fa"],"default":"en"},"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"$preview":{"width":390,"height":1200}}'>
+<script type="text/x-dc" data-dc-script data-props='{"screen":{"editor":"enum","options":["home","recipe","basics","tokens","components"],"default":"home"},"lang":{"editor":"enum","options":["en","fa"],"default":"en"},"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"font":{"editor":"enum","options":["vazirmatn","noto"],"default":"vazirmatn"},"$preview":{"width":390,"height":1200}}'>
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
@@ -558,7 +559,7 @@ class Component extends DCLogic {
     ];
 
     return {
-      dir: fa ? 'rtl' : 'ltr', lang, theme, t, pills, steps, styles, basics, gloss, swatches, contrast, typeScale, spacing,
+      dir: fa ? 'rtl' : 'ltr', lang, theme, font: p.font === 'noto' ? 'noto' : 'vazirmatn', t, pills, steps, styles, basics, gloss, swatches, contrast, typeScale, spacing,
       isFa: fa, enOn: !fa, faOn: fa,
       basicsCur: screen === 'basics' ? 'page' : undefined,
       showChrome: !(screen === 'tokens' || screen === 'components'),
