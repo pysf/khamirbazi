@@ -1,4 +1,4 @@
-{% set t = i18n[lang] %}<!doctype html>
+{% set t = i18n[lang] %}{% set other = t.other_lang %}<!doctype html>
 <html lang="{{ lang }}" dir="{{ t.dir }}">
 <head>
   <meta charset="utf-8">
@@ -6,28 +6,47 @@
   <title>{{ title }} - {{ t.site_name }}</title>
   <meta name="description" content="{{ t.tagline }}">
   <meta name="color-scheme" content="light dark">
-  {% if lang == "fa" %}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap">
-  {% endif %}
+  <link rel="icon" href="{{ '/assets/favicon.svg' | url }}" type="image/svg+xml">
+  <script>
+    /* Apply the saved or system theme before the page paints. Works without storage. */
+    (function () {
+      var d = document.documentElement, theme = null;
+      d.classList.add("js");
+      try { theme = localStorage.getItem("theme"); } catch (e) {}
+      if (theme !== "light" && theme !== "dark") theme = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      d.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="preload" href="{{ ('/assets/fonts/' + ('vazirmatn-arabic-wght-normal.woff2' if lang == 'fa' else 'inter-latin-400-normal.woff2')) | url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
 </head>
 <body>
   <a class="skip" href="#main">{{ t.skip }}</a>
-  <header class="site-header">
-    <a class="brand" href="{{ ('/' + lang + '/') | url }}">{{ t.site_name }}</a>
-    <nav aria-label="{{ t.nav.styles }}">
-      <a href="{{ ('/' + lang + '/') | url }}">{{ t.nav.home }}</a>
-      <a href="{{ ('/' + lang + '/calculator/') | url }}">{{ t.nav.calculator }}</a>
-    </nav>
-    <a class="lang-switch" lang="{{ t.other_lang }}" hreflang="{{ t.other_lang }}" href="{{ page.url | replace('/' + lang + '/', '/' + t.other_lang + '/') | url }}">{{ t.other_lang_name }}</a>
+  <header class="hdr">
+    <div class="wrap hdr-row">
+      <a class="brand" href="{{ ('/' + lang + '/') | url }}" aria-label="{{ t.site_name }}">
+        {% if lang == "fa" %}<span class="lg fa" aria-hidden="true">خمیربازی<span class="ld"></span></span>{% else %}<span class="lg" aria-hidden="true">Kham<span class="di">ı</span>baz<span class="di">ı</span></span>{% endif %}
+      </a>
+      <div class="hdr-tools">
+        <div class="seg" role="group" aria-label="{{ t.lang_label }}">
+          <a class="seg-b" lang="en" hreflang="en" href="{{ (page.url | replace('/' + lang + '/', '/en/', 1)) | url }}"{% if lang == "en" %} aria-current="true"{% endif %}>English</a>
+          <a class="seg-b" lang="fa" hreflang="fa" href="{{ (page.url | replace('/' + lang + '/', '/fa/', 1)) | url }}"{% if lang == "fa" %} aria-current="true"{% endif %}>فارسی</a>
+        </div>
+        <button type="button" class="theme-btn" data-theme-toggle aria-label="{{ t.theme.toggle }}">{% icon "moon", "i-moon" %}{% icon "sun", "i-sun" %}</button>
+      </div>
+      <nav class="nav" aria-label="{{ t.nav.main }}">
+        <a href="{{ ('/' + lang + '/') | url }}"{% if section == "home" %} aria-current="page"{% endif %}>{{ t.nav.home }}</a>
+        <a href="{{ ('/' + lang + '/#styles') | url }}"{% if section == "styles" %} aria-current="page"{% endif %}>{{ t.nav.styles }}</a>
+        <a href="{{ ('/' + lang + '/calculator/') | url }}"{% if section == "calc" %} aria-current="page"{% endif %}>{{ t.nav.calculator }}</a>
+        <a href="{{ ('/' + lang + '/basics/') | url }}"{% if section == "basics" %} aria-current="page"{% endif %}>{{ t.nav.basics }}</a>
+      </nav>
+    </div>
   </header>
-  <main id="main">
+  <main id="main" class="wrap main">
     {{ content | safe }}
   </main>
-  <footer class="site-footer">
-    <p>{{ t.footer.disclaimer }}</p>
-  </footer>
+  {% if sumbar %}{% include "sumbar.njk" %}{% endif %}
+  <footer class="ftr"><div class="wrap">{{ t.footer.disclaimer }}</div></footer>
+  <script type="module" src="{{ '/assets/site.js' | url }}"></script>
 </body>
 </html>

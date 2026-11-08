@@ -7,23 +7,61 @@
   "site_name": "Khamirbazi",
   "tagline": "A home pizza guide and dough calculator",
   "skip": "Skip to content",
-  "nav": { "home": "Home", "calculator": "Calculator", "styles": "Pizza styles" },
-  "footer": { "disclaimer": "Amounts and times are approximate; change one thing at a time." },
+  "nav": {
+    "home": "Home",
+    "calculator": "Calculator",
+    "styles": "Styles",
+    "main": "Main menu",
+    "basics": "Basics"
+  },
+  "footer": {
+    "disclaimer": "Amounts and times are approximate; change one thing at a time."
+  },
   "home": {
-    "title": "Home pizza guide",
-    "pitch": "Six pizza styles for a home oven that reaches {max_c} degrees, with exact amounts in grams and a calculator that scales any recipe to your pizza count or pan.",
+    "title": "Bake six pizza styles at home, step by step",
+    "pitch": "Exact amounts in grams, a clear reason for every step, and a calculator that scales the dough to your oven, your pan or the number of pizzas.",
     "cta": "Open the calculator",
-    "styles_heading": "Choose a style"
+    "styles_heading": "Six styles",
+    "oven_note": "Written for a home oven that reaches {max_c} degrees.",
+    "cta2": "Start with {name}",
+    "how_heading": "How it works",
+    "how": {
+      "s1": {
+        "t": "Pick a style",
+        "d": "Six styles, each with the same clear layout."
+      },
+      "s2": {
+        "t": "Set your amount",
+        "d": "Number of pizzas, or the size of your pan."
+      },
+      "s3": {
+        "t": "Follow the timeline",
+        "d": "It counts backwards from the time you want to eat."
+      }
+    }
   },
   "card": {
     "difficulty": "Difficulty",
     "hydration": "Hydration",
     "bake": "Bake",
     "ferment": "Fermentation",
-    "open": "Open the {name} guide"
+    "open": "Open the {name} guide",
+    "open_short": "Open recipe"
   },
-  "difficulty": { "easy": "Easy", "medium": "Medium", "hard": "Harder" },
-  "unit": { "g": "g", "min": "min", "h": "h", "c": "degrees", "cm": "cm", "cm2": "cm2", "pct": "%" },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Harder"
+  },
+  "unit": {
+    "g": "g",
+    "min": "min",
+    "h": "h",
+    "c": "degrees",
+    "cm": "cm",
+    "cm2": "cm²",
+    "pct": "%"
+  },
   "style": {
     "facts": "Key facts",
     "hydration": "Hydration",
@@ -38,17 +76,50 @@
     "optional": "optional",
     "calc_link": "Change the amount in the calculator",
     "notes": "Safety and notes",
-    "steps": "Method",
+    "steps": "Steps",
     "body_placeholder": "The detailed step-by-step instructions for this style come next. Until then, use the amounts above and the timeline in the calculator.",
-    "dash": "-"
+    "dash": "-",
+    "back": "All styles",
+    "method_label": "Fermentation method",
+    "th_ing": "Ingredient",
+    "th_g": "Grams",
+    "why": "Why?",
+    "ferment": "Fermentation",
+    "ferment_range": "{from} to {to}",
+    "bake": "Bake",
+    "bake_value": "{temp} degrees · {from} to {to} min"
   },
   "styles": {
-    "new_york": { "name": "New York", "latin": "New York style", "blurb": "Foldable slice, crisp base, chewy rim. The main recipe of this guide and the best fit for a home oven." },
-    "neapolitan": { "name": "Neapolitan", "latin": "Pizza Napoletana", "blurb": "Soft centre and a tall, airy rim. No oil in the dough. In a home oven it is Neapolitan-style, not the real thing." },
-    "roman_tonda": { "name": "Roman tonda", "latin": "Pizza Romana Tonda", "blurb": "Thin, crisp and light. The dough is rolled out with a rolling pin and topped lightly." },
-    "al_taglio": { "name": "Al taglio", "latin": "Pizza al Taglio / in Teglia", "blurb": "Roman tray pizza cut into squares. Very wet dough, open crumb, crisp base." },
-    "detroit": { "name": "Detroit", "latin": "Detroit-style pizza", "blurb": "Thick, airy, with a fried crisp base and cheese baked to a dark edge. Sauce goes on top." },
-    "chicago": { "name": "Chicago deep dish", "latin": "Chicago deep dish", "blurb": "A tall pie in a deep pan. Cheese goes at the bottom, sauce on top." }
+    "new_york": {
+      "name": "New York",
+      "latin": "New York style",
+      "blurb": "Foldable slice, crisp base, chewy rim. The main recipe of this guide and the best fit for a home oven."
+    },
+    "neapolitan": {
+      "name": "Neapolitan",
+      "latin": "Pizza Napoletana",
+      "blurb": "Soft centre and a tall, airy rim. No oil in the dough. In a home oven it is Neapolitan-style, not the real thing."
+    },
+    "roman_tonda": {
+      "name": "Roman tonda",
+      "latin": "Pizza Romana Tonda",
+      "blurb": "Thin, crisp and light. The dough is rolled out with a rolling pin and topped lightly."
+    },
+    "al_taglio": {
+      "name": "Al taglio",
+      "latin": "Pizza al Taglio / in Teglia",
+      "blurb": "Roman tray pizza cut into squares. Very wet dough, open crumb, crisp base."
+    },
+    "detroit": {
+      "name": "Detroit",
+      "latin": "Detroit-style pizza",
+      "blurb": "Thick, airy, with a fried crisp base and cheese baked to a dark edge. Sauce goes on top."
+    },
+    "chicago": {
+      "name": "Chicago deep dish",
+      "latin": "Chicago deep dish",
+      "blurb": "A tall pie in a deep pan. Cheese goes at the bottom, sauce on top."
+    }
   },
   "methods": {
     "warm_2h": "2 hours, warm",
@@ -58,7 +129,11 @@
     "cold_48h": "48 hours, fridge",
     "cold_72h": "72 hours, fridge"
   },
-  "rack": { "upper_third": "Upper third", "middle": "Middle", "lower": "Lower" },
+  "rack": {
+    "upper_third": "Upper third",
+    "middle": "Middle",
+    "lower": "Lower"
+  },
   "surface": {
     "pizza_stone": "pizza stone",
     "baking_steel": "baking steel",
@@ -119,7 +194,7 @@
   },
   "calc": {
     "title": "Dough calculator",
-    "intro": "Pick a style and a method, then say how many pizzas or which pan. Everything else is calculated.",
+    "intro": "Choose your dough and amount. The recipe updates as you change anything.",
     "style": "Style",
     "method": "Method",
     "yeast_type": "Yeast",
@@ -145,7 +220,7 @@
     "results": "Your recipe",
     "dough_total": "Total dough",
     "ingredients": "Ingredients",
-    "water_temp": "water at {c} degrees",
+    "water_temp": "at {c} degrees",
     "optional": "optional",
     "yeast": "Yeast",
     "yeast_direct": "Weigh {g} g of {type} yeast and mix it into the flour.",
@@ -164,7 +239,11 @@
     "toppings": "Toppings",
     "after_bake": "after baking",
     "layer_order": "Order: {order}",
-    "layer": { "sauce": "sauce", "cheese": "cheese", "toppings": "toppings" },
+    "layer": {
+      "sauce": "sauce",
+      "cheese": "cheese",
+      "toppings": "toppings"
+    },
     "oven": "Oven",
     "oven_line": "{temp} degrees, top and bottom heat, no fan. Rack: {rack}. Preheat the {surface} for {pre} minutes.",
     "grill_line": "Grill for the last {from} to {to} minutes (never more than {max} minutes in total).",
@@ -184,7 +263,9 @@
       "invalid_pan": "A pan needs a size above zero.",
       "invalid_pizzas": "The number of pizzas must be above zero.",
       "invalid_ball_weight": "The ball weight must be above zero.",
-      "missing_pans": "Add at least one pan."
+      "missing_pans": "Add at least one pan.",
+      "pan_too_small": "This pan is too small. A pan needs at least {min} cm² of area. Try a larger size.",
+      "invalid_number": "Enter a number above zero."
     },
     "hm": "{h} h {m} min",
     "m": "{m} min",
@@ -192,6 +273,58 @@
     "pan_label": "{size} cm",
     "oven_tray": "Oven tray",
     "pan": "Pan",
-    "round_word": "round"
+    "round_word": "round",
+    "yeast_dry_short": "Dry",
+    "yeast_fresh_short": "Fresh",
+    "hint_pizzas": "This style is measured by the number of pizzas.",
+    "hint_pan": "This style is baked in a pan, so it is measured by the pan size.",
+    "dec": "Decrease",
+    "inc": "Increase",
+    "presets": "Presets",
+    "pan_round": "Round · {size} cm",
+    "pan_rect": "Rectangle · {size} cm",
+    "custom_title": "Add a pan of your own size",
+    "shape": "Shape",
+    "shape_round": "Round",
+    "shape_rect": "Rectangle",
+    "custom_add": "Add this pan",
+    "sum_dough": "Dough",
+    "sum_flour": "Flour",
+    "sum_none": "Fix the amount to see the recipe",
+    "see_recipe": "See recipe",
+    "edit_amount": "Edit amount",
+    "amount_pizzas": "Pizzas: {n} × {ball} g of dough",
+    "amount_pans": "Pans: {n}, {area} cm² in total",
+    "tl_sub": "Counting back from {when}",
+    "tl_sub_rel": "Counting back from the start of baking. Enter a bake time above to get clock times.",
+    "before": "before baking",
+    "minutes_range": "{from} to {to} min",
+    "on": "On",
+    "off": "Off",
+    "noscript": "The calculator needs JavaScript. Without it, use the amounts in the tables on the style pages."
+  },
+  "lang_label": "Language",
+  "theme": {
+    "toggle": "Switch between light and dark theme"
+  },
+  "callout": {
+    "safe": "Safety",
+    "warn": "Careful",
+    "tip": "Tip",
+    "note": "Note"
+  },
+  "methods_short": {
+    "warm_2h": "2 h warm",
+    "room_8_12h": "8 to 12 h room",
+    "cold_12_16h": "12 to 16 h cold",
+    "cold_24h": "24 h cold",
+    "cold_48h": "48 h cold",
+    "cold_72h": "72 h cold"
+  },
+  "basics": {
+    "title": "The basics",
+    "compare": "Style comparison",
+    "glossary": "Glossary",
+    "compare_note": "Hydration and bake are the values this guide uses; each style is described on its own page."
   }
 }

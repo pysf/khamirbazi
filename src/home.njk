@@ -1,5 +1,6 @@
 ---
 layout: layout.njk
+section: home
 pagination:
   data: site.langs
   size: 1
@@ -8,24 +9,46 @@ permalink: "/{{ lang }}/index.html"
 eleventyComputed:
   title: "{{ i18n[lang].home.title }}"
 ---
-{% set t = i18n[lang] %}
-<h1>{{ t.home.title }}</h1>
-<p class="lead">{{ t.home.pitch | fill({ max_c: recipes.oven.max_c.value }, lang) }}</p>
-<p><a class="button" href="{{ ('/' + lang + '/calculator/') | url }}">{{ t.home.cta }}</a></p>
+{% from "ill.njk" import ill %}{% set t = i18n[lang] %}
+<section class="hero">
+  <div class="stack">
+    <h1>{{ t.home.title }}</h1>
+    <p class="lead">{{ t.home.pitch }}</p>
+    <p class="muted small">{{ t.home.oven_note | fill({ max_c: recipes.oven.max_c.value }, lang) }}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="{{ ('/' + lang + '/calculator/') | url }}">{{ t.home.cta }}{% icon "arrow", "dir-icon" %}</a>
+      <a class="btn btn-secondary" href="{{ ('/' + lang + '/styles/new_york/') | url }}">{{ t.home.cta2 | fill({ name: t.styles.new_york.name }, lang) }}</a>
+    </div>
+  </div>
+  <div class="hero-ill" aria-hidden="true">
+    <svg viewBox="0 0 120 120" width="100%"><circle class="i-crust" cx="60" cy="60" r="56"></circle><circle class="i-sauce" cx="60" cy="60" r="46"></circle><circle class="i-cheese" cx="44" cy="46" r="11"></circle><circle class="i-cheese" cx="74" cy="50" r="12"></circle><circle class="i-cheese" cx="58" cy="78" r="13"></circle><circle class="i-leaf" cx="68" cy="72" r="5"></circle><circle class="i-leaf" cx="40" cy="68" r="4"></circle><circle class="i-leaf" cx="62" cy="36" r="4"></circle></svg>
+  </div>
+</section>
 
-<h2>{{ t.home.styles_heading }}</h2>
-<ul class="cards">
-  {% for id, st in recipes.styles %}
-  <li class="card">
-    <h3><a href="{{ ('/' + lang + '/styles/' + id + '/') | url }}" aria-label="{{ t.card.open | fill({ name: t.styles[id].name }, lang) }}">{{ t.styles[id].name }}</a></h3>
-    <p class="latin"><bdi dir="ltr">{{ t.styles[id].latin }}</bdi></p>
-    <p>{{ t.styles[id].blurb }}</p>
-    <dl class="facts">
-      <div><dt>{{ t.card.difficulty }}</dt><dd>{{ t.difficulty[st.difficulty] }}</dd></div>
-      <div><dt>{{ t.card.hydration }}</dt><dd>{{ st.dough.hydration.value | num(lang) }}{{ t.unit.pct }}</dd></div>
-      <div><dt>{{ t.card.bake }}</dt><dd>{{ st.bake.temp_c.value | num(lang) }} {{ t.unit.c }}, {{ st.bake.time_min.range[0] | num(lang) }}-{{ st.bake.time_min.range[1] | num(lang) }} {{ t.unit.min }}</dd></div>
-      <div><dt>{{ t.card.ferment }}</dt><dd>{% for m in st.methods_typical %}{{ t.methods[m] }}{% if not loop.last %}{{ "، " if lang == "fa" else ", " }}{% endif %}{% endfor %}</dd></div>
-    </dl>
-  </li>
-  {% endfor %}
-</ul>
+<section id="styles" class="stack">
+  <h2>{{ t.home.styles_heading }}</h2>
+  <div class="grid">
+    {% for id, st in recipes.styles %}{% set tb = tables[id] %}
+    <a class="card scard" href="{{ ('/' + lang + '/styles/' + id + '/') | url }}" aria-label="{{ t.card.open | fill({ name: t.styles[id].name }, lang) }}">
+      <div class="ill" aria-hidden="true">{{ ill(site.illustrations[id]) | safe }}</div>
+      <h3 class="sname">{{ t.styles[id].name }}</h3>
+      {% if lang == "fa" %}<span class="latin" dir="ltr">{{ t.styles[id].latin }}</span>{% endif %}
+      <p class="muted">{{ t.styles[id].blurb }}</p>
+      <dl class="smeta">
+        <div><dt>{{ t.card.difficulty }}</dt><dd>{{ t.difficulty[st.difficulty] }}</dd></div>
+        <div><dt>{{ t.card.ferment }}</dt><dd>{% if tb.methodIds.length > 1 %}{{ t.style.ferment_range | fill({ from: t.methods_short[tb.methodIds | first], to: t.methods_short[tb.methodIds | last] }, lang) }}{% else %}{{ t.methods_short[tb.methodIds | first] }}{% endif %}</dd></div>
+      </dl>
+      <span class="lnk">{{ t.card.open_short }}{% icon "arrow", "dir-icon" %}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="stack">
+  <h2>{{ t.home.how_heading }}</h2>
+  <ol class="how">
+    {% for k in ["s1", "s2", "s3"] %}
+    <li><strong>{{ t.home.how[k].t }}</strong><span class="muted">{{ t.home.how[k].d }}</span></li>
+    {% endfor %}
+  </ol>
+</section>

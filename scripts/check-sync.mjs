@@ -61,17 +61,36 @@ function shape(text) {
     headings: [1, 2, 3, 4].map((n) => count(new RegExp(`^#{${n}} `, "gm"))).join("/"),
     steps: count(/^\d+\. /gm),
     bullets: count(/^\s*[-*] /gm),
-    callouts: count(/^> /gm),
+    // Markers stay in English in both languages: Why (under a step), Tip, Warning, Safety.
+    why: count(/^\s*> Why:/gm),
+    tips: count(/^\s*> Tip:/gm),
+    warnings: count(/^\s*> Warning:/gm),
+    safety: count(/^\s*> Safety:/gm),
     vars: [...body.matchAll(/\{\{\s*([^}|]+?)\s*(?:\|[^}]*)?\}\}/g)].map((m) => m[1]).sort().join(","),
     links: count(/\]\(/g),
   };
 }
+// A blockquote must start with a known marker; later lines of the same quote may continue it.
+function checkMarkers(file, text) {
+  const body = text.replace(/^---\n[\s\S]*?\n---/, "");
+  let inQuote = false;
+  body.split("\n").forEach((line, i) => {
+    const q = line.match(/^\s*>\s?(.*)$/);
+    if (q && !inQuote && !/^(Why|Tip|Warning|Safety): /.test(q[1])) fail(`content: ${file} line ${i + 1}: a blockquote must start with "Why:", "Tip:", "Warning:" or "Safety:"`);
+    inQuote = !!q;
+  });
+  // "Why:" belongs under a step (an indented quote after a numbered item)
+  if (/^> Why:/m.test(body)) fail(`content: ${file}: "> Why:" must be indented under a numbered step`);
+}
+
 const enDir = join(root, "src/content/en");
 const faDir = join(root, "src/content/fa");
 const enFiles = new Set(walk(enDir).map((p) => relative(enDir, p)));
 const faFiles = new Set(walk(faDir).map((p) => relative(faDir, p)));
 for (const f of enFiles) if (!faFiles.has(f)) fail(`content: ${f} exists in en but not in fa`);
 for (const f of faFiles) if (!enFiles.has(f)) fail(`content: ${f} exists in fa but not in en`);
+for (const [dir, files] of [[enDir, enFiles], [faDir, faFiles]])
+  for (const f of files) checkMarkers(`${relative(root, dir)}/${f}`, readFileSync(join(dir, f), "utf8"));
 for (const f of enFiles) {
   if (!faFiles.has(f)) continue;
   const a = shape(readFileSync(join(enDir, f), "utf8"));

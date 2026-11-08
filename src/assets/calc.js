@@ -303,9 +303,9 @@ export function computeRecipe(input, data) {
   };
 }
 
-/** Display helper: at most 1 decimal, locale digits ('fa' gives Persian digits). Never use for calculation. */
+/** Display helper: at most 1 decimal. Western digits (0-9) in both languages, as the design decides, so numbers match the kitchen scale and oven display. Never use for calculation. */
 export function formatNumber(n, locale = "en") {
   if (n == null || Number.isNaN(n)) return "";
-  const loc = locale === "fa" ? "fa-IR" : "en-US";
+  const loc = locale === "fa" ? "fa-IR-u-nu-latn" : "en-US";
   return new Intl.NumberFormat(loc, { maximumFractionDigits: 1 }).format(n);
 }

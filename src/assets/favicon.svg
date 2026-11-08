@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <style>
+    .bg{fill:#B3321F}.fg{fill:#FFFDF8}
+    @media (prefers-color-scheme: dark){.bg{fill:#FF8A70}.fg{fill:#1C1A16}}
+  </style>
+  <rect class="bg" width="96" height="96" rx="24"/>
+  <text class="fg" x="44" y="68" font-family="Newsreader, Georgia, serif" font-size="64" font-weight="600" text-anchor="middle">k</text>
+  <circle class="fg" cx="68" cy="34" r="7"/>
+</svg>
