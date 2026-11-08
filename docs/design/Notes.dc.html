@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Decisions, fonts, assumptions</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<style>
+body{margin:0}
+.n h1,.n h2,.n p,.n ul{margin:0}
+.n li{margin-bottom:8px}
+</style>
+</helmet>
+<div class="n" style="font-family: Inter, system-ui, sans-serif; background: #FBF6EC; color: #2B2A22; padding: 40px 48px; line-height: 1.5; font-size: 17px; display: flex; flex-direction: column; gap: 20px; max-width: 900px; box-sizing: border-box">
+<h1 style="font-size: 34px; letter-spacing: -.03em">Decisions, fonts, assumptions</h1>
+
+<h2 style="font-size: 22px; margin-top: 8px">What changed in this version</h2>
+<ul style="padding-inline-start: 22px">
+<li><b>Two pages and a reference page.</b> Home is the calculator, the Recipe page shows ingredients and steps, Basics explains the fundamentals. No separate style or calculator pages.</li>
+<li><b>Calculator on the first screen.</b> On a 390 × 844 phone, the headline, all five inputs and the “Show recipe” button fit without scrolling. Inputs: style (New York, Neapolitan), method, size (round 26, 30, 32 cm or oven tray 30 × 40), number of pizzas, yeast type.</li>
+<li><b>Removed:</b> ball weight, planned bake time and timeline, sauce and cheese, copy as text, print, keep-awake, pan lists. The recipe is about dough only.</li>
+<li><b>Recipe page.</b> Desktop: ingredients stay on the side while you scroll the steps. Phone: the ingredients card sits on top and can be collapsed. Each step has a bold action and one line of detail. A round “?” opens a short “Good to know” note with a link to Basics. Safety is a callout inside the step where it matters.</li>
+<li><b>Apple-like styling.</b> One sans family, large tight headlines, 17 px body at line height 1.47, wide spacing, filled surfaces instead of outlines, soft shadows, pill buttons, iOS-style grouped rows and segmented controls, translucent sticky nav. Colours unchanged.</li>
+</ul>
+
+<h2 style="font-size: 22px; margin-top: 8px">Fonts</h2>
+<ul style="padding-inline-start: 22px">
+<li><b>Latin:</b> Inter (open source). Apple’s own SF Pro is not free to use on websites; Inter is the closest open font.</li>
+<li><b>Farsi:</b> Vazirmatn (open source, SIL OFL). Alternatives that are free and available on Google Fonts: Noto Sans Arabic, IBM Plex Sans Arabic (check that it covers پ چ ژ گ in your preview before choosing). Open-source Persian fonts not on Google Fonts, which you would self-host: Estedad, Sahel, Shabnam.</li>
+<li><b>Farsi rules:</b> zero letter spacing (tracking breaks joined letters), line height 1.8, Persian digits (۰–۹) and the Persian decimal separator (٫) everywhere on Farsi pages. Latin terms like “Tipo 00” keep their Latin digits. Numbers stay Western in <code>recipes.json</code>; the build converts them for Farsi pages. Scales and ovens still show Western digits.</li>
+</ul>
+
+<h2 style="font-size: 22px; margin-top: 8px">RTL</h2>
+<ul style="padding-inline-start: 22px">
+<li>Logical CSS properties only, so one stylesheet serves both directions. Arrows and back chevrons flip; the check mark, “?” and safety icons do not.</li>
+<li>Steps, rows, stepper (− on the right in Farsi) and the ingredients/steps columns mirror automatically.</li>
+<li>Latin names in Farsi text sit on their own line with <code>dir="ltr"</code> or inside <code>&lt;bdi&gt;</code>.</li>
+</ul>
+
+<h2 style="font-size: 22px; margin-top: 8px">Assumptions to confirm</h2>
+<ul style="padding-inline-start: 22px">
+<li><b>All numbers, times and the 1.5 h rest and 7 min bake are placeholders.</b> Real values come from <code>recipes.json</code> after the fact-check. The recipe shown is New York, 30 cm, 2 pizzas, 24 h cold, dry yeast.</li>
+<li>The dough amount per pizza now comes from the size and the style, not from a ball weight. The values per size are not decided yet.</li>
+<li>“Oven tray 30 × 40” is one rectangle; “Pizzas” then means trays.</li>
+<li>With only two styles the style picker could be a two-way segmented control instead of a dropdown. It is a dropdown for now.</li>
+<li>The Farsi copy is a working draft.</li>
+</ul>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":900,"height":1500}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

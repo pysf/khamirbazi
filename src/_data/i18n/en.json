@@ -1,0 +1,112 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "lang_name": "English",
+  "site_name": "Khamirbazi",
+  "tagline": "A home pizza guide and dough calculator",
+  "skip": "Skip to content",
+  "lang_label": "Language",
+  "theme": {
+    "toggle": "Switch between light and dark theme"
+  },
+  "nav": {
+    "basics": "Basics",
+    "main": "Main menu"
+  },
+  "footer": {
+    "disclaimer": "Amounts and times are a starting point. Bake once, then change one thing at a time."
+  },
+  "callout": {
+    "safe": "Safety",
+    "warn": "Careful",
+    "tip": "Tip"
+  },
+  "home": {
+    "title": "Pizza dough only",
+    "sub": "Choose a pizza type and a size. Get exact grams and clear steps.",
+    "calc_label": "Dough calculator",
+    "style": "Pizza type",
+    "method": "Fermentation",
+    "size": "Size",
+    "cm": "cm",
+    "count": "Pizzas",
+    "yeast": "Yeast",
+    "dry": "Dry",
+    "fresh": "Fresh",
+    "dec": "Fewer pizzas",
+    "inc": "More pizzas",
+    "cta": "Show recipe",
+    "new_to": "New to dough?",
+    "new_to_sub": "Read the basics",
+    "err_min_batch": "Warm fermentation (2 hours) needs at least {min} pizzas, with dry or fresh yeast. For one pizza the dry yeast would weigh less than {min_g} g, which a kitchen scale cannot show. Choose another fermentation, or make {min} pizzas."
+  },
+  "recipe": {
+    "change": "Change",
+    "ingredients": "Ingredients",
+    "dough_total": "Total dough",
+    "th_ing": "Ingredient",
+    "th_g": "Grams",
+    "steps": "Steps",
+    "optional": "optional",
+    "more_details": "More details",
+    "placeholder": "Detailed steps for this style are coming soon.",
+    "size_round": "{d} cm",
+    "pizza_one": "{n} pizza",
+    "pizza_other": "{n} pizzas",
+    "noscript": "JavaScript is off, so this page shows amounts for 2 pizzas of 30 cm. Turn JavaScript on to choose your own amounts."
+  },
+  "styles": {
+    "new_york": {
+      "name": "New York",
+      "latin": "New York style",
+      "blurb": "A slice you can fold, a crisp base and a chewy rim. The main recipe of this guide and the best fit for a home oven."
+    },
+    "neapolitan": {
+      "name": "Neapolitan",
+      "latin": "Pizza Napoletana",
+      "blurb": "Soft centre and a tall, airy rim. No oil in the dough. A home oven makes a Neapolitan-style pizza, not the real thing."
+    }
+  },
+  "methods": {
+    "warm_2h": "Warm fermentation, 2 hours",
+    "room_8_12h": "Room fermentation, 8 to 12 hours",
+    "cold_12_16h": "Cold fermentation, 12 to 16 hours (overnight)",
+    "cold_24h": "Cold fermentation, 24 hours",
+    "cold_48h": "Cold fermentation, 48 hours",
+    "cold_72h": "Cold fermentation, 72 hours"
+  },
+  "methods_short": {
+    "warm_2h": "Warm, 2 hours",
+    "room_8_12h": "Room, 8 to 12 hours",
+    "cold_12_16h": "Cold, 12 to 16 hours",
+    "cold_24h": "Cold, 24 hours",
+    "cold_48h": "Cold, 48 hours",
+    "cold_72h": "Cold, 72 hours"
+  },
+  "ing": {
+    "flour": "Pizza flour (Tipo 00)",
+    "water": "Water",
+    "yeast_solution": "Yeast solution",
+    "salt": "Salt",
+    "sugar": "Sugar",
+    "oil": "Olive oil",
+    "yeast_dry": "Dry yeast",
+    "yeast_fresh": "Fresh yeast"
+  },
+  "warn": {
+    "parchment": "Baking paper is optional. If you use it, check the maximum temperature printed on the pack. Many papers are rated to {max_c} degrees, which is lower than this oven. Keep the paper away from the heating elements and the oven walls. Do not use wax paper. If your paper is rated below the oven temperature, pull it out from under the pizza after the first {pull_min} to {pull_max} minutes.",
+    "oil_smoke": "Extra-virgin olive oil starts to smoke at about {min_c} to {max_c} degrees. Do not oil the hot baking surface. Oil mixed into the dough is fine.",
+    "min_batch": "This fermentation needs at least {min_pizzas} pizzas, but you chose {pizzas}. For one pizza the dry yeast would weigh less than {min_g} g, which a kitchen scale cannot show. This guide uses the same rule for fresh yeast.",
+    "batch_too_small": "This batch is too small: the yeast would weigh less than a kitchen scale can show, even as a yeast solution. Make more pizzas."
+  },
+  "card": {
+    "scale_resolution": "A kitchen scale shows whole grams, and {g} g lies between {lo} and {hi} g. Use the heavier reading ({hi} g). A little more yeast only makes the dough rise a little faster, so watch its size."
+  },
+  "basics": {
+    "title": "The basics",
+    "styles": "Two styles",
+    "hydration": "Hydration",
+    "bake": "Bake",
+    "bake_value": "{temp} degrees Celsius · {from} to {to} minutes"
+  }
+}

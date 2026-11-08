@@ -1,0 +1,17 @@
+{
+  "name": "khamirbazi",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Bilingual (English/Farsi) home pizza guide with a dough calculator",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check-sync.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "markdown-it": "^14.3.3"
+  }
+}

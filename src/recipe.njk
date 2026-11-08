@@ -1,0 +1,69 @@
+---
+layout: layout.njk
+section: recipe
+script: recipe.js
+pagination:
+  data: site.recipePages
+  size: 1
+  alias: rp
+permalink: "/{{ rp.lang }}/recipe/{{ rp.id }}/index.html"
+eleventyComputed:
+  lang: "{{ rp.lang }}"
+  title: "{{ i18n[rp.lang].styles[rp.id].name }}"
+---
+{% set lang = rp.lang %}{% set t = i18n[lang] %}{% set r = t.recipe %}{% set id = rp.id %}
+{% set page_data = recipePage[id] %}{% set st = recipes.styles[id] %}
+{% set body = docs[lang].styles[id] if docs[lang].styles else undefined %}
+<header class="rhead">
+  <a class="back" id="change" href="{{ ('/' + lang + '/') | url }}">{% icon "back", "dir-icon" %}{{ r.change }}</a>
+  <h1>{{ t.styles[id].name }}</h1>
+  <div class="pills" id="pills">
+    <span class="pill">{{ r.size_round | fill({ d: page_data.size.diameter }, lang) }}</span>
+    <span class="pill">{{ r.pizza_other | fill({ n: 2 }, lang) }}</span>
+    <span class="pill">{{ t.methods_short[page_data.defaultMethod] }}</span>
+    <span class="pill">{{ t.ing.yeast_dry }}</span>
+  </div>
+</header>
+<div class="rgrid">
+  <details class="card ing" open>
+    <summary><h2>{{ r.ingredients }}</h2>{% icon "chev", "chv2" %}</summary>
+    <table class="tbl">
+      <caption class="vh">{{ r.ingredients }}</caption>
+      <thead><tr><th scope="col">{{ r.th_ing }}</th><th scope="col" class="num">{{ r.th_g }}</th></tr></thead>
+      <tbody id="ing-body">
+        {% for row in page_data.rows %}<tr><th scope="row">{{ t.ing[row.id] }}{% if row.optional %} <span class="opt">({{ r.optional }})</span>{% endif %}</th><td class="num">{{ row.g | num(lang) }}</td></tr>
+        {% endfor %}<tr class="total"><th scope="row">{{ r.dough_total }}</th><td class="num">{{ page_data.dough_g | num(lang) }}</td></tr>
+      </tbody>
+    </table>
+    <div id="ing-yeast">{% for l in page_data.yeastLines %}{% if l.group == "warn" %}<div class="callout warn" role="note">{% icon "warn" %}<div><p>{{ t.warn[l.key] | fill(l.params, lang) }}</p></div></div>{% else %}<p class="ynote">{{ t.card[l.key] | fill(l.params, lang) }}</p>{% endif %}{% endfor %}</div>
+    <noscript><p class="muted small ing-note">{{ r.noscript }}</p></noscript>
+  </details>
+  <section aria-labelledby="st-h">
+    <h2 class="vh" id="st-h">{{ r.steps }}</h2>
+    {% if body %}
+    {% set parts = body | recipeParts(lang) %}
+    {% for p in parts %}{% if p.main %}
+    <div class="msec" data-method-section="{{ p.methods | join(' ') }}"{% if page_data.defaultMethod not in p.methods %} hidden{% endif %}>
+      <h3 class="eyebrow">{{ p.title }}</h3>
+      {{ p.html | safe }}
+    </div>
+    {% endif %}{% endfor %}
+    <div class="more">
+      <h2>{{ r.more_details }}</h2>
+      {% for p in parts %}{% if not p.main %}
+      <details class="card sec"{% if p.methods %} data-method-section="{{ p.methods | join(' ') }}"{% if page_data.defaultMethod not in p.methods %} hidden{% endif %}{% endif %}>
+        <summary><h3>{{ p.title }}</h3>{% icon "chev", "chv2" %}</summary>
+        <div class="sec-b">{{ p.html | safe }}</div>
+      </details>
+      {% endif %}{% endfor %}
+    </div>
+    {% else %}
+    <p class="card placeholder">{{ r.placeholder }}</p>
+    <div class="callouts">
+      <div class="callout safe" role="note">{% icon "safe" %}<div><strong>{{ t.callout.safe }}</strong><p>{{ t.warn.parchment | fill({ max_c: recipes.safety.parchment_max_c.value, pull_min: recipes.safety.parchment_pull_min.range[0], pull_max: recipes.safety.parchment_pull_min.range[1] }, lang) }}</p></div></div>
+      <div class="callout safe" role="note">{% icon "safe" %}<div><strong>{{ t.callout.safe }}</strong><p>{{ t.warn.oil_smoke | fill({ min_c: recipes.safety.evoo_smoke_c.range[0], max_c: recipes.safety.evoo_smoke_c.range[1] }, lang) }}</p></div></div>
+    </div>
+    {% endif %}
+  </section>
+</div>
+<script type="application/json" id="recipe-data">{{ { styleId: id, lang: lang, data: page_data.data, sizes: recipes.sizes, strings: { ing: t.ing, recipe: r, methods_short: t.methods_short, warn: t.warn, card: t.card } } | dump | safe }}</script>

@@ -1,0 +1,31 @@
+---
+layout: layout.njk
+section: basics
+pagination:
+  data: site.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/basics/index.html"
+eleventyComputed:
+  title: "{{ i18n[lang].basics.title }}"
+---
+{% set t = i18n[lang] %}
+<div class="long">
+  <h1>{{ t.basics.title }}</h1>
+  <div class="prose">{{ docs[lang].basics | md(lang) | safe }}</div>
+
+  {# Generated from recipes.json so the numbers cannot drift. Only the two styles the site offers. #}
+  <section>
+    <h2>{{ t.basics.styles }}</h2>
+    <dl>
+      {% for id in site.uiStyles %}{% set st = recipes.styles[id] %}
+      <div>
+        <dt><a href="{{ ('/' + lang + '/recipe/' + id + '/') | url }}">{{ t.styles[id].name }}</a></dt>
+        <dd>{{ t.styles[id].blurb }}<br><span class="small">{{ t.basics.hydration }}: {{ st.dough.hydration.value | num(lang) }}{{ "%" }} · {{ t.basics.bake }}: {{ t.basics.bake_value | fill({ temp: st.bake.temp_c.value, from: st.bake.time_min.range[0], to: st.bake.time_min.range[1] }, lang) }}</span></dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </section>
+
+  <div class="prose">{{ docs[lang].glossary | md(lang) | safe }}</div>
+</div>
