@@ -2,6 +2,7 @@ import MarkdownIt from "markdown-it";
 import { formatNumber } from "./src/assets/calc.js";
 import { interpolate } from "./src/assets/i18n.js";
 import { icon } from "./lib/icons.js";
+import { persianizeHtml } from "./lib/persian-html.js";
 import { contentPlugin, renderContent, splitSections } from "./lib/content.js";
 
 export default function (eleventyConfig) {
@@ -25,6 +26,10 @@ export default function (eleventyConfig) {
   );
   // {% icon "arrow", "dir-icon" %}
   eleventyConfig.addShortcode("icon", (name, extra) => icon(name, extra));
+
+  // Farsi pages show Persian digits. Sources and data stay Western; only visible text is converted (lib/persian-html.js).
+  eleventyConfig.addTransform("persian-digits", (content, outputPath) =>
+    outputPath?.endsWith(".html") && /^\s*<!doctype html>\s*<html lang="fa"/i.test(content) ? persianizeHtml(content) : content);
 
   return {
     pathPrefix: process.env.PATH_PREFIX || "/",

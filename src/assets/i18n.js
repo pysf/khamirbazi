@@ -1,13 +1,32 @@
 // Small helpers shared by the build (Eleventy filters) and the calculator page.
 import { formatNumber } from "./calc.js";
 
+// Latin terms that keep their Latin digits inside Farsi text.
+export const LATIN_TERMS = ["Tipo 00", "Typ 00"];
+const PROTECTED = new RegExp(`(${LATIN_TERMS.map((x) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`);
+const PERSIAN = "۰۱۲۳۴۵۶۷۸۹";
+
+/** Farsi display: digits 0-9 -> ۰-۹ and a decimal point between digits -> ٫. Latin terms (LATIN_TERMS) are left as they are.
+ *  Commas, colons, "%" and a full stop that ends a sentence are not touched. Pure text: never call it on HTML, URLs or input values. */
+export function toPersianDigits(text) {
+  return String(text)
+    .split(PROTECTED)
+    .map((part, i) => (i % 2 ? part : part.replace(/(\d)\.(?=\d)/g, "$1٫").replace(/\d/g, (d) => PERSIAN[d])))
+    .join("");
+}
+
+/** Text for the page in this language: Persian digits for "fa", unchanged otherwise. */
+export function localize(text, locale = "en") {
+  return locale === "fa" ? toPersianDigits(text) : String(text);
+}
+
 /** Replace {name} in a UI string. Numbers are formatted for the locale, strings are used as-is. */
 export function interpolate(str, params = {}, locale = "en") {
-  return String(str).replace(/\{(\w+)\}/g, (match, key) => {
+  return localize(String(str).replace(/\{(\w+)\}/g, (match, key) => {
     if (!(key in params)) return match;
     const v = params[key];
     return typeof v === "number" ? formatNumber(v, locale) : String(v);
-  });
+  }), locale);
 }
 
 /** Minutes -> "2 h 10 min" using the strings t.calc.hm / m / h. */

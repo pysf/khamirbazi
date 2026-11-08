@@ -2,7 +2,7 @@
 // calc.js in the browser and shows only the steps of the chosen method. Without JavaScript the page shows the
 // defaults rendered at build time.
 import { computeRecipe, formatNumber } from "./calc.js";
-import { interpolate } from "./i18n.js";
+import { interpolate, localize } from "./i18n.js";
 
 const { styleId, lang, data, sizes, strings: t } = JSON.parse(document.getElementById("recipe-data").textContent);
 const style = data.styles[styleId];
@@ -22,7 +22,7 @@ function render() {
   const r = computeRecipe({ styleId, methodId, yeastType, mode: { pizzas, size } }, data);
 
   document.getElementById("ing-body").innerHTML = r.ingredients
-    .map((i) => `<tr><th scope="row">${esc(t.ing[i.id])}${i.optional ? ` <span class="opt">(${esc(t.recipe.optional)})</span>` : ""}</th><td class="num">${formatNumber(i.g, lang)}</td></tr>`)
+    .map((i) => `<tr><th scope="row">${esc(localize(t.ing[i.id], lang))}${i.optional ? ` <span class="opt">(${esc(localize(t.recipe.optional, lang))})</span>` : ""}</th><td class="num">${formatNumber(i.g, lang)}</td></tr>`)
     .join("");
   document.getElementById("dough-total").textContent = fill(t.recipe.dough_total, { g: r.dough_g });
 
@@ -35,7 +35,7 @@ function render() {
   const sizeText = size.shape === "round" ? fill(t.recipe.size_round, { d: size.diameter }) : fill(t.recipe.size_tray, { l: size.length, w: size.width });
   const unit = size.shape === "round" ? "pizza" : "tray";
   const count = fill(t.recipe[`${unit}_${pizzas === 1 ? "one" : "other"}`], { n: pizzas });
-  document.getElementById("pills").innerHTML = [sizeText, count, t.methods_short[methodId], t.ing[`yeast_${yeastType}`]]
+  document.getElementById("pills").innerHTML = [sizeText, count, localize(t.methods_short[methodId], lang), localize(t.ing[`yeast_${yeastType}`], lang)]
     .map((x) => `<span class="pill">${esc(x)}</span>`).join("");
 }
 

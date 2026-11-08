@@ -63,7 +63,7 @@ test("bullets get the bullets class and markers are removed from the text", () =
 
 test("{{ path }} comes from recipes.json and is formatted per language", () => {
   assert.equal(fillVars("{{ recipes.safety.parchment_max_c.value }}", "en"), "220");
-  assert.equal(fillVars("x {{ recipes.styles.neapolitan.dough.hydration.value }} y", "fa"), "x 61.7 y");
+  assert.equal(fillVars("x {{ recipes.styles.neapolitan.dough.hydration.value }} y", "fa"), "x ۶۱٫۷ y");
   assert.throws(() => fillVars("{{ recipes.nope.value }}", "en"), /not found/);
 });
 

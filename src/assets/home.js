@@ -1,4 +1,7 @@
 // Home page: the five inputs. "Show recipe" is a link to the recipe page with the choices in the query string.
+import { formatNumber } from "./calc.js";
+import { localize } from "./i18n.js";
+
 const $ = (sel, root = document) => root.querySelector(sel);
 const calc = $("#calc");
 const styleSel = $("#f-style");
@@ -8,6 +11,7 @@ const err = $("#count-err");
 const cta = $("#cta");
 const minPizzas = Number(calc.dataset.minPizzas);
 const labels = JSON.parse($("#method-labels").textContent);
+const lang = document.documentElement.lang; // "fa" shows Persian digits; URLs and values stay Western
 const state = { size: "round_30", pizzas: 2, yeast: "dry" };
 
 // The method list depends on the style (its typical methods).
@@ -16,7 +20,7 @@ function fillMethods(wanted) {
   const ids = opt.dataset.methods.split(" ");
   const keep = ids.includes(wanted) ? wanted : opt.dataset.default;
   methodSel.replaceChildren(...ids.map((id) => {
-    const o = new Option(labels[id] ?? id, id);
+    const o = new Option(localize(labels[id] ?? id, lang), id);
     o.selected = id === keep;
     return o;
   }));
@@ -27,7 +31,7 @@ function group(name, value) {
 }
 
 function render() {
-  countEl.textContent = state.pizzas;
+  countEl.textContent = formatNumber(state.pizzas, lang);
   const tooFew = methodSel.value === "warm_2h" && state.pizzas < minPizzas;
   err.hidden = !tooFew;
   const q = new URLSearchParams({ method: methodSel.value, size: state.size, pizzas: state.pizzas, yeast: state.yeast });

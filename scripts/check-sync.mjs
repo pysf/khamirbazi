@@ -101,6 +101,12 @@ for (const f of enFiles) {
     if (a[k] !== b[k]) fail(`content: ${f} differs in "${k}" (en: ${a[k]} | fa: ${b[k]})`);
 }
 
+// 4. Farsi sources use Western digits (0-9). The build turns them into Persian digits (lib/persian-html.js).
+// Arabic-Indic (٠-٩) or already-converted (۰-۹) digits in a source would be wrong, or break the step counting above.
+const digitFiles = [...faFiles].map((f) => join(faDir, f)).concat(join(root, "src/_data/i18n/fa.json"));
+for (const p of digitFiles)
+  if (/[\u0660-\u0669\u06F0-\u06F9]/.test(readFileSync(p, "utf8"))) fail(`digits: ${relative(root, p)} contains Arabic-Indic or Persian digits; write 0-9 and let the build convert them`);
+
 if (problems.length) {
   console.error(`Language sync check FAILED (${problems.length}):`);
   for (const p of problems) console.error(" - " + p);

@@ -322,9 +322,9 @@ export function computeRecipe(input, data) {
   };
 }
 
-/** Display helper: at most 1 decimal. Western digits (0-9) in both languages, as the design decides, so numbers match the kitchen scale and oven display. Never use for calculation. */
+/** Display helper: at most 1 decimal. English: 12.5. Farsi: Persian digits and the decimal separator, ۱۲٫۵ (the design decides). Never use for calculation or for URLs and input values. */
 export function formatNumber(n, locale = "en") {
   if (n == null || Number.isNaN(n)) return "";
-  const loc = locale === "fa" ? "fa-IR-u-nu-latn" : "en-US";
+  const loc = locale === "fa" ? "fa-IR" : "en-US";
   return new Intl.NumberFormat(loc, { maximumFractionDigits: 1 }).format(n);
 }

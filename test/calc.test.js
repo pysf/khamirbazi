@@ -391,15 +391,17 @@ test("results are exact: no rounding to friendly numbers", () => {
   assert.notEqual(r.yeast.solution.take_g, Math.round(r.yeast.solution.take_g));
 });
 
-test("formatNumber: at most 1 decimal, Western digits in both languages", () => {
+test("formatNumber: at most 1 decimal, Persian digits and ٫ in Farsi", () => {
   assert.equal(formatNumber(12.345), "12.3");
   assert.equal(formatNumber(1.96), "2");
   assert.equal(formatNumber(59.06), "59.1");
   assert.equal(formatNumber(1234.56), "1,234.6");
   assert.equal(formatNumber(0.04), "0");
   assert.equal(formatNumber(null), "");
-  assert.equal(formatNumber(12.5, "fa"), "12.5");
-  assert.equal(formatNumber(1234.56, "fa"), "1,234.6");
+  assert.equal(formatNumber(12.5, "fa"), "۱۲٫۵");
+  assert.equal(formatNumber(2, "fa"), "۲");
+  assert.equal(formatNumber(296.74, "fa"), "۲۹۶٫۷");
+  assert.equal(formatNumber(0.04, "fa"), "۰");
 });
 
 test("data: every value object has confidence, verified and sources or a note", () => {
