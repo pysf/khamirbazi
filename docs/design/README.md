@@ -21,7 +21,7 @@ These `.dc.html` files only run inside the canvas. Do not ship them. Use them as
 - Rename the `.kb` root selector to `:root` / `[data-theme]` / `[dir=rtl]`. Remove the `sc-for, sc-if` rule and `min-height: 100vh`.
 - `{{...}}` holes become Eleventy variables. Strings in `renderVals()` move to `src/_data/i18n/en.json` and `fa.json`.
 - **Every number, time, difficulty and fermentation label in the mockups is a placeholder.** Real values come only from `recipes.json` after the fact-check.
-- Farsi copy is a draft. Review it against `pizza-guide-v7-raw.md`.
+- Farsi copy is a draft.
 - Fonts: self-host Inter and Vazirmatn (all SIL OFL). Do not load from Google Fonts in production.
 
 ## Logo

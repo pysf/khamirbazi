@@ -6,7 +6,7 @@ const PERSIAN = "۰۱۲۳۴۵۶۷۸۹";
 /** Farsi display: digits 0-9 -> ۰-۹ and a decimal point between digits -> ٫.
  *  Commas, colons, "%" and a full stop that ends a sentence are not touched. Pure text: never call it on HTML, URLs or input values. */
 export function toPersianDigits(text) {
-  return String(text).replace(/(\d)\.(?=\d)/g, "$1٫").replace(/\d/g, (d) => PERSIAN[d]);
+  return String(text).replace(/(\d)\.(?=\d)/g, "$1٫").replace(/([0-9۰-۹])%/g, "$1٪").replace(/\d/g, (d) => PERSIAN[d]);
 }
 
 /** Text for the page in this language: Persian digits for "fa", unchanged otherwise. */

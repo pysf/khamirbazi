@@ -102,6 +102,8 @@ function checkStepTitles(file, text) {
   body.split("\n").forEach((line, i) => {
     const m = line.match(/^\s*\d+\. \*\*((?:(?!\*\*).)+?)\*\*/);
     if (m && /[.\u06D4]$/.test(m[1].trim())) fail(`content: ${file} line ${i + 1}: step title "${m[1]}" must not end with a full stop`);
+    // "##" section headings are read before the template runs, so a {{ variable }} there prints raw.
+    if (/^## .*\{\{/.test(line)) fail(`content: ${file} line ${i + 1}: no {{ variables }} in a heading`);
   });
 }
 
