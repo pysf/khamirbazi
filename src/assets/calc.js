@@ -1,6 +1,6 @@
 // Pure calculator for the pizza guide. No DOM, no rounding of results.
 // All numbers come from the recipes data object (src/_data/recipes.json).
-// Display rounding lives only in formatNumber() at the bottom.
+// Display rounding lives only in formatNumber() at the bottom, and in householdMeasure() (the approximate spoons column).
 
 function positive(x, code) {
   const n = Number(x);
@@ -207,6 +207,35 @@ export function yeastCard(r) {
     }
   }
   return lines;
+}
+
+/**
+ * Approximate household measure for one ingredient row (the "About" column), from data.measures.
+ * This is the only rounded output of the calculator; the grams stay exact.
+ *   ml (water, yeast solution): whole ml.
+ *   spoon (salt, sugar, dry yeast, oil): teaspoons rounded to measures.spoon_step; oil switches to tablespoons
+ *     from 1 tablespoon up. Under measures.spoon_min -> null.
+ *   cube (fresh yeast): fraction of yeast.solution.fresh.cube_g rounded to measures.cube_step; under cube_min -> null.
+ * Returns null when there is no household measure (flour, unknown id, too small), else { unit: "ml"|"tsp"|"tbsp"|"cube", amount }.
+ */
+export function householdMeasure(ingredientId, grams, data) {
+  const ms = data.measures;
+  const ing = ms?.ingredients?.[ingredientId];
+  const g = Number(grams);
+  if (!ing?.measure || !Number.isFinite(g) || g <= 0) return null;
+  const to = (x, step) => Math.round(x / step) * step;
+  if (ing.measure === "ml") {
+    const ml = Math.round(g / ing.g_per_ml.value);
+    return ml >= 1 ? { unit: "ml", amount: ml } : null;
+  }
+  if (ing.measure === "cube") {
+    const c = g / data.yeast.solution.fresh.cube_g.value;
+    return c >= ms.cube_min.value ? { unit: "cube", amount: to(c, ms.cube_step.value) } : null;
+  }
+  const step = ms.spoon_step.value;
+  if (ing.g_per_tbsp && g >= ing.g_per_tbsp.value) return { unit: "tbsp", amount: to(g / ing.g_per_tbsp.value, step) };
+  const tsp = g / ing.g_per_tsp.value;
+  return tsp >= ms.spoon_min.value ? { unit: "tsp", amount: to(tsp, step) } : null;
 }
 
 /** Display helper: at most 1 decimal. English: 12.5. Farsi: Persian digits and the decimal separator, ۱۲٫۵ (the design decides). Never use for calculation or for URLs and input values. */

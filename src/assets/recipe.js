@@ -1,8 +1,8 @@
 // Recipe page: reads the choices from the query string (method, size, pizzas, yeast), computes the ingredients with
 // calc.js in the browser and shows only the steps of the chosen method. Without JavaScript the page shows the
 // defaults rendered at build time.
-import { computeRecipe, formatNumber, yeastCard } from "./calc.js";
-import { interpolate, localize } from "./i18n.js";
+import { computeRecipe, formatNumber, householdMeasure, yeastCard } from "./calc.js";
+import { formatMeasure, interpolate, localize } from "./i18n.js";
 
 const { styleId, lang, data, sizes, strings: t } = JSON.parse(document.getElementById("recipe-data").textContent);
 const style = data.styles[styleId];
@@ -29,8 +29,8 @@ function render() {
   const r = computeRecipe({ styleId, methodId, yeastType, mode: { pizzas, size } }, data);
 
   document.getElementById("ing-body").innerHTML = r.ingredients
-    .map((i) => `<tr><th scope="row">${esc(localize(t.ing[i.id], lang))}${i.optional ? ` <span class="opt">(${esc(localize(t.recipe.optional, lang))})</span>` : ""}</th><td class="num">${formatNumber(i.g, lang)}</td></tr>`)
-    .join("") + `<tr class="total"><th scope="row">${esc(localize(t.recipe.dough_total, lang))}</th><td class="num">${formatNumber(r.dough_g, lang)}</td></tr>`;
+    .map((i) => `<tr><th scope="row">${esc(localize(t.ing[i.id], lang))}${i.optional ? ` <span class="opt">(${esc(localize(t.recipe.optional, lang))})</span>` : ""}</th><td class="num">${formatNumber(i.g, lang)}</td><td class="msr">${esc(formatMeasure(householdMeasure(i.id, i.g, data), t.measure, lang))}</td></tr>`)
+    .join("") + `<tr class="total"><th scope="row">${esc(localize(t.recipe.dough_total, lang))}</th><td class="num">${formatNumber(r.dough_g, lang)}</td><td></td></tr>`;
 
   // The warnings that replace the yeast amount, and the 1 g scale note (from calc.js).
   document.getElementById("ing-yeast").innerHTML = yeastCard(r, data).map(yeastHtml).join("");

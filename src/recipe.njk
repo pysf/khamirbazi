@@ -29,12 +29,13 @@ eleventyComputed:
     <summary><h2>{{ r.ingredients }}</h2>{% icon "chev", "chv2" %}</summary>
     <table class="tbl">
       <caption class="vh">{{ r.ingredients }}</caption>
-      <thead><tr><th scope="col">{{ r.th_ing }}</th><th scope="col" class="num">{{ r.th_g }}</th></tr></thead>
+      <thead><tr><th scope="col">{{ r.th_ing }}</th><th scope="col" class="num">{{ r.th_g }}</th><th scope="col" class="msr">{{ r.th_about }}</th></tr></thead>
       <tbody id="ing-body">
-        {% for row in page_data.rows %}<tr><th scope="row">{{ t.ing[row.id] }}{% if row.optional %} <span class="opt">({{ r.optional }})</span>{% endif %}</th><td class="num">{{ row.g | num(lang) }}</td></tr>
-        {% endfor %}<tr class="total"><th scope="row">{{ r.dough_total }}</th><td class="num">{{ page_data.dough_g | num(lang) }}</td></tr>
+        {% for row in page_data.rows %}<tr><th scope="row">{{ t.ing[row.id] }}{% if row.optional %} <span class="opt">({{ r.optional }})</span>{% endif %}</th><td class="num">{{ row.g | num(lang) }}</td><td class="msr">{{ row.measure | measure(t.measure, lang) }}</td></tr>
+        {% endfor %}<tr class="total"><th scope="row">{{ r.dough_total }}</th><td class="num">{{ page_data.dough_g | num(lang) }}</td><td></td></tr>
       </tbody>
     </table>
+    <p class="muted small ing-note">{{ r.measure_note | fill({ tsp_ml: recipes.measures.tsp_ml.value, tbsp_ml: recipes.measures.tbsp_ml.value }, lang) }}</p>
     <div id="ing-yeast">{% for l in page_data.yeastLines %}{% if l.group == "warn" %}<div class="callout warn" role="note">{% icon "warn" %}<div><p>{{ t.warn[l.key] | fill(l.params, lang) }}</p></div></div>{% else %}<p class="ynote">{{ t.card[l.key] | fill(l.params, lang) }}</p>{% endif %}{% endfor %}</div>
     <noscript><p class="muted small ing-note">{{ r.noscript }}</p></noscript>
   </details>
@@ -66,4 +67,4 @@ eleventyComputed:
     {% endif %}
   </section>
 </div>
-<script type="application/json" id="recipe-data">{{ { styleId: id, lang: lang, data: page_data.data, sizes: recipes.sizes, strings: { ing: t.ing, recipe: r, methods_short: t.methods_short, warn: t.warn, card: t.card } } | dump | safe }}</script>
+<script type="application/json" id="recipe-data">{{ { styleId: id, lang: lang, data: page_data.data, sizes: recipes.sizes, strings: { ing: t.ing, recipe: r, methods_short: t.methods_short, warn: t.warn, card: t.card, measure: t.measure } } | dump | safe }}</script>

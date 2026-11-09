@@ -23,7 +23,18 @@ export function interpolate(str, params = {}, locale = "en") {
   }), locale);
 }
 
-/** Minutes -> "2 h 10 min" using the strings t.calc.hm / m / h. */
+/** A householdMeasure() result -> "≈ 1 ¼ tsp" using the strings t.measure (fractions in eighths: tm.frac["2"] = "¼").
+ *  Empty string for null (no household measure). */
+export function formatMeasure(m, tm, locale = "en") {
+  if (!m) return "";
+  const whole = Math.floor(m.amount);
+  const frac = tm.frac[Math.round((m.amount - whole) * 8)] ?? "";
+  const n = !frac ? whole : whole ? interpolate(tm.mixed, { whole, frac }, locale) : frac;
+  const key = m.unit === "cube" ? (m.amount > 1 ? "cube_other" : "cube_one") : m.unit;
+  return interpolate(tm[key], { n }, locale);
+}
+
+/** Minutes ->"2 h 10 min" using the strings t.calc.hm / m / h. */
 export function formatDuration(minutes, t, locale = "en") {
   const total = Math.round(minutes);
   const h = Math.floor(total / 60);

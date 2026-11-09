@@ -46,6 +46,7 @@
     "dough_total": "Total dough",
     "th_ing": "Ingredient",
     "th_g": "Grams",
+    "th_about": "About",
     "steps": "Steps",
     "optional": "optional",
     "more_details": "More details",
@@ -53,7 +54,8 @@
     "size_round": "{d} cm",
     "pizza_one": "{n} pizza",
     "pizza_other": "{n} pizzas",
-    "noscript": "JavaScript is off, so this page shows amounts for 2 pizzas of 30 cm. Turn JavaScript on to choose your own amounts."
+    "noscript": "JavaScript is off, so this page shows amounts for 2 pizzas of 30 cm. Turn JavaScript on to choose your own amounts.",
+    "measure_note": "Spoons are level measuring spoons: teaspoon {tsp_ml} ml, tablespoon {tbsp_ml} ml. Salt means fine table salt; weigh coarse salt."
   },
   "styles": {
     "new_york": {
@@ -101,6 +103,23 @@
   },
   "card": {
     "scale_resolution": "A kitchen scale shows whole grams, and {g} g lies between {lo} and {hi} g. Use the heavier reading ({hi} g). A little more yeast only makes the dough rise a little faster, so watch its size."
+  },
+  "measure": {
+    "tsp": "≈ {n} tsp",
+    "tbsp": "≈ {n} tbsp",
+    "ml": "≈ {n} ml",
+    "cube_one": "≈ {n} cube",
+    "cube_other": "≈ {n} cubes",
+    "mixed": "{whole} {frac}",
+    "frac": {
+      "1": "⅛",
+      "2": "¼",
+      "3": "⅜",
+      "4": "½",
+      "5": "⅝",
+      "6": "¾",
+      "7": "⅞"
+    }
   },
   "basics": {
     "title": "The basics",

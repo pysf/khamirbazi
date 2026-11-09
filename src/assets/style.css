@@ -102,7 +102,10 @@ a{color:inherit}
 .ing .chv2{transition:transform .2s;color:var(--text-muted)}
 .ing[open] .chv2{transform:rotate(180deg)}
 .tbl{width:100%;border-collapse:collapse}
-.tbl th,.tbl td{padding:13px 16px;border-top:1px solid var(--border);text-align:start;font-weight:400}
+.tbl th,.tbl td{padding:13px 6px;border-top:1px solid var(--border);text-align:start;font-weight:400}
+.tbl :is(th,td):first-child{padding-inline-start:16px}
+.tbl :is(th,td):last-child{padding-inline-end:16px}
+.tbl .msr{text-align:end;color:var(--text-muted);font-size:var(--fs-sm);font-weight:400;min-width:9ch}
 .tbl tbody th{font-weight:500}
 .tbl .num{text-align:end;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
 .tbl tr.total th,.tbl tr.total td{border-top:2px solid var(--text);font-weight:700}
@@ -157,7 +160,7 @@ a{color:inherit}
 #ing-yeast .callout{margin:8px 8px 4px}
 /* below the table: the weight of one ball, then the yeast instruction from calc.js (yeastCard) */
 .ynote{margin:8px 8px 4px;padding:12px 14px;border-radius:var(--r-md);background:var(--surface-2);font-size:var(--fs-sm);line-height:1.5}
-.ing-note{padding-inline:16px}
+.ing-note{padding-inline:16px;margin-block:8px 4px}
 .placeholder{padding:20px 24px}
 .msec{display:grid;gap:20px}
 .msec+.msec{margin-top:0}
