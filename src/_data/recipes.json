@@ -273,6 +273,178 @@
       "diameter": 32
     }
   ],
+  "measures": {
+    "note": "Approximate household measures for the 'About' column next to the grams. Grams stay the exact main unit; this column is the only rounded output. Level measuring spoons, 5 ml teaspoon, 15 ml tablespoon. Research 2026-11 (scratchpad report measures-research.md).",
+    "tsp_ml": {
+      "value": 5,
+      "unit": "ml",
+      "confidence": "high",
+      "verified": false,
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/metric-kitchen/metric-kitchen-cooking-measurement-equivalencies",
+        "https://www.law.cornell.edu/cfr/text/21/101.9",
+        "https://en.wikipedia.org/wiki/Teaspoon"
+      ],
+      "note": "Metric teaspoon. The US teaspoon is 4.93 ml (1.4% smaller), which does not matter here. Household cutlery spoons vary widely, so the site says 'measuring spoon'."
+    },
+    "tbsp_ml": {
+      "value": 15,
+      "unit": "ml",
+      "confidence": "high",
+      "verified": false,
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/metric-kitchen/metric-kitchen-cooking-measurement-equivalencies",
+        "https://www.law.cornell.edu/cfr/text/21/101.9",
+        "https://en.wikipedia.org/wiki/Tablespoon"
+      ],
+      "note": "Metric tablespoon (UK, EU, US labeling). The Australian tablespoon is 20 ml, so only oil uses tablespoons; everything else is in teaspoons (5 ml everywhere)."
+    },
+    "spoon_step": {
+      "value": 0.25,
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/metric-kitchen/metric-kitchen-cooking-measurement-equivalencies",
+        "https://www.webstaurantstore.com/tablecraft-h723-4-piece-stainless-steel-spice-measuring-spoon-set/808H723.html"
+      ],
+      "note": "Spoon amounts are rounded to the nearest 1/4 teaspoon or tablespoon. Common measuring spoon sets go down to 1/4 teaspoon; smaller names (pinch, dash) are not defined consistently."
+    },
+    "spoon_min": {
+      "value": 0.25,
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/metric-kitchen/metric-kitchen-cooking-measurement-equivalencies"
+      ],
+      "note": "Smallest spoon amount shown: 1/4 teaspoon (NIST table goes down to 1/4 tsp). Below that the column is empty: weigh, or use the yeast solution."
+    },
+    "cube_step": {
+      "value": 0.125,
+      "confidence": "low",
+      "verified": false,
+      "sources": [],
+      "note": "Fresh yeast is shown as a fraction of the cube (yeast.solution.fresh.cube_g), rounded to the nearest 1/8. Judgment, not a measured value: cutting a cube by eye is about +/-30% for small pieces."
+    },
+    "cube_min": {
+      "value": 0.25,
+      "confidence": "medium",
+      "verified": false,
+      "sources": [
+        "https://www.gigacalculator.com/converters/yeast-converter.php"
+      ],
+      "note": "Smallest cube fraction shown: 1/4 cube (about 10 g of a 42 g cube). Smaller pieces are eyeballing; then the column is empty and the reader weighs. No source gives a teaspoon value for fresh yeast (it is a compressible paste), so no spoons for fresh yeast."
+    },
+    "ingredients": {
+      "flour": {
+        "measure": null,
+        "note": "No cups for flour: a cup weighs 116-142 g depending on how it is filled (King Arthur 116-120 g, USDA 125 g, America's Test Kitchen 142 g), about 20%, which would move hydration by over 10 points. Grams only.",
+        "sources": [
+          "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+          "https://fdc.nal.usda.gov/food-details/168894/portions"
+        ]
+      },
+      "water": {
+        "measure": "ml",
+        "g_per_ml": {
+          "value": 1,
+          "unit": "g/ml",
+          "confidence": "high",
+          "verified": false,
+          "sources": [
+            "https://www.engineeringtoolbox.com/water-density-specific-weight-d_595.html",
+            "https://fdc.nal.usda.gov/food-details/174158/portions"
+          ],
+          "note": "Water density is 0.994-1.000 g/ml between 4 and 35 degrees C (under 0.6% off). The measuring jug's markings limit accuracy, not density."
+        }
+      },
+      "yeast_solution": {
+        "measure": "ml",
+        "g_per_ml": {
+          "value": 1,
+          "unit": "g/ml",
+          "confidence": "high",
+          "verified": false,
+          "sources": [
+            "https://www.engineeringtoolbox.com/water-density-specific-weight-d_595.html"
+          ],
+          "note": "Own calculation, not a looked-up value: a 1% dry or 3% fresh yeast solution is about 1.001-1.003 g/ml, under 0.5% from 1 g/ml. Stir before pouring; the yeast settles."
+        }
+      },
+      "salt": {
+        "measure": "spoon",
+        "g_per_tsp": {
+          "value": 6,
+          "unit": "g",
+          "confidence": "high",
+          "verified": false,
+          "sources": [
+            "https://fdc.nal.usda.gov/food-details/173468/portions",
+            "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+            "https://www.177milkstreet.com/2021/02/worth-our-salt"
+          ],
+          "note": "Fine table salt, level 5 ml teaspoon (USDA 6.0 g/tsp; King Arthur 18 g/tbsp; Milk Street weighing 6 g). Coarse, kosher and flaky salts weigh 2.8-5 g per teaspoon (Milk Street, labels, King Arthur), so the site tells readers to weigh coarse salt."
+        }
+      },
+      "sugar": {
+        "measure": "spoon",
+        "g_per_tsp": {
+          "value": 4.2,
+          "unit": "g",
+          "confidence": "high",
+          "verified": false,
+          "sources": [
+            "https://fdc.nal.usda.gov/food-details/169655/portions",
+            "https://www.kingarthurbaking.com/learn/ingredient-weight-chart"
+          ],
+          "note": "Granulated white sugar, level 5 ml teaspoon (USDA 4.2 g/tsp; King Arthur 198 g per cup = 4.2 g per 5 ml)."
+        }
+      },
+      "oil": {
+        "measure": "spoon",
+        "g_per_tsp": {
+          "value": 4.6,
+          "unit": "g",
+          "confidence": "high",
+          "verified": false,
+          "sources": [
+            "https://fdc.nal.usda.gov/food-details/171413/portions",
+            "https://laws.justice.gc.ca/eng/regulations/c.r.c.,_c._870/section-B.09.003-20060322.html"
+          ],
+          "note": "Olive oil density 0.91-0.92 g/ml (USDA 216 g per US cup; Canadian regulation B.09.003 relative density 0.910-0.916). 5 ml x 0.913 = 4.6 g. King Arthur's lower value (0.85 g/ml) is not used."
+        },
+        "g_per_tbsp": {
+          "value": 13.7,
+          "unit": "g",
+          "confidence": "high",
+          "verified": false,
+          "sources": [
+            "https://fdc.nal.usda.gov/food-details/171413/portions",
+            "https://laws.justice.gc.ca/eng/regulations/c.r.c.,_c._870/section-B.09.003-20060322.html"
+          ],
+          "note": "15 ml x 0.913 g/ml = 13.7 g (USDA 13.5 g per US tablespoon). Oil is shown in tablespoons from 1 tablespoon up, below that in teaspoons."
+        }
+      },
+      "yeast_dry": {
+        "measure": "spoon",
+        "g_per_tsp": {
+          "value": 3.1,
+          "unit": "g",
+          "confidence": "high",
+          "verified": false,
+          "sources": [
+            "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+            "https://redstaryeast.com/products/red-star/red-star-quick-rise-yeast",
+            "https://www.shoprite.com/sm/delivery/rsid/207/product/red-star-quickrise-instant-yeast-14-oz-3-count-id-00017929000288"
+          ],
+          "note": "Instant dry yeast, level 5 ml teaspoon: King Arthur 2 1/4 tsp = 7 g; packet labels 7 g = about 2 1/4 tsp. USDA lists 4 g/tsp for active dry yeast, which contradicts its own 7.2 g packet = 1.8 tsp; not used. Granule size varies by brand (+/-10%)."
+        }
+      },
+      "yeast_fresh": {
+        "measure": "cube",
+        "note": "Fresh yeast is shown as a fraction of the cube (yeast.solution.fresh.cube_g); no reliable teaspoon value exists."
+      }
+    }
+  },
   "methods": {
     "warm_2h": {
       "yeast_pct_dry": {

@@ -95,5 +95,5 @@ test("the recipe page table ends with the total dough row, equal to the sum of t
   }
   const njk = readFileSync(new URL("../src/recipe.njk", import.meta.url), "utf8");
   const body = njk.slice(njk.indexOf('id="ing-body"'), njk.indexOf("</tbody>"));
-  assert.ok(body.trimEnd().endsWith('<td class="num">{{ page_data.dough_g | num(lang) }}</td></tr>'), "total is the last row");
+  assert.ok(body.trimEnd().endsWith('<td class="num">{{ page_data.dough_g | num(lang) }}</td><td></td></tr>'), "total is the last row");
 });

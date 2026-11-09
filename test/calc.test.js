@@ -1,7 +1,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { computeRecipe, roundArea, formatNumber, yeastCard } from "../src/assets/calc.js";
+import { computeRecipe, roundArea, formatNumber, yeastCard, householdMeasure } from "../src/assets/calc.js";
+import { formatMeasure } from "../src/assets/i18n.js";
 
 const data = JSON.parse(readFileSync(new URL("../src/_data/recipes.json", import.meta.url)));
 
@@ -353,4 +354,115 @@ test("yeastCard: warnings exactly when there is no yeast amount; every line has 
             assert.equal(hasYeastRow, r.yeast.mode !== "unavailable", label);
             for (const t of strings) for (const l of lines) assert.ok(t[l.group][l.key], `${label}: ${l.group}.${l.key}`);
           }
+});
+
+// ---- Household measures (the approximate "About" column) ------------------------------------------------
+const hm = (id, grams) => householdMeasure(id, grams, data);
+
+test("householdMeasure: data basis is 5 ml teaspoon, 15 ml tablespoon, 1/4 spoon steps", () => {
+  const m = data.measures;
+  assert.deepEqual([m.tsp_ml.value, m.tbsp_ml.value, m.spoon_step.value, m.spoon_min.value], [5, 15, 0.25, 0.25]);
+  assert.deepEqual([m.cube_step.value, m.cube_min.value], [0.125, 0.25]);
+  const i = m.ingredients;
+  assert.deepEqual([i.salt.g_per_tsp.value, i.sugar.g_per_tsp.value, i.yeast_dry.g_per_tsp.value], [6, 4.2, 3.1]);
+  assert.deepEqual([i.oil.g_per_tsp.value, i.oil.g_per_tbsp.value], [4.6, 13.7]);
+  assert.deepEqual([i.water.g_per_ml.value, i.yeast_solution.g_per_ml.value], [1, 1]);
+});
+
+test("householdMeasure: no measure for flour, unknown ids and empty amounts", () => {
+  assert.equal(hm("flour", 300), null);
+  assert.equal(hm("cheese", 10), null);
+  assert.equal(hm("salt", 0), null);
+  assert.equal(hm("salt", NaN), null);
+});
+
+test("householdMeasure: water and yeast solution in whole ml (1 g = 1 ml)", () => {
+  assert.deepEqual(hm("water", 126.97), { unit: "ml", amount: 127 });
+  assert.deepEqual(hm("yeast_solution", 59.06), { unit: "ml", amount: 59 });
+  assert.deepEqual(hm("water", 0.6), { unit: "ml", amount: 1 });
+  assert.equal(hm("water", 0.4), null);
+});
+
+test("householdMeasure: teaspoons rounded to the nearest 1/4 (hand-computed)", () => {
+  assert.deepEqual(hm("salt", 6.88), { unit: "tsp", amount: 1.25 }); // 1.147 tsp: 4.59 quarters -> 5
+  assert.deepEqual(hm("salt", 8.087), { unit: "tsp", amount: 1.25 }); // 1.348
+  assert.deepEqual(hm("salt", 15), { unit: "tsp", amount: 2.5 }); // 2.5 exactly
+  assert.deepEqual(hm("salt", 69), { unit: "tsp", amount: 11.5 }); // salt stays in teaspoons
+  assert.deepEqual(hm("sugar", 2.953), { unit: "tsp", amount: 0.75 }); // 0.703
+  assert.deepEqual(hm("sugar", 2.12), { unit: "tsp", amount: 0.5 }); // 0.505
+  assert.deepEqual(hm("yeast_dry", 1.961), { unit: "tsp", amount: 0.75 }); // 0.633
+  assert.deepEqual(hm("yeast_dry", 1), { unit: "tsp", amount: 0.25 }); // 0.323
+});
+
+test("householdMeasure: under 1/4 teaspoon there is no spoon amount", () => {
+  assert.equal(hm("yeast_dry", 0.77), null); // 0.248 tsp
+  assert.deepEqual(hm("yeast_dry", 0.78), { unit: "tsp", amount: 0.25 }); // 0.252
+  assert.equal(hm("salt", 1.4), null); // 0.233
+  assert.equal(hm("sugar", 1), null); // 0.238
+});
+
+test("householdMeasure: oil in teaspoons below 1 tablespoon, tablespoons from 1 tablespoon up", () => {
+  assert.deepEqual(hm("oil", 8.858), { unit: "tsp", amount: 2 }); // 1.926 tsp
+  assert.deepEqual(hm("oil", 13.6), { unit: "tsp", amount: 3 }); // 2.957 tsp, still under 13.7 g
+  assert.deepEqual(hm("oil", 13.7), { unit: "tbsp", amount: 1 });
+  assert.deepEqual(hm("oil", 17.716), { unit: "tbsp", amount: 1.25 }); // 1.293
+  assert.deepEqual(hm("oil", 0.9), null); // 0.196 tsp
+});
+
+test("householdMeasure: fresh yeast as a fraction of the 42 g cube, nearest 1/8, at least 1/4", () => {
+  assert.equal(data.yeast.solution.fresh.cube_g.value, 42);
+  assert.deepEqual(hm("yeast_fresh", 11.765), { unit: "cube", amount: 0.25 }); // 0.280
+  assert.deepEqual(hm("yeast_fresh", 21), { unit: "cube", amount: 0.5 });
+  assert.deepEqual(hm("yeast_fresh", 15.5), { unit: "cube", amount: 0.375 }); // 0.369
+  assert.deepEqual(hm("yeast_fresh", 58.8), { unit: "cube", amount: 1.375 }); // 1.4
+  assert.equal(hm("yeast_fresh", 10.4), null); // 0.248 cube
+  assert.equal(hm("yeast_fresh", 5.9), null);
+});
+
+const i18n = Object.fromEntries(["en", "fa"].map((l) => [l, JSON.parse(readFileSync(new URL(`../src/_data/i18n/${l}.json`, import.meta.url)))]));
+
+test("formatMeasure: fractions and units in English and Farsi (no Latin letters in Farsi)", () => {
+  const en = (m) => formatMeasure(m, i18n.en.measure, "en");
+  const fa = (m) => formatMeasure(m, i18n.fa.measure, "fa");
+  assert.equal(en(null), "");
+  assert.equal(en({ unit: "tsp", amount: 1.25 }), "≈ 1 ¼ tsp");
+  assert.equal(en({ unit: "tsp", amount: 0.75 }), "≈ ¾ tsp");
+  assert.equal(en({ unit: "tbsp", amount: 2 }), "≈ 2 tbsp");
+  assert.equal(en({ unit: "ml", amount: 1270 }), "≈ 1,270 ml");
+  assert.equal(en({ unit: "cube", amount: 0.5 }), "≈ ½ cube");
+  assert.equal(en({ unit: "cube", amount: 1.375 }), "≈ 1 ⅜ cubes");
+  assert.equal(fa({ unit: "tsp", amount: 1.25 }), "≈ ۱ و یک‌چهارم قاشق چای‌خوری");
+  assert.equal(fa({ unit: "tsp", amount: 0.5 }), "≈ نیم قاشق چای‌خوری");
+  assert.equal(fa({ unit: "ml", amount: 127 }), "≈ ۱۲۷ میلی‌لیتر");
+  assert.equal(fa({ unit: "cube", amount: 0.25 }), "≈ یک‌چهارم قالب");
+});
+
+test("householdMeasure: every ingredient row of every style, method, yeast, size and count gives null or a valid measure with text in both languages", () => {
+  const steps = { ml: 1, tsp: 0.25, tbsp: 0.25, cube: 0.125 };
+  const counts = {};
+  for (const styleId of Object.keys(data.styles))
+    for (const methodId of Object.keys(data.methods))
+      for (const yeastType of ["dry", "fresh"])
+        for (const d of [26, 30, 32])
+          for (const pizzas of [1, 2, 3, 4, 5, 6, 10, 20]) {
+            const r = computeRecipe({ styleId, methodId, yeastType, mode: { pizzas, size: round(d) } }, data);
+            for (const i of r.ingredients) {
+              const label = `${styleId} ${methodId} ${yeastType} ${d} cm x ${pizzas}: ${i.id}`;
+              const m = hm(i.id, i.g);
+              if (i.id === "flour") assert.equal(m, null, label);
+              if (m == null) continue;
+              assert.ok(i.id in data.measures.ingredients, label);
+              assert.ok(steps[m.unit], label);
+              assert.ok(m.amount > 0 && Number.isInteger(m.amount / steps[m.unit]), `${label} ${m.amount}`);
+              if (m.unit === "tsp" || m.unit === "tbsp") assert.ok(m.amount >= 0.25, label);
+              if (m.unit === "cube") assert.ok(m.amount >= 0.25, label);
+              counts[m.unit] = (counts[m.unit] ?? 0) + 1;
+              for (const lang of ["en", "fa"]) {
+                const text = formatMeasure(m, i18n[lang].measure, lang);
+                assert.ok(text.startsWith("≈ ") && !/[{}]|undefined/.test(text), `${label} ${lang}: ${text}`);
+                if (lang === "fa") assert.ok(!/[A-Za-z0-9]/.test(text), `${label} fa: ${text}`);
+              }
+            }
+          }
+  for (const u of Object.keys(steps)) assert.ok(counts[u] > 0, `some rows use ${u}`);
 });
