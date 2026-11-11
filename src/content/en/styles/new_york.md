@@ -68,13 +68,11 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
    > Why: There is little time, so kneading has to build the gluten that a long rest would build.
 4. **Let the dough rise**
    1. Put the dough in an oiled container with a lid (see the section "Container, oil and cover"). The container needs room for the dough to double.
-   2. Leave it in a warm place for about {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes. A good temperature is {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees.
+   2. Leave it in a warm place for about {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes. A good temperature is {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees. A switched-off oven with the light on works well.
    3. The dough should grow to {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size, with a soft, puffy surface. If you have no warm place, the rise can take up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes. The time is only a guide: the dough decides. Go by the size of the dough, not the clock. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough).
    > Why: The yeast makes gas, and the gas makes the dough bigger and puffier. The air in the dough makes the rim puff in the oven. The cover keeps the surface from drying into a skin.
 
    > Tip: Mark the level of the dough on the outside of the container with tape or a pen. Then you can see how much it has grown.
-
-   > Tip: A switched-off oven with the light on is a good warm place. Take the dough out before you turn the oven on, because a plastic container or lid melts in a hot oven.
 5. **Heat the oven and the baking surface**
    Do this about halfway through the rise, so the surface is hot when the balls are ready (see the section "Oven and baking surface").
    1. If the dough is rising in the oven, take it out first.
