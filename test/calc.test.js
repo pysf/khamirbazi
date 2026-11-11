@@ -467,3 +467,8 @@ test("householdMeasure: every ingredient row of every style, method, yeast, size
           }
   for (const u of Object.keys(steps)) assert.ok(counts[u] > 0, `some rows use ${u}`);
 });
+
+test("the calculator allows at most max_pizzas pizzas (owner decision: 6)", () => {
+  assert.equal(data.max_pizzas.value, 6);
+  assert.ok(data.methods.warm_2h.min_pizzas <= data.max_pizzas.value);
+});

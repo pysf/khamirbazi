@@ -256,6 +256,13 @@
       "note": "Validation review 2026-11 (m8): if the paper is rated below the oven temperature, pull it out from under the pizza after the first 2-3 minutes, when the base has set. Practice advice, untested. See docs/test-bake-plan.md, item 6."
     }
   },
+  "max_pizzas": {
+    "value": 6,
+    "confidence": "low",
+    "verified": false,
+    "sources": [],
+    "note": "Owner decision (2026-11-11): the calculator allows 1 to 6 pizzas. Larger batches are hard at home: one pizza bakes at a time (about 15-20 min each with pan recovery), so the last balls over-rise; more dough than a normal bowl, hand kneading or fridge space handles. Not explained on the site."
+  },
   "sizes": [
     {
       "id": "round_26",
