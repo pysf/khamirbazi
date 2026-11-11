@@ -16,7 +16,7 @@ eleventyComputed:
   <p>{{ h.sub }}</p>
 </section>
 <section class="calc" aria-label="{{ h.calc_label }}" id="calc"
-  data-min-pizzas="{{ recipes.methods.warm_2h.min_pizzas }}" data-min-g="{{ recipes.yeast.min_weigh_g.value }}">
+  data-min-pizzas="{{ recipes.methods.warm_2h.min_pizzas }}" data-max-pizzas="{{ recipes.max_pizzas.value }}" data-min-g="{{ recipes.yeast.min_weigh_g.value }}">
   <div class="card rows" role="group" aria-label="{{ h.calc_label }}">
     <div class="row"><label class="k" for="f-style">{{ h.style }}</label>
       <span class="selw"><select id="f-style" class="sel">{% for id in site.uiStyles %}<option value="{{ id }}" data-url="{{ ('/' + lang + '/recipe/' + id + '/') | url }}" data-methods="{{ recipes.styles[id].methods_typical | join(' ') }}" data-default="{{ recipes.styles[id].default_method }}">{{ t.styles[id].name }}</option>{% endfor %}</select>{% icon "chev", "chv" %}</span></div>

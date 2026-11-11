@@ -30,6 +30,7 @@ Every push to `main` deploys to GitHub Pages (`.github/workflows/pages.yml`).
 ## Writing content
 
 - `## Heading {methods=warm_2h}`: the main steps of those fermentations. Other `##` sections go under "More details".
+- `## Heading {#some-id}`: gives the section an id (the same in both languages), so text can link to it, for example `[Reading the dough](/en/basics/#reading-the-dough)`.
 - Steps: `1. **Short title**`, then the body indented below. Numbered sub-steps for actions in order, bullets for alternatives.
 - Under a step: `> Why:` (a note), `> Tip:`, `> Warning:`, `> Safety:` (callouts). Markers stay English in both languages.
 - Numbers only as `{{ recipes.… }}`, never typed in text, and never in a `##` heading.

@@ -38,7 +38,7 @@
     "cta": "Show recipe",
     "new_to": "New to dough?",
     "new_to_sub": "Read the basics",
-    "err_min_batch": "Warm fermentation (2 hours) needs at least {min} pizzas, with dry or fresh yeast. For one pizza the dry yeast would weigh less than {min_g} g, which a kitchen scale cannot show. Choose another fermentation, or make {min} pizzas."
+    "err_min_batch": "Warm fermentation (2 hours) needs at least {min} pizzas, with dry or fresh yeast. For one pizza the dry yeast is too little to weigh well on a kitchen scale that reads whole grams. Choose another fermentation, or make {min} pizzas."
   },
   "recipe": {
     "change": "Change",
@@ -98,7 +98,7 @@
   "warn": {
     "parchment": "Baking paper is optional. If you use it, check the maximum temperature printed on the pack. Many papers are rated to {max_c} degrees, which is lower than this oven. Keep the paper away from the heating elements and the oven walls. Do not use wax paper. If your paper is rated below the oven temperature, pull it out from under the pizza after the first {pull_min} to {pull_max} minutes.",
     "oil_smoke": "Extra-virgin olive oil starts to smoke at about {min_c} to {max_c} degrees. Do not oil the hot baking surface. Oil mixed into the dough is fine.",
-    "min_batch": "This fermentation needs at least {min_pizzas} pizzas, but you chose {pizzas}. For one pizza the dry yeast would weigh less than {min_g} g, which a kitchen scale cannot show. This guide uses the same rule for fresh yeast.",
+    "min_batch": "This fermentation needs at least {min_pizzas} pizzas, but you chose {pizzas}. For one pizza the dry yeast is too little to weigh well on a kitchen scale that reads whole grams. This guide uses the same rule for fresh yeast.",
     "batch_too_small": "This batch is too small: the yeast would weigh less than a kitchen scale can show, even as a yeast solution. Make more pizzas."
   },
   "card": {

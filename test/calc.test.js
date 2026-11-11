@@ -16,14 +16,14 @@ const two = { pizzas: 2 };
 // see comments for the dough mass and the divisor.
 // [style, method, mode, flour, water to add, solution to take (or null), direct dry yeast (or null), salt, sugar, oil]
 const cases = [
-  // New York: 2 x 250 g = 500 g, divisor 1.7 (warm: with yeast 0.6667%) or 1.6933 (solution)
-  ["new_york", "warm_2h", two, 294.12, 185.3, null, 1.961, 6.853, 2.941, 8.824],
+  // New York: 2 x 250 g = 500 g, divisor 1.7 (warm: with yeast 1%) or 1.6933 (solution)
+  ["new_york", "warm_2h", two, 293.55, 184.93, null, 2.935, 6.840, 2.935, 8.806],
   ["new_york", "cold_24h", two, 295.28, 126.97, 59.06, null, 6.88, 2.953, 8.858],
   ["new_york", "cold_48h", two, 295.28, 141.74, 44.29, null, 6.88, 2.953, 8.858],
   ["new_york", "room_8_12h", two, 295.28, 156.5, 29.53, null, 6.88, 2.953, 8.858],
-  // Neapolitan: 500 g, hydration 61.7, salt 2.67, sugar 0.7, no oil
-  ["neapolitan", "warm_2h", two, 301.68, 186.14, null, 2.011, 8.055, 2.112, null],
-  ["neapolitan", "cold_24h", two, 302.9, 126.31, 60.58, null, 8.087, 2.12, null],
+  // Neapolitan: 500 g, hydration 61.7, salt 2.8, sugar 0.7, no oil
+  ["neapolitan", "warm_2h", two, 300.84, 185.62, null, 3.008, 8.424, 2.106, null],
+  ["neapolitan", "cold_24h", two, 302.66, 126.21, 60.53, null, 8.475, 2.119, null],
 ];
 
 for (const [style, method, mode, flour, water, take, yeast, salt, sugar, oil] of cases) {
@@ -55,7 +55,7 @@ for (const [style, method, mode, flour, water, take, yeast, salt, sugar, oil] of
 }
 
 test("yeast percentages per method (instant dry, % of flour)", () => {
-  const expected = { warm_2h: 2 / 300 * 100, room_8_12h: 0.1, cold_12_16h: 0.3, cold_24h: 0.2, cold_48h: 0.15, cold_72h: 0.1 };
+  const expected = { warm_2h: 1, room_8_12h: 0.1, cold_12_16h: 0.3, cold_24h: 0.2, cold_48h: 0.15, cold_72h: 0.1 };
   for (const [id, pct] of Object.entries(expected)) {
     near(data.methods[id].yeast_pct_dry.value, pct, 1e-9, id);
     assert.equal(data.methods[id].yeast_pct_dry.confidence, "low");
@@ -106,8 +106,8 @@ test("solution threshold: under 1.5 g dry-equivalent uses solution, otherwise we
 });
 
 test("when the solution would exceed the recipe water, weigh the yeast and warn", () => {
-  const r = computeRecipe({ styleId: "new_york", methodId: "warm_2h", mode: { pizzas: 2, ballWeight: 150 } }, data);
-  // a small batch: the solution would be more than all the recipe water
+  const r = computeRecipe({ styleId: "new_york", methodId: "warm_2h", mode: { pizzas: 2, ballWeight: 100 } }, data);
+  // a small batch (200 g dough, 117.4 g flour, 1.17 g yeast; the 1% solution would be 117 g, more than the 74 g water): the solution would be more than all the recipe water
   assert.equal(r.yeast.mode, "direct");
   assert.ok(r.warnings.some((w) => w.id === "solution_exceeds_water"));
   assert.ok(r.water.add_g > 0);
@@ -326,8 +326,9 @@ test("yeastCard: a yeast solution or a whole-gram amount needs no extra line", (
   near(g(r, "yeast_dry"), 1.77, 0.01);
 });
 
-test("yeastCard: warm method, 2 x 26 cm: 1.47 g lies between two scale readings", () => {
-  const lines = card("new_york", "warm_2h", 2, 26);
+test("yeastCard: a small warm batch (2 x 100 g, 1.17 g yeast) lies between two scale readings", () => {
+  const r = computeRecipe({ styleId: "new_york", methodId: "warm_2h", mode: { pizzas: 2, ballWeight: 100 } }, data);
+  const lines = yeastCard(r, data);
   assert.deepEqual(lines.map((l) => l.key), ["scale_resolution"]);
   assert.deepEqual([lines[0].params.lo, lines[0].params.hi], [1, 2]);
 });
@@ -465,4 +466,9 @@ test("householdMeasure: every ingredient row of every style, method, yeast, size
             }
           }
   for (const u of Object.keys(steps)) assert.ok(counts[u] > 0, `some rows use ${u}`);
+});
+
+test("the calculator allows at most max_pizzas pizzas (owner decision: 6)", () => {
+  assert.equal(data.max_pizzas.value, 6);
+  assert.ok(data.methods.warm_2h.min_pizzas <= data.max_pizzas.value);
 });

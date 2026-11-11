@@ -13,7 +13,7 @@ const methodId = pick("method", Object.keys(data.methods), style.default_method)
 const size = sizes.find((s) => s.id === q.get("size")) ?? sizes.find((s) => s.id === "round_30");
 const yeastType = pick("yeast", ["dry", "fresh"], "dry");
 const n = Number(q.get("pizzas"));
-const pizzas = Number.isInteger(n) && n >= 1 && n <= 20 ? n : 2;
+const pizzas = Number.isInteger(n) && n >= 1 && n <= data.max_pizzas.value ? n : 2;
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
 const fill = (str, params) => interpolate(str, params, lang);

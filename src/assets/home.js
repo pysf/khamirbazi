@@ -10,6 +10,7 @@ const countEl = $("#f-count");
 const err = $("#count-err");
 const cta = $("#cta");
 const minPizzas = Number(calc.dataset.minPizzas);
+const maxPizzas = Number(calc.dataset.maxPizzas);
 const labels = JSON.parse($("#method-labels").textContent);
 const lang = document.documentElement.lang; // "fa" shows Persian digits; URLs and values stay Western
 const state = { size: "round_30", pizzas: 2, yeast: "dry" };
@@ -48,7 +49,7 @@ if ([...styleSel.options].some((o) => o.value === params.get("style"))) styleSel
 if ($(`[data-group="size"] [data-value="${params.get("size")}"]`)) state.size = params.get("size");
 if (params.get("yeast") === "fresh") state.yeast = "fresh";
 const n = Number(params.get("pizzas"));
-if (Number.isInteger(n) && n >= 1 && n <= 20) state.pizzas = n;
+if (Number.isInteger(n) && n >= 1 && n <= maxPizzas) state.pizzas = n;
 fillMethods(params.get("method"));
 group("size", state.size);
 group("yeast", state.yeast);
@@ -60,7 +61,7 @@ calc.addEventListener("click", (e) => {
   if (!b) return;
   const g = b.closest("[data-group]")?.dataset.group;
   if (g) { state[g] = b.dataset.value; group(g, state[g]); }
-  else if (b.dataset.step) state.pizzas = Math.min(20, Math.max(1, state.pizzas + Number(b.dataset.step)));
+  else if (b.dataset.step) state.pizzas = Math.min(maxPizzas, Math.max(1, state.pizzas + Number(b.dataset.step)));
   else return;
   render();
 });

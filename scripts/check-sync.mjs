@@ -78,6 +78,8 @@ function shape(text) {
     safety: count(/^\s*> Safety:/gm),
     vars: [...body.matchAll(/\{\{\s*([^}|]+?)\s*(?:\|[^}]*)?\}\}/g)].map((m) => m[1]).sort().join(","),
     links: count(/\]\(/g),
+    // "## Heading {#id}" gives a section an id for links; both languages use the same ids.
+    ids: [...body.matchAll(/^#+ .*\{#([\w-]+)\}\s*$/gm)].map((m) => m[1]).join(","),
     // "## Heading {methods=a,b}" marks the main step list of those methods: same markers, same order in both languages
     methodSections: [...body.matchAll(/^## .*\{methods=([\w,]+)\}\s*$/gm)].map((m) => m[1]).join(";"),
   };
@@ -167,6 +169,7 @@ function latinWords(line) {
   const s = line
     .replace(/\{\{[^}]*\}\}/g, " ")
     .replace(/\{methods=[\w,]+\}/g, " ")
+    .replace(/\{#[\w-]+\}/g, " ")
     .replace(/\{\w+\}/g, " ")
     .replace(/^(\s*>\s*)(Why|Tip|Warning|Safety):/, "$1")
     .replace(/(https?:\/\/|\/)[^\s)"]*/g, " ");

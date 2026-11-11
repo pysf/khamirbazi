@@ -256,6 +256,13 @@
       "note": "Validation review 2026-11 (m8): if the paper is rated below the oven temperature, pull it out from under the pizza after the first 2-3 minutes, when the base has set. Practice advice, untested. See docs/test-bake-plan.md, item 6."
     }
   },
+  "max_pizzas": {
+    "value": 6,
+    "confidence": "low",
+    "verified": false,
+    "sources": [],
+    "note": "Owner decision (2026-11-11): the calculator allows 1 to 6 pizzas. Larger batches are hard at home: one pizza bakes at a time (about 15-20 min each with pan recovery), so the last balls over-rise; more dough than a normal bowl, hand kneading or fridge space handles. Not explained on the site."
+  },
   "sizes": [
     {
       "id": "round_26",
@@ -448,12 +455,12 @@
   "methods": {
     "warm_2h": {
       "yeast_pct_dry": {
-        "value": 0.6666666666666666,
+        "value": 1,
         "unit": "% of flour, instant dry yeast",
         "confidence": "low",
         "verified": false,
         "sources": [],
-        "note": "2 g per 300 g flour (0.667%). Typical straight-dough rule of thumb is 0.5-0.7% instant yeast (pizzamaking forum, secondhand); Reinhart NY about 0.71%. Sources vary up to 5x with fridge temperature and yeast brand. Treat as a starting point and adjust after baking. Validation review 2026-11 (m12): plausible at 26-28 C, at the low end for a 1.5-2x rise in 45-60 min; in a 21 C room it can take up to 90 min. See docs/test-bake-plan.md, item 1 (raise to about 0.8-1% if the rise takes more than 75 min at 26-28 C)."
+        "note": "1.0% instant dry yeast for a 45-60 min rise (was 0.67%, 2 g per 300 g flour). Sources vary up to 5x with fridge temperature and yeast brand. Reason: 0.67% only works in a real 26-28 C place; ordinary bread uses about 1.4% (7 g per 500 g flour) for a 60-90 min rise. An expert review (a model opinion, not a source) suggested 0.8-1.0%. Typical straight-dough rule of thumb 0.5-0.7% (pizzamaking forum, secondhand); Reinhart NY about 0.71%. Owner-approved 2026-11-11; not test-baked. In a 21 C room the rise can still take up to 90 min: watch the size, not the clock."
       },
       "water_temp_c": {
         "value": 30,
@@ -500,7 +507,7 @@
       },
       "fridge_h": null,
       "min_pizzas": 2,
-      "min_pizzas_note": "1 pizza needs under 1 g dry yeast (0.98 g at 30 cm) and the scale reads whole grams. Fresh yeast for 1 pizza would be about 2.2-3.3 g (weighable), but the user's rule (at least 2 pizzas for the warm method) is kept for both yeast types; the owner confirmed this rule after the validation (m4).",
+      "min_pizzas_note": "1 pizza needs only about 1.5 g dry yeast (1.47 g at 30 cm), which is hard to weigh on a scale that reads whole grams. Fresh yeast for 1 pizza would be about 2.2-3.3 g (weighable), but the user's rule (at least 2 pizzas for the warm method) is kept for both yeast types; the owner confirmed this rule after the validation (m4).",
       "bulk_slow_max_min": {
         "value": 90,
         "unit": "min",
@@ -563,6 +570,16 @@
         ],
         "note": "Planning assumption: about 4 h in bulk, then about 5 h in balls = 9 h at 21 C, inside the 8-12 h window. AVPN allows 8-24 h in total; the split is an estimate (Naples practice: bulk then balls)."
       },
+      "bulk_h": {
+        "value": 4,
+        "unit": "h",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+        ],
+        "note": "Same as bulk_min, in hours for display (240 min = 4 h). Keep the two in step."
+      },
       "final_rest_min": {
         "value": 300,
         "unit": "min",
@@ -572,6 +589,16 @@
           "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
         ],
         "note": "Time in balls (or in the pan) at room temperature."
+      },
+      "final_rest_h": {
+        "value": 5,
+        "unit": "h",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+        ],
+        "note": "Same as final_rest_min, in hours for display (300 min = 5 h). Keep the two in step. Time in balls at room temperature."
       },
       "total_ferment_h": {
         "range": [
@@ -992,10 +1019,8 @@
         "unit": "g",
         "confidence": "low",
         "verified": false,
-        "sources": [
-          "https://www.surlatable.com/recipe/new-york-style-pizza-dough/REC-236776"
-        ],
-        "note": "About 30 cm pizza. Serious Eats (mirror) uses about 210 g for 12 in; 250 g is the user's guide value."
+        "sources": [],
+        "note": "About 30 cm pizza. 250 g is the owner's guide value; for comparison only, Serious Eats (Kenji) uses about 210 g for 12 in."
       },
       "dough_density_g_per_cm2": {
         "value": 0.35367765,
@@ -1003,7 +1028,7 @@
         "confidence": "low",
         "verified": false,
         "sources": [],
-        "note": "Derived from the user's guide v7 ball weight and diameter: 250 g for a 30 cm pizza = 250 / (pi x 15^2). Dough per pizza = pizza area x this density. Serious Eats uses about 210 g for 12 in (30 cm), which is lower."
+        "note": "Derived from the user's guide v7 ball weight and diameter: 250 g for a 30 cm pizza = 250 / (pi x 15^2). Dough per pizza = pizza area x this density. For comparison only, Serious Eats uses about 210 g for 12 in (30 cm), which is lower."
       },
       "dough": {
         "hydration": {
@@ -1011,40 +1036,32 @@
           "unit": "% of flour",
           "confidence": "medium",
           "verified": false,
-          "sources": [
-            "https://www.surlatable.com/recipe/new-york-style-pizza-dough/REC-236776"
-          ],
-          "note": "Typical NY range 58-65% (Lehmann/pizzamaking, not retrieved); Serious Eats mirror about 67%; Reinhart about 65%."
+          "sources": [],
+          "note": "Owner's own recipe (guide v7); within the typical New York range. Kenji López-Alt's Serious Eats recipe is a thicker, richer variant (about 67% water, 2% sugar, 5% oil), kept here as a comparison only. Typical NY range 58-65% (Lehmann/pizzamaking, not retrieved); Reinhart about 65%."
         },
         "salt": {
           "value": 2.33,
           "unit": "% of flour",
           "confidence": "medium",
           "verified": false,
-          "sources": [
-            "https://www.surlatable.com/recipe/new-york-style-pizza-dough/REC-236776"
-          ],
-          "note": "7 g per 300 g flour. Slightly above the typical 1.75-2%."
+          "sources": [],
+          "note": "Owner's own recipe (guide v7); within the typical New York range. Kenji López-Alt's Serious Eats recipe is a thicker, richer variant (about 67% water, 2% sugar, 5% oil), kept here as a comparison only. 7 g per 300 g flour. Slightly above the typical 1.75-2%."
         },
         "sugar": {
           "value": 1,
           "unit": "% of flour",
           "confidence": "medium",
           "verified": false,
-          "sources": [
-            "https://www.surlatable.com/recipe/new-york-style-pizza-dough/REC-236776"
-          ],
-          "note": "Typical 0-2%."
+          "sources": [],
+          "note": "Owner's own recipe (guide v7); within the typical New York range. Kenji López-Alt's Serious Eats recipe is a thicker, richer variant (about 67% water, 2% sugar, 5% oil), kept here as a comparison only. Typical 0-2%."
         },
         "oil": {
           "value": 3,
           "unit": "% of flour",
           "confidence": "medium",
           "verified": false,
-          "sources": [
-            "https://www.surlatable.com/recipe/new-york-style-pizza-dough/REC-236776"
-          ],
-          "note": "Typical 1-3%; Serious Eats mirror 5%, Reinhart about 6%."
+          "sources": [],
+          "note": "Owner's own recipe (guide v7); within the typical New York range. Kenji López-Alt's Serious Eats recipe is a thicker, richer variant (about 67% water, 2% sugar, 5% oil), kept here as a comparison only. Typical 1-3%; Reinhart about 6%."
         }
       },
       "bake": {
@@ -1455,7 +1472,7 @@
           "note": "AVPN: 1600-1800 g flour per litre of water (about 56-63%). Home-oven sources use 65-76% because the bake is longer (America's Test Kitchen about 76%). AVPN numbers were read from the AVPN page by a summarizing tool; re-check the official PDF."
         },
         "salt": {
-          "value": 2.67,
+          "value": 2.8,
           "range": [
             2.2,
             3.75
@@ -1464,9 +1481,10 @@
           "confidence": "medium",
           "verified": false,
           "sources": [
-            "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+            "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana",
+            "https://www.legislation.gov.uk/eur/2010/97/annex/II"
           ],
-          "note": "AVPN 40-60 g per litre of water with 1.6-1.8 kg flour = about 2.2-3.75% of flour (validation n4 corrected the earlier '2.4-3.5%'); STG reportedly 50-55 g/L (secondary summary)."
+          "note": "AVPN 40-60 g per litre of water with 1.6-1.8 kg flour = about 2.2-3.75% of flour (validation n4 corrected the earlier '2.4-3.5%'); STG reportedly 50-55 g/L (secondary summary). EU Reg. 97/2010 (Pizza Napoletana TSG) gives 50-55 g salt per litre of water with 1.8 kg flour = 2.78-3.06%; 2.8% sits inside both the AVPN page range and the TSG range. Owner-approved 2026-11-11 (was 2.67%)."
         },
         "sugar": {
           "value": 0.7,
