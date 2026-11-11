@@ -119,3 +119,8 @@ test('a heading ending in "{#id}" gets that id and the marker is not shown', () 
   const html = md.render("## Reading the dough {#reading-the-dough}\n");
   assert.match(html, /<h2 id="reading-the-dough">Reading the dough<\/h2>/);
 });
+
+test("content links open in a new tab", () => {
+  const html = md.render("See [Reading the dough](/en/basics/#reading-the-dough).\n");
+  assert.match(html, /<a href="[^"]*reading-the-dough" target="_blank" rel="noopener">/);
+});
