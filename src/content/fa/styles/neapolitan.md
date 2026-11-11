@@ -26,7 +26,7 @@
 
 - **مزیت‌ها:** همان روز آماده است.
 - **عیب‌ها:** طعمش ساده‌تر و بیشتر شبیه نان معمولی است. از این سه تخمیر، کمترین شباهت را به اصلش دارد.
-- **دست‌کم {{ recipes.methods.warm_2h.min_pizzas }} پیتزا لازم دارد.** برای یک پیتزا مخمر خشک آن‌قدر کم می‌شود که ترازوی آشپزخانه نشانش نمی‌دهد. این راهنما برای مخمر تازه هم همین قاعده را نگه می‌دارد.
+- **دست‌کم {{ recipes.methods.warm_2h.min_pizzas }} پیتزا لازم دارد.** برای یک پیتزا مخمر خشک آن‌قدر کم است که ترازوی آشپزخانه‌ای که فقط گرم کامل نشان می‌دهد، آن را درست وزن نمی‌کند. این راهنما برای مخمر تازه هم همین قاعده را نگه می‌دارد.
 
 **خلاصه:** اگر وقت داری، برای نزدیک‌ترین نتیجه تخمیر در دمای اتاق را انتخاب کن، یا برای راحت‌ترین برنامه تخمیر سرد را. اگر می‌خواهی همین امروز بخوری، تخمیر گرم هم پیتزای خوشمزه‌ای می‌دهد.
 
@@ -69,7 +69,7 @@
    2. {{ recipes.methods.room_8_12h.knead_min.range.0 }} تا {{ recipes.methods.room_8_12h.knead_min.range.1 }} دقیقه ورز بده. بخش «ورز دادن» در صفحه‌ی دستور نیویورکی طرزش را نشان می‌دهد. روغن اضافه نکن.
    > Why: نمک گلوتن را قوی‌تر و کار مخمر را کند می‌کند. گلوتن همان شبکه‌ی کشسانی است که گاز مخمر را نگه می‌دارد.
 5. **بگذار خمیر ور بیاید**
-   خمیر را در ظرف دردار بگذار (بخش «ظرف، روغن و پوشش» در صفحه‌ی دستور نیویورکی را ببین). بگذار یک‌تکه، {{ recipes.methods.room_8_12h.bulk_min.value }} دقیقه در دمای اتاق بماند. در ظرف را بسته نگه دار تا سطح خمیر خشک نشود.
+   خمیر را در ظرف دردار بگذار (بخش «ظرف، روغن و پوشش» در صفحه‌ی دستور نیویورکی را ببین). بگذار یک‌تکه، حدود {{ recipes.methods.room_8_12h.bulk_min.value }} دقیقه در دمای اتاق بماند، تا {{ recipes.styles.new_york.practice.rise_factor.range.0 }} تا {{ recipes.styles.new_york.practice.rise_factor.range.1 }} برابر شود. زمان فقط راهنماست، خمیر تصمیم می‌گیرد و در آشپزخانه‌ی گرم زودتر آماده می‌شود. «خواندن خمیر» را در صفحه‌ی مبانی ببین. در ظرف را بسته نگه دار تا سطح خمیر خشک نشود.
    > Why: مخمر گاز می‌سازد و گاز خمیر را بزرگ و پف‌دار می‌کند. ور آمدن آرام در دمای اتاق طعم می‌سازد.
 
    > Tip: ظرفی بردار که خمیر بتواند دو برابر شود و به در ظرف نخورد. سطح خمیر را بیرون ظرف با چسب کاغذی یا ماژیک علامت بزن تا ببینی چقدر بزرگ شده است.
@@ -79,7 +79,7 @@
    3. هر تکه را چونه کن: لبه‌ها را به وسط جمع کن، برش گردان و با کف دست روی میز بچرخان تا سطحش کشیده و صاف شود. هر چونه را در یک ظرف دردار جدا بگذار.
    > Why: چونه‌های هم‌وزن یکنواخت می‌پزند و پیتزاهای هم‌اندازه می‌دهند. ترازو از چشم دقیق‌تر است. سطح کشیده گاز را داخل نگه می‌دارد و چونه بعداً راحت‌تر باز می‌شود.
 7. **چونه‌ها را استراحت بده**
-   بگذار چونه‌ها با در بسته {{ recipes.methods.room_8_12h.final_rest_min.value }} دقیقه بمانند. کل ور آمدن، از مخلوط کردن تا پخت، {{ recipes.methods.room_8_12h.total_ferment_h.range.0 }} تا {{ recipes.methods.room_8_12h.total_ferment_h.range.1 }} ساعت طول می‌کشد.
+   بگذار چونه‌ها با در بسته حدود {{ recipes.methods.room_8_12h.final_rest_min.value }} دقیقه بمانند، تا نرم و پف‌دار شوند و انگشت آردی که روی خمیر فشار می‌دهی جای فرورفتگی را آرام پر کند. «خواندن خمیر» را در صفحه‌ی مبانی ببین. کل ور آمدن، از مخلوط کردن تا پخت، {{ recipes.methods.room_8_12h.total_ferment_h.range.0 }} تا {{ recipes.methods.room_8_12h.total_ferment_h.range.1 }} ساعت طول می‌کشد.
    > Why: خمیر در چونه‌ها آرام به ور آمدن ادامه می‌دهد و گلوتن شل می‌شود. چونه‌ای که استراحت کرده راحت باز می‌شود و جمع نمی‌شود.
 8. **فر و سطح پخت را داغ کن**
    این کار را {{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه پیش از پخت انجام بده، وقتی چونه‌ها هنوز در حال استراحت‌اند. سطح پخت (سنگ پیتزا، فولاد پخت یا سینی چدنی) را در طبقه‌ی بالای فر بگذار، یعنی حدود یک‌سوم بالایی فر. فر را روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه، با گرمای بالا و پایین و **بدون فن** تنظیم کن.
@@ -149,8 +149,8 @@
    > Why: نمک گلوتن را قوی‌تر و کار مخمر را کند می‌کند.
 5. **بگذار خمیر ور بیاید**
    1. خمیر را در ظرف دردار بگذار (بخش «ظرف، روغن و پوشش» در صفحه‌ی دستور نیویورکی را ببین).
-   2. بگذار در دمای حدود {{ recipes.oven.room_c.value }} درجه، {{ recipes.methods.cold_24h.room_rest_min.range.0 }} تا {{ recipes.methods.cold_24h.room_rest_min.range.1 }} دقیقه بماند تا حدود {{ recipes.styles.new_york.practice.cold_rise_pct.value }} درصد بزرگ‌تر شود.
-   - اگر کشیدن و تا کردن را انتخاب کرده‌ای، در همین مدت {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} دور انجام بده: دور اول را همین حالا، بعد هر {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} دقیقه یک دور. بگذار ور آمدن کامل {{ recipes.methods.cold_24h.room_rest_min.range.1 }} دقیقه طول بکشد.
+   2. بگذار در دمای حدود {{ recipes.oven.room_c.value }} درجه، حدود {{ recipes.methods.cold_24h.room_rest_min.range.0 }} تا {{ recipes.methods.cold_24h.room_rest_min.range.1 }} دقیقه بماند. زمان فقط راهنماست: در آشپزخانه‌ی گرم زودتر و در آشپزخانه‌ی سرد دیرتر می‌شود. وقتی خمیر حدود {{ recipes.styles.new_york.practice.cold_rise_pct.value }} درصد بزرگ‌تر شد، آن را در یخچال بگذار. «خواندن خمیر» را در صفحه‌ی مبانی ببین.
+   - اگر کشیدن و تا کردن را انتخاب کرده‌ای، در همین مدت {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} دور انجام بده: دور اول را همین حالا، بعد هر {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} دقیقه یک دور. دورها همان‌قدر وقت می‌گیرند که می‌گیرند، پس همه را انجام بده. بعد از دور آخر خمیر را نگاه کن و وقتی حدود {{ recipes.styles.new_york.practice.cold_rise_pct.value }} درصد بزرگ‌تر شد، آن را در یخچال بگذار. اگر هنوز به آنجا نرسیده، کمی بیشتر صبر کن.
    > Why: مخمر پیش از رفتن به سرما یک شروع گرم و کوتاه لازم دارد.
 
    > Tip: ظرفی بردار که خمیر بتواند دو برابر شود و به در ظرف نخورد. سطح خمیر را بیرون ظرف با چسب کاغذی یا ماژیک علامت بزن تا ببینی چقدر بزرگ شده است.
@@ -163,7 +163,7 @@
    ظرف‌ها را {{ recipes.methods.cold_24h.fridge_h.value }} ساعت در یخچال بگذار.
    > Why: در یخچال مخمر آرام کار می‌کند و آنزیم‌ها فرصت دارند طعم بسازند. نتیجه طعم عمیق‌تر و رنگ‌گیری بهتر است.
 8. **خمیر را از یخچال دربیاور**
-   روز پخت، ظرف‌ها را {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} تا {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} دقیقه پیش از باز کردن چونه‌ها بیرون بیاور. در ظرف‌ها را باز نکن.
+   روز پخت، ظرف‌ها را حدود {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} تا {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} دقیقه پیش از باز کردن چونه‌ها بیرون بیاور. در ظرف‌ها را باز نکن. چونه وقتی آماده‌ی باز کردن است که نرم باشد و انگشت آردی که روی خمیر فشار می‌دهی جای فرورفتگی را آرام پر کند. «خواندن خمیر» را در صفحه‌ی مبانی ببین.
    > Why: خمیر سرد خوب کش نمی‌آید و پاره می‌شود. این رایج‌ترین اشتباه در تخمیر سرد است.
 9. **فر و سطح پخت را داغ کن**
    این کار را {{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه پیش از پخت انجام بده، همان وقتی که خمیر دارد از سرما درمی‌آید. سطح پخت (سنگ پیتزا، فولاد پخت یا سینی چدنی) را در طبقه‌ی بالای فر بگذار، یعنی حدود یک‌سوم بالایی فر. فر را روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه، با گرمای بالا و پایین و **بدون فن** تنظیم کن.
@@ -207,7 +207,7 @@
 
 خمیر را درست می‌کنی و حدود دو ساعت بعد می‌پزی. مقدارها را از جدول کارت «مواد لازم» بردار.
 
-> Warning: این تخمیر دست‌کم {{ recipes.methods.warm_2h.min_pizzas }} پیتزا لازم دارد. برای یک پیتزا مخمر خشک کمتر از {{ recipes.yeast.min_weigh_g.value }} گرم می‌شود و ترازوی آشپزخانه نمی‌تواند آن را نشان دهد. این راهنما برای مخمر تازه هم همین قاعده را دارد. برای یک پیتزا تخمیر دیگری انتخاب کن.
+> Warning: این تخمیر دست‌کم {{ recipes.methods.warm_2h.min_pizzas }} پیتزا لازم دارد. برای یک پیتزا مخمر خشک آن‌قدر کم است که ترازوی آشپزخانه‌ای که فقط گرم کامل نشان می‌دهد، آن را درست وزن نمی‌کند. این راهنما برای مخمر تازه هم همین قاعده را دارد. برای یک پیتزا تخمیر دیگری انتخاب کن.
 
 1. **مخمر را آماده کن**
    1. آب ولرم (حدود {{ recipes.methods.warm_2h.water_temp_c.value }} درجه) را در یک کاسه‌ی بزرگ بریز.
@@ -228,8 +228,8 @@
    > Why: وقت کم است، پس گلوتنی را که در استراحت طولانی خودبه‌خود ساخته می‌شد باید با ورز بسازی. نمک گلوتن را قوی‌تر و کار مخمر را کند می‌کند.
 4. **بگذار خمیر ور بیاید**
    1. خمیر را در ظرف دردار بگذار (بخش «ظرف، روغن و پوشش» در صفحه‌ی دستور نیویورکی را ببین).
-   2. بگذار در جای گرم، با دمای {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} تا {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} درجه، {{ recipes.methods.warm_2h.bulk_min.range.0 }} تا {{ recipes.methods.warm_2h.bulk_min.range.1 }} دقیقه بماند. فر خاموش با چراغ روشن جای خوبی است.
-   3. خمیر باید {{ recipes.styles.new_york.practice.rise_factor.range.0 }} تا {{ recipes.styles.new_york.practice.rise_factor.range.1 }} برابر شود. اگر جای گرم نداری، ور آمدن ممکن است تا {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} دقیقه طول بکشد: به اندازه‌ی خمیر نگاه کن، نه به ساعت.
+   2. بگذار در جای گرم، با دمای {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} تا {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} درجه، حدود {{ recipes.methods.warm_2h.bulk_min.range.0 }} تا {{ recipes.methods.warm_2h.bulk_min.range.1 }} دقیقه بماند. فر خاموش با چراغ روشن جای خوبی است.
+   3. خمیر باید {{ recipes.styles.new_york.practice.rise_factor.range.0 }} تا {{ recipes.styles.new_york.practice.rise_factor.range.1 }} برابر شود. اگر جای گرم نداری، ور آمدن ممکن است تا {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} دقیقه طول بکشد: زمان فقط راهنماست، پس به اندازه‌ی خمیر نگاه کن، نه به ساعت. «خواندن خمیر» را در صفحه‌ی مبانی ببین.
    > Why: مخمر گاز می‌سازد و گاز خمیر را بزرگ می‌کند. همین هوا باعث می‌شود حاشیه در فر پف کند.
 
    > Tip: ظرفی بردار که خمیر بتواند دو برابر شود و به در ظرف نخورد. سطح خمیر را بیرون ظرف با چسب کاغذی یا ماژیک علامت بزن تا ببینی چقدر بزرگ شده است.
@@ -245,7 +245,7 @@
    3. هر تکه را چونه کن: لبه‌ها را به وسط جمع کن، برش گردان و با کف دست روی میز بچرخان تا سطحش کشیده و صاف شود.
    > Why: چونه‌های هم‌وزن یکنواخت می‌پزند و پیتزاهای هم‌اندازه می‌دهند. ترازو از چشم دقیق‌تر است. سطح کشیده گاز را داخل نگه می‌دارد و چونه بعداً راحت‌تر باز می‌شود.
 7. **چونه‌ها را استراحت بده**
-   روی چونه‌ها را بپوشان (ظرف دردار یا یک کاسه‌ی وارونه خوب است) و بگذار {{ recipes.methods.warm_2h.final_rest_min.range.0 }} تا {{ recipes.methods.warm_2h.final_rest_min.range.1 }} دقیقه بمانند. فر همچنان دارد گرم می‌شود.
+   روی چونه‌ها را بپوشان (ظرف دردار یا یک کاسه‌ی وارونه خوب است) و بگذار حدود {{ recipes.methods.warm_2h.final_rest_min.range.0 }} تا {{ recipes.methods.warm_2h.final_rest_min.range.1 }} دقیقه بمانند، تا نرم و شل شوند. خمیر تصمیم می‌گیرد، نه ساعت. «خواندن خمیر» را در صفحه‌ی مبانی ببین. فر همچنان دارد گرم می‌شود.
    > Why: گلوتن شل می‌شود. چونه‌ای که استراحت کرده راحت باز می‌شود و جمع نمی‌شود.
 8. **چونه را باز کن**
    حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه پیش از پخت شروع کن. تا آن موقع فر داغ است و سطح پخت تقریباً {{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه‌ی کاملش را گرم شده است. روی بقیه‌ی چونه‌ها پوشیده بماند.
@@ -285,8 +285,8 @@
 ## برنامه‌ی روز پخت، تخمیر در دمای اتاق {methods=room_8_12h}
 
 - **شروع:** خمیر را مخلوط کن و {{ recipes.methods.room_8_12h.autolyse_min.range.0 }} تا {{ recipes.methods.room_8_12h.autolyse_min.range.1 }} دقیقه استراحت بده. نمک را اضافه کن و {{ recipes.methods.room_8_12h.knead_min.range.0 }} تا {{ recipes.methods.room_8_12h.knead_min.range.1 }} دقیقه ورز بده.
-- **ور آمدن اول:** {{ recipes.methods.room_8_12h.bulk_min.value }} دقیقه، یک‌تکه و با در بسته.
-- **بعد:** کل خمیر را وزن کن، وزن را بر تعداد پیتزاها تقسیم کن و چونه‌های هم‌وزن بساز. روی چونه‌ها را بپوشان و بگذار {{ recipes.methods.room_8_12h.final_rest_min.value }} دقیقه استراحت کنند.
+- **ور آمدن اول:** حدود {{ recipes.methods.room_8_12h.bulk_min.value }} دقیقه، یک‌تکه و با در بسته.
+- **بعد:** کل خمیر را وزن کن، وزن را بر تعداد پیتزاها تقسیم کن و چونه‌های هم‌وزن بساز. روی چونه‌ها را بپوشان و بگذار حدود {{ recipes.methods.room_8_12h.final_rest_min.value }} دقیقه استراحت کنند.
 - **{{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه پیش از پخت:** فر را روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه با گرمای بالا و پایین بگذار، با سطح پخت در طبقه‌ی بالا.
 - **حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه پیش از پخت:** چونه‌ی اول را باز کن و رویش را بچین.
 - **بپز:** {{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه، و {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} دقیقه‌ی آخر با گریل. اگر از کاغذ روغنی استفاده می‌کنی، گریل را روشن نکن، مگر اینکه روی بسته نوشته باشد ایمن است.
@@ -294,7 +294,7 @@
 
 ## برنامه‌ی روز پخت، تخمیر سرد {methods=cold_24h}
 
-- **{{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} تا {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} دقیقه پیش از باز کردن چونه‌ها:** ظرف‌ها را از یخچال بیرون بیاور و درشان را باز نکن.
+- **حدود {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} تا {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} دقیقه پیش از باز کردن چونه‌ها:** ظرف‌ها را از یخچال بیرون بیاور و درشان را باز نکن.
 - **{{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه پیش از پخت:** فر را روی {{ recipes.styles.neapolitan.bake.temp_c.value }} درجه با گرمای بالا و پایین بگذار، با سطح پخت در طبقه‌ی بالا.
 - **حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه پیش از پخت:** چونه‌ی اول را باز کن و رویش را بچین.
 - **بپز:** {{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه، و {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} دقیقه‌ی آخر با گریل. اگر از کاغذ روغنی استفاده می‌کنی، گریل را روشن نکن، مگر اینکه روی بسته نوشته باشد ایمن است.
@@ -303,8 +303,8 @@
 ## برنامه‌ی روز پخت، تخمیر گرم {methods=warm_2h}
 
 - **شروع:** مخمر، آب ولرم و آرد را مخلوط کن. نمک (و اگر می‌ریزی، شکر) را اضافه کن و {{ recipes.methods.warm_2h.knead_min.value }} دقیقه ورز بده.
-- **ور آمدن اول:** {{ recipes.methods.warm_2h.bulk_min.range.0 }} تا {{ recipes.methods.warm_2h.bulk_min.range.1 }} دقیقه در جای گرم (بدون جای گرم تا {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} دقیقه). حدود نیمه‌ی این زمان، اگر خمیر داخل فر است بیرونش بیاور. بعد فر را با گرمای بالا و پایین روشن کن، با سطح پخت در طبقه‌ی بالا.
-- **بعد:** کل خمیر را وزن کن، وزن را بر تعداد پیتزاها تقسیم کن و چونه‌های هم‌وزن بساز. روی چونه‌ها را بپوشان و بگذار {{ recipes.methods.warm_2h.final_rest_min.range.0 }} تا {{ recipes.methods.warm_2h.final_rest_min.range.1 }} دقیقه استراحت کنند. فر همچنان دارد گرم می‌شود.
+- **ور آمدن اول:** حدود {{ recipes.methods.warm_2h.bulk_min.range.0 }} تا {{ recipes.methods.warm_2h.bulk_min.range.1 }} دقیقه در جای گرم (بدون جای گرم تا {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} دقیقه). حدود نیمه‌ی این زمان، اگر خمیر داخل فر است بیرونش بیاور. بعد فر را با گرمای بالا و پایین روشن کن، با سطح پخت در طبقه‌ی بالا.
+- **بعد:** کل خمیر را وزن کن، وزن را بر تعداد پیتزاها تقسیم کن و چونه‌های هم‌وزن بساز. روی چونه‌ها را بپوشان و بگذار حدود {{ recipes.methods.warm_2h.final_rest_min.range.0 }} تا {{ recipes.methods.warm_2h.final_rest_min.range.1 }} دقیقه استراحت کنند. فر همچنان دارد گرم می‌شود.
 - **حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه پیش از پخت:** چونه‌ی اول را باز کن و رویش را بچین.
 - **بپز:** {{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه، و {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} دقیقه‌ی آخر با گریل. اگر از کاغذ روغنی استفاده می‌کنی، گریل را روشن نکن، مگر اینکه روی بسته نوشته باشد ایمن است.
 - **پیتزای بعدی:** فر را دوباره روی گرمای بالا و پایین بگذار و {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} تا {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} دقیقه صبر کن، بعد چونه‌ی بعدی را باز کن.

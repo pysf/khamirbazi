@@ -17,7 +17,7 @@ There are two ways to ferment this dough. Both give a good pizza. They differ in
 - **How it works:** more yeast, lukewarm water and {{ recipes.methods.warm_2h.knead_min.value }} minutes of kneading. The yeast works fast, so the dough rises in about an hour.
 - **Pros:** ready the same day. No planning.
 - **Cons:** the taste is simpler, more like plain bread. The browning is a little weaker.
-- **Needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas.** For one pizza, the dry yeast would weigh less than a kitchen scale can show. This guide keeps the same rule for fresh yeast.
+- **Needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas.** For one pizza, the dry yeast is too little to weigh well on a kitchen scale that reads whole grams. This guide keeps the same rule for fresh yeast.
 
 **Cold fermentation: when you can wait until tomorrow.** Fermentation is the yeast eating sugar and making gas and flavour. In cold fermentation the dough does this slowly in the fridge (about {{ recipes.oven.fridge_c.range.0 }} to {{ recipes.oven.fridge_c.range.1 }} degrees). You can choose from {{ recipes.methods.cold_12_16h.fridge_h.range.0 }} to {{ recipes.methods.cold_12_16h.fridge_h.range.1 }} hours (overnight) up to {{ recipes.methods.cold_72h.fridge_h.value }} hours.
 
@@ -47,7 +47,7 @@ There are two ways to ferment this dough. Both give a good pizza. They differ in
 
 You mix the dough and bake about two hours later. Take the amounts from the Ingredients card on this page.
 
-> Warning: Warm fermentation needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas. For one pizza the dry yeast would weigh less than {{ recipes.yeast.min_weigh_g.value }} g, and a kitchen scale cannot show that. This guide keeps the same rule for fresh yeast. For one pizza, use cold fermentation.
+> Warning: Warm fermentation needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas. For one pizza the dry yeast is too little to weigh well on a kitchen scale that reads whole grams. This guide keeps the same rule for fresh yeast. For one pizza, use cold fermentation.
 
 1. **Prepare the yeast**
    1. Pour the dough water into a large bowl. It should be lukewarm, about {{ recipes.methods.warm_2h.water_temp_c.value }} degrees.
@@ -68,8 +68,8 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
    > Why: There is little time, so kneading has to build the gluten that a long rest would build.
 4. **Let the dough rise**
    1. Put the dough in an oiled container with a lid (see the section "Container, oil and cover"). The container needs room for the dough to double.
-   2. Leave it in a warm place for {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes. A good temperature is {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees.
-   3. The dough should grow to {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size, with a soft, puffy surface. If you have no warm place, the rise can take up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes. Go by the size of the dough, not the clock.
+   2. Leave it in a warm place for about {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes. A good temperature is {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees.
+   3. The dough should grow to {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size, with a soft, puffy surface. If you have no warm place, the rise can take up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes. The time is only a guide: the dough decides. Go by the size of the dough, not the clock. See "Reading the dough" on the Basics page.
    > Why: The yeast makes gas, and the gas makes the dough bigger and puffier. The air in the dough makes the rim puff in the oven. The cover keeps the surface from drying into a skin.
 
    > Tip: Mark the level of the dough on the outside of the container with tape or a pen. Then you can see how much it has grown.
@@ -86,7 +86,7 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
    3. Shape each piece into a ball (see the section "Shaping"). Keep the balls covered.
    > Why: Equal balls bake evenly and make pizzas of the same size. A scale is more accurate than your eye.
 7. **Rest the balls**
-   Let the balls rest, covered, for {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes. Meanwhile the oven keeps heating (you turned it on in the step "Heat the oven and the baking surface").
+   Let the balls rest, covered, for about {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes, until they are soft, relaxed and a little puffier. The dough decides, not the clock. See "Reading the dough" on the Basics page. Meanwhile the oven keeps heating (you turned it on in the step "Heat the oven and the baking surface").
    > Why: The gluten relaxes. A relaxed ball stretches easily and does not shrink back. The cover keeps the balls from drying out.
 8. **Open the dough**
    1. Dust the table lightly. Open the first ball as shown in the section "Shaping", part "Opening the dough". Work gently so it does not tear.
@@ -145,8 +145,8 @@ You make the dough one or more days before baking. Take the amounts from the Ing
    > Tip: If the dough feels dry or stiff, wet your hand and work in a little water (see the section "Kneading", part "The dough is dry").
 5. **Let the dough rise**
    1. Put the dough in an oiled container with a lid (see the section "Container, oil and cover"). The container needs room for the dough to grow.
-   2. Leave it, covered, at about {{ recipes.oven.room_c.value }} degrees for {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes, until it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger.
-   - If you chose stretch and fold, do it during this rise: {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds, {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes apart. Do the first round now. After the last round, leave the dough alone. Let the rise run the full {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes.
+   2. Leave it, covered, at about {{ recipes.oven.room_c.value }} degrees for about {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes. The time is only a guide: a warm kitchen is faster and a cold one is slower. Put the dough in the fridge when it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger. See "Reading the dough" on the Basics page. If you chose the {{ recipes.methods.cold_48h.fridge_h.value }} or {{ recipes.methods.cold_72h.fridge_h.value }} hour fridge time and the dough already grows fast in this rest, put it in the fridge sooner, because it keeps rising in the fridge for a long time.
+   - If you chose stretch and fold, do it during this rise: {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds, {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes apart. Do the first round now. The rounds need the time they take, so do all of them. After the last round, leave the dough alone and watch it. Put it in the fridge when it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger. If it is not there yet, wait a little longer.
    > Why: The yeast needs a short warm start before it goes into the cold. Stretch and fold makes the dough strong while it rises, so the rounds fit into the rise time. The cover keeps the surface from drying into a skin.
 
    > Tip: Mark the level of the dough on the outside of the container with tape or a pen. Then you can see how much it has grown.
@@ -158,7 +158,7 @@ You make the dough one or more days before baking. Take the amounts from the Ing
    Put the containers in the fridge for the time you chose: {{ recipes.methods.cold_12_16h.fridge_h.range.0 }} to {{ recipes.methods.cold_12_16h.fridge_h.range.1 }} hours (overnight), {{ recipes.methods.cold_24h.fridge_h.value }} hours, {{ recipes.methods.cold_48h.fridge_h.value }} hours or {{ recipes.methods.cold_72h.fridge_h.value }} hours. The yeast amount in the table is for that time. To change the time, press "Change" at the top of the page. {{ recipes.methods.cold_72h.fridge_h.value }} hours is the longest this guide uses.
    > Why: In the fridge the yeast works slowly, and the enzymes have time to build flavour. The result is a deeper taste and better browning.
 8. **Take the dough out of the fridge**
-   On baking day, take the containers out of the fridge {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you open the dough. Keep the lids closed.
+   On baking day, take the containers out of the fridge about {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you open the dough. Keep the lids closed. The dough is ready to open when it is soft and a floured finger dent fills back slowly. See "Reading the dough" on the Basics page.
    > Why: Cold dough does not stretch well, and it tears. Opening it too cold is the most common mistake with cold dough.
 9. **Heat the oven and the baking surface**
    Put the baking surface on the upper rack. {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking, turn the oven on to {{ recipes.styles.new_york.bake.temp_c.value }} degrees, top and bottom heat, no fan. Meanwhile the dough keeps warming up in its closed containers (see the section "Oven and baking surface").
@@ -280,7 +280,7 @@ Moving air dries the surface of the dough and makes it crusty. A dry skin tears 
 ### Is the dough ready?
 
 - **Warm fermentation:** after the first rise the dough is {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times bigger, and the surface is soft and puffy.
-- **Cold fermentation:** the balls are a little bigger and you can see small bubbles at the bottom of the container. Press the dough gently with a finger. If it springs back slowly, it is ready. If it springs back at once, it needs more time. If your finger leaves a dent that does not come back, the dough has risen too much (see the section "Troubleshooting").
+- **Cold fermentation:** the balls are a little bigger and you can see small bubbles at the bottom of the container. Press the dough gently with a finger. If it springs back slowly, it is ready. If it springs back at once, it needs more time. If your finger leaves a dent that does not come back, the dough has risen too much (see the section "Troubleshooting"). See "Reading the dough" on the Basics page.
 
 ## Shaping
 
@@ -349,14 +349,14 @@ The baking surface is a pizza stone, a baking steel or a cast-iron pan. Use the 
 ## Bake-day checklist, warm fermentation {methods=warm_2h}
 
 - **Hour 0:** mix the yeast, lukewarm water, flour and salt. Then add the sugar and oil, and knead for {{ recipes.methods.warm_2h.knead_min.value }} minutes.
-- **First rise:** {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes in a warm place (up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes without one). About halfway through, take the dough out if it is rising in the oven. Put the baking surface in and turn the oven on to {{ recipes.styles.new_york.bake.temp_c.value }} degrees.
+- **First rise:** about {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes in a warm place (up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes without one). About halfway through, take the dough out if it is rising in the oven. Put the baking surface in and turn the oven on to {{ recipes.styles.new_york.bake.temp_c.value }} degrees.
 - **Then:** weigh the whole dough, divide the weight by the number of pizzas, and shape equal balls.
-- **Rest the balls:** {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes, covered. The oven keeps heating.
+- **Rest the balls:** about {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes, covered. The oven keeps heating.
 - **After the rest:** open the dough, dress it and bake for {{ recipes.styles.new_york.bake.time_min.range.0 }} to {{ recipes.styles.new_york.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.new_york.bake.grill.last_min.range.0 }} to {{ recipes.styles.new_york.bake.grill.last_min.range.1 }} minutes.
 
 ## Bake-day checklist, cold fermentation {methods=cold_12_16h,cold_24h,cold_48h,cold_72h}
 
-- **{{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before opening the dough:** take the dough out of the fridge. Keep the lids closed.
+- **About {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before opening the dough:** take the dough out of the fridge. Keep the lids closed.
 - **{{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking:** set the oven to {{ recipes.styles.new_york.bake.temp_c.value }} degrees, top and bottom heat, with the baking surface on the upper rack.
 - **{{ recipes.timeline.shape_lead_min.value }} minutes before baking:** dust the table, open the dough and dress it.
 - **Work fast** and move the pizza onto the hot surface.

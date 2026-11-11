@@ -26,7 +26,7 @@ Fermentation is the yeast eating sugar and making gas and flavour. In Naples the
 
 - **Pros:** ready the same day.
 - **Cons:** the taste is simpler, more like plain bread. It is the furthest from the original.
-- **Needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas.** For one pizza the dry yeast would weigh less than a kitchen scale can show. This guide keeps the same rule for fresh yeast.
+- **Needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas.** For one pizza the dry yeast is too little to weigh well on a kitchen scale that reads whole grams. This guide keeps the same rule for fresh yeast.
 
 **In short:** if you have time, choose room fermentation for the closest result, or cold fermentation for the easiest plan. If you want to eat today, warm fermentation still makes a tasty pizza.
 
@@ -69,7 +69,7 @@ You mix the dough in the morning and bake in the evening, or the other way round
    2. Knead for {{ recipes.methods.room_8_12h.knead_min.range.0 }} to {{ recipes.methods.room_8_12h.knead_min.range.1 }} minutes. The section "Kneading" on the New York recipe page shows how. Do not add oil.
    > Why: Salt makes the gluten stronger and slows the yeast down. Gluten is the stretchy net that holds the gas from the yeast.
 5. **Let the dough rise**
-   Put the dough in a container with a lid (see "Container, oil and cover" on the New York recipe page). Leave it as one piece at room temperature for {{ recipes.methods.room_8_12h.bulk_min.value }} minutes. Keep the lid on, so the surface does not dry out.
+   Put the dough in a container with a lid (see "Container, oil and cover" on the New York recipe page). Leave it as one piece at room temperature for about {{ recipes.methods.room_8_12h.bulk_min.value }} minutes, until it is {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size. The time is only a guide: the dough decides, and a warm kitchen is faster. See "Reading the dough" on the Basics page. Keep the lid on, so the surface does not dry out.
    > Why: The yeast makes gas, and the gas makes the dough bigger and puffier. A slow rise at room temperature builds flavour.
 
    > Tip: Use a container big enough for the dough to double without touching the lid. Mark the dough level on the outside with tape or a pen, so you can see how much it has grown.
@@ -79,7 +79,7 @@ You mix the dough in the morning and bake in the evening, or the other way round
    3. Shape each piece into a ball: pull the edges to the middle, turn it over and roll it under your palm on the table until the surface is tight and smooth. Put each ball in its own container with a lid.
    > Why: Equal balls bake evenly and make pizzas of the same size. A scale is more accurate than your eye. A tight surface keeps the gas in, and the ball opens more easily later.
 7. **Rest the balls**
-   Leave the balls, covered, for {{ recipes.methods.room_8_12h.final_rest_min.value }} minutes. The whole rise, from mixing to baking, takes {{ recipes.methods.room_8_12h.total_ferment_h.range.0 }} to {{ recipes.methods.room_8_12h.total_ferment_h.range.1 }} hours.
+   Leave the balls, covered, for about {{ recipes.methods.room_8_12h.final_rest_min.value }} minutes, until they are soft and airy and a floured finger dent fills back slowly. See "Reading the dough" on the Basics page. The whole rise, from mixing to baking, takes {{ recipes.methods.room_8_12h.total_ferment_h.range.0 }} to {{ recipes.methods.room_8_12h.total_ferment_h.range.1 }} hours.
    > Why: In the balls the dough keeps rising slowly and the gluten relaxes. A relaxed ball opens easily and does not shrink back.
 8. **Heat the oven and the baking surface**
    Do this {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking, while the balls are still resting. Put the baking surface (a pizza stone, a baking steel or a cast-iron pan) on the upper rack, in about the upper third of the oven. Set the oven to {{ recipes.styles.neapolitan.bake.temp_c.value }} degrees, with top and bottom heat and **no fan**.
@@ -149,8 +149,8 @@ You make the dough the day before baking. Take the amounts from the table on the
    > Why: Salt makes the gluten stronger and slows the yeast down.
 5. **Let the dough rise**
    1. Put the dough in a container with a lid (see "Container, oil and cover" on the New York recipe page).
-   2. Leave it at about {{ recipes.oven.room_c.value }} degrees for {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes, until it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger.
-   - If you chose stretch and fold, do {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds during this rise: the first one now, then one every {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes. Let the rise run the full {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes.
+   2. Leave it at about {{ recipes.oven.room_c.value }} degrees for about {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes. The time is only a guide: a warm kitchen is faster and a cold one is slower. Put the dough in the fridge when it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger. See "Reading the dough" on the Basics page.
+   - If you chose stretch and fold, do {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds during this rise: the first one now, then one every {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes. The rounds need the time they take, so do all of them. After the last round, watch the dough and put it in the fridge when it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger. If it is not there yet, wait a little longer.
    > Why: The yeast needs a short warm start before it goes into the cold.
 
    > Tip: Use a container big enough for the dough to double without touching the lid. Mark the dough level on the outside with tape or a pen, so you can see how much it has grown.
@@ -163,7 +163,7 @@ You make the dough the day before baking. Take the amounts from the table on the
    Put the containers in the fridge for {{ recipes.methods.cold_24h.fridge_h.value }} hours.
    > Why: In the fridge the yeast works slowly, and the enzymes have time to build flavour. The result is a deeper taste and better browning.
 8. **Take the dough out of the fridge**
-   On baking day, take the containers out {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you open the dough. Keep the lids closed.
+   On baking day, take the containers out about {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you open the dough. Keep the lids closed. The dough is ready to open when it is soft and a floured finger dent fills back slowly. See "Reading the dough" on the Basics page.
    > Why: Cold dough does not stretch well and it tears. This is the most common mistake with cold dough.
 9. **Heat the oven and the baking surface**
    Do this {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking, while the dough warms up. Put the baking surface (a pizza stone, a baking steel or a cast-iron pan) on the upper rack, in about the upper third of the oven. Set the oven to {{ recipes.styles.neapolitan.bake.temp_c.value }} degrees, with top and bottom heat and **no fan**.
@@ -207,7 +207,7 @@ You make the dough the day before baking. Take the amounts from the table on the
 
 You mix the dough and bake about two hours later. Take the amounts from the table on the Ingredients card.
 
-> Warning: This fermentation needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas. For one pizza the dry yeast would weigh less than {{ recipes.yeast.min_weigh_g.value }} g, and a kitchen scale cannot show that. This guide keeps the same rule for fresh yeast. For one pizza, choose another fermentation.
+> Warning: This fermentation needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas. For one pizza the dry yeast is too little to weigh well on a kitchen scale that reads whole grams. This guide keeps the same rule for fresh yeast. For one pizza, choose another fermentation.
 
 1. **Prepare the yeast**
    1. Pour the lukewarm water (about {{ recipes.methods.warm_2h.water_temp_c.value }} degrees) into a large bowl.
@@ -228,8 +228,8 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
    > Why: There is little time, so kneading has to build the gluten that a long rest would build. Salt makes the gluten stronger and slows the yeast down.
 4. **Let the dough rise**
    1. Put the dough in a container with a lid (see "Container, oil and cover" on the New York recipe page).
-   2. Leave it in a warm place, at {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees, for {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes. A switched-off oven with the light on works well.
-   3. The dough should grow to {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size. Without a warm place, the rise can take up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes: wait for the size, not the clock.
+   2. Leave it in a warm place, at {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees, for about {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes. A switched-off oven with the light on works well.
+   3. The dough should grow to {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size. Without a warm place, the rise can take up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes: the time is only a guide, so wait for the size, not the clock. See "Reading the dough" on the Basics page.
    > Why: The yeast makes gas, and the gas makes the dough bigger. This air makes the rim puff in the oven.
 
    > Tip: Use a container big enough for the dough to double without touching the lid. Mark the dough level on the outside with tape or a pen, so you can see how much it has grown.
@@ -245,7 +245,7 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
    3. Shape each piece into a ball: pull the edges to the middle, turn it over and roll it under your palm on the table until the surface is tight and smooth.
    > Why: Equal balls bake evenly and make pizzas of the same size. A scale is more accurate than your eye. A tight surface keeps the gas in, and the ball opens more easily later.
 7. **Rest the balls**
-   Cover the balls (a container with a lid or an upturned bowl works) and leave them for {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes. The oven keeps heating.
+   Cover the balls (a container with a lid or an upturned bowl works) and leave them for about {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes, until they are soft and relaxed. The dough decides, not the clock. See "Reading the dough" on the Basics page. The oven keeps heating.
    > Why: The gluten relaxes. A relaxed ball opens easily and does not shrink back.
 8. **Open the dough**
    Start about {{ recipes.timeline.shape_lead_min.value }} minutes before baking. By then the oven is hot, and the baking surface has almost had its full {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes. Keep the other balls covered.
@@ -285,8 +285,8 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
 ## Bake-day checklist, room fermentation {methods=room_8_12h}
 
 - **Start:** mix the dough and rest it for {{ recipes.methods.room_8_12h.autolyse_min.range.0 }} to {{ recipes.methods.room_8_12h.autolyse_min.range.1 }} minutes. Add the salt and knead for {{ recipes.methods.room_8_12h.knead_min.range.0 }} to {{ recipes.methods.room_8_12h.knead_min.range.1 }} minutes.
-- **First rise:** {{ recipes.methods.room_8_12h.bulk_min.value }} minutes as one piece, covered.
-- **Then:** weigh the whole dough, divide the weight by the number of pizzas, and shape equal balls. Rest them, covered, for {{ recipes.methods.room_8_12h.final_rest_min.value }} minutes.
+- **First rise:** about {{ recipes.methods.room_8_12h.bulk_min.value }} minutes as one piece, covered.
+- **Then:** weigh the whole dough, divide the weight by the number of pizzas, and shape equal balls. Rest them, covered, for about {{ recipes.methods.room_8_12h.final_rest_min.value }} minutes.
 - **{{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking:** set the oven to {{ recipes.styles.neapolitan.bake.temp_c.value }} degrees, top and bottom heat, with the baking surface on the upper rack.
 - **About {{ recipes.timeline.shape_lead_min.value }} minutes before baking:** open the first ball and dress it.
 - **Bake** for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes. If you use baking paper, skip the grill unless the pack says it is safe.
@@ -294,7 +294,7 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
 
 ## Bake-day checklist, cold fermentation {methods=cold_24h}
 
-- **{{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you open the dough:** take the containers out of the fridge and keep the lids closed.
+- **About {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you open the dough:** take the containers out of the fridge and keep the lids closed.
 - **{{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking:** set the oven to {{ recipes.styles.neapolitan.bake.temp_c.value }} degrees, top and bottom heat, with the baking surface on the upper rack.
 - **About {{ recipes.timeline.shape_lead_min.value }} minutes before baking:** open the first ball and dress it.
 - **Bake** for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes. If you use baking paper, skip the grill unless the pack says it is safe.
@@ -303,8 +303,8 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
 ## Bake-day checklist, warm fermentation {methods=warm_2h}
 
 - **Start:** mix the yeast, the lukewarm water and the flour. Add the salt (and the sugar, if you use it) and knead for {{ recipes.methods.warm_2h.knead_min.value }} minutes.
-- **First rise:** {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes in a warm place (up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes without one). About halfway through, take the dough out if it rises in the oven. Then turn on the oven, top and bottom heat, with the baking surface on the upper rack.
-- **Then:** weigh the whole dough, divide the weight by the number of pizzas, and shape equal balls. Rest them, covered, for {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes. The oven keeps heating.
+- **First rise:** about {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes in a warm place (up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes without one). About halfway through, take the dough out if it rises in the oven. Then turn on the oven, top and bottom heat, with the baking surface on the upper rack.
+- **Then:** weigh the whole dough, divide the weight by the number of pizzas, and shape equal balls. Rest them, covered, for about {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes. The oven keeps heating.
 - **About {{ recipes.timeline.shape_lead_min.value }} minutes before baking:** open the first ball and dress it.
 - **Bake** for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes. If you use baking paper, skip the grill unless the pack says it is safe.
 - **Next pizza:** switch back to top and bottom heat and wait {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes before you open the next ball.

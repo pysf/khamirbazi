@@ -27,6 +27,16 @@ Yeast amounts are ranges, not fixed numbers. They depend on your fridge temperat
 
 Some people say a long cold rise is easier to digest. This guide does not make that claim. Choose it for the flavour.
 
+## Reading the dough
+
+The times in this guide are a guide for a room of about {{ recipes.oven.room_c.value }} degrees. Your kitchen is warmer in summer and colder in winter, and that changes the speed a lot. In a warm kitchen the dough can be ready much sooner. In a cold one it needs longer. Watch the dough, not the clock. Reading the dough comes with practice, and each bake teaches you a bit more.
+
+- **Ready:** about {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size. It is soft and airy, with small bubbles under the surface and at the bottom of the container. Press a floured finger into it: the dent fills back slowly, about halfway.
+- **Too little rise (it needs more time):** it has barely grown, and it feels tight and dense. It springs back at once when you press or stretch it. Give it more time in a warmer spot.
+- **Too much rise:** it is more than double, flat and spreading, with big bubbles and a strong smell of alcohol. It is weak and tears when you stretch it, and the crust stays pale. Bake it soon. A cold dough can go back into the fridge. Next time, give it less time or keep it cooler.
+
+> Tip: Mark the level of the dough on the outside of the container with tape or a pen. Then you can see how much it has grown.
+
 ## Fermentation and its names
 
 Fermentation is the yeast eating sugar and making gas and flavour. Cold fermentation means letting the dough do this in the fridge. Other names for the same thing are cold proofing and cold retarding. Dough that rises at room temperature has a room-temperature rise; in a warm place, a warm rise.
