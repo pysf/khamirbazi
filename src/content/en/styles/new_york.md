@@ -55,7 +55,7 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
    3. Crumble fresh yeast first, then stir the yeast into the water. Instant dry yeast needs no waiting.
    > Why: Yeast works fast between {{ recipes.styles.new_york.practice.yeast_works_c.range.0 }} and {{ recipes.styles.new_york.practice.yeast_works_c.range.1 }} degrees and starts to die from about {{ recipes.styles.new_york.practice.yeast_dies_c.value }} degrees, so never use hot water. Lukewarm water feels only slightly warm on your wrist, cooler than a bath.
 
-   > Tip: If your yeast is old, or you are not sure it is alive, check it first. Stir it into the lukewarm water with a pinch of sugar and wait {{ recipes.styles.new_york.practice.yeast_check_min.range.0 }} to {{ recipes.styles.new_york.practice.yeast_check_min.range.1 }} minutes. It should foam. If there is no foam, use new yeast.
+   > Tip: If your yeast is old, or you are not sure it is alive, test it first. Stir a little yeast you do not need for this dough into a cup of lukewarm water. A pinch of sugar makes the foam show sooner; this sugar is only for the test. Wait {{ recipes.styles.new_york.practice.yeast_check_min.range.0 }} to {{ recipes.styles.new_york.practice.yeast_check_min.range.1 }} minutes until foam forms on top. No foam means the yeast is dead: use new yeast. Instant dry yeast that is within its date needs no test.
 2. **Mix the dough**
    1. Add about half of the flour to the yeast water and stir until it looks like a thick batter.
    2. Add the rest of the flour in two or three portions, and add the salt with the last portion.
@@ -64,7 +64,7 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
 
    > Tip: If the dough feels dry or stiff, wet your hand and work in a little water (see the section "Kneading", part "The dough is dry").
 3. **Knead**
-   Add the sugar and the olive oil. Then knead for {{ recipes.methods.warm_2h.knead_min.value }} minutes (see the section "Kneading").
+   Add the sugar and the olive oil. All the oil in the table goes into the dough. Then knead for {{ recipes.methods.warm_2h.knead_min.value }} minutes (see the section "Kneading").
    > Why: There is little time, so kneading has to build the gluten that a long rest would build.
 4. **Let the dough rise**
    1. Put the dough in an oiled container with a lid (see the section "Container, oil and cover"). The container needs room for the dough to double.
@@ -115,19 +115,20 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
     Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it. Leave it uncovered, on a rack if you have one. While it rests, add fresh or delicate extras: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings. For the next pizza, wait until the baking surface is hot again, then open the next ball (see the section "Oven and baking surface", step "Wait for a second pizza").
     > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base stays crisp. Fresh or delicate extras go on after baking so they do not burn or wilt.
 
-
 ## Cold fermentation {methods=cold_12_16h,cold_24h,cold_48h,cold_72h}
 
 You make the dough one or more days before baking. Take the amounts from the Ingredients card on this page. It shows the amounts for the time you chose on the Home page. The steps up to "Chill the dough" are the first day. The steps from "Take the dough out of the fridge" on are baking day.
 
+> Tip: If you use a yeast solution, mix it right before you use it. Stir it again right before you pour, because the yeast sinks to the bottom. Throw away what is left. No source says how long a yeast solution keeps, so this guide gives no storage time.
+
 1. **Prepare the yeast**
    1. Pour the cold water (about {{ recipes.methods.cold_24h.water_temp_c.value }} degrees) into a large bowl.
    2. Add the yeast like this:
-      - **If the table has a Yeast solution row:** in a separate jug or bowl, stir one whole {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast (or half of a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube of fresh yeast) into {{ recipes.yeast.solution.dry.water_g.value }} g ({{ recipes.yeast.solution.dry.water_g.value }} ml) of lukewarm water ({{ recipes.yeast.solution.water_temp_c.range.0 }} to {{ recipes.yeast.solution.water_temp_c.range.1 }} degrees). Stir until no lumps are left. Wait {{ recipes.yeast.solution.dissolve_wait_min.value }} minutes and stir again. Right away, put the bowl of dough water on the scale and pour in the amount shown in the Yeast solution row. Throw the rest of the solution away. A measuring jug works too: water and yeast solution have about as many milliliters as grams (the About column shows ml).
+      - **If the table has a Yeast solution row:** in a separate jug or bowl, stir one whole {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast (or half of a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube of fresh yeast) into {{ recipes.yeast.solution.dry.water_g.value }} g ({{ recipes.yeast.solution.dry.water_g.value }} ml) of lukewarm water ({{ recipes.yeast.solution.water_temp_c.range.0 }} to {{ recipes.yeast.solution.water_temp_c.range.1 }} degrees). Stir until no lumps are left. Wait {{ recipes.yeast.solution.dissolve_wait_min.value }} minutes and stir again. Right away, put the bowl of dough water on the scale and pour in the amount shown in the Yeast solution row. Throw the rest of the solution away. One gram of water or yeast solution is about one millilitre. A measuring jug works too (the About column shows ml).
       - **If the table has a Dry yeast or Fresh yeast row:** weigh that amount and stir it into the water. Crumble fresh yeast first. Instant dry yeast needs no waiting.
    > Why: A small amount of yeast is too light for a kitchen scale, so you weigh part of a yeast solution instead. A larger batch has enough yeast to weigh directly. The Water row in the table already has the solution weight taken off.
 
-   > Tip: If your yeast is old, or you are not sure it is alive, check it first in a separate cup. Stir it into lukewarm water with a pinch of sugar and wait {{ recipes.styles.new_york.practice.yeast_check_min.range.0 }} to {{ recipes.styles.new_york.practice.yeast_check_min.range.1 }} minutes. It should foam. If there is no foam, use new yeast.
+   > Tip: If your yeast is old, or you are not sure it is alive, test it first. Stir a little yeast you do not need for this dough into a cup of lukewarm water. A pinch of sugar makes the foam show sooner; this sugar is only for the test. Wait {{ recipes.styles.new_york.practice.yeast_check_min.range.0 }} to {{ recipes.styles.new_york.practice.yeast_check_min.range.1 }} minutes until foam forms on top. No foam means the yeast is dead: use new yeast. Instant dry yeast that is within its date needs no test.
 2. **Mix the dough**
    1. Add about half of the flour and stir.
    2. Then add the rest in two or three portions.
@@ -137,7 +138,7 @@ You make the dough one or more days before baking. Take the amounts from the Ing
    Cover the bowl and leave the dough for {{ recipes.methods.cold_24h.autolyse_min.range.0 }} to {{ recipes.methods.cold_24h.autolyse_min.range.1 }} minutes. This rest is called autolyse.
    > Why: The water and the enzymes in the flour start to build gluten by themselves, so you need less kneading.
 4. **Add the salt and knead**
-   1. Add the salt, the sugar and the olive oil, and work them into the dough until it is even.
+   1. Add the salt, the sugar and the olive oil, and work them into the dough until it is even. All the oil in the table goes into the dough.
    2. Then knead for {{ recipes.methods.cold_24h.knead_min.range.0 }} to {{ recipes.methods.cold_24h.knead_min.range.1 }} minutes (see the section "Kneading").
    - If you prefer stretch and fold, skip the kneading and go to the step "Let the dough rise".
    > Why: Salt makes the gluten stronger and slows the yeast down.
@@ -145,8 +146,8 @@ You make the dough one or more days before baking. Take the amounts from the Ing
    > Tip: If the dough feels dry or stiff, wet your hand and work in a little water (see the section "Kneading", part "The dough is dry").
 5. **Let the dough rise**
    1. Put the dough in an oiled container with a lid (see the section "Container, oil and cover"). The container needs room for the dough to grow.
-   2. Leave it, covered, at about {{ recipes.oven.room_c.value }} degrees for about {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes. The time is only a guide: a warm kitchen is faster and a cold one is slower. Put the dough in the fridge when it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger. See "Reading the dough" on the Basics page. If you chose the {{ recipes.methods.cold_48h.fridge_h.value }} or {{ recipes.methods.cold_72h.fridge_h.value }} hour fridge time and the dough already grows fast in this rest, put it in the fridge sooner, because it keeps rising in the fridge for a long time.
-   - If you chose stretch and fold, do it during this rise: {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds, {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes apart. Do the first round now. The rounds need the time they take, so do all of them. After the last round, leave the dough alone and watch it. Put it in the fridge when it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger. If it is not there yet, wait a little longer.
+   2. Leave it, covered, at about {{ recipes.oven.room_c.value }} degrees for about {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes. The time is only a guide: a warm kitchen is faster and a cold one is slower. When it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger, go on to the next step. See "Reading the dough" on the Basics page; for this check, go by size only. If you chose the {{ recipes.methods.cold_48h.fridge_h.value }} or {{ recipes.methods.cold_72h.fridge_h.value }} hour fridge time and the dough already grows fast in this rest, go on to the next step sooner, because it keeps rising in the fridge for a long time.
+   - If you chose stretch and fold, do it during this rise: {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds, {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes apart. Do the first round now. Do all the rounds, even if the dough grows fast. After the last round, leave the dough alone and watch it. When it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger, go on to the next step. If it is not there yet, wait a little longer.
    > Why: The yeast needs a short warm start before it goes into the cold. Stretch and fold makes the dough strong while it rises, so the rounds fit into the rise time. The cover keeps the surface from drying into a skin.
 
    > Tip: Mark the level of the dough on the outside of the container with tape or a pen. Then you can see how much it has grown.
@@ -154,6 +155,8 @@ You make the dough one or more days before baking. Take the amounts from the Ing
    1. Weigh the whole dough on the scale. It should be close to Total dough in the table.
    2. Divide the weight by the number of pizzas and cut off equal pieces of that weight.
    3. Shape each piece into a ball (see the section "Shaping"). Put each ball in its own oiled container with a lid (see the section "Container, oil and cover").
+
+   > Tip: You can also keep the dough in the fridge as one piece instead of balls. Take it out at the same time on baking day. Weigh it, divide it into equal pieces and shape them into balls right away, because cold dough is easier to shape into balls. Then let the balls rest, covered, until you open them.
 7. **Chill the dough**
    Put the containers in the fridge for the time you chose: {{ recipes.methods.cold_12_16h.fridge_h.range.0 }} to {{ recipes.methods.cold_12_16h.fridge_h.range.1 }} hours (overnight), {{ recipes.methods.cold_24h.fridge_h.value }} hours, {{ recipes.methods.cold_48h.fridge_h.value }} hours or {{ recipes.methods.cold_72h.fridge_h.value }} hours. The yeast amount in the table is for that time. To change the time, press "Change" at the top of the page. {{ recipes.methods.cold_72h.fridge_h.value }} hours is the longest this guide uses.
    > Why: In the fridge the yeast works slowly, and the enzymes have time to build flavour. The result is a deeper taste and better browning.
@@ -189,10 +192,6 @@ You make the dough one or more days before baking. Take the amounts from the Ing
     Take the pizza out and let it rest for {{ recipes.styles.new_york.practice.rest_before_cut_min.range.0 }} to {{ recipes.styles.new_york.practice.rest_before_cut_min.range.1 }} minutes before you cut it. Leave it uncovered, on a rack if you have one. While it rests, add fresh or delicate extras: a drizzle of olive oil, fresh herbs such as basil, grated hard cheese, chili flakes, or a squeeze of lemon on some toppings. For the next pizza, wait until the baking surface is hot again, then open the next ball (see the section "Oven and baking surface", step "Wait for a second pizza").
     > Why: Steam escapes and the cheese sets, so the toppings do not slide off. An uncovered base stays crisp. Fresh or delicate extras go on after baking so they do not burn or wilt.
 
-
-> Tip: You can also keep the dough in the fridge as one piece. Take it out at the same time on baking day. Weigh it, divide it into equal pieces and shape them into balls right away, because cold dough is easier to shape into balls. Then let the balls rest, covered, until you open them.
-
-> Tip: If you use a yeast solution, mix it right before you use it. Stir it again right before you pour, because the yeast sinks to the bottom. Throw away what is left. No source says how long a yeast solution keeps, so this guide gives no storage time.
 
 ## Kneading
 
@@ -337,7 +336,7 @@ The baking surface is a pizza stone, a baking steel or a cast-iron pan. Use the 
    For the last {{ recipes.styles.new_york.bake.grill.last_min.range.0 }} to {{ recipes.styles.new_york.bake.grill.last_min.range.1 }} minutes, turn on the grill to colour the top. Skip this if you use baking paper, unless the pack says it is safe.
    > Why: A {{ recipes.styles.new_york.bake.temp_c.value }} degree oven gives too little heat from above.
 7. **Wait for a second pizza**
-   Keep its ball covered until the first pizza is out and the surface is hot again. This takes about {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes. Only then open the ball.
+   Switch the oven back to top and bottom heat. Keep its ball covered until the first pizza is out and the surface is hot again. This takes about {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes. Only then open the ball.
    > Why: Dough that waits on the board or paper gets wet and sticks.
 
 > Safety: Baking paper is your choice. If you use it, check the maximum temperature printed on the pack (many papers are rated to {{ recipes.safety.parchment_max_c.value }} degrees, which is lower than this oven) and trim the edges. Do not use wax paper. The full note is in the step "Slide the pizza in".
@@ -365,7 +364,7 @@ The baking surface is a pizza stone, a baking steel or a cast-iron pan. Use the 
 ## Troubleshooting
 
 - **The base is pale or stays soft.** The surface was not hot enough. Heat it for {{ recipes.oven.preheat_min.range.1 }} minutes.
-- **The dough springs back.** The gluten is tight, or the dough is cold. Rest it for {{ recipes.styles.new_york.practice.cold_dough_rest_min.range.0 }} to {{ recipes.styles.new_york.practice.cold_dough_rest_min.range.1 }} minutes.
+- **The dough springs back.** The gluten is tight, or the dough is cold. Rest it for {{ recipes.styles.new_york.practice.shrink_rest_min.range.0 }} to {{ recipes.styles.new_york.practice.shrink_rest_min.range.1 }} minutes. If the dough is still cold, give it {{ recipes.styles.new_york.practice.cold_dough_rest_min.range.0 }} to {{ recipes.styles.new_york.practice.cold_dough_rest_min.range.1 }} minutes.
 - **The dough is very sticky.** See the section "Kneading", part "The dough is sticky".
 - **The dough is very stiff.** See the section "Kneading", part "The dough is dry".
 - **A sharp smell of alcohol or sourness.** The dough rose too much. Next time use less yeast or less time.

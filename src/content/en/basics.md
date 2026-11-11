@@ -17,7 +17,7 @@ Gluten is a stretchy network that forms when the proteins in flour meet water. I
 - **Sugar** feeds the yeast a little and helps the crust brown earlier ({{ recipes.styles.new_york.dough.sugar.value }}% in New York).
 - **Oil** makes the dough softer and the crust a little crisper ({{ recipes.styles.new_york.dough.oil.value }}% in New York).
 
-Traditional Neapolitan dough has no oil and no sugar, because a very hot oven browns the crust by itself. In a {{ recipes.oven.max_c.value }} degree home oven they can help, so see the Neapolitan page.
+Traditional Neapolitan dough has no oil and no sugar, because a very hot oven browns the crust by itself. In a {{ recipes.oven.max_c.value }} degree home oven a little sugar helps the crust brown, so the Neapolitan recipe has optional sugar. It still has no oil.
 
 ## Yeast, time and temperature
 
@@ -50,7 +50,7 @@ The times in this guide are for a room of about {{ recipes.oven.room_c.value }} 
 Fermentation is the yeast eating sugar and making gas and flavour. The gas makes the dough rise. This guide uses three ways to ferment. The difference is the temperature: the warmer the dough, the faster it is ready, and the cooler and slower, the more flavour it gets.
 
 - **Warm fermentation:** the dough rises in a warm place, at about {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees. It is the fastest way, for pizza on the same day, but it has the least flavour.
-- **Room-temperature fermentation:** the dough rises at about {{ recipes.oven.room_c.value }} degrees for {{ recipes.methods.room_8_12h.total_ferment_h.range.0 }} to {{ recipes.methods.room_8_12h.total_ferment_h.range.1 }} hours. Make the dough in the morning and bake in the evening.
+- **Room fermentation:** the dough rises at about {{ recipes.oven.room_c.value }} degrees for {{ recipes.methods.room_8_12h.total_ferment_h.range.0 }} to {{ recipes.methods.room_8_12h.total_ferment_h.range.1 }} hours. Make the dough in the morning and bake in the evening.
 - **Cold fermentation:** after a short rise at room temperature, the dough goes into the fridge for {{ recipes.methods.cold_12_16h.fridge_h.range.0 }} up to {{ recipes.methods.cold_72h.fridge_h.value }} hours. The cold slows the yeast down, so the dough gets the most flavour, and you can choose the baking day. Other names for it are cold proofing and cold retarding.
 
 Not every style uses every way. The calculator on the Home page shows the ones for your style. Whichever you choose, the dough tells you when it is ready (see "Reading the dough" above).

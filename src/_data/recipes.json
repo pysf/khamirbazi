@@ -563,6 +563,16 @@
         ],
         "note": "Planning assumption: about 4 h in bulk, then about 5 h in balls = 9 h at 21 C, inside the 8-12 h window. AVPN allows 8-24 h in total; the split is an estimate (Naples practice: bulk then balls)."
       },
+      "bulk_h": {
+        "value": 4,
+        "unit": "h",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+        ],
+        "note": "Same as bulk_min, in hours for display (240 min = 4 h). Keep the two in step."
+      },
       "final_rest_min": {
         "value": 300,
         "unit": "min",
@@ -572,6 +582,16 @@
           "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
         ],
         "note": "Time in balls (or in the pan) at room temperature."
+      },
+      "final_rest_h": {
+        "value": 5,
+        "unit": "h",
+        "confidence": "low",
+        "verified": false,
+        "sources": [
+          "https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana"
+        ],
+        "note": "Same as final_rest_min, in hours for display (300 min = 5 h). Keep the two in step. Time in balls at room temperature."
       },
       "total_ferment_h": {
         "range": [

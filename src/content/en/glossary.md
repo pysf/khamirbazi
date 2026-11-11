@@ -4,8 +4,8 @@
 
 - **Baker's percentage:** every ingredient is written as a percentage of the flour weight. Flour is always 100%.
 - **Tipo 00:** the most refined Italian flour grade. It is very fine and white, and often sold as pizza flour. The protein line on the pack shows the protein content.
-- **Dry yeast:** instant yeast, commonly a 7 g packet. Check your pack.
-- **Fresh yeast:** a soft cube of yeast, commonly 42 g. Check your pack.
+- **Dry yeast:** instant yeast, commonly a {{ recipes.yeast.solution.dry.yeast_g.value }} g packet. Check your pack.
+- **Fresh yeast:** a soft cube of yeast, commonly {{ recipes.yeast.solution.fresh.cube_g.value }} g. Check your pack.
 - **Yeast solution:** yeast dissolved in a known amount of water, so you can measure a very small amount of yeast on a kitchen scale.
 - **Semolina:** coarse flour from durum wheat, which is hard wheat, used for dusting the board or peel. Its grains roll like tiny balls, so the dough slides easily, and they soak up less water than normal flour, so the base does not turn pasty. Normal flour works too (see the New York page, "What is semolina for?").
 
@@ -18,8 +18,8 @@
 - **Rise:** the dough gets bigger as the yeast makes gas.
 - **Dough ball:** a portion of dough shaped into a ball, ready to rise and to be opened into a pizza.
 - **Warm fermentation:** letting the dough rise fast in a warm place.
-- **Room-temperature fermentation:** letting the dough rise slowly at room temperature, for most of a day.
-- **Cold fermentation:** letting the dough rise very slowly in the fridge, for one to three days.
+- **Room fermentation:** letting the dough rise slowly at room temperature, for most of a day.
+- **Cold fermentation:** letting the dough rise very slowly in the fridge, from one night up to three days.
 - **Finger test:** pressing a floured fingertip into the dough to see if it is ready (see Basics, "Reading the dough").
 
 ### Oven and tools

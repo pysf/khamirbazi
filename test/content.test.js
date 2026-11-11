@@ -97,3 +97,20 @@ test("the recipe page table ends with the total dough row, equal to the sum of t
   const body = njk.slice(njk.indexOf('id="ing-body"'), njk.indexOf("</tbody>"));
   assert.ok(body.trimEnd().endsWith('<td class="num">{{ page_data.dough_g | num(lang) }}</td><td></td></tr>'), "total is the last row");
 });
+
+test("links that start with / get the path prefix", () => {
+  const md = new MarkdownIt().use(contentPlugin);
+  const old = process.env.PATH_PREFIX;
+  process.env.PATH_PREFIX = "/khamirbazi/";
+  try {
+    assert.match(renderContent(md, "[a](/en/recipe/new_york/)", "en"), /href="\/khamirbazi\/en\/recipe\/new_york\/"/);
+  } finally {
+    if (old === undefined) delete process.env.PATH_PREFIX; else process.env.PATH_PREFIX = old;
+  }
+});
+
+test("room method hours match minutes", () => {
+  const m = JSON.parse(readFileSync(new URL("../src/_data/recipes.json", import.meta.url))).methods.room_8_12h;
+  assert.equal(m.bulk_h.value * 60, m.bulk_min.value);
+  assert.equal(m.final_rest_h.value * 60, m.final_rest_min.value);
+});
