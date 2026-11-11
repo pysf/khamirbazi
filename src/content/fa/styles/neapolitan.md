@@ -86,7 +86,7 @@
    > Why: سطحی که کامل داغ نشده، کف پیتزا را رنگ‌پریده و نرم می‌کند. گرمای بالا و پایین گرما را مستقیم از زیر به سطح پخت می‌رساند. در حالت فن، المنت پایین اغلب خاموش است و هوای در حال حرکت روی پیتزا را زودتر از کفش خشک می‌کند و رنگ می‌اندازد. اگر فرت حالت پیتزا دارد (فن همراه با گرمای پایین)، می‌توانی امتحانش کنی و حواست به روی پیتزا باشد.
 9. **چونه را باز کن**
    حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه پیش از پخت شروع کن. تا آن موقع فر داغ است و سطح پخت تقریباً {{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه‌ی کاملش را گرم شده است. روی بقیه‌ی چونه‌ها پوشیده بماند.
-   1. حدود {{ recipes.styles.new_york.practice.bench_flour_g.value }} گرم آرد (یا سمولینا) روی میز بپاش. چونه را رویش بگذار و با نوک انگشت‌ها از وسط به بیرون فشار بده. **به حاشیه‌ی {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی‌متری دست نزن.**
+   1. حدود {{ recipes.styles.new_york.practice.bench_flour_g.value }} گرم آرد (یا سمولینا: دانه‌های درشتش کمک می‌کنند خمیر راحت سُر بخورد و خمیری نشود؛ واژه‌نامه را ببین) روی میز بپاش. چونه را رویش بگذار و با نوک انگشت‌ها از وسط به بیرون فشار بده. **به حاشیه‌ی {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی‌متری دست نزن.**
    2. خمیر را با دو دست بکش و همزمان بچرخان تا به اندازه‌ای برسد که در صفحه‌ی اصلی انتخاب کرده‌ای (بالای همین صفحه نوشته شده).
    3. اگر خمیر جمع شد، بگذار {{ recipes.styles.new_york.practice.shrink_rest_min.range.0 }} تا {{ recipes.styles.new_york.practice.shrink_rest_min.range.1 }} دقیقه استراحت کند و بعد دوباره بکشش.
    > Why: حاشیه‌ی دست‌نخورده هوایش را نگه می‌دارد، پس در فر پف می‌کند. حاشیه‌ی بلند و نرم نشانه‌ی پیتزای ناپولیتن است.
@@ -170,7 +170,7 @@
    > Why: سطحی که کامل داغ نشده، کف پیتزا را رنگ‌پریده و نرم می‌کند. گرمای بالا و پایین گرما را مستقیم از زیر به سطح پخت می‌رساند. در حالت فن، المنت پایین اغلب خاموش است و هوای در حال حرکت روی پیتزا را زودتر از کفش خشک می‌کند و رنگ می‌اندازد. اگر فرت حالت پیتزا دارد (فن همراه با گرمای پایین)، می‌توانی امتحانش کنی و حواست به روی پیتزا باشد.
 10. **چونه را باز کن**
     حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه پیش از پخت شروع کن. تا آن موقع فر داغ است و سطح پخت تقریباً {{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه‌ی کاملش را گرم شده است. روی بقیه‌ی چونه‌ها پوشیده بماند.
-    1. حدود {{ recipes.styles.new_york.practice.bench_flour_g.value }} گرم آرد (یا سمولینا) روی میز بپاش. چونه را رویش بگذار و با نوک انگشت‌ها از وسط به بیرون فشار بده. **به حاشیه‌ی {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی‌متری دست نزن.**
+    1. حدود {{ recipes.styles.new_york.practice.bench_flour_g.value }} گرم آرد (یا سمولینا: دانه‌های درشتش کمک می‌کنند خمیر راحت سُر بخورد و خمیری نشود؛ واژه‌نامه را ببین) روی میز بپاش. چونه را رویش بگذار و با نوک انگشت‌ها از وسط به بیرون فشار بده. **به حاشیه‌ی {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی‌متری دست نزن.**
     2. خمیر را با دو دست بکش و همزمان بچرخان تا به اندازه‌ای برسد که در صفحه‌ی اصلی انتخاب کرده‌ای (بالای همین صفحه نوشته شده).
     3. اگر خمیر جمع شد، بگذار {{ recipes.styles.new_york.practice.shrink_rest_min.range.0 }} تا {{ recipes.styles.new_york.practice.shrink_rest_min.range.1 }} دقیقه استراحت کند و بعد دوباره بکشش.
     > Why: حاشیه‌ی دست‌نخورده هوایش را نگه می‌دارد، پس در فر پف می‌کند. حاشیه‌ی بلند و نرم نشانه‌ی پیتزای ناپولیتن است.
@@ -249,7 +249,7 @@
    > Why: گلوتن شل می‌شود. چونه‌ای که استراحت کرده راحت باز می‌شود و جمع نمی‌شود.
 8. **چونه را باز کن**
    حدود {{ recipes.timeline.shape_lead_min.value }} دقیقه پیش از پخت شروع کن. تا آن موقع فر داغ است و سطح پخت تقریباً {{ recipes.oven.preheat_min.range.0 }} تا {{ recipes.oven.preheat_min.range.1 }} دقیقه‌ی کاملش را گرم شده است. روی بقیه‌ی چونه‌ها پوشیده بماند.
-   1. حدود {{ recipes.styles.new_york.practice.bench_flour_g.value }} گرم آرد (یا سمولینا) روی میز بپاش. چونه را رویش بگذار و با نوک انگشت‌ها از وسط به بیرون فشار بده. **به حاشیه‌ی {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی‌متری دست نزن.**
+   1. حدود {{ recipes.styles.new_york.practice.bench_flour_g.value }} گرم آرد (یا سمولینا: دانه‌های درشتش کمک می‌کنند خمیر راحت سُر بخورد و خمیری نشود؛ واژه‌نامه را ببین) روی میز بپاش. چونه را رویش بگذار و با نوک انگشت‌ها از وسط به بیرون فشار بده. **به حاشیه‌ی {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_rim_cm.range.1 }} سانتی‌متری دست نزن.**
    2. خمیر را با دو دست بکش و همزمان بچرخان تا به اندازه‌ای برسد که در صفحه‌ی اصلی انتخاب کرده‌ای (بالای همین صفحه نوشته شده).
    3. اگر خمیر جمع شد، بگذار {{ recipes.styles.new_york.practice.shrink_rest_min.range.0 }} تا {{ recipes.styles.new_york.practice.shrink_rest_min.range.1 }} دقیقه استراحت کند و بعد دوباره بکشش.
    > Why: حاشیه‌ی دست‌نخورده هوایش را نگه می‌دارد، پس در فر پف می‌کند. حاشیه‌ی بلند و نرم نشانه‌ی پیتزای ناپولیتن است.

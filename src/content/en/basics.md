@@ -45,9 +45,15 @@ The times in this guide are for a room of about {{ recipes.oven.room_c.value }} 
 - **Needs more time:** the dent springs back at once. The dough has barely grown and feels tight. Wait and check again a little later. If your kitchen is cold, move the dough to a warmer spot.
 - **Gone too far:** the dent stays and does not fill back. The dough is more than double, flat and spreading, with big bubbles and a strong smell of alcohol. It tears when you stretch it, and the crust bakes pale. Bake it as soon as you can. Dough from the fridge can go back in to slow down. Next time, shorten the time or keep the dough cooler.
 
-## Fermentation and its names
+## Three ways to ferment
 
-Fermentation is the yeast eating sugar and making gas and flavour. Cold fermentation means letting the dough do this in the fridge. Other names for the same thing are cold proofing and cold retarding. Dough that rises at room temperature has a room-temperature rise; in a warm place, a warm rise.
+Fermentation is the yeast eating sugar and making gas and flavour. The gas makes the dough rise. This guide uses three ways to ferment. The difference is the temperature: the warmer the dough, the faster it is ready, and the cooler and slower, the more flavour it gets.
+
+- **Warm fermentation:** the dough rises in a warm place, at about {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees. It is the fastest way, for pizza on the same day, but it has the least flavour.
+- **Room-temperature fermentation:** the dough rises at about {{ recipes.oven.room_c.value }} degrees for {{ recipes.methods.room_8_12h.total_ferment_h.range.0 }} to {{ recipes.methods.room_8_12h.total_ferment_h.range.1 }} hours. Make the dough in the morning and bake in the evening.
+- **Cold fermentation:** after a short rise at room temperature, the dough goes into the fridge for {{ recipes.methods.cold_12_16h.fridge_h.range.0 }} up to {{ recipes.methods.cold_72h.fridge_h.value }} hours. The cold slows the yeast down, so the dough gets the most flavour, and you can choose the baking day. Other names for it are cold proofing and cold retarding.
+
+Not every style uses every way. The calculator on the Home page shows the ones for your style. Whichever you choose, the dough tells you when it is ready (see "Reading the dough" above).
 
 ## Raw dough
 
