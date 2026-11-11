@@ -4,7 +4,7 @@
 
 - **وسط:** نازک و نرم. خم می‌شود. مثل کراکر ترد نیست.
 - **حاشیه (لبه‌ی پیتزا):** بلند، پرهوا و لطیف، با چند لکه‌ی قهوه‌ای تا تیره که گرما رویش می‌اندازد.
-- **در خانه:** فر واقعی ناپولیتن روی {{ recipes.styles.neapolitan.practice.avpn_oven_c.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_oven_c.range.1 }} درجه کار می‌کند و پیتزا را در {{ recipes.styles.neapolitan.practice.avpn_bake_s.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_bake_s.range.1 }} ثانیه می‌پزد. فر خانگی حدود {{ recipes.oven.max_c.value }} درجه گرم می‌شود، پس پخت {{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه طول می‌کشد. نتیجه پیتزای **به سبک ناپولیتن** است، نه خود اصلش. حاشیه کمی سفت‌تر و رنگش کمتر تیره می‌شود. ولی باز هم پیتزای خیلی خوبی است.
+- **در خانه:** فر واقعی ناپولیتن روی {{ recipes.styles.neapolitan.practice.avpn_oven_c.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_oven_c.range.1 }} درجه کار می‌کند و پیتزا را در {{ recipes.styles.neapolitan.practice.avpn_bake_s.range.0 }} تا {{ recipes.styles.neapolitan.practice.avpn_bake_s.range.1 }} ثانیه می‌پزد. فر خانگی حدود {{ recipes.oven.max_c.value }} درجه گرم می‌شود، پس پخت {{ recipes.styles.neapolitan.bake.time_min.range.0 }} تا {{ recipes.styles.neapolitan.bake.time_min.range.1 }} دقیقه طول می‌کشد. نتیجه پیتزایی **شبیه پیتزای ناپولیتن** است، نه خود اصلش. حاشیه کمی سفت‌تر و رنگش کمتر تیره می‌شود. ولی باز هم پیتزای خیلی خوبی است.
 
 دستور اصلی بیشتر به طعم و بافت توجه دارد تا عددهای دقیق. همه‌ی مقدارها و زمان‌های اینجا نقطه‌ی شروع‌اند. یک بار بپز، خمیر و پوسته را نگاه کن و دفعه‌ی بعد هر چه لازم است تغییر بده.
 
