@@ -27,7 +27,7 @@ Yeast amounts are ranges, not fixed numbers. They depend on your fridge temperat
 
 Some people say a long cold rise is easier to digest. This guide does not make that claim. Choose it for the flavour.
 
-## Reading the dough
+## Reading the dough {#reading-the-dough}
 
 The times in this guide are for a room of about {{ recipes.oven.room_c.value }} degrees. Use them as a guide, not a rule. A kitchen is warmer in summer and colder in winter, and the yeast follows: in a warm kitchen the dough is ready sooner, in a cold one it needs more time. So watch the dough, not the clock. You get better at this with every bake.
 

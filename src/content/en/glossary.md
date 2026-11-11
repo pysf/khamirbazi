@@ -20,7 +20,7 @@
 - **Warm fermentation:** letting the dough rise fast in a warm place.
 - **Room fermentation:** letting the dough rise slowly at room temperature, for most of a day.
 - **Cold fermentation:** letting the dough rise very slowly in the fridge, from one night up to three days.
-- **Finger test:** pressing a floured fingertip into the dough to see if it is ready (see Basics, "Reading the dough").
+- **Finger test:** pressing a floured fingertip into the dough to see if it is ready (see ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough)).
 
 ### Oven and tools
 

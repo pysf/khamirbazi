@@ -114,3 +114,8 @@ test("room method hours match minutes", () => {
   assert.equal(m.bulk_h.value * 60, m.bulk_min.value);
   assert.equal(m.final_rest_h.value * 60, m.final_rest_min.value);
 });
+
+test('a heading ending in "{#id}" gets that id and the marker is not shown', () => {
+  const html = md.render("## Reading the dough {#reading-the-dough}\n");
+  assert.match(html, /<h2 id="reading-the-dough">Reading the dough<\/h2>/);
+});

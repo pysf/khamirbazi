@@ -69,7 +69,7 @@ You mix the dough in the morning and bake in the evening, or the other way round
    2. Knead for {{ recipes.methods.room_8_12h.knead_min.range.0 }} to {{ recipes.methods.room_8_12h.knead_min.range.1 }} minutes. The section "Kneading" on the [New York recipe page](/en/recipe/new_york/) shows how. Do not add oil.
    > Why: Salt makes the gluten stronger and slows the yeast down. Gluten is the stretchy net that holds the gas from the yeast.
 5. **Let the dough rise**
-   Put the dough in a lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)). This oil is only for the container, not for the dough. Leave it as one piece at room temperature for about {{ recipes.methods.room_8_12h.bulk_h.value }} hours, until it is clearly bigger and a little puffy. The time is only a guide: the dough decides, and a warm kitchen is faster. See "Reading the dough" on the Basics page. Keep the lid on, so the surface does not dry out.
+   Put the dough in a lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)). This oil is only for the container, not for the dough. Leave it as one piece at room temperature for about {{ recipes.methods.room_8_12h.bulk_h.value }} hours, until it is clearly bigger and a little puffy. The time is only a guide: the dough decides, and a warm kitchen is faster. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough). Keep the lid on, so the surface does not dry out.
    > Why: The yeast makes gas, and the gas makes the dough bigger and puffier. A slow rise at room temperature builds flavour.
 
    > Tip: Use a container big enough for the dough to double without touching the lid. Mark the dough level on the outside with tape or a pen, so you can see how much it has grown.
@@ -79,7 +79,7 @@ You mix the dough in the morning and bake in the evening, or the other way round
    3. Shape each piece into a ball: pull the edges to the middle, turn it over and roll it under your palm on the table until the surface is tight and smooth. Put each ball in its own lightly oiled container with a lid.
    > Why: Equal balls bake evenly and make pizzas of the same size. A scale is more accurate than your eye. A tight surface keeps the gas in, and the ball opens more easily later.
 7. **Rest the balls**
-   Leave the balls, covered, for about {{ recipes.methods.room_8_12h.final_rest_h.value }} hours, until they are soft and airy and a floured finger dent fills back slowly. See "Reading the dough" on the Basics page. The whole rise, from mixing to baking, takes {{ recipes.methods.room_8_12h.total_ferment_h.range.0 }} to {{ recipes.methods.room_8_12h.total_ferment_h.range.1 }} hours.
+   Leave the balls, covered, for about {{ recipes.methods.room_8_12h.final_rest_h.value }} hours, until they are soft and airy and a floured finger dent fills back slowly. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough). The whole rise, from mixing to baking, takes {{ recipes.methods.room_8_12h.total_ferment_h.range.0 }} to {{ recipes.methods.room_8_12h.total_ferment_h.range.1 }} hours.
    > Why: In the balls the dough keeps rising slowly and the gluten relaxes. A relaxed ball opens easily and does not shrink back.
 8. **Heat the oven and the baking surface**
    Do this {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking, while the balls are still resting. Put the baking surface (a pizza stone, a baking steel or a cast-iron pan) on the upper rack, in about the upper third of the oven. Set the oven to {{ recipes.styles.neapolitan.bake.temp_c.value }} degrees, with top and bottom heat and **no fan**.
@@ -149,7 +149,7 @@ You make the dough the day before baking. Take the amounts from the table on the
    > Why: Salt makes the gluten stronger and slows the yeast down.
 5. **Let the dough rise**
    1. Put the dough in a lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)). This oil is only for the container, not for the dough.
-   2. Leave it at about {{ recipes.oven.room_c.value }} degrees for about {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes. The time is only a guide: a warm kitchen is faster and a cold one is slower. When it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger, go on to the next step. See "Reading the dough" on the Basics page; for this check, go by size only.
+   2. Leave it at about {{ recipes.oven.room_c.value }} degrees for about {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes. The time is only a guide: a warm kitchen is faster and a cold one is slower. When it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger, go on to the next step. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough); for this check, go by size only.
    - If you chose stretch and fold, do {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds during this rise: the first one now, then one every {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes. Do all the rounds, even if the dough grows fast. After the last round, watch the dough. When it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger, go on to the next step. If it is not there yet, wait a little longer.
    > Why: The yeast needs a short warm start before it goes into the cold.
 
@@ -163,7 +163,7 @@ You make the dough the day before baking. Take the amounts from the table on the
    Put the containers in the fridge for {{ recipes.methods.cold_24h.fridge_h.value }} hours.
    > Why: In the fridge the yeast works slowly, and the enzymes have time to build flavour. The result is a deeper taste and better browning.
 8. **Take the dough out of the fridge**
-   On baking day, take the containers out about {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you open the dough. Keep the lids closed. The dough is ready to open when it is soft and a floured finger dent fills back slowly. See "Reading the dough" on the Basics page.
+   On baking day, take the containers out about {{ recipes.methods.cold_24h.take_out_lead_min.range.0 }} to {{ recipes.methods.cold_24h.take_out_lead_min.range.1 }} minutes before you open the dough. Keep the lids closed. The dough is ready to open when it is soft and a floured finger dent fills back slowly. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough).
    > Why: Cold dough does not stretch well, and it tears. Opening it too cold is the most common mistake with cold dough.
 9. **Heat the oven and the baking surface**
    Do this {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes before baking, while the dough warms up. Put the baking surface (a pizza stone, a baking steel or a cast-iron pan) on the upper rack, in about the upper third of the oven. Set the oven to {{ recipes.styles.neapolitan.bake.temp_c.value }} degrees, with top and bottom heat and **no fan**.
@@ -229,7 +229,7 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
 4. **Let the dough rise**
    1. Put the dough in a lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)). This oil is only for the container, not for the dough.
    2. Leave it in a warm place, at {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees, for about {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes. A switched-off oven with the light on works well.
-   3. The dough should grow to {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size. Without a warm place, the rise can take up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes: the time is only a guide, so wait for the size, not the clock. See "Reading the dough" on the Basics page.
+   3. The dough should grow to {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size. Without a warm place, the rise can take up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes: the time is only a guide, so wait for the size, not the clock. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough).
    > Why: The yeast makes gas, and the gas makes the dough bigger. This air makes the rim puff in the oven.
 
    > Tip: Use a container big enough for the dough to double without touching the lid. Mark the dough level on the outside with tape or a pen, so you can see how much it has grown.
@@ -245,7 +245,7 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
    3. Shape each piece into a ball: pull the edges to the middle, turn it over and roll it under your palm on the table until the surface is tight and smooth.
    > Why: Equal balls bake evenly and make pizzas of the same size. A scale is more accurate than your eye. A tight surface keeps the gas in, and the ball opens more easily later.
 7. **Rest the balls**
-   Cover the balls (a container with a lid or an upturned bowl works) and leave them for about {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes, until they are soft and relaxed. The dough decides, not the clock. See "Reading the dough" on the Basics page. The oven keeps heating.
+   Cover the balls (a container with a lid or an upturned bowl works) and leave them for about {{ recipes.methods.warm_2h.final_rest_min.range.0 }} to {{ recipes.methods.warm_2h.final_rest_min.range.1 }} minutes, until they are soft and relaxed. The dough decides, not the clock. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough). The oven keeps heating.
    > Why: The gluten relaxes. A relaxed ball opens easily and does not shrink back.
 8. **Open the dough**
    Start about {{ recipes.timeline.shape_lead_min.value }} minutes before baking. By then the oven is hot, and the baking surface has almost had its full {{ recipes.oven.preheat_min.range.0 }} to {{ recipes.oven.preheat_min.range.1 }} minutes. Keep the other balls covered.
