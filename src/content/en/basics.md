@@ -29,11 +29,19 @@ Some people say a long cold rise is easier to digest. This guide does not make t
 
 ## Reading the dough
 
-The times in this guide are a guide for a room of about {{ recipes.oven.room_c.value }} degrees. Your kitchen is warmer in summer and colder in winter, and that changes the speed a lot. In a warm kitchen the dough can be ready much sooner. In a cold one it needs longer. Watch the dough, not the clock. Reading the dough comes with practice, and each bake teaches you a bit more.
+The times in this guide are for a room of about {{ recipes.oven.room_c.value }} degrees. Use them as a guide, not a rule. A kitchen is warmer in summer and colder in winter, and the yeast follows: in a warm kitchen the dough is ready sooner, in a cold one it needs more time. So watch the dough, not the clock. You get better at this with every bake.
 
-- **Ready:** about {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size. It is soft and airy, with small bubbles under the surface and at the bottom of the container. Press a floured finger into it: the dent fills back slowly, about halfway.
-- **Too little rise (it needs more time):** it has barely grown, and it feels tight and dense. It springs back at once when you press or stretch it. Give it more time in a warmer spot.
-- **Too much rise:** it is more than double, flat and spreading, with big bubbles and a strong smell of alcohol. It is weak and tears when you stretch it, and the crust stays pale. Bake it soon. A cold dough can go back into the fridge. Next time, give it less time or keep it cooler.
+**Three ways to check the dough**
+
+- **Size:** compare the dough with the mark on the container. Each step of the recipe says how much it should grow.
+- **Look:** ready dough looks soft and a little domed, with small bubbles under the surface and at the bottom of the container.
+- **Finger test:** flour a fingertip, press it gently into the dough and watch the dent.
+
+**What the dough tells you**
+
+- **Ready:** the dent fills back slowly, about halfway, and the dough has reached the size the step asks for. Go on to the next step.
+- **Needs more time:** the dent springs back at once. The dough has barely grown and feels tight. Wait and check again a little later. If your kitchen is cold, move the dough to a warmer spot.
+- **Gone too far:** the dent stays and does not fill back. The dough is more than double, flat and spreading, with big bubbles and a strong smell of alcohol. It tears when you stretch it, and the crust bakes pale. Bake it as soon as you can. Dough from the fridge can go back in to slow down. Next time, shorten the time or keep the dough cooler.
 
 > Tip: Mark the level of the dough on the outside of the container with tape or a pen. Then you can see how much it has grown.
 
