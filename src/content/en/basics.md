@@ -37,13 +37,13 @@ The times in this guide are for a room of about {{ recipes.oven.room_c.value }} 
 - **Look:** ready dough looks soft and a little domed, with small bubbles under the surface and at the bottom of the container.
 - **Finger test:** flour a fingertip, press it gently into the dough and watch the dent.
 
+> Tip: Mark the level of the dough on the outside of the container with tape or a pen. Then you can see how much it has grown.
+
 **What the dough tells you**
 
 - **Ready:** the dent fills back slowly, about halfway, and the dough has reached the size the step asks for. Go on to the next step.
 - **Needs more time:** the dent springs back at once. The dough has barely grown and feels tight. Wait and check again a little later. If your kitchen is cold, move the dough to a warmer spot.
 - **Gone too far:** the dent stays and does not fill back. The dough is more than double, flat and spreading, with big bubbles and a strong smell of alcohol. It tears when you stretch it, and the crust bakes pale. Bake it as soon as you can. Dough from the fridge can go back in to slow down. Next time, shorten the time or keep the dough cooler.
-
-> Tip: Mark the level of the dough on the outside of the container with tape or a pen. Then you can see how much it has grown.
 
 ## Fermentation and its names
 
