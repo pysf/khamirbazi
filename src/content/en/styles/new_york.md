@@ -49,13 +49,21 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
 
 > Warning: Warm fermentation needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas. For one pizza the dry yeast is too little to weigh well on a kitchen scale that reads whole grams. This guide keeps the same rule for fresh yeast. For one pizza, use cold fermentation.
 
+**You need:**
+
+- A kitchen scale
+- A large bowl to mix the dough in
+- A container with a lid for the rise, big enough for the dough to double
+- A baking surface: a pizza stone, a baking steel or a cast-iron pan
+- A board or pizza peel, with semolina or flour, or baking paper
+- Oven gloves
+
 1. **Prepare the yeast**
-   1. Pour the dough water into a large bowl. It should be lukewarm, about {{ recipes.methods.warm_2h.water_temp_c.value }} degrees.
-   2. Weigh the yeast. Take the amount from the Dry yeast or Fresh yeast row in the table.
-   3. Crumble fresh yeast first, then stir the yeast into the water. Instant dry yeast needs no waiting.
+   1. Put the large bowl on the scale and set the scale to zero. Pour in the water from the Water row. Use lukewarm water, about {{ recipes.methods.warm_2h.water_temp_c.value }} degrees.
+   2. Weigh the yeast from the Dry yeast or Fresh yeast row and stir it into the water. Crumble fresh yeast first.
    > Why: Yeast works fast between {{ recipes.styles.new_york.practice.yeast_works_c.range.0 }} and {{ recipes.styles.new_york.practice.yeast_works_c.range.1 }} degrees and starts to die from about {{ recipes.styles.new_york.practice.yeast_dies_c.value }} degrees, so never use hot water. Lukewarm water feels only slightly warm on your wrist, cooler than a bath.
 
-   > Tip: If your yeast is old, or you are not sure it is alive, test it first. Stir a little yeast you do not need for this dough into a cup of lukewarm water. A pinch of sugar makes the foam show sooner; this sugar is only for the test. Wait {{ recipes.styles.new_york.practice.yeast_check_min.range.0 }} to {{ recipes.styles.new_york.practice.yeast_check_min.range.1 }} minutes until foam forms on top. No foam means the yeast is dead: use new yeast. Instant dry yeast that is within its date needs no test.
+   > Tip: Not sure your yeast is alive? Stir a pinch of it and a pinch of sugar into a little lukewarm water. If foam forms on top within {{ recipes.styles.new_york.practice.yeast_check_min.range.0 }} to {{ recipes.styles.new_york.practice.yeast_check_min.range.1 }} minutes, the yeast is alive. Instant dry yeast that is within its date needs no test.
 2. **Mix the dough**
    1. Add about half of the flour to the yeast water and stir until it looks like a thick batter.
    2. Add the rest of the flour in two or three portions, and add the salt with the last portion.
@@ -117,16 +125,27 @@ You mix the dough and bake about two hours later. Take the amounts from the Ingr
 
 You make the dough one or more days before baking. Take the amounts from the Ingredients card on this page. It shows the amounts for the time you chose on the Home page. The steps up to "Chill the dough" are the first day. The steps from "Take the dough out of the fridge" on are baking day.
 
-> Tip: If you use a yeast solution, mix it right before you use it. Stir it again right before you pour, because the yeast sinks to the bottom. Throw away what is left. No source says how long a yeast solution keeps, so this guide gives no storage time.
+**You need:**
+
+- A kitchen scale
+- A large bowl to mix the dough in
+- A jug or small bowl for the yeast solution, only if your table has a Yeast solution row
+- A container with a lid for the rise, big enough for the dough to double
+- Small containers with lids, one for each ball
+- A baking surface: a pizza stone, a baking steel or a cast-iron pan
+- A board or pizza peel, with semolina or flour, or baking paper
+- Oven gloves
 
 1. **Prepare the yeast**
-   1. Pour the cold water (about {{ recipes.methods.cold_24h.water_temp_c.value }} degrees) into a large bowl.
-   2. Add the yeast like this:
-      - **If the table has a Yeast solution row:** in a separate jug or bowl, stir one whole {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast (or half of a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube of fresh yeast) into {{ recipes.yeast.solution.dry.water_g.value }} g ({{ recipes.yeast.solution.dry.water_g.value }} ml) of lukewarm water ({{ recipes.yeast.solution.water_temp_c.range.0 }} to {{ recipes.yeast.solution.water_temp_c.range.1 }} degrees). Stir until no lumps are left. Wait {{ recipes.yeast.solution.dissolve_wait_min.value }} minutes and stir again. Right away, put the bowl of dough water on the scale and pour in the amount shown in the Yeast solution row. Throw the rest of the solution away. One gram of water or yeast solution is about one millilitre. A measuring jug works too (the About column shows ml).
-      - **If the table has a Dry yeast or Fresh yeast row:** weigh that amount and stir it into the water. Crumble fresh yeast first. Instant dry yeast needs no waiting.
-   > Why: A small amount of yeast is too light for a kitchen scale, so you weigh part of a yeast solution instead. A larger batch has enough yeast to weigh directly. The Water row in the table already has the solution weight taken off.
+   1. Put the large bowl on the scale and set the scale to zero. Pour in the water from the Water row. Use cold water, about {{ recipes.methods.cold_24h.water_temp_c.value }} degrees.
+   2. Add the yeast to the same bowl. Your table has one of these two rows:
+      - **Yeast solution:** in the jug, stir one {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast (or half a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube of fresh yeast) into {{ recipes.yeast.solution.dry.water_g.value }} g of lukewarm water. Wait {{ recipes.yeast.solution.dissolve_wait_min.value }} minutes and stir again. Set the scale to zero again, with the bowl still on it, and pour in the amount from the Yeast solution row. Throw the rest of the solution away.
+      - **Dry yeast or Fresh yeast:** weigh that amount and stir it into the water. Crumble fresh yeast first.
+   > Why: A small amount of yeast is too light for a kitchen scale, so you weigh part of a yeast solution instead. The Water row already has the solution's water taken off.
 
-   > Tip: If your yeast is old, or you are not sure it is alive, test it first. Stir a little yeast you do not need for this dough into a cup of lukewarm water. A pinch of sugar makes the foam show sooner; this sugar is only for the test. Wait {{ recipes.styles.new_york.practice.yeast_check_min.range.0 }} to {{ recipes.styles.new_york.practice.yeast_check_min.range.1 }} minutes until foam forms on top. No foam means the yeast is dead: use new yeast. Instant dry yeast that is within its date needs no test.
+   > Tip: For the yeast solution, lukewarm means {{ recipes.yeast.solution.water_temp_c.range.0 }} to {{ recipes.yeast.solution.water_temp_c.range.1 }} degrees. Stir until no lumps are left, and stir again just before you pour, because the yeast sinks. One gram of water or solution is about one millilitre, so a measuring jug works too (the About column shows ml).
+
+   > Tip: Not sure your yeast is alive? Stir a pinch of it and a pinch of sugar into a little lukewarm water. If foam forms on top within {{ recipes.styles.new_york.practice.yeast_check_min.range.0 }} to {{ recipes.styles.new_york.practice.yeast_check_min.range.1 }} minutes, the yeast is alive. Instant dry yeast that is within its date needs no test.
 2. **Mix the dough**
    1. Add about half of the flour and stir.
    2. Then add the rest in two or three portions.
