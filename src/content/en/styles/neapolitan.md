@@ -1,4 +1,4 @@
-## The finished pizza
+## The finished pizza {#finished-pizza}
 
 A Neapolitan pizza has a thin, soft centre and a tall, soft, puffy rim. All temperatures on this site are in degrees Celsius. Here is what to expect:
 
@@ -8,7 +8,7 @@ A Neapolitan pizza has a thin, soft centre and a tall, soft, puffy rim. All temp
 
 The original recipe is about taste and texture, not exact numbers. All amounts and times here are a starting point. Bake once, look at the dough and the crust, and change what you need next time.
 
-## Choosing a fermentation
+## Choosing a fermentation {#choosing-fermentation}
 
 Fermentation is the yeast eating sugar and making gas and flavour. In Naples the dough usually ferments for {{ recipes.styles.neapolitan.practice.avpn_ferment_h.range.0 }} to {{ recipes.styles.neapolitan.practice.avpn_ferment_h.range.1 }} hours at room temperature, with very little yeast. This page offers three kinds of fermentation. You choose one on the Home page, and the Ingredients card on this page shows the amounts for it. To try another, press "Change" at the top of the page.
 
@@ -30,11 +30,11 @@ Fermentation is the yeast eating sugar and making gas and flavour. In Naples the
 
 **In short:** if you have time, choose room fermentation for the closest result, or cold fermentation for the easiest plan. If you want to eat today, warm fermentation still makes a tasty pizza.
 
-## Flour and yeast
+## Flour and yeast {#flour-and-yeast}
 
-**Flour.** Use the same pizza flour as for the New York pizza (the pack often says Tipo 00). The section "Flour and yeast" on the [New York recipe page](/en/recipe/new_york/) explains how to read the protein on the pack.
+**Flour.** Use the same pizza flour as for the New York pizza (the pack often says Tipo 00). The section ["Flour and yeast" on the New York recipe page](/en/recipe/new_york/#flour-and-yeast) explains how to read the protein on the pack.
 
-**Yeast.** The Ingredients card shows the yeast you chose on the Home page (dry or fresh). The section "Flour and yeast" on the [New York recipe page](/en/recipe/new_york/) describes both kinds. For a small batch, room and cold fermentation use a yeast solution, because the yeast is too light for a kitchen scale. The step Prepare the yeast shows how to make one, and the table on the Ingredients card shows whether you need it.
+**Yeast.** The Ingredients card shows the yeast you chose on the Home page (dry or fresh). The section ["Flour and yeast" on the New York recipe page](/en/recipe/new_york/#flour-and-yeast) describes both kinds. For a small batch, room and cold fermentation use a yeast solution, because the yeast is too light for a kitchen scale. The step Prepare the yeast shows how to make one, and the table on the Ingredients card shows whether you need it.
 
 - **Sugar:** the original dough has no sugar. This home recipe adds a little ({{ recipes.styles.neapolitan.dough.sugar.value }}% of the flour weight; the Ingredients card shows the grams), because a {{ recipes.oven.max_c.value }} degree oven browns the pizza less than a real Neapolitan oven. You can leave it out.
 - **Oil:** none. This dough has no oil inside.
@@ -78,10 +78,10 @@ You mix the dough in the morning and bake in the evening, or the other way round
    > Why: The water and the enzymes in the flour start to build gluten by themselves, so you need less kneading.
 4. **Add the salt and knead**
    1. Sprinkle the salt (and the sugar, if you use it) over the dough. Work them in until the dough is even.
-   2. Knead for {{ recipes.methods.room_8_12h.knead_min.range.0 }} to {{ recipes.methods.room_8_12h.knead_min.range.1 }} minutes. The section "Kneading" on the [New York recipe page](/en/recipe/new_york/) shows how. Do not add oil.
+   2. Knead for {{ recipes.methods.room_8_12h.knead_min.range.0 }} to {{ recipes.methods.room_8_12h.knead_min.range.1 }} minutes. The section ["Kneading" on the New York recipe page](/en/recipe/new_york/#kneading) shows how. Do not add oil.
    > Why: Salt makes the gluten stronger and slows the yeast down. Gluten is the stretchy net that holds the gas from the yeast.
 5. **Let the dough rise**
-   Put the dough in a lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)). This oil is only for the container, not for the dough. Leave it as one piece at room temperature for about {{ recipes.methods.room_8_12h.bulk_h.value }} hours, until it is clearly bigger and a little puffy. The time is only a guide: the dough decides, and a warm kitchen is faster. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough). Keep the lid on, so the surface does not dry out.
+   Put the dough in a lightly oiled container with a lid (see ["Container, oil and cover" on the New York recipe page](/en/recipe/new_york/#container)). This oil is only for the container, not for the dough. Leave it as one piece at room temperature for about {{ recipes.methods.room_8_12h.bulk_h.value }} hours, until it is clearly bigger and a little puffy. The time is only a guide: the dough decides, and a warm kitchen is faster. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough). Keep the lid on, so the surface does not dry out.
    > Why: The yeast makes gas, and the gas makes the dough bigger and puffier. A slow rise at room temperature builds flavour.
 
    > Tip: Use a container big enough for the dough to double without touching the lid. Mark the dough level on the outside with tape or a pen, so you can see how much it has grown.
@@ -166,11 +166,11 @@ You make the dough the day before baking. Take the amounts from the table on the
    > Why: The water and the enzymes in the flour start to build gluten by themselves, so you need less kneading.
 4. **Add the salt and knead**
    1. Sprinkle the salt (and the sugar, if you use it) over the dough. Work them in until the dough is even.
-   2. Knead for {{ recipes.methods.cold_24h.knead_min.range.0 }} to {{ recipes.methods.cold_24h.knead_min.range.1 }} minutes. The section "Kneading" on the [New York recipe page](/en/recipe/new_york/) shows how. Do not add oil.
-   - If you prefer stretch and fold, skip the kneading. You do it during the next step instead (see "Stretch and fold" in the section "Kneading" on the [New York recipe page](/en/recipe/new_york/)).
+   2. Knead for {{ recipes.methods.cold_24h.knead_min.range.0 }} to {{ recipes.methods.cold_24h.knead_min.range.1 }} minutes. The section ["Kneading" on the New York recipe page](/en/recipe/new_york/#kneading) shows how. Do not add oil.
+   - If you prefer stretch and fold, skip the kneading. You do it during the next step instead (see ["Stretch and fold" in the section "Kneading" on the New York recipe page](/en/recipe/new_york/#stretch-and-fold)).
    > Why: Salt makes the gluten stronger and slows the yeast down.
 5. **Let the dough rise**
-   1. Put the dough in a lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)). This oil is only for the container, not for the dough.
+   1. Put the dough in a lightly oiled container with a lid (see ["Container, oil and cover" on the New York recipe page](/en/recipe/new_york/#container)). This oil is only for the container, not for the dough.
    2. Leave it at about {{ recipes.oven.room_c.value }} degrees for about {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes. The time is only a guide: a warm kitchen is faster and a cold one is slower. When it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger, go on to the next step. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough); for this check, go by size only.
    - If you skipped the kneading for stretch and fold, do {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds during this rise: the first one now, then one every {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes. Do all the rounds, even if the dough grows fast. After the last round, watch the dough. When it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger, go on to the next step. If it is not there yet, wait a little longer.
    > Why: The yeast needs a short warm start before it goes into the cold.
@@ -179,7 +179,7 @@ You make the dough the day before baking. Take the amounts from the table on the
 6. **Divide and ball**
    1. Put the whole dough on the scale. The weight should be close to Total dough in the table.
    2. Divide the weight by the number of pizzas. Cut off equal pieces of that weight.
-   3. Shape each piece into a ball: pull the edges to the middle, turn it over and roll it under your palm on the table until the surface is tight and smooth. Put each ball in its own lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)).
+   3. Shape each piece into a ball: pull the edges to the middle, turn it over and roll it under your palm on the table until the surface is tight and smooth. Put each ball in its own lightly oiled container with a lid (see ["Container, oil and cover" on the New York recipe page](/en/recipe/new_york/#container)).
    > Why: Equal balls bake evenly and make pizzas of the same size. A scale is more accurate than your eye. A tight surface keeps the gas in, and the ball opens more easily later.
 7. **Chill the dough**
    Put the containers in the fridge for {{ recipes.methods.cold_24h.fridge_h.value }} hours.
@@ -253,10 +253,10 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
    > Why: Flour added in portions gets wet evenly, so you get no dry lumps, and the yeast spreads through the dough.
 3. **Add the salt and knead**
    1. Sprinkle the salt (and the sugar, if you use it) over the dough. Work them in until the dough is even.
-   2. Knead for {{ recipes.methods.warm_2h.knead_min.value }} minutes. The section "Kneading" on the [New York recipe page](/en/recipe/new_york/) shows how. Do not add oil.
+   2. Knead for {{ recipes.methods.warm_2h.knead_min.value }} minutes. The section ["Kneading" on the New York recipe page](/en/recipe/new_york/#kneading) shows how. Do not add oil.
    > Why: There is little time, so kneading has to build the gluten that a long rest would build. Salt makes the gluten stronger and slows the yeast down.
 4. **Let the dough rise**
-   1. Put the dough in a lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)). This oil is only for the container, not for the dough.
+   1. Put the dough in a lightly oiled container with a lid (see ["Container, oil and cover" on the New York recipe page](/en/recipe/new_york/#container)). This oil is only for the container, not for the dough.
    2. Leave it in a warm place, at {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees, for about {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes. A switched-off oven with the light on works well.
    3. The dough should grow to {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size. Without a warm place, the rise can take up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes: the time is only a guide, so wait for the size, not the clock. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough).
    > Why: The yeast makes gas, and the gas makes the dough bigger. This air makes the rim puff in the oven.
@@ -338,7 +338,7 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
 - **Bake** for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes. If you use baking paper, skip the grill unless the pack says it is safe.
 - **Next pizza:** switch back to top and bottom heat and wait {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes before you open the next ball.
 
-## Troubleshooting
+## Troubleshooting {#troubleshooting}
 
 - **The rim did not puff.** You pressed the rim when you opened the dough, or the dough had not risen enough. Press only the middle and leave the rim alone.
 - **The base is pale or stays soft.** The baking surface was not hot enough. Heat it for the full {{ recipes.oven.preheat_min.range.1 }} minutes.
@@ -347,9 +347,9 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
 - **The dough springs back.** The gluten is tight, or the dough is cold. Let it rest for {{ recipes.styles.new_york.practice.shrink_rest_min.range.0 }} to {{ recipes.styles.new_york.practice.shrink_rest_min.range.1 }} minutes.
 - **The dough tears.** It is cold, or the gluten is weak. Let it rest, or patch the hole with a small piece of dough.
 - **A sharp smell of alcohol or sourness.** The dough rose too much. Next time use less yeast or a shorter rise, especially in a warm room.
-- **The dough is very sticky or very stiff.** See "The dough is sticky" and "The dough is dry" in the section "Kneading" on the [New York recipe page](/en/recipe/new_york/).
+- **The dough is very sticky or very stiff.** See ["The dough is sticky"](/en/recipe/new_york/#dough-sticky) and ["The dough is dry"](/en/recipe/new_york/#dough-dry) in the section "Kneading" on the New York recipe page.
 
-## What the original rules say
+## What the original rules say {#original-rules}
 
 The real Neapolitan pizza has rules from the AVPN (Associazione Verace Pizza Napoletana, an association in Naples that protects the original pizza). This guide uses the facts below. They are for information only. Your home pizza does not have to follow them.
 

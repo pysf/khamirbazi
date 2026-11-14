@@ -46,6 +46,19 @@ document.querySelectorAll("[data-method-section]").forEach((el) => {
   el.hidden = !el.dataset.methodSection.split(" ").includes(methodId);
 });
 
+// A link to "#id" in "More details" opens the folded section that holds the target, then scrolls to it.
+function openTarget() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const el = id && document.getElementById(id);
+  if (!el) return;
+  for (let d = el.closest("details"); d; d = d.parentElement.closest("details")) d.open = true;
+  el.scrollIntoView();
+}
+addEventListener("hashchange", openTarget);
+// A second click on the same link does not change the hash, so open the target on every click too.
+document.addEventListener("click", (e) => { if (e.target.closest('a[href^="#"]')) setTimeout(openTarget); });
+openTarget();
+
 // "Change" goes back to the Home page with the same choices.
 const change = document.getElementById("change");
 const home = new URLSearchParams({ style: styleId, method: methodId, size: size.id, pizzas, yeast: yeastType });

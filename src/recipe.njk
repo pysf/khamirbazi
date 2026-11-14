@@ -52,7 +52,7 @@ eleventyComputed:
     <div class="more">
       <h2>{{ r.more_details }}</h2>
       {% for p in parts %}{% if not p.main %}
-      <details class="card sec"{% if p.methods %} data-method-section="{{ p.methods | join(' ') }}"{% if page_data.defaultMethod not in p.methods %} hidden{% endif %}{% endif %}>
+      <details class="card sec"{% if p.id %} id="{{ p.id }}"{% endif %}{% if p.methods %} data-method-section="{{ p.methods | join(' ') }}"{% if page_data.defaultMethod not in p.methods %} hidden{% endif %}{% endif %}>
         <summary><h3>{{ p.title }}</h3>{% icon "chev", "chv2" %}</summary>
         <div class="sec-b">{{ p.html | safe }}</div>
       </details>
