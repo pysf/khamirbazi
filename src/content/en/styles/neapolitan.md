@@ -1,4 +1,4 @@
-## The finished pizza
+## The finished pizza {#finished-pizza}
 
 A Neapolitan pizza has a thin, soft centre and a tall, soft, puffy rim. All temperatures on this site are in degrees Celsius. Here is what to expect:
 
@@ -8,7 +8,7 @@ A Neapolitan pizza has a thin, soft centre and a tall, soft, puffy rim. All temp
 
 The original recipe is about taste and texture, not exact numbers. All amounts and times here are a starting point. Bake once, look at the dough and the crust, and change what you need next time.
 
-## Choosing a fermentation
+## Choosing a fermentation {#choosing-fermentation}
 
 Fermentation is the yeast eating sugar and making gas and flavour. In Naples the dough usually ferments for {{ recipes.styles.neapolitan.practice.avpn_ferment_h.range.0 }} to {{ recipes.styles.neapolitan.practice.avpn_ferment_h.range.1 }} hours at room temperature, with very little yeast. This page offers three kinds of fermentation. You choose one on the Home page, and the Ingredients card on this page shows the amounts for it. To try another, press "Change" at the top of the page.
 
@@ -30,11 +30,11 @@ Fermentation is the yeast eating sugar and making gas and flavour. In Naples the
 
 **In short:** if you have time, choose room fermentation for the closest result, or cold fermentation for the easiest plan. If you want to eat today, warm fermentation still makes a tasty pizza.
 
-## Flour and yeast
+## Flour and yeast {#flour-and-yeast}
 
-**Flour.** Use the same pizza flour as for the New York pizza (the pack often says Tipo 00). The section "Flour and yeast" on the [New York recipe page](/en/recipe/new_york/) explains how to read the protein on the pack.
+**Flour.** Use the same pizza flour as for the New York pizza (the pack often says Tipo 00). The section ["Flour and yeast" on the New York recipe page](/en/recipe/new_york/#flour-and-yeast) explains how to read the protein on the pack.
 
-**Yeast.** The Ingredients card shows the yeast you chose on the Home page (dry or fresh). The section "Flour and yeast" on the [New York recipe page](/en/recipe/new_york/) describes both kinds. For a small batch, room and cold fermentation use a yeast solution, because the yeast is too light for a kitchen scale. The step Prepare the yeast shows how to make one, and the table on the Ingredients card shows whether you need it.
+**Yeast.** The Ingredients card shows the yeast you chose on the Home page (dry or fresh). The section ["Flour and yeast" on the New York recipe page](/en/recipe/new_york/#flour-and-yeast) describes both kinds. For a small batch, room and cold fermentation use a yeast solution, because the yeast is too light for a kitchen scale. The step Prepare the yeast shows how to make one, and the table on the Ingredients card shows whether you need it.
 
 - **Sugar:** the original dough has no sugar. This home recipe adds a little ({{ recipes.styles.neapolitan.dough.sugar.value }}% of the flour weight; the Ingredients card shows the grams), because a {{ recipes.oven.max_c.value }} degree oven browns the pizza less than a real Neapolitan oven. You can leave it out.
 - **Oil:** none. This dough has no oil inside.
@@ -47,15 +47,27 @@ You mix the dough in the morning and bake in the evening, or the other way round
 
 > Warning: Room temperature changes the speed a lot. This plan is for a room of about {{ recipes.oven.room_c.value }} degrees. If your room is warmer than {{ recipes.styles.new_york.practice.hot_room_c.value }} degrees, make both rises shorter and watch the dough.
 
-1. **Prepare the yeast**
-   1. Pour the cool water (about {{ recipes.methods.room_8_12h.water_temp_c.value }} degrees) into a large bowl. Never use hot water: it kills the yeast.
-   2. Check the table on the Ingredients card.
-      - **If the table has a Yeast solution row:** in a separate jug or bowl, stir one whole {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast (or half of a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube of fresh yeast) into {{ recipes.yeast.solution.dry.water_g.value }} g ({{ recipes.yeast.solution.dry.water_g.value }} ml) of lukewarm water ({{ recipes.yeast.solution.water_temp_c.range.0 }} to {{ recipes.yeast.solution.water_temp_c.range.1 }} degrees) until no lumps are left. Wait {{ recipes.yeast.solution.dissolve_wait_min.value }} minutes and stir again. Right away, put the bowl of dough water on the scale and pour in the amount shown in the Yeast solution row. Throw the rest of the solution away. One gram of water or yeast solution is about one millilitre. A measuring jug works too (the About column shows ml).
-      - **If the table has a Dry yeast or Fresh yeast row:** weigh that amount and stir it into the water. Crumble fresh yeast first. Instant dry yeast needs no waiting.
-   3. Keep the salt out of the bowl for now: salt that touches the yeast directly slows it down.
-   > Why: A small amount of yeast is too light for a kitchen scale, so you weigh part of a yeast solution instead. A larger batch has enough yeast to weigh directly. When the table has a Yeast solution row, the Water row already has the solution's weight taken off.
+**You need:**
 
-   > Tip: If your yeast is old, or you are not sure it is alive, test it first. Stir a little yeast you do not need for this dough into a cup of lukewarm water. A pinch of sugar makes the foam show sooner; this sugar is only for the test. Wait until foam forms on top, which can take several minutes. No foam means the yeast is dead: use new yeast. Instant dry yeast that is within its date needs no test.
+- A kitchen scale
+- A large bowl to mix the dough in
+- A jug or small bowl for the yeast solution, only if your table has a Yeast solution row
+- A container with a lid for the rise, big enough for the dough to double
+- Small containers with lids, one for each ball
+- A baking surface: a pizza stone, a baking steel or a cast-iron pan
+- A board or pizza peel, with semolina or flour, or baking paper
+- Oven gloves
+
+1. **Prepare the yeast**
+   1. Put the large bowl on the scale and set the scale to zero. Pour in the water from the Water row. Use cool water, about {{ recipes.methods.room_8_12h.water_temp_c.value }} degrees.
+   2. Add the yeast to the same bowl. Your table has one of these two rows:
+      - **Yeast solution:** in the jug, stir one {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast (or half a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube of fresh yeast) into {{ recipes.yeast.solution.dry.water_g.value }} g of lukewarm water. Wait {{ recipes.yeast.solution.dissolve_wait_min.value }} minutes and stir again. Set the scale to zero again, with the bowl still on it, and pour in the amount from the Yeast solution row. Throw the rest of the solution away.
+      - **Dry yeast or Fresh yeast:** weigh that amount and stir it into the water. Crumble fresh yeast first.
+   > Why: A small amount of yeast is too light for a kitchen scale, so you weigh part of a yeast solution instead. The Water row already has the solution's water taken off. The salt goes in later, because salt that touches the yeast directly slows it down.
+
+   > Tip: For the yeast solution, lukewarm means {{ recipes.yeast.solution.water_temp_c.range.0 }} to {{ recipes.yeast.solution.water_temp_c.range.1 }} degrees. Stir until no lumps are left, and stir again just before you pour, because the yeast sinks. One gram of water or solution is about one millilitre, so a measuring jug works too (the About column shows ml).
+
+   > Tip: Not sure your yeast is alive? Stir a pinch of it and a pinch of sugar into a little lukewarm water. If foam forms on top within {{ recipes.styles.new_york.practice.yeast_check_min.range.0 }} to {{ recipes.styles.new_york.practice.yeast_check_min.range.1 }} minutes, the yeast is alive. Instant dry yeast that is within its date needs no test.
 2. **Mix the dough**
    1. Add about half of the flour and stir until the mixture is smooth.
    2. Add the rest of the flour in portions, and stir after each one.
@@ -66,10 +78,10 @@ You mix the dough in the morning and bake in the evening, or the other way round
    > Why: The water and the enzymes in the flour start to build gluten by themselves, so you need less kneading.
 4. **Add the salt and knead**
    1. Sprinkle the salt (and the sugar, if you use it) over the dough. Work them in until the dough is even.
-   2. Knead for {{ recipes.methods.room_8_12h.knead_min.range.0 }} to {{ recipes.methods.room_8_12h.knead_min.range.1 }} minutes. The section "Kneading" on the [New York recipe page](/en/recipe/new_york/) shows how. Do not add oil.
+   2. Knead for {{ recipes.methods.room_8_12h.knead_min.range.0 }} to {{ recipes.methods.room_8_12h.knead_min.range.1 }} minutes. The section ["Kneading" on the New York recipe page](/en/recipe/new_york/#kneading) shows how. Do not add oil.
    > Why: Salt makes the gluten stronger and slows the yeast down. Gluten is the stretchy net that holds the gas from the yeast.
 5. **Let the dough rise**
-   Put the dough in a lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)). This oil is only for the container, not for the dough. Leave it as one piece at room temperature for about {{ recipes.methods.room_8_12h.bulk_h.value }} hours, until it is clearly bigger and a little puffy. The time is only a guide: the dough decides, and a warm kitchen is faster. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough). Keep the lid on, so the surface does not dry out.
+   Put the dough in a lightly oiled container with a lid (see ["Container, oil and cover" on the New York recipe page](/en/recipe/new_york/#container)). This oil is only for the container, not for the dough. Leave it as one piece at room temperature for about {{ recipes.methods.room_8_12h.bulk_h.value }} hours, until it is clearly bigger and a little puffy. The time is only a guide: the dough decides, and a warm kitchen is faster. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough). Keep the lid on, so the surface does not dry out.
    > Why: The yeast makes gas, and the gas makes the dough bigger and puffier. A slow rise at room temperature builds flavour.
 
    > Tip: Use a container big enough for the dough to double without touching the lid. Mark the dough level on the outside with tape or a pen, so you can see how much it has grown.
@@ -123,17 +135,27 @@ You mix the dough in the morning and bake in the evening, or the other way round
 
 You make the dough the day before baking. Take the amounts from the table on the Ingredients card. The first day ends with the step Chill the dough. Baking day starts with the step Take the dough out of the fridge.
 
-> Tip: If the table has a Yeast solution row, mix the solution right before you use it. Stir it again right before you pour out the amount, because the yeast sinks to the bottom. Throw away what is left. No source says how long a yeast solution keeps, so this guide gives no shelf life.
+**You need:**
+
+- A kitchen scale
+- A large bowl to mix the dough in
+- A jug or small bowl for the yeast solution, only if your table has a Yeast solution row
+- A container with a lid for the rise, big enough for the dough to double
+- Small containers with lids, one for each ball
+- A baking surface: a pizza stone, a baking steel or a cast-iron pan
+- A board or pizza peel, with semolina or flour, or baking paper
+- Oven gloves
 
 1. **Prepare the yeast**
-   1. Pour the cold water (about {{ recipes.methods.cold_24h.water_temp_c.value }} degrees) into a large bowl.
-   2. Check the table on the Ingredients card.
-      - **If the table has a Yeast solution row:** in a separate jug or bowl, stir one whole {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast (or half of a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube of fresh yeast) into {{ recipes.yeast.solution.dry.water_g.value }} g ({{ recipes.yeast.solution.dry.water_g.value }} ml) of lukewarm water ({{ recipes.yeast.solution.water_temp_c.range.0 }} to {{ recipes.yeast.solution.water_temp_c.range.1 }} degrees) until no lumps are left. Wait {{ recipes.yeast.solution.dissolve_wait_min.value }} minutes and stir again. Right away, put the bowl of dough water on the scale and pour in the amount shown in the Yeast solution row. Throw the rest of the solution away. One gram of water or yeast solution is about one millilitre. A measuring jug works too (the About column shows ml).
-      - **If the table has a Dry yeast or Fresh yeast row:** weigh that amount and stir it into the water. Crumble fresh yeast first. Instant dry yeast needs no waiting.
-   3. Keep the salt out of the bowl for now: salt that touches the yeast directly slows it down.
-   > Why: A small amount of yeast is too light for a kitchen scale, so you weigh part of a yeast solution instead. A larger batch has enough yeast to weigh directly. When the table has a Yeast solution row, the Water row already has the solution's weight taken off.
+   1. Put the large bowl on the scale and set the scale to zero. Pour in the water from the Water row. Use cold water, about {{ recipes.methods.cold_24h.water_temp_c.value }} degrees.
+   2. Add the yeast to the same bowl. Your table has one of these two rows:
+      - **Yeast solution:** in the jug, stir one {{ recipes.yeast.solution.dry.yeast_g.value }} g packet of dry yeast (or half a {{ recipes.yeast.solution.fresh.cube_g.value }} g cube of fresh yeast) into {{ recipes.yeast.solution.dry.water_g.value }} g of lukewarm water. Wait {{ recipes.yeast.solution.dissolve_wait_min.value }} minutes and stir again. Set the scale to zero again, with the bowl still on it, and pour in the amount from the Yeast solution row. Throw the rest of the solution away.
+      - **Dry yeast or Fresh yeast:** weigh that amount and stir it into the water. Crumble fresh yeast first.
+   > Why: A small amount of yeast is too light for a kitchen scale, so you weigh part of a yeast solution instead. The Water row already has the solution's water taken off. The salt goes in later, because salt that touches the yeast directly slows it down.
 
-   > Tip: If your yeast is old, or you are not sure it is alive, test it first. Stir a little yeast you do not need for this dough into a cup of lukewarm water. A pinch of sugar makes the foam show sooner; this sugar is only for the test. Wait until foam forms on top, which can take several minutes. No foam means the yeast is dead: use new yeast. Instant dry yeast that is within its date needs no test.
+   > Tip: For the yeast solution, lukewarm means {{ recipes.yeast.solution.water_temp_c.range.0 }} to {{ recipes.yeast.solution.water_temp_c.range.1 }} degrees. Stir until no lumps are left, and stir again just before you pour, because the yeast sinks. One gram of water or solution is about one millilitre, so a measuring jug works too (the About column shows ml).
+
+   > Tip: Not sure your yeast is alive? Stir a pinch of it and a pinch of sugar into a little lukewarm water. If foam forms on top within {{ recipes.styles.new_york.practice.yeast_check_min.range.0 }} to {{ recipes.styles.new_york.practice.yeast_check_min.range.1 }} minutes, the yeast is alive. Instant dry yeast that is within its date needs no test.
 2. **Mix the dough**
    1. Add about half of the flour and stir until the mixture is smooth.
    2. Add the rest of the flour in portions, and stir after each one.
@@ -144,20 +166,20 @@ You make the dough the day before baking. Take the amounts from the table on the
    > Why: The water and the enzymes in the flour start to build gluten by themselves, so you need less kneading.
 4. **Add the salt and knead**
    1. Sprinkle the salt (and the sugar, if you use it) over the dough. Work them in until the dough is even.
-   2. Knead for {{ recipes.methods.cold_24h.knead_min.range.0 }} to {{ recipes.methods.cold_24h.knead_min.range.1 }} minutes. The section "Kneading" on the [New York recipe page](/en/recipe/new_york/) shows how. Do not add oil.
-   - If you prefer stretch and fold, skip the kneading. You do it during the next step instead (see "Stretch and fold" in the section "Kneading" on the [New York recipe page](/en/recipe/new_york/)).
+   2. Knead for {{ recipes.methods.cold_24h.knead_min.range.0 }} to {{ recipes.methods.cold_24h.knead_min.range.1 }} minutes. The section ["Kneading" on the New York recipe page](/en/recipe/new_york/#kneading) shows how. Do not add oil.
+   - If you prefer stretch and fold, skip the kneading. You do it during the next step instead (see ["Stretch and fold" in the section "Kneading" on the New York recipe page](/en/recipe/new_york/#stretch-and-fold)).
    > Why: Salt makes the gluten stronger and slows the yeast down.
 5. **Let the dough rise**
-   1. Put the dough in a lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)). This oil is only for the container, not for the dough.
+   1. Put the dough in a lightly oiled container with a lid (see ["Container, oil and cover" on the New York recipe page](/en/recipe/new_york/#container)). This oil is only for the container, not for the dough.
    2. Leave it at about {{ recipes.oven.room_c.value }} degrees for about {{ recipes.methods.cold_24h.room_rest_min.range.0 }} to {{ recipes.methods.cold_24h.room_rest_min.range.1 }} minutes. The time is only a guide: a warm kitchen is faster and a cold one is slower. When it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger, go on to the next step. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough); for this check, go by size only.
-   - If you chose stretch and fold, do {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds during this rise: the first one now, then one every {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes. Do all the rounds, even if the dough grows fast. After the last round, watch the dough. When it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger, go on to the next step. If it is not there yet, wait a little longer.
+   - If you skipped the kneading for stretch and fold, do {{ recipes.methods.cold_24h.stretch_fold.rounds.value }} rounds during this rise: the first one now, then one every {{ recipes.methods.cold_24h.stretch_fold.gap_min.value }} minutes. Do all the rounds, even if the dough grows fast. After the last round, watch the dough. When it is about {{ recipes.styles.new_york.practice.cold_rise_pct.value }}% bigger, go on to the next step. If it is not there yet, wait a little longer.
    > Why: The yeast needs a short warm start before it goes into the cold.
 
    > Tip: Use a container big enough for the dough to double without touching the lid. Mark the dough level on the outside with tape or a pen, so you can see how much it has grown.
 6. **Divide and ball**
    1. Put the whole dough on the scale. The weight should be close to Total dough in the table.
    2. Divide the weight by the number of pizzas. Cut off equal pieces of that weight.
-   3. Shape each piece into a ball: pull the edges to the middle, turn it over and roll it under your palm on the table until the surface is tight and smooth. Put each ball in its own lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)).
+   3. Shape each piece into a ball: pull the edges to the middle, turn it over and roll it under your palm on the table until the surface is tight and smooth. Put each ball in its own lightly oiled container with a lid (see ["Container, oil and cover" on the New York recipe page](/en/recipe/new_york/#container)).
    > Why: Equal balls bake evenly and make pizzas of the same size. A scale is more accurate than your eye. A tight surface keeps the gas in, and the ball opens more easily later.
 7. **Chill the dough**
    Put the containers in the fridge for {{ recipes.methods.cold_24h.fridge_h.value }} hours.
@@ -209,14 +231,21 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
 
 > Warning: This fermentation needs at least {{ recipes.methods.warm_2h.min_pizzas }} pizzas. For one pizza the dry yeast is too little to weigh well on a kitchen scale that reads whole grams. This guide keeps the same rule for fresh yeast. For one pizza, choose another fermentation.
 
-1. **Prepare the yeast**
-   1. Pour the lukewarm water (about {{ recipes.methods.warm_2h.water_temp_c.value }} degrees) into a large bowl.
-   2. Weigh the amount in the Dry yeast or Fresh yeast row of the table.
-   3. Crumble fresh yeast first, then stir the yeast into the water. Instant dry yeast needs no waiting.
-   4. Keep the salt out of the bowl for now: salt that touches the yeast directly slows it down.
-   > Why: Yeast works fast between {{ recipes.styles.new_york.practice.yeast_works_c.range.0 }} and {{ recipes.styles.new_york.practice.yeast_works_c.range.1 }} degrees and starts to die from about {{ recipes.styles.new_york.practice.yeast_dies_c.value }} degrees, so never use hot water. Lukewarm water feels just slightly warm on your wrist, cooler than a bath.
+**You need:**
 
-   > Tip: If your yeast is old, or you are not sure it is alive, test it first. Stir a little yeast you do not need for this dough into a cup of lukewarm water. A pinch of sugar makes the foam show sooner; this sugar is only for the test. Wait until foam forms on top, which can take several minutes. No foam means the yeast is dead: use new yeast. Instant dry yeast that is within its date needs no test.
+- A kitchen scale
+- A large bowl to mix the dough in
+- A container with a lid for the rise, big enough for the dough to double
+- A baking surface: a pizza stone, a baking steel or a cast-iron pan
+- A board or pizza peel, with semolina or flour, or baking paper
+- Oven gloves
+
+1. **Prepare the yeast**
+   1. Put the large bowl on the scale and set the scale to zero. Pour in the water from the Water row. Use lukewarm water, about {{ recipes.methods.warm_2h.water_temp_c.value }} degrees.
+   2. Weigh the yeast from the Dry yeast or Fresh yeast row and stir it into the water. Crumble fresh yeast first.
+   > Why: Yeast works fast between {{ recipes.styles.new_york.practice.yeast_works_c.range.0 }} and {{ recipes.styles.new_york.practice.yeast_works_c.range.1 }} degrees and starts to die from about {{ recipes.styles.new_york.practice.yeast_dies_c.value }} degrees, so never use hot water. Lukewarm water feels only slightly warm on your wrist, cooler than a bath. The salt goes in later, because salt that touches the yeast directly slows it down.
+
+   > Tip: Not sure your yeast is alive? Stir a pinch of it and a pinch of sugar into a little lukewarm water. If foam forms on top within {{ recipes.styles.new_york.practice.yeast_check_min.range.0 }} to {{ recipes.styles.new_york.practice.yeast_check_min.range.1 }} minutes, the yeast is alive. Instant dry yeast that is within its date needs no test.
 2. **Mix the dough**
    1. Add about half of the flour and stir until the mixture is smooth.
    2. Add the rest of the flour in portions, and stir after each one.
@@ -224,10 +253,10 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
    > Why: Flour added in portions gets wet evenly, so you get no dry lumps, and the yeast spreads through the dough.
 3. **Add the salt and knead**
    1. Sprinkle the salt (and the sugar, if you use it) over the dough. Work them in until the dough is even.
-   2. Knead for {{ recipes.methods.warm_2h.knead_min.value }} minutes. The section "Kneading" on the [New York recipe page](/en/recipe/new_york/) shows how. Do not add oil.
+   2. Knead for {{ recipes.methods.warm_2h.knead_min.value }} minutes. The section ["Kneading" on the New York recipe page](/en/recipe/new_york/#kneading) shows how. Do not add oil.
    > Why: There is little time, so kneading has to build the gluten that a long rest would build. Salt makes the gluten stronger and slows the yeast down.
 4. **Let the dough rise**
-   1. Put the dough in a lightly oiled container with a lid (see "Container, oil and cover" on the [New York recipe page](/en/recipe/new_york/)). This oil is only for the container, not for the dough.
+   1. Put the dough in a lightly oiled container with a lid (see ["Container, oil and cover" on the New York recipe page](/en/recipe/new_york/#container)). This oil is only for the container, not for the dough.
    2. Leave it in a warm place, at {{ recipes.styles.new_york.practice.warm_place_c.range.0 }} to {{ recipes.styles.new_york.practice.warm_place_c.range.1 }} degrees, for about {{ recipes.methods.warm_2h.bulk_min.range.0 }} to {{ recipes.methods.warm_2h.bulk_min.range.1 }} minutes. A switched-off oven with the light on works well.
    3. The dough should grow to {{ recipes.styles.new_york.practice.rise_factor.range.0 }} to {{ recipes.styles.new_york.practice.rise_factor.range.1 }} times its size. Without a warm place, the rise can take up to {{ recipes.methods.warm_2h.bulk_slow_max_min.value }} minutes: the time is only a guide, so wait for the size, not the clock. See ["Reading the dough" on the Basics page](/en/basics/#reading-the-dough).
    > Why: The yeast makes gas, and the gas makes the dough bigger. This air makes the rim puff in the oven.
@@ -309,7 +338,7 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
 - **Bake** for {{ recipes.styles.neapolitan.bake.time_min.range.0 }} to {{ recipes.styles.neapolitan.bake.time_min.range.1 }} minutes, with the grill for the last {{ recipes.styles.neapolitan.bake.grill.last_min.range.0 }} to {{ recipes.styles.neapolitan.bake.grill.last_min.range.1 }} minutes. If you use baking paper, skip the grill unless the pack says it is safe.
 - **Next pizza:** switch back to top and bottom heat and wait {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.0 }} to {{ recipes.styles.new_york.practice.second_pizza_wait_min.range.1 }} minutes before you open the next ball.
 
-## Troubleshooting
+## Troubleshooting {#troubleshooting}
 
 - **The rim did not puff.** You pressed the rim when you opened the dough, or the dough had not risen enough. Press only the middle and leave the rim alone.
 - **The base is pale or stays soft.** The baking surface was not hot enough. Heat it for the full {{ recipes.oven.preheat_min.range.1 }} minutes.
@@ -318,9 +347,9 @@ You mix the dough and bake about two hours later. Take the amounts from the tabl
 - **The dough springs back.** The gluten is tight, or the dough is cold. Let it rest for {{ recipes.styles.new_york.practice.shrink_rest_min.range.0 }} to {{ recipes.styles.new_york.practice.shrink_rest_min.range.1 }} minutes.
 - **The dough tears.** It is cold, or the gluten is weak. Let it rest, or patch the hole with a small piece of dough.
 - **A sharp smell of alcohol or sourness.** The dough rose too much. Next time use less yeast or a shorter rise, especially in a warm room.
-- **The dough is very sticky or very stiff.** See "The dough is sticky" and "The dough is dry" in the section "Kneading" on the [New York recipe page](/en/recipe/new_york/).
+- **The dough is very sticky or very stiff.** See ["The dough is sticky"](/en/recipe/new_york/#dough-sticky) and ["The dough is dry"](/en/recipe/new_york/#dough-dry) in the section "Kneading" on the New York recipe page.
 
-## What the original rules say
+## What the original rules say {#original-rules}
 
 The real Neapolitan pizza has rules from the AVPN (Associazione Verace Pizza Napoletana, an association in Naples that protects the original pizza). This guide uses the facts below. They are for information only. Your home pizza does not have to follow them.
 

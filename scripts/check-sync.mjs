@@ -128,6 +128,18 @@ for (const f of enFiles) {
     if (a[k] !== b[k]) fail(`content: ${f} differs in "${k}" (en: ${a[k]} | fa: ${b[k]})`);
 }
 
+// Every link to a section id ("#id", "/en/recipe/<style>/#id", "/en/basics/#id") must point at a "{#id}" heading of that page.
+for (const [lang, dir, files] of [["en", enDir, enFiles], ["fa", faDir, faFiles]]) {
+  const idsOf = (f) => (files.has(f) ? [...readFileSync(join(dir, f), "utf8").matchAll(/^#+ .*\{#([\w-]+)\}\s*$/gm)].map((m) => m[1]) : []);
+  for (const f of files)
+    for (const m of readFileSync(join(dir, f), "utf8").matchAll(/\]\(([^)\s]*)#([\w-]+)\)/g)) {
+      const [, path, id] = m;
+      const page = path === "" ? f : path.match(new RegExp(`^/${lang}/recipe/(\\w+)/$`)) ? `styles/${path.split("/")[3]}.md` : path === `/${lang}/basics/` ? "basics.md" : null;
+      if (!page) fail(`content: ${lang}/${f}: link "${path}#${id}" must point to /${lang}/recipe/<style>/ or /${lang}/basics/`);
+      else if (!idsOf(page).includes(id)) fail(`content: ${lang}/${f}: link "${path}#${id}" has no "{#${id}}" heading in ${page}`);
+    }
+}
+
 // 4. Farsi sources use Western digits (0-9). The build turns them into Persian digits (lib/persian-html.js).
 // Arabic-Indic (٠-٩) or already-converted (۰-۹) digits in a source would be wrong, or break the step counting above.
 const digitFiles = [...faFiles].map((f) => join(faDir, f)).concat(join(root, "src/_data/i18n/fa.json"));
@@ -162,7 +174,7 @@ for (const [where, text] of scanned) {
 }
 
 // 6. Farsi pages contain no Latin words (CLAUDE.md, Farsi writing rules). Proper names are written in Persian script.
-// Not checked: template syntax, {placeholders}, {methods=...} markers, the blockquote marker words and URLs.
+// Not checked: template syntax, {placeholders}, {methods=...} markers, the blockquote marker words, URLs and "(#id)" link targets.
 // ALLOW holds the only exceptions; the "EN"/"FA" language-switch codes live in the layout template, not in these sources.
 const ALLOW = new Set([]);
 function latinWords(line) {
@@ -172,7 +184,8 @@ function latinWords(line) {
     .replace(/\{#[\w-]+\}/g, " ")
     .replace(/\{\w+\}/g, " ")
     .replace(/^(\s*>\s*)(Why|Tip|Warning|Safety):/, "$1")
-    .replace(/(https?:\/\/|\/)[^\s)"]*/g, " ");
+    .replace(/(https?:\/\/|\/)[^\s)"]*/g, " ")
+    .replace(/\]\(#[\w-]+\)/g, "] ");
   return (s.match(/[A-Za-z][A-Za-z'\u2019-]*/g) || []).filter((w) => !ALLOW.has(w));
 }
 function checkLatin(file, lines) {
